@@ -14,9 +14,9 @@ and
 **Contributor:** The individual accepting this Agreement.
 
 The Agreement concerns contributions intentionally submitted
-for inclusion in RIGGED (research repository), planned at:
+for inclusion in RIGGED (research repository), at:
 
-https://github.com/mohamedbechirkefi/rigged-research
+https://github.com/mohamedbechirkefi/rigged-equal-rules
 
 ## 1. Ownership of contributions
 

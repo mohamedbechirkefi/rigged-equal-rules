@@ -57,3 +57,17 @@ pandoc research/paper/manuscript.md -s -t latex -o research/paper/manuscript.tex
 pandoc research/paper/manuscript.md -s -t typst -V mainfont="Libertinus Serif" -o build/manuscript.typ
 python -c "import typst; typst.compile('build/manuscript.typ', output='build/manuscript.pdf')"
 ```
+
+## 7. Running the engine (M2)
+
+```
+# Command-line interface (UV=/path/to/uv if uv is not on PATH)
+scripts/rigged test                       # whole test suite
+scripts/rigged smoke                      # protocol smoke matrix, exploratory -> results/exploratory/smoke/
+scripts/rigged smoke --matrix SIZING      # exploratory sizing run at n = 20,000 on seeds 1000-1019
+scripts/rigged smoke --matrix DEGEN       # exploratory degenerate-case probe
+scripts/rigged run --experiment EXP-001   # refused (exit 2) until the owner freezes the protocol
+scripts/rigged report --input results/exploratory/smoke --pdf
+```
+
+PDFs use pandoc and the typst Python package; set `RIGGED_PANDOC` and `RIGGED_TYPST_PYTHON` if the tools live elsewhere.

@@ -1,0 +1,8 @@
+#!/bin/sh
+# SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
+# Run the RIGGED command-line interface in the locked environment.
+# Usage: scripts/rigged {smoke|run|report|test} [options]
+# UV may point to the uv executable (default: uv on PATH).
+root="$(cd "$(dirname "$0")/.." && pwd)"
+UV="${UV:-uv}"
+cd "$root" && PYTHONPATH="$root/src" exec "$UV" run --frozen python -m rigged.cli "$@"

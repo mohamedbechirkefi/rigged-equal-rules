@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rigged.result_bundle/1.0.0",
+  "title": "RIGGED result bundle (synthetic simulation results)",
+  "type": "object",
+  "required": ["schema", "schema_version", "label", "matrix_id", "experiment_id", "description", "created_utc",
+               "protocol", "generator_version", "package_version", "n", "seeds", "runs", "counts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "rigged.result_bundle"},
+    "schema_version": {"const": "1.0.0"},
+    "label": {"enum": ["exploratory", "confirmatory"]},
+    "matrix_id": {"type": "string", "minLength": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "created_utc": {"type": "string"},
+    "protocol": {
+      "type": "object",
+      "required": ["path", "sha256", "frozen", "status_reason"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string"},
+        "frozen": {"type": "boolean"},
+        "status_reason": {"type": "string"}
+      }
+    },
+    "generator_version": {"type": "string"},
+    "package_version": {"type": "string"},
+    "n": {"type": "integer", "minimum": 1},
+    "seeds": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 1},
+    "counts": {
+      "type": "object",
+      "required": ["planned", "ok", "failed"],
+      "additionalProperties": false,
+      "properties": {
+        "planned": {"type": "integer", "minimum": 0},
+        "ok": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0}
+      }
+    },
+    "runs": {"type": "array", "items": {"$ref": "#/$defs/run"}}
+  },
+  "$defs": {
+    "num": {"type": ["number", "null"]},
+    "group": {
+      "type": "object",
+      "required": ["n", "positives", "negatives", "selected", "tp", "fp", "tn", "fn", "sr", "tpr", "fnr", "fpr", "ppv", "ece"],
+      "additionalProperties": false,
+      "properties": {
+        "n": {"type": "integer", "minimum": 0},
+        "positives": {"type": "integer", "minimum": 0},
+        "negatives": {"type": "integer", "minimum": 0},
+        "selected": {"type": "integer", "minimum": 0},
+        "tp": {"type": "integer", "minimum": 0},
+        "fp": {"type": "integer", "minimum": 0},
+        "tn": {"type": "integer", "minimum": 0},
+        "fn": {"type": "integer", "minimum": 0},
+        "sr": {"$ref": "#/$defs/rate"},
+        "tpr": {"$ref": "#/$defs/rate"},
+        "fnr": {"$ref": "#/$defs/rate"},
+        "fpr": {"$ref": "#/$defs/rate"},
+        "ppv": {"$ref": "#/$defs/rate"},
+        "ece": {"$ref": "#/$defs/rate"}
+      }
+    },
+    "rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "gapval": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+    "run": {
+      "type": "object",
+      "required": ["run_id", "experiment_id", "cell_id", "policy", "seed", "n", "config", "config_hash", "status",
+                   "failure_reason", "runtime_s", "peak_traced_bytes"],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {"type": "string", "pattern": "^RUN-[A-Z0-9-]+-[A-Za-z0-9_.-]+-P[0-3]-s[0-9]+$"},
+        "experiment_id": {"type": "string"},
+        "cell_id": {"type": "string"},
+        "policy": {"enum": ["P0", "P1", "P2", "P3"]},
+        "seed": {"type": "integer", "minimum": 0},
+        "n": {"type": "integer", "minimum": 1},
+        "config": {"type": "object"},
+        "config_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "status": {"enum": ["ok", "failed"]},
+        "failure_reason": {"type": ["string", "null"]},
+        "runtime_s": {"type": "number", "minimum": 0},
+        "peak_traced_bytes": {"type": ["integer", "null"], "minimum": 0},
+        "policy_fit": {"type": "object"},
+        "groups": {
+          "type": "object",
+          "required": ["A", "B"],
+          "additionalProperties": false,
+          "properties": {"A": {"$ref": "#/$defs/group"}, "B": {"$ref": "#/$defs/group"}}
+        },
+        "overall": {
+          "type": "object",
+          "required": ["n", "selected", "tp", "fp", "tn", "fn", "sr", "utility_per_capita", "accuracy"],
+          "additionalProperties": false,
+          "properties": {
+            "n": {"type": "integer", "minimum": 0},
+            "selected": {"type": "integer", "minimum": 0},
+            "tp": {"type": "integer", "minimum": 0},
+            "fp": {"type": "integer", "minimum": 0},
+            "tn": {"type": "integer", "minimum": 0},
+            "fn": {"type": "integer", "minimum": 0},
+            "sr": {"$ref": "#/$defs/rate"},
+            "utility_per_capita": {"$ref": "#/$defs/num"},
+            "accuracy": {"$ref": "#/$defs/rate"}
+          }
+        },
+        "gaps": {
+          "type": "object",
+          "required": ["sr_gap", "eog", "fpr_gap", "ppv_gap", "ece_gap"],
+          "additionalProperties": false,
+          "properties": {
+            "sr_gap": {"$ref": "#/$defs/gapval"},
+            "eog": {"$ref": "#/$defs/gapval"},
+            "fpr_gap": {"$ref": "#/$defs/gapval"},
+            "ppv_gap": {"$ref": "#/$defs/gapval"},
+            "ece_gap": {"$ref": "#/$defs/gapval"}
+          }
+        },
+        "undefined": {"type": "object", "additionalProperties": {"type": "string"}}
+      },
+      "if": {"properties": {"status": {"const": "ok"}}},
+      "then": {"required": ["groups", "overall", "gaps", "undefined", "policy_fit"],
+               "properties": {"failure_reason": {"type": "null"}}},
+      "else": {"properties": {"failure_reason": {"type": "string", "minLength": 1}}}
+    }
+  }
+}

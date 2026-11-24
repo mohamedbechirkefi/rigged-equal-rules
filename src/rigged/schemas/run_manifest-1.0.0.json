@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rigged.run_manifest/1.0.0",
+  "title": "RIGGED run manifest",
+  "type": "object",
+  "required": ["schema", "schema_version", "matrix_id", "label", "result_file", "result_sha256", "environment",
+               "wall_clock_s", "peak_rss_bytes", "command", "runs"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "rigged.run_manifest"},
+    "schema_version": {"const": "1.0.0"},
+    "matrix_id": {"type": "string"},
+    "label": {"enum": ["exploratory", "confirmatory"]},
+    "result_file": {"type": "string"},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "command": {"type": "string"},
+    "wall_clock_s": {"type": "number", "minimum": 0},
+    "peak_rss_bytes": {"type": ["integer", "null"], "minimum": 0},
+    "environment": {
+      "type": "object",
+      "required": ["git_revision", "git_dirty", "python", "numpy", "jsonschema", "rigged", "os", "machine", "cpu",
+                   "cpu_count", "started_utc", "finished_utc"],
+      "properties": {
+        "git_revision": {"type": ["string", "null"]},
+        "git_dirty": {"type": ["boolean", "null"]},
+        "python": {"type": "string"},
+        "numpy": {"type": "string"},
+        "jsonschema": {"type": "string"},
+        "rigged": {"type": "string"},
+        "os": {"type": "string"},
+        "machine": {"type": "string"},
+        "cpu": {"type": "string"},
+        "cpu_count": {"type": ["integer", "null"]},
+        "started_utc": {"type": "string"},
+        "finished_utc": {"type": "string"}
+      }
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "config_hash", "seed", "status", "runtime_s", "peak_traced_bytes"],
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {"type": "string"},
+          "config_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "seed": {"type": "integer", "minimum": 0},
+          "status": {"enum": ["ok", "failed"]},
+          "runtime_s": {"type": "number", "minimum": 0},
+          "peak_traced_bytes": {"type": ["integer", "null"], "minimum": 0}
+        }
+      }
+    }
+  }
+}

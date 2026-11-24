@@ -7,7 +7,7 @@ Target: five focused development days (planning estimate). Effort is in focused 
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24), pending the owner's read of the gate | none |
 | M1 | Research and preregistration | M0 | P0 | 0.75 | in progress (drafts written in M0) | owner freeze (G-FREEZE) |
-| M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | not started | none |
+| M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | done (2026-11-24): all acceptance criteria checked; exploratory runs only | none |
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | not started | owner freeze |
 | M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | not started | none |
@@ -32,9 +32,9 @@ Acceptance criteria:
 - [x] Draft project protocol with H0/H1, baseline, primary metric, secondary metrics, unit, seeds, sample-size rationale, uncertainty, exclusion and stopping rules, smoke and full matrices, sensitivity analysis.
 - [x] EXP-001 to EXP-003 registered and given draft protocols (11.2).
 - [ ] Full texts of the core sources read; definitions and theorem statements recorded; `references.bib` limited to verified entries.
-- [ ] Analytic expressions for population TPR per group derived and written into the protocol (needed for the cross-check and for H1b's direction).
-- [ ] Smoke run (exploratory) measures the per-seed SD and runtime; seed count confirmed.
-- [ ] Fixture manifest for golden tests.
+- [ ] Analytic expressions for population TPR per group derived and written into the protocol (needed for the cross-check and for H1b's direction). Implemented numerically in `src/rigged/analytic.py` and used for AP-003; not yet written into the protocol text (owner's draft).
+- [x] Smoke run (exploratory) measures the per-seed SD and runtime (JRN-0002 to JRN-0004). Seed count: 20 adequate at n = 20,000; the owner decides the trigger wording and whether to raise to 50 (AP-002).
+- [ ] Fixture manifest for golden tests. Golden examples are inline in `tests/` (hand-computed); a separate manifest file is not written yet.
 - [ ] Owner freezes the protocols; protocol hashes recorded in the registry (G-FREEZE).
 - Gate: protocol frozen before confirmatory runs; exploratory results visibly separated.
 
@@ -42,18 +42,19 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- [ ] Generator, policy P0 first, then P1 to P3, metrics; pure functions, typed, seeded.
-- [ ] Unit tests: confusion matrices, group counts, zero denominators, threshold monotonicity; property tests; golden hand-computed fixtures; analytic differential test.
-- [ ] Versioned JSON result schema with validation; run manifest (runtime, peak memory, OS, CPU, package versions, git revision, config hash).
-- [ ] CLI: smoke, run, report, test.
-- [ ] Report generator producing tables and figures from results.
+- [x] Generator, policy P0 first, then P1 to P3, metrics; pure functions, typed, seeded (`src/rigged/`).
+- [x] Unit tests: confusion matrices, group counts, zero denominators, threshold monotonicity; property tests; golden hand-computed fixtures; analytic differential test (101 tests, all passing on 2026-11-24).
+- [x] Versioned JSON result schema with validation; run manifest (runtime, peak memory, OS, CPU, package versions, git revision, config hash).
+- [x] CLI: smoke, run (refuses confirmatory while unfrozen), report, test.
+- [x] Report generator producing tables and figures from results (CSV, Markdown, SVG; PDF through pandoc and Typst, visually inspected).
+- Open items carried forward: proposed protocol amendments AP-001 to AP-008 (`research/protocol_amendment_proposals.md`) await the owner.
 - Gate: correctness before UI polish.
 
 ## M3: Experiments (11.6: reports as experiments finish; provenance at run time)
 
 Acceptance criteria:
 
-- [ ] Smoke matrix run and validated.
+- [ ] Smoke matrix run and validated. (Run exploratorily in M2, JRN-0002; to be rerun under the frozen protocol.)
 - [ ] Frozen full matrix run for EXP-001 to EXP-003; every run, failure and deviation exported.
 - [ ] Per-experiment report drafted as each finishes.
 - Gate: complete planned matrix or documented failure; no silently dropped runs.

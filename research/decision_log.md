@@ -37,3 +37,33 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
 - **Decided by:** the AI assistant, following the session brief.
 - **Decision:** `pyproject.toml` pins numpy 2.5.4, jsonschema 4.26.0, pytest 9.2.0, hypothesis 6.170.15; `[tool.uv] exclude-newer = "2026-11-10T00:00:00Z"` keeps every resolved distribution at least two weeks older than 2026-11-24. `uv.lock` was produced with uv 0.9.5.
 - **Consequences:** Upgrades require a dated decision entry.
+
+## DEC-006 (2026-11-24): No SciPy; numerical functions implemented and tested in the package
+
+- **Decided by:** the AI assistant (M2); open to owner review.
+- **Decision:** The normal CDF (Hart's double-precision approximation), quantiles, latent-family distributions and the Student t quantile are implemented in `src/rigged/numerics.py`; the dependency set stays numpy and jsonschema.
+- **Context:** Only a few special functions are needed. Each is tested against the standard library (`math.erfc`, `statistics.NormalDist`) or tabulated values.
+- **Consequences:** No new dependency, `uv.lock` unchanged.
+
+## DEC-007 (2026-11-24): Exploratory runs use seeds of 1000 and above
+
+- **Decided by:** the AI assistant (M2), as a safeguard; proposed for the protocol as AP-004.
+- **Decision:** The SIZING and DEGEN exploratory matrices use seeds 1000 and above; tests use seeds 2000 and above or 5000 and above; `rigged.cli run --exploratory` refuses the confirmatory seeds 0 to 19. The protocol's own smoke matrix (seeds 0 to 2, n = 2,000) was run as written.
+- **Consequences:** No confirmatory seed was evaluated at the planned n before the freeze.
+
+## DEC-008 (2026-11-24): What "frozen" means to the code
+
+- **Decided by:** the AI assistant (M2); open to owner review.
+- **Decision:** `rigged.protocol_guard` treats an experiment as frozen only if its registry row has a protocol hash equal to the SHA-256 of its protocol file and neither that protocol nor `research/protocol.md` declares DRAFT in its header. Otherwise `run` refuses (exit code 2). The code never writes a hash.
+- **Consequences:** At freeze, the owner records the hash (`shasum -a 256 research/experiments/EXP-NNN/protocol.md`) in the registry and removes the DRAFT status.
+
+## DEC-009 (2026-11-24): P3 fitting by bisection on a common TPR
+
+- **Decided by:** the AI assistant (M2); open to owner review.
+- **Decision:** P3 thresholds select, in each group, the top round(tau * qualified) qualified scores; tau is found by bisection so the overall count is as close to kappa * n as the finite population allows. Realised fitting TPR gap and count are recorded per run. The tolerance question is raised as AP-005.
+
+## DEC-010 (2026-11-24): The package is run from `src/` without installation
+
+- **Decided by:** the AI assistant (M2).
+- **Decision:** `pyproject.toml` keeps `package = false`; pytest uses `pythonpath = ["src"]`; the CLI runs as `scripts/rigged` or `PYTHONPATH=src uv run --frozen python -m rigged.cli`. Installing a build backend would add a download for no benefit.
+- **Consequences:** The reproduction commands in the EXP protocols (`uv run python -m rigged.cli ...`) need `PYTHONPATH=src` or `scripts/rigged`; this is noted for the owner and not edited in the draft protocols.

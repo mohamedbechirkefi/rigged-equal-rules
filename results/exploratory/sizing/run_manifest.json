@@ -1,0 +1,3227 @@
+{
+ "command": "python -m rigged.cli smoke --matrix SIZING --pdf",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "finished_utc": "2026-11-24T16:07:20Z",
+  "git_dirty": false,
+  "git_revision": "16e3b4f6980797ec8f09f14ebe6a351d761fc646",
+  "jsonschema": "4.26.0",
+  "machine": "arm64",
+  "numpy": "2.5.4",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "python": "3.12.1",
+  "rigged": "0.2.0",
+  "started_utc": "2026-11-24T16:07:09Z"
+ },
+ "label": "exploratory",
+ "matrix_id": "SIZING",
+ "peak_rss_bytes": 78561280,
+ "result_file": "results.json",
+ "result_sha256": "7df119da2c4e234ba99ad33cdd0c2babba81e5b79cabd51bcbf1333f2fa95e8c",
+ "runs": [
+  {
+   "config_hash": "sha256:f8eac6c42c74d0cc45bc1a4d2188ae1109308bcfff1cf39be7141574a74f203f",
+   "peak_traced_bytes": 5050923,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1000",
+   "runtime_s": 0.07535354200081201,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7ab3ce0724fd47c59b7670eb4280e4470f5015fec6a0be216f4d39e5b79091a3",
+   "peak_traced_bytes": 1524400,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1000",
+   "runtime_s": 0.04035450000083074,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3f7246db20524384ad450416680d49089b44fee1aad5563016603c4567292c46",
+   "peak_traced_bytes": 1523288,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1000",
+   "runtime_s": 0.021112207999976818,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8eba86188d4d34c5682a2e1fd85f3215334dd675ba85f146cde80a650bb75332",
+   "peak_traced_bytes": 1523336,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1000",
+   "runtime_s": 0.012243625000337488,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1abe669f979d742cb6feeea63604e09750f5cf90a004c697bf4fd93f26c71cca",
+   "peak_traced_bytes": 1523312,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1000",
+   "runtime_s": 0.030084209000051487,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5110c45ae206049e0061c6d432a5741dd02a9fdb4c29a5f8833bff5d5cfb9713",
+   "peak_traced_bytes": 1523296,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1000",
+   "runtime_s": 0.010323624999728054,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6b9a41bd0a2040049b99e1a8e22dd1d32e6646a805bc054529dce45fc4ba75c6",
+   "peak_traced_bytes": 1523216,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1000",
+   "runtime_s": 0.005907957998715574,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7f61e4eae9e558badbf813a580e610c7904215f43b0a69b2fc41efb83f8baf5a",
+   "peak_traced_bytes": 1523264,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1000",
+   "runtime_s": 0.00719424999988405,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a9ed35cd3e5e89a3aafd5889ae70e81ec856b95e2bba5aeffc0091bb206b8262",
+   "peak_traced_bytes": 1523240,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1000",
+   "runtime_s": 0.02663475000008475,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0f331df5c6dfb3734d955c2bc3f78dac3a5a81062a41b58a0810845b505972fc",
+   "peak_traced_bytes": 1523224,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1000",
+   "runtime_s": 0.049544834000698756,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:abb3c357d2883d1b3c8fa159991cfabe1e1a4a9e1c8d410b4b64c29b2294e366",
+   "peak_traced_bytes": 1523144,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1000",
+   "runtime_s": 0.04444037500070408,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7905da2b35e4d0135e5963ab1e63d1d173ddbde517e86b13e01df324afea5fd3",
+   "peak_traced_bytes": 1523192,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1000",
+   "runtime_s": 0.04441954200046894,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:91100eac62119ef2231689e64f0b31d34f144ff4a80f67a9fc9602a6e3ec2418",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1000",
+   "runtime_s": 0.013873207999495207,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9728d0d1fcda89c09abe98ed33de7759e144356fa19421f12e9f1124d5325d0e",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1000",
+   "runtime_s": 0.03803200000038487,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3a3cd55ae49840b926b8d021eb77ab2aaa80a49f7a3b9e202b0dc898664769a1",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1000",
+   "runtime_s": 0.0080965830002242,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8c018b853a00036dcf1de9d3c1899c7a1fb3499726b64366ab01032819b4b045",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1000",
+   "runtime_s": 0.024120708998452756,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9b8ee894b22a30961dd34f2811eabfc94979b380da006d6ed7003b208ee9f8ad",
+   "peak_traced_bytes": 1523808,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1000",
+   "runtime_s": 0.011662082999464474,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dab0f5fe078be62ee482ffb4bb0e8532d204414577f5101fd4cbcc6cc7acab8f",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1000",
+   "runtime_s": 0.02819370799988974,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b56a2c2314ee08ab2964913e51d9892600b0129f5e9c8491ad40ce46cec12623",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1000",
+   "runtime_s": 0.016974875001324108,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a501c1e65498ceb0870fb7faa96b0635d6de810825af3ad3f3080de1a426af84",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1000",
+   "runtime_s": 0.021302916000422556,
+   "seed": 1000,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dcc60d055a0b076d927e6e5ac13aed450b2c8f32eea6b9bc5fa735ea87ba1223",
+   "peak_traced_bytes": 3764928,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1001",
+   "runtime_s": 0.007276750000528409,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:150416b3f8c9cf1767e14b0e589a5e52528b57ecbf234df4d7591c5bc79493b5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1001",
+   "runtime_s": 0.010226750000583706,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:65fdbbba14cbf97c6d7569d78f85d16998b3a513179e48fb3da7916ae426e5c5",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1001",
+   "runtime_s": 0.03860933299984026,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:28e7192a8025ddcaf83e74369c91e9efc2a152cee88ed5bb5dfac3870524e488",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1001",
+   "runtime_s": 0.01711054199950013,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:299b338d412b68e37a1fab4da27c6fd2adfc0e3ca8e7b60bff1080507eebe7a8",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1001",
+   "runtime_s": 0.02022258300166868,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ab5623fef2aa04c64afef7ed442ef0c2c84d64c0cdb37cbcbb0c2cd3d0c821f7",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1001",
+   "runtime_s": 0.010300709000148345,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:625f1eb7cfb7ebb6d978d51e19f8719d3a6b1c3fbea317f0d2813b36790e6ba0",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1001",
+   "runtime_s": 0.005809000000226661,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ec5cd952c8a4cf100d0cdd8a471c528c0895b99b92188c0a614a29f758206ecd",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1001",
+   "runtime_s": 0.08229324999956589,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f8d74be12eea7f6ec461dab80775c8e1b3b0640efde09e4b391242425674ba76",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1001",
+   "runtime_s": 0.019268624999313033,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c967f698cce1588325d1f8cbecf622258883456e39ccc973dbd2c673b321761c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1001",
+   "runtime_s": 0.0239800830004242,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f4b7896346a6f075fd5b30c4ed4169c50d1a92a7c2d851e552b5ab3ca43db0d8",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1001",
+   "runtime_s": 0.007493540999348625,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d5b9b57229fe18000491f1c7e8ac1411951ceb13b377c20d072b5b67dccacfd9",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1001",
+   "runtime_s": 0.007218500000817585,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:86f9a6f9928ba7997d18471cbbd7619b305b995c4d18f7f4ace62cf33906a17a",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1001",
+   "runtime_s": 0.005381375000069966,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d7bedc774e93f5c4be8f7b1fa942061217a78abee7b99b3bfd38f347227e7eb5",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1001",
+   "runtime_s": 0.00710866699955659,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:440cb0b878503094bc2e9d6541be0c40102d19b54496c424078342bd056162fd",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1001",
+   "runtime_s": 0.005823125000461005,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:41887bc662eb36ba81a39cbfbd43be2b9e6d8fec542bc8313d5f17730b071369",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1001",
+   "runtime_s": 0.040615124999021646,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:334624c982bef2f9fe458e7a3de87296be1a960a15ca98c673fb2070c3f7db00",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1001",
+   "runtime_s": 0.02849387499918521,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2888c824c632122f8deee652205cf4549ecc00c24551ef4a3f4b0bae222eeb77",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1001",
+   "runtime_s": 0.02381500000046799,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8600c89972f7b5340a4bf654844c4ac495b0274c763b4dfd8e298218f692d3e5",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1001",
+   "runtime_s": 0.03479133299879322,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6c65641cdddd682c659c325ab10634c86a277acf7442623d5b47249fd22aef62",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1001",
+   "runtime_s": 0.006372208001266699,
+   "seed": 1001,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:905577032a66b573530ea04c78b29ebcfe28f85ba45e8797824b8eec2dc14ecd",
+   "peak_traced_bytes": 3764896,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1002",
+   "runtime_s": 0.04432154200003424,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fe10a9e0165d806ccf1002a37ccf90c75ef47f50ff8b076deb3ad1afa9c36b29",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1002",
+   "runtime_s": 0.010546374998739338,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bbb4b5fe47432622cb68e31523be30ee55d2e75ff100fae3e9191979cf5c598f",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1002",
+   "runtime_s": 0.00591941700076859,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d957952edba782c4e01a46403bfa0d8d1de8dab682bd33b2c6597a044ab7a4f7",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1002",
+   "runtime_s": 0.0072372909999103285,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dc10ed015bb29016d8c77379bc9f8501d43321beb1cc91ca7a8430eac108d92b",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1002",
+   "runtime_s": 0.031741583999973955,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ae81305485f380facb18324a4ac1b86ab68c69390bc23d13fdc0d16eb8a64659",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1002",
+   "runtime_s": 0.013670833999640308,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ed1232d0d961b131af83d78aba589c638805ba4e65208a6a73a08f73fb6b4a92",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1002",
+   "runtime_s": 0.04095620800035249,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d7dae3b3c016ff681149b1c548c519b2908b1d9104f3e6ce1170d9366c96acc0",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1002",
+   "runtime_s": 0.02707666700007394,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:890b709f7bb9039ad8d20bae8775f0c60dd9fa9471fa06f05778211d062a503a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1002",
+   "runtime_s": 0.005861042000105954,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ee097d8b5c8947fc0dbf7799cf478329c8ee409347a9d1fb4b141cde765ae72a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1002",
+   "runtime_s": 0.037881459000345785,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7190473fc374d55750d841c010ceb4e6ef1219e9d2175ecb7bd52b1c7b6f6891",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1002",
+   "runtime_s": 0.005888332998438273,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d0e9d2ad4129fd75c13d91d394d0a76ce25a9138cd5e21b000f3075276189ec5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1002",
+   "runtime_s": 0.041986666999946465,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7dc2dce7237fb48a8bd8e9ebd37e006d550687d0b25dc0ab1bff914fd548db4e",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1002",
+   "runtime_s": 0.024791541998638422,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:df6f86194ffdfdcea9d3031c5bf8832e8ab7be9edab9cee020957923162ddde1",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1002",
+   "runtime_s": 0.014751417000297806,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:64c246d8bf0e8c9af465ff931b8233d329b639cb562addd8a5fd204dd156f2f8",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1002",
+   "runtime_s": 0.005956708000667277,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:36a801f06f6c461f2baaef189288c34a82339439fb15841c16c4450cc8e85ec0",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1002",
+   "runtime_s": 0.02513537499908125,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7a6fd03d2ec3fae0675ce23d1e6a13106e0b92f590484e727e6fa45ca5f2b64a",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1002",
+   "runtime_s": 0.016661083000144572,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3124ae43f84c5327be99146d43391b220fe0c9dcf1287c2d5f3ae85086f1fad5",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1002",
+   "runtime_s": 0.03789570800108777,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a10cd083db19494db5b64596ae25ada6727d5a5d6f73b9fb999b123dda3c80aa",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1002",
+   "runtime_s": 0.004984290999345831,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc3aff45ab2fd63a18c8e8bb0c4d6361f84b0d318f49169f246981aff9dbaf26",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1002",
+   "runtime_s": 0.018295333000423852,
+   "seed": 1002,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a96943ff56f1d0dacd6de5f535fd94641dca9ce6be26a33079ef9d2ba09cdd45",
+   "peak_traced_bytes": 3764856,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1003",
+   "runtime_s": 0.00746695800080488,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1d12d96bb45fa6268f0310efdfe5f9c27909a42cd8036afd4eb58715072a8f43",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1003",
+   "runtime_s": 0.03058966699973098,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b6d490f3825ac15f3de11eb5c9a5db97810f14396e2913cf417da7d8e0aa6424",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1003",
+   "runtime_s": 0.005885624999791617,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e206dcd697d64a095b4e64d2fb9b2bf641f0c0581792b31d59d0fd5d0ee7acb4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1003",
+   "runtime_s": 0.007179041000199504,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1c2e8dbe19bb1316af7771e6a500998a8e139e1568287d10879df143290ef57a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1003",
+   "runtime_s": 0.026244249998853775,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6c60e5fd54d759a196dab3a1548484b94052d8b5ecb352c42754b77650a070a0",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1003",
+   "runtime_s": 0.040009374999499414,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:abd87b05b3d5044fcda5307f1938c13108428de891d60cd09ab1bfdf0fefea37",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1003",
+   "runtime_s": 0.023255582998899627,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0607896d98ec2f1f20e1cae64979c96cc70b34efc2e567368f1a07f8976eb62a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1003",
+   "runtime_s": 0.0073004579990083585,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b893857893f9f4b72f4f1ef33d9163591af9c9c4de06f3cd15fb7edecfa7ea61",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1003",
+   "runtime_s": 0.04340204099935363,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:de97b46380f586a4ec293383c537d704c9b91103fd8735dfa9b7b6f1ea2067b1",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1003",
+   "runtime_s": 0.030847209000057774,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:74ea3344e7f3ab236a6a0b239588022a5d47d916d7dd1959502f963fdf19622a",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1003",
+   "runtime_s": 0.01933229199858033,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:637afa2bcc4f4e06e4f29476d56711b061ef95c32da0ac0d99a45f632ad29203",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1003",
+   "runtime_s": 0.010649750000084168,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:63c3e1c6d8a6bc781f0619efe6af49a4c4c65072fe6d1cdbb74f979dcda298f1",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1003",
+   "runtime_s": 0.011036833000616753,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:038bfe10c799526752e8f43fd205db7b1d86118016ad35557a668b9d92ffbe29",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1003",
+   "runtime_s": 0.03021712500049034,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a74e50c5b20cd62ad1fb11f3b0cd3fd08e95cb8deb921f7b3210afad98cee3a7",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1003",
+   "runtime_s": 0.016164582999408594,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:60292ed0619fbf98e1b50554d56572ab0f7fcf5c3c187a55cab5b0f5db65c2f4",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1003",
+   "runtime_s": 0.03734670899939374,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:77450289a1c8e510fd3b32b23aed50b5c5860754d26a5cc510180a480d3c411f",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1003",
+   "runtime_s": 0.00589229199977126,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c1d2b3e01102e516924c49c064117ed3b24d048fb0e976c57b0312cf88e431a7",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1003",
+   "runtime_s": 0.023630583000340266,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ea78606b70836e03a56486510f82364035c58457fc7d2837b6f11d3b13b82af0",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1003",
+   "runtime_s": 0.06539287500163482,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a28cd0e6160869b779598358e599703fa9a7da31c89b606954d9cc49c59bc64e",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1003",
+   "runtime_s": 0.00664337499983958,
+   "seed": 1003,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c0e20b4154f294dca195202932d841876ebfa68394a7419921b58f094d0aaafe",
+   "peak_traced_bytes": 3764816,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1004",
+   "runtime_s": 0.027181542000107584,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cd6561daeabd755077a77fb2ba79e8317cc2d7693ea79644ed6b2b3dd1e1b9dd",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1004",
+   "runtime_s": 0.01773683299870754,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f834f5bb1fa0f6a3ee00ca7044e68f9e5fadf111f59f9adaaddaceb66de2239a",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1004",
+   "runtime_s": 0.03152345800117473,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3257c9c9ff8f80df15f5af5961679f1814d5ab35546a5cfff3149013a09ee2f7",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1004",
+   "runtime_s": 0.04868420900129422,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f2e7d1314722d90ab67c40e1b082980397ca6a7969e6950a65f5d4cf005a1714",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1004",
+   "runtime_s": 0.0302657909996924,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6bad9d7011902de7fd7c9cc28ce3208dafbe70e82690ae169fb529c549e4d026",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1004",
+   "runtime_s": 0.014677667000796646,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9574da72ff974311660de3fb3977fc52f6ca2df64966b973d629fe287d92a736",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1004",
+   "runtime_s": 0.03587104200050817,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4ddfdf147621cf004e8726953a2b62f8aee648c54d86dd6612c3caef2a545311",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1004",
+   "runtime_s": 0.03492970799925388,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9953c6ee4359a9cc8c18a226a6e3cf4c5ff7e20b8e413ed3d38f4b7c62e49033",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1004",
+   "runtime_s": 0.0063249579998228,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:73925cc7c5fe93a5772782872c35edbe26cae3f1d1e1369d8c145917e22f86d5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1004",
+   "runtime_s": 0.02275562499926309,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:229ed2fbeb7685013cee17a41b03c037cc592316d34bee900428f1cf662b0975",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1004",
+   "runtime_s": 0.05113462500048627,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0a0b6f14ebc66db6af23bd9dc2032a2b593293f22fd62fb24ec15621a8d3ac8",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1004",
+   "runtime_s": 0.05393333400024858,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f5e237b7f0618a66166fe52e205711726687d50ac1f6e218797e6272ed13c054",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1004",
+   "runtime_s": 0.011587707998842234,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e1b346ec3d01448f49f5985e4ae267a90843860135ac2a63e38e1230569062fa",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1004",
+   "runtime_s": 0.008229541999753565,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6d067e41d8bd95b10d41200b010937d5d4540e7cb109ad26e9f01f9fc0b856d8",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1004",
+   "runtime_s": 0.006065208999643801,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:668bee8ee602bf5fb82cbc145cd2ea8169a7ae805298df1b46e990e322adece3",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1004",
+   "runtime_s": 0.007708458999331924,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:448ccd5a476ec4258294a7da1d9ecbcd5fe12642f7851f56ae023c089174c2f8",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1004",
+   "runtime_s": 0.005908875000386615,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:10f6591538885a23e383371bc6781de1ad68bbea17ed1eee6abb96141866c7b6",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1004",
+   "runtime_s": 0.007599583001137944,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e58015ac44b03775104fa7c29e1aa019a6d8ab64a3b0abbab5865de1217c15a5",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1004",
+   "runtime_s": 0.004732167000838672,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ac900f08b97d36ad487d9b907f7facc05f6f89b0cd5f16b9267a6cbe5c2bacf4",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1004",
+   "runtime_s": 0.006332791999739129,
+   "seed": 1004,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6e984601dc069ecf58a9f879a45866746733505fe9ac73dfb7e2d1927f1ada22",
+   "peak_traced_bytes": 3764784,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1005",
+   "runtime_s": 0.007158250000429689,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5f9f0cb73f9b15893f00732b33bc82c0bac9be26842baffac5ad8afa3b33b8b6",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1005",
+   "runtime_s": 0.11101529200095683,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6d9a8bcfa8a8e458c87d9eadbfdbe67731e94f985c69bbe51889a46211d2d52b",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1005",
+   "runtime_s": 0.006111040998803219,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a9ad7edcb39d03323670215d9bdebf73ea9bc95087b68a56e9516b941eb27dfd",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1005",
+   "runtime_s": 0.030658666999443085,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:02c7f6068f1779352a6c5f46eaaa65be951839963017502920c4b3d1e0f14dcc",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1005",
+   "runtime_s": 0.014824584000962204,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ad662b5cb319e5cdb185ea3e1f4fad6bbc5588a95e21288845fa9b0adeee1868",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1005",
+   "runtime_s": 0.042139125000176136,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bf928955a8e7e9f266f866df20eb8a22fcaa1e670ca6914e90bef0283b0786c3",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1005",
+   "runtime_s": 0.012207750000015949,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0ec6549d0933436c7d41d4786d9b264e82f9ecf22eff69996206a2daae40848",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1005",
+   "runtime_s": 0.025993625000410248,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:184a43bd2c4d3297641dcb345dbf46506b0dc073fd41b292c3c6f0cff5d53a26",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1005",
+   "runtime_s": 0.005515499999091844,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e7455c51ea719c482c62e25b373b00b5926903627f5221ea472dceb0903b2cc5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1005",
+   "runtime_s": 0.010457832999236416,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7fe591c177504febb42a0e66a2bbcbef0839609300053f54313089e1dec55616",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1005",
+   "runtime_s": 0.046983166999780224,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:df069de09b3d0c600203a553332a4ef560b81d464c2c5a94a11e3e6b4e35ad5d",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1005",
+   "runtime_s": 0.03352900000027148,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2132364ec1bd1bb01a6683cdd6f9e800b41948b53b9f2390e7b10e382a2d1da5",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1005",
+   "runtime_s": 0.005738042000302812,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ad26e6ca7d7e2a2dc064ce5fc669982394e3d28f2a7cc2f614a179d67b94882c",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1005",
+   "runtime_s": 0.007206832999145263,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0d60124cf178e8ee86838ca0c3c78fc7650f5563c15aa6eda8b66ff097fc5eb5",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1005",
+   "runtime_s": 0.00574133299960522,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f50c8ae0d28f0aed48e4c472fe3e3b869c9ed7e010b136b62ceb016f3f38471d",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1005",
+   "runtime_s": 0.02731491700069455,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a8e75b37fcda5b48be2d87c8e11a1a448752d3625202a25b945503a138a64a53",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1005",
+   "runtime_s": 0.04161120799835771,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4c275cedd0c6a29df9d923df510345ae09203471592e781f19264042ff4a4b7a",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1005",
+   "runtime_s": 0.007654084000023431,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4d911d260974dace7d795edf34a486ded2d73e4bc0169e4098bdd143539df698",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1005",
+   "runtime_s": 0.014053957998839905,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aae926cc38a2161ee71e08a967880d3017f540c9c08c75aaf2a1d71dbf73daad",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1005",
+   "runtime_s": 0.017389999999068095,
+   "seed": 1005,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0db4e504ee2cbb4341df6ec88552e7ababecb9e4a9884c0c5c71bc622e035add",
+   "peak_traced_bytes": 3764752,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1006",
+   "runtime_s": 0.007382292000329471,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8b66575fd7a5090cb8ec853b8854a907b2a05efe0236cf13e5c2a096de7064ef",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1006",
+   "runtime_s": 0.010026374999142718,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ad6bc6edb1bafb463e70ee8b3d865442d029258bf316c292208ab812f5651142",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1006",
+   "runtime_s": 0.04591400000026624,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4ddf354ed4227ab70ee01aaf3bede57adb8a1140b63cd410918ebeb6450ebd5f",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1006",
+   "runtime_s": 0.007404375000987784,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:34cefe755b7bc7fcbc5a4dbffb284cafa2ba0e3c8fe15dcb76e0dfb96dfe936b",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1006",
+   "runtime_s": 0.05406195800060232,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f172e1de4715bf3e918426070772eaff8bdb88faf815fa7fae79f8cdf7757bae",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1006",
+   "runtime_s": 0.017381457999363192,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1e1aa4d877935d00aca8305af80738fe28e1a2c4ab788047507ce0225bdefe1a",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1006",
+   "runtime_s": 0.007751000001007924,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:43ec7d7e78ae4b8d78fa131166fd19ec6db251fe3e3c98314bbc4716be768943",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1006",
+   "runtime_s": 0.04541174999940267,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4fa0c146f3cb4613f8e48bfcd11770a3c129fd1b7601d342a19af89d62e720d4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1006",
+   "runtime_s": 0.005574291000812082,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:34692fa11249c8a7d1d7d01f88cb7bafdf19c893ae7031472ebac19dbc3843ed",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1006",
+   "runtime_s": 0.032388333000199054,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f56616bbd07e78ce437b4791af93d4100f92e766df1959700eb95ca4ea66f881",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1006",
+   "runtime_s": 0.011829459001091891,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2a87be61aed240d5595a622a89804669228d6ae1e89a147169ec887c08d7ed73",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1006",
+   "runtime_s": 0.008540374999938649,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:95546d6d1a14569a11ca87dc527d5e2c60ff371d5c518bf81d50d143df41b124",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1006",
+   "runtime_s": 0.0054723749999538995,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c1b6cdd22e1fcbf5dc1c15340d35af7eb3ca2f294fbfbee559ed2dbc8dc41186",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1006",
+   "runtime_s": 0.007122334000086994,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:98f47fbf0138b4e7b954c42a6b638bfcbfaf85dadc7b996edf6cf57cf7155135",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1006",
+   "runtime_s": 0.005819040999995195,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:29ca181c1fedf2750b21a589ef8718c2569f316ce8515c4fbb298fd67758d735",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1006",
+   "runtime_s": 0.007498832999772276,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6853ccb6126730c3cf6f989dd732f41e2f6963f479a9af3732e1a95eb9a58709",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1006",
+   "runtime_s": 0.005689916999472189,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:92cdaee8f9e950feaf933e7384aef26c0deddd89a99045e39bb2b8ba1be38188",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1006",
+   "runtime_s": 0.007398625000860193,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:38b517a86d15b30878728501e9d427884e8b8d45a4c067258468b56a37bc5050",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1006",
+   "runtime_s": 0.0046714999989490025,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d7aa8816451dd29e0e923cb0cba4198552cc84727963a14ed079c101e05edac5",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1006",
+   "runtime_s": 0.12597983299929183,
+   "seed": 1006,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9806fcbcd952bfb98c3dc350a84e43056a6e554efc04f8c18d54eca4bae28d07",
+   "peak_traced_bytes": 3764712,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1007",
+   "runtime_s": 0.011894499999471009,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6b538576e5e1041faec3b1c39b8d91612d5676c608946c93e117d1ef874d2124",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1007",
+   "runtime_s": 0.024374375001571025,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:becc289700f8c19a53495e7e0618bd039c4c9c0c003b1bd307ec7f3877b94ba8",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1007",
+   "runtime_s": 0.005849208000654471,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9a091debaf63123b8a4ee0c85f5febffbdf83ae7d989261658784785567c0999",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1007",
+   "runtime_s": 0.023406083000736544,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fac1187cf250cab1c1f96830e2d4adf4ef0d9f9b83b5e82ea4880a1dd0405139",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1007",
+   "runtime_s": 0.024674666999999317,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:30ffa009f4b24788fdfb1792fd2767ad51a87e23af23ba3de10be19283f644d2",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1007",
+   "runtime_s": 0.019876541000485304,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1cf3c9bfdbe10333bc42631f1f40f39b615743b96450bf4139cf79307219595b",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1007",
+   "runtime_s": 0.005871334000403294,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:251cdbf21f64c28b2b125151bb315ee759a2fc6afcf25948e2d1572f7a1e34cc",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1007",
+   "runtime_s": 0.007132708000426646,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ea439d5aed7243e7d7ecee8189eb75d499acef6ba1c1fb2b3e4d14d2d14c2424",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1007",
+   "runtime_s": 0.005404875000749598,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1b307f54446b982849f33854439eee87318ad9df428a0b4bfbe3802870e12901",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1007",
+   "runtime_s": 0.010113000000274042,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b40b790f88e6caa05d21b0a090286cf870a2579c048feee8349b4a67b2e999c5",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1007",
+   "runtime_s": 0.005823040999530349,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bf510c304a71b3d9b237bbc48200bdb0bd98d8e4fca9e214a900ae0e5bd422b4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1007",
+   "runtime_s": 0.0070614160013064975,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6c9f3c635c789b7d9c39ebc684693e8addd4e41b6fc8cd5ec6bfb19dde6ccdc2",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1007",
+   "runtime_s": 0.005439083999590366,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ce9526becc252827acadfb1c2ceab7339799f6120fb82c3ad41ab516648fd444",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1007",
+   "runtime_s": 0.0071766660003049765,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3cd091443f37c94921b2593bc9c4fb7a49922aa1781dfc149dc97f0eda237177",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1007",
+   "runtime_s": 0.18261445900134277,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:68969c21714b69d05ef8ee0f0651748101277157ae47aefc285654af8679046c",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1007",
+   "runtime_s": 0.01455158300086623,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8d88bcb3a21e68946c8ae8a76f57b56916d27c0b3ee21a227d45a2b808323e43",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1007",
+   "runtime_s": 0.05199125000035565,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:12b85cf92657611b34d32a99571725b3be5d97ec6e04fc5d49054aeb84706336",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1007",
+   "runtime_s": 0.04438333399957628,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0e9543204b0a16d0731ebd7650898be0c66d84b847fa392195ef04ce8708ce75",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1007",
+   "runtime_s": 0.012446415999875171,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2ef23ad85f87c40a300209e30bf2f156af656a2115ea602d35716fada1908509",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1007",
+   "runtime_s": 0.02114354200057278,
+   "seed": 1007,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:493815973b1c6820da94fa9c3d4672bf4cad756ce541518138eec63d55aaae61",
+   "peak_traced_bytes": 3764672,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1008",
+   "runtime_s": 0.008105999999315827,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6544711bcb7bd48fbf581d0dd06baa1b57c52700972ef8b6e7134349711cbaf6",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1008",
+   "runtime_s": 0.01004487499994866,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d9c0af547ac3ef4197ac6daf73eed9114c0b01b1e07af6771b7930bb974674b5",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1008",
+   "runtime_s": 0.005900666999878013,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:85d1880c412fb116c82a75da78d0011e6f3e8715813c29e5634dc88d04877a5f",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1008",
+   "runtime_s": 0.00725537499965867,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:899514697118142aabe13f34b178d0cd079c040ec40827dee60bcf2eac8e0c8e",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1008",
+   "runtime_s": 0.005566124998949817,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f254f08248d9744c71cfafabe5b837372dc2b5cbc1bdfaf9d5bb9c09b3513966",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1008",
+   "runtime_s": 0.010264667000228656,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7bf772d569b24fa6df4b8392d8f4d1b1afb42ad6f1f2ab76c0d39da1438bb0d6",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1008",
+   "runtime_s": 0.005899708001379622,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9b3c4a675112d593c7de8220438747ed13a35731d70fc1c94e67317ff195887c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1008",
+   "runtime_s": 0.007053375000396045,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7a249b37aa4c085032d87eea32d2adf3e67bda1de85f1c6f4f1d60bb00f7e71e",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1008",
+   "runtime_s": 0.12547320900011982,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:504fe77f38d86ef5ada5ba64c567aa1ca0c58e7a17568a1981afcc72a712b031",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1008",
+   "runtime_s": 0.08616979099861055,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8aa2c01298c1f48fb31fa4975c211bd23b55646fb99dab7f26a4e37dd75239bc",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1008",
+   "runtime_s": 0.005912624999837135,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:caa639d1620b4f0ffb9fa1451a04bdc8978442a38429169a5775ff8da55e19b4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1008",
+   "runtime_s": 0.0071921660000953125,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:836b7b8a2b53ba315e436a273db3fafd1a6be4ce9be03fba351709b6dc8cdcb3",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1008",
+   "runtime_s": 0.005456041000797995,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c84bf930c7199976eeed4c5d223973abff5cc9afca1ec35ce09858aebc834e2b",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1008",
+   "runtime_s": 0.007295249999515363,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:afc7faf20ce9f52ecbfe016ac87c4ede6cea3b20cb113f7cd54413dff50db6e3",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1008",
+   "runtime_s": 0.005782457999885082,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ebc175e414c3e904254f4d8158d0a081a68b84adebb47e842adf7ea2fa72d71d",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1008",
+   "runtime_s": 0.007533209000030183,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ed2fbce64a285ce5a6ec8b77ff5dd0df058622d497343bfdf139049ca8ff169f",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1008",
+   "runtime_s": 0.005695416999515146,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0c3736bb2ad6463bf0133dad4ec815cfe3c74cdbc14295cfdd796e94379b65f1",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1008",
+   "runtime_s": 0.007439749999321066,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f0999e1f084c8c0eca253d796eb6ce5a247e8f684437aa1141f8fc8414c5fbe9",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1008",
+   "runtime_s": 0.00467075000051409,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:23aadc19602e9337ff97509579b88ab4c97f28546b2855fcbdf6cdc207ce0522",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1008",
+   "runtime_s": 0.006295417000728776,
+   "seed": 1008,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:80ba4ce38630d2d9b056f77e183c91dc2f9f44db056167f3740bbebcd016092e",
+   "peak_traced_bytes": 3764640,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1009",
+   "runtime_s": 0.007044709000183502,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f0635c9f676e4744637316f4aaf759d1e6eff03a1068e39513c9691dffb3e297",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1009",
+   "runtime_s": 0.14987137500065728,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:541e4b092d83c4067a9b20b8363d9d666f63ec8bedced18288a458a7181c68cd",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1009",
+   "runtime_s": 0.005875250000826782,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d14288c6da0e5d182fa14dca5b609785ae449f54591978a30f99fad1b04ff435",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1009",
+   "runtime_s": 0.007245541999509442,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bef591eeea9b0bffefbcad76aed29685d4dc02b3a850ef1d896499b40dfd93fe",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1009",
+   "runtime_s": 0.005423709000751842,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c63aec9243992c90d7ee58c89fd389b60d42af2276e4ef193693846382c8bb03",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1009",
+   "runtime_s": 0.010096665999299148,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:04e649b7e1c567c30e505b4c133522d6001097fd5a12e402f8d5ec09b7a688b8",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1009",
+   "runtime_s": 0.005863333000888815,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:75bcedf6ac605eb2b18c255b703f0c06332a832d036e1e75cb639237a9d98178",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1009",
+   "runtime_s": 0.007242791998578468,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:15fe69731d6782af65c47ffc063b7fb335099a768152244337dc0373dbbcf304",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1009",
+   "runtime_s": 0.1072504999992816,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e2235fe01a8468d662ee1c5342cfd45cf39a1d8b059085447aec0814b000b30c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1009",
+   "runtime_s": 0.060511249999763095,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:126040d3b0321e351bf4612db0ecfd4674321abd02a25f635bdf2bf78dc07c7f",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1009",
+   "runtime_s": 0.06312562499988417,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:62328c55271eac0f4992cf779fbda26ac5547a915fb9f616e42bbae93b6186c5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1009",
+   "runtime_s": 0.03758537500107195,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a2f7316ca069af8133af4f0052c80d7652d318c6f360f303d7f2a4bf3e5dac1a",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1009",
+   "runtime_s": 0.012526374999652035,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:58abf0ccbf23490f5bdb06ffa97d27cbbb4f81cf6838a4203a3ba45cc399c431",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1009",
+   "runtime_s": 0.02134858299905318,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:428ca65a2ceee4dbd8d011202560965e3efab199becab90b957db854dc110d8d",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1009",
+   "runtime_s": 0.00699700000041048,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:050b7458626d227c217ef07783f339b9b5aa0e27c4e6af7bad8d23398986165b",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1009",
+   "runtime_s": 0.00801458299974911,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b52abe553c13ccc18052297f632ac6d5e147bbf43f99c40bd8517b4e43d4fc53",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1009",
+   "runtime_s": 0.14092087499921035,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7c00ebff6f084ac74e6fc6e1a864e49c0801e4dfd99a88fc58dfa224094ec680",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1009",
+   "runtime_s": 0.015959083999405266,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4c602dc47997f90f4280860d9274f2c0c6dc63cbbeb7d7431150bba164ed5f23",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1009",
+   "runtime_s": 0.004789416001585778,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f267bee1c5e61d3c5fc0102be2a426957748780560ae25b14d7a7459326513b6",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1009",
+   "runtime_s": 0.007421083999361144,
+   "seed": 1009,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6486c716d76d3e7bf8218f3df9888bd52e9f6d575902a4acaf5ea89d6f1065cc",
+   "peak_traced_bytes": 3764608,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1010",
+   "runtime_s": 0.008496583001033287,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d5360f32bc7dff7fbab7ee4c7ffaa3a8149f349e12825457fc3d5e3ec40d67c3",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1010",
+   "runtime_s": 0.010139667001567432,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e70518f923b8979f563d3b6d65e34466880ec9ee1d76d120a1054782d8ad92bb",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1010",
+   "runtime_s": 0.0063914999991538934,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e691cf944a115dd077f52b0881951daadf8bc8708d37c79d0ca7a13c1c624e3c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1010",
+   "runtime_s": 0.007809417000316898,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fda8b192c150d9126886cf143349c0293c06f9cca78b8bcadff90fc42929b4e8",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1010",
+   "runtime_s": 0.1201188329996512,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:37ddf9559a8028b7c795665a22733418d0894f54e78a9a89ae46c7bef8242d38",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1010",
+   "runtime_s": 0.061277625000002445,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:91532bc928e2db34942a2748a7e704023860b34732bf83e667312ebda348db4b",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1010",
+   "runtime_s": 0.02736666599957971,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4e2b89633a7564383861bbdddbef4c1d7d78a81acfdd26ed649da4ca3c09f7e5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1010",
+   "runtime_s": 0.007355416999416775,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8447fef7a49b0595ddca0197ff923a836eaecb3ca689fcbec5b8af96fcfa1c21",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1010",
+   "runtime_s": 0.00542762499935634,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0525b498b0ff2b8e48a6c6768c47dd2186ca5b3231795d4425db846397d4f51",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1010",
+   "runtime_s": 0.010131875000297441,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d66f6752e91a1349b2257d2cd7f6daddb727c7534b9f7ac6871efc4b73a5ddd1",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1010",
+   "runtime_s": 0.005781791000117664,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:52e27fde313d7ad3a0cf6cf5db918b9aee81e28c57926736841ee38151c6a5c3",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1010",
+   "runtime_s": 0.007086499999786611,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:94dcf75a48b432d28ec12173048ad37770659e443f4325fb8612d3f5410b6999",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1010",
+   "runtime_s": 0.005427666001196485,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0e4675b3df0b8d9ede5792aa014404d9f9e7c1e8bbae9a9acbade223e694a2bf",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1010",
+   "runtime_s": 0.00717770800110884,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:30bf119ee746b1f6c69c471ff623162016e868f2fe0b271f7e8cf50b7bea8d87",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1010",
+   "runtime_s": 0.005703667000489077,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:76175ee525a32d615f1d5d6a0ee6859b0ee2902381f688fa1f1b3f67b724f12e",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1010",
+   "runtime_s": 0.007427750000715605,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:edabf0044efb7cbe28fc73b69a16e62202424a9e40f2874e775fc687df8d2da6",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1010",
+   "runtime_s": 0.005712083000616985,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cd983a6016b42f919ad09c6628aae5cb06f88f2d8da934e9bc14d2e7973a01ef",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1010",
+   "runtime_s": 0.1653844160009612,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0f7310a6dddccc0398823db88d9dfbaf05e466a8060e46898e7943e93294f3eb",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1010",
+   "runtime_s": 0.01173699999890232,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:637d0621f00d6c2e7ee97b94802b28de9ced392fd5b89e492f8bc5673729e1a8",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1010",
+   "runtime_s": 0.009350333000838873,
+   "seed": 1010,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2f7623c9304bdd7cb9e8268f9298764d27d9010127a8fa6c9ba755aafe820df9",
+   "peak_traced_bytes": 3764568,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1011",
+   "runtime_s": 0.11418991699974868,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0a5875560d42f16f451d43331443daef11b0cd82c66a7206ba507a3ea866ad92",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1011",
+   "runtime_s": 0.02175379099935526,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:27f9686bdc2809eb17ca59eed88988706e71b5d1d7230aa7f7aa1e73f2f49c9b",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1011",
+   "runtime_s": 0.01576004200069292,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e6bc1b8d88be9125561dee7ff40295c167c12a9e990ad26a935ab31774228731",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1011",
+   "runtime_s": 0.1375588749997405,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cf3a0bacea8e4fb6ffa476a5fab01b53338a9e544172a7567a3a6530ab2c3094",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1011",
+   "runtime_s": 0.0112720420002006,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c7e5294617978fd7be6170a952a51d3f2cdce2b5d115d0771f0a1fee53115aa2",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1011",
+   "runtime_s": 0.035559250000005704,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:03e0de6ba32c4d1aabc7f3f46d232c4e01d711ba01c0f80f4adb0aebfb7737c7",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1011",
+   "runtime_s": 0.010484332999112667,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:34f2477aeb1c29e5dd97e9a6d987d193252674cb17327b4c39277216fbf29728",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1011",
+   "runtime_s": 0.017496790998848155,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:132eea7398032a96a1f558e2c3e4af291f78ec4338f8e6a186d1c5bb7295541a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1011",
+   "runtime_s": 0.012219375001222943,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c0fb73b327dfc47c26ec5ace645efe7cca7606244fb8342f4b49b217d4d25b8e",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1011",
+   "runtime_s": 0.1429065840002295,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a354900fc1742d9c30b4906176a9103ac39d0a61d293098716a7e8e14e1200f4",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1011",
+   "runtime_s": 0.0328003329996136,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8f98c0a0632a10b83ece4088fa213fa93c49370dda63b32f1634410e9d8bd5c8",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1011",
+   "runtime_s": 0.07287008300045272,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d4c12365ac7593912091303b32dda2d9887e76ce36e5e89a2d57ec705d1ad470",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1011",
+   "runtime_s": 0.013186042000597809,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a0387684e65d8e5b3f3e65214754bf7880f2764c6ba17b15f2e2f84106beb7c0",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1011",
+   "runtime_s": 0.022598707999350154,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d7b9f014df0f86d4d42026288af9dbf802e3293150130fa41fc609da27c7f795",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1011",
+   "runtime_s": 0.10296404200016696,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fcaaf4381640d8f0b95465354699ccfa1c05d4f110d9fe0ed83a1840fc6a1f42",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1011",
+   "runtime_s": 0.05085141700146778,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a627ff842496bdd37b713b666a751c504792ac19b3912a8f84d1fe341c52f3ec",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1011",
+   "runtime_s": 0.018397249999907217,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e43d6d1b06dd7becc464dee22260ea1f49f9192ea0994b0fd9797823220406ae",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1011",
+   "runtime_s": 0.04810604199883528,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:442e035990fb01f93b03d09da1fd18fac7b10c9e89d3fc1c0a8339b56c23d06a",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1011",
+   "runtime_s": 0.02913304199864797,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:23e287cb27f1866d143ae1f38b3c8962d98b8cecc160e78c641cbcc2f1a6dba8",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1011",
+   "runtime_s": 0.03231079099896306,
+   "seed": 1011,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:199d9594075e81faa7f91e5b7192bbe4fea3360dbb8b877cf27abbb53bb57f7f",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1012",
+   "runtime_s": 0.013848124999640277,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5fc07d6d3341f2103baea24b02dc944c571ef6d64b94b6893f787e47571c463c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1012",
+   "runtime_s": 0.11532570799863606,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dc5d9659fee0d42aefbfad76fe1b08e1c67d5277ff7de8dcc44a7b2e8e592238",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1012",
+   "runtime_s": 0.005891708999115508,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b7637c1e0a8d55950638f2d0624f16174b1d9bc0ab50fcd2146322f58da740d4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1012",
+   "runtime_s": 0.0072162079995905515,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7f6a750a2d479588ae78434c7aa11800ee2000f0fbc1c83e26b10ccba62e4815",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1012",
+   "runtime_s": 0.005374333000872866,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:341febf8e1ea9f63d817cc0f6dd87e8d0ab37a78eb076f92669887ce1115c190",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1012",
+   "runtime_s": 0.010094958000991028,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1208977ac27c85418e1af9fedeb723deb3504e4ffe3a6168e7e73c7fe701df1f",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1012",
+   "runtime_s": 0.005760375001045759,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ac7f51936c51fe3745171c02a488c3cb17022023bc401f939b36d616d97beb9b",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1012",
+   "runtime_s": 0.0070886249995965045,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:88332c69cb744de476d36559e3a7181cc5b39de2b152d060b5294e3ff05de8d8",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1012",
+   "runtime_s": 0.005329458999767667,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:eaaa9847164681be4bf3460df85f5d5af289a9ecb72994ba2e1d77f793a99cf7",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1012",
+   "runtime_s": 0.010081750000608736,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5642ba2d38f6940149d813c6e15223d5fdfbd2e11a9244bf4a8128e3326b7bca",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1012",
+   "runtime_s": 0.20242795900048804,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0bdce8172f6ce1c5f2d4d30dc2c6dc4bcb4fc91b335a339170f12bbd5dfbd6d9",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1012",
+   "runtime_s": 0.01168566600063059,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b1ae8a527d4dca85433c43a81be8f6f0b5405298fa3c9abb9bd5c32b9fd41c4c",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1012",
+   "runtime_s": 0.005458917001305963,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:382c9b1095d61a9405b00e9851fff8c913d4be4084f676051cf6106634ba401e",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1012",
+   "runtime_s": 0.007091292000040994,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:05717aefad93788493656294161e1ac70f3e5a46c9a3a2ad6b2f50bf26509f02",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1012",
+   "runtime_s": 0.005714458000511513,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:43c6772b34e83c809ba811597318a551b6d3647927201ff36189a8bc53471939",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1012",
+   "runtime_s": 0.007516333998864866,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0424c7ce74d4d032334f03fda6cf91e548dede4d229e7eba8bef4ce725c97567",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1012",
+   "runtime_s": 0.00574479199894995,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:333f2c91348f0df42a6831dfbdb26e0cdb6f8c8085d4588d5e36b9c62b4f4327",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1012",
+   "runtime_s": 0.007632291000845726,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b9bf2985c71031f5df3a0736ac7f08486c02b376d2f7dbf264159035bd485e1e",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1012",
+   "runtime_s": 0.0047203329995682,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e65465dbf536ff6efd259ac52de72bb4ff0429f8036f7add772e295d9ae4c840",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1012",
+   "runtime_s": 0.0063012079990585335,
+   "seed": 1012,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7aa7c5088dc9a3725dd6c329b7a0f80ac8eb521d7dd08440a39c8d4f5983cb87",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1013",
+   "runtime_s": 0.1587080409990449,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:94b5acd6bef3ee41795aef46a49de899dfdeb762342fe435ef4f309531ffe2bb",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1013",
+   "runtime_s": 0.056581958999231574,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e69e80fa77e05acc4e0f0fc415eb7846bbab0610fb9168f9f59f0956c8a1a959",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1013",
+   "runtime_s": 0.009864084000582807,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8d973ac4f819e48016d7ad5360bf746012fd6a59207e061e84075816c56c0c59",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1013",
+   "runtime_s": 0.0072740840005280916,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:87252e0704452bec0f4a39e2fbb21ffc70c3005857cffa5493630f012c68cd3e",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1013",
+   "runtime_s": 0.0053823340003873454,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:512fb93ba5f88ad9c97258cda4d6381c940554f79f8894ff282bb70a563828fb",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1013",
+   "runtime_s": 0.01003316599963,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8072575881e74480ebc1cd504d5c15e3d83c22d353fd4b724d21c2ad49484101",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1013",
+   "runtime_s": 0.005787374999272288,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f5374cddac58a87a7cd79b4513fd215caf5c08e823b5365d2456ff7fa51cac36",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1013",
+   "runtime_s": 0.007031416000245372,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f68fd7145023f549054f1fc56fffb6b88ae2b3fd1a3c4e9cb1d01546f765ec86",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1013",
+   "runtime_s": 0.00536179099981382,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0487a4d2f1506b1bc3ea03eb20a1f9d939033210d659600b22660bc1485d7b38",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1013",
+   "runtime_s": 0.1555493750001915,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aa95e68dc3df2eafd83769f5ea53bdf945aeee1afcc0996ae9c5b5c78a24fe87",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1013",
+   "runtime_s": 0.05225229200004833,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:38901da3a42cfdc5d73e629a73d49e0ef78a8816908926e916522b228c1e07d4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1013",
+   "runtime_s": 0.017950708001080784,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0f7610fa972d6b65153e266b32b4debdc8acfd721c0c0bd83b3044b3fdec6072",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1013",
+   "runtime_s": 0.005564749999393825,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dcf1ee1ec6bce16b3bb4d517a2df50d203709fc0c5bf43be1022fb83bdcebd36",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1013",
+   "runtime_s": 0.007172541998443194,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5b133d356b44b83e88049a35a03d1e99cdab7856f33b3fb0099f120c216ac565",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1013",
+   "runtime_s": 0.005724874999941676,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:99208250c112281d8643426fc8096d51a11a56ebdf07a978e275a83e4f229a51",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1013",
+   "runtime_s": 0.007418834000418428,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:71de333fc6339128a573ed39ed5d524cf201b42496a198d3118d6e345dff4125",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1013",
+   "runtime_s": 0.005691541999112815,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ef5f1d12b138818cf43846edee2828420d22db8e8e1250fc53d26234dcdde6a2",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1013",
+   "runtime_s": 0.007361708998359973,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:89aa7eaf110b6335088ca904ff5d4ad4c23fa5b2dd5f41abb9319c3240f27cd5",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1013",
+   "runtime_s": 0.004710707999038277,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:055d3959be0cd9adbfcad23c7ffeb3225c5bf3d2e9e44433762a93f556cf4b85",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1013",
+   "runtime_s": 0.006281292000494432,
+   "seed": 1013,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6de0410520a47231cae7a7e1bf6e4394aed2f7eb93ada8e357362ce1bdca057c",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1014",
+   "runtime_s": 0.0071479170001111925,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cd4c62dec4a72bd154b9f7dbb8fa0fec87fa386543971257e4c523dbb3d9b29f",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1014",
+   "runtime_s": 0.009981790999518125,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:22a5d2683cdf2944025524fb8b6db6af1e11945a376ae8c678e95151275c58fe",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1014",
+   "runtime_s": 0.0058326250000391155,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bacdea933ab91633e0bd1677c0e41d0a595f83e871345e77bcc65a00d28be258",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1014",
+   "runtime_s": 0.007131000000299537,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1f3286a8bca7dcdc642b34e371753e500d95118a0ab9a8166558d32c8893de7c",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1014",
+   "runtime_s": 0.005408249999163672,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b2d5e88cd86ca0ee632d8d1b6bf1d2693939bdba0ab3b308df27816808d7673e",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1014",
+   "runtime_s": 0.20332983399930527,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:af2fb4c12c67b98cc15116e798c14d4c645288c011becf2ad021e0baa58b6eb4",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1014",
+   "runtime_s": 0.008897959000023548,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8c9f181eaccfbeab8df8b6cdf7294903711e67599f736a3edacaf6d2ed123310",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1014",
+   "runtime_s": 0.0520234999985405,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d97d59139d82507bfbb93e6040ee2bd2c99294f992d755a972d07244f1d8a992",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1014",
+   "runtime_s": 0.014253583000026993,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:355c40ba1eaeb80b84b245c9c94345feb4105a395c0aed5872eb1ca333df8cd3",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1014",
+   "runtime_s": 0.010405915998489945,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:df7e53dee1008bc3292be15cde1036f991312b7118f6829a1868a1f4d6ec9d5e",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1014",
+   "runtime_s": 0.018044041000393918,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1dcc3268a52d5b3d71bdaf86ceff0a2827f88eeb0c6e0e70667fb41a010708cc",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1014",
+   "runtime_s": 0.04294220800147741,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a9a3bbca089b069e6b092f0f8e6eefe72e0692b7a49601be744621bc9f9ebd9b",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1014",
+   "runtime_s": 0.005723500000385684,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:332625e0b6d7152bb1378b568a743a17496f3f1cd7524dbf51c1a89a0ae5b161",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1014",
+   "runtime_s": 0.007276333000845625,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3bc101b74dd19e78582ef8a8f4925f190936fc932e902094dd91a3ad2c1fa439",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1014",
+   "runtime_s": 0.006012834001012379,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c4c619a07e3e301cdcbd4629a3eeca25d6079463e6591ef776fb0f8d4f648c90",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1014",
+   "runtime_s": 0.019449166999038425,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3617edf8df860bf64756c6064d64a0bc21d52136895f506fcc1bd41ffb7b505e",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1014",
+   "runtime_s": 0.005850249999639345,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7186976b78d99449c9bfa32958dfcef8a4f9342e3dd535e074981f2a4f8b0f30",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1014",
+   "runtime_s": 0.06311141599871917,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:808d63a9c55f044e257b8ccb3b777a99bdfdf30217809357912689a36bd3b411",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1014",
+   "runtime_s": 0.039140374999988126,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cc6a003829451ea64c24e3a1470621a7d15922e1338fe94404aeb5f7539144c8",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1014",
+   "runtime_s": 0.029342334000830306,
+   "seed": 1014,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:01086482a45210149751e85e903681aed683e05618d17329452690bba6b2f541",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1015",
+   "runtime_s": 0.007386375000351109,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bb7cd76ec7164a2ca83d623770da0c25ce74ef01cbbccc2991d9b7f6d0f0fb16",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1015",
+   "runtime_s": 0.010149749999982305,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4f5631c60d5354503fee6086bf2f3cd2f79790c466f2e1f8b8739155b3bd1e1a",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1015",
+   "runtime_s": 0.005806000001030043,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d5b069c824658c6f26dbfd4a9bb63d7e7d696367838dd703f7a7f6f86169f848",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1015",
+   "runtime_s": 0.007183707999502076,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d52d33eb0fd07dd49f66ea0245c3eafde812c256028644dd145b58be5daebf9d",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1015",
+   "runtime_s": 0.00541079200047534,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bb98df01f90506f1e83c299f67441b50f03bda33f8e60473a4cf24df12d87a63",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1015",
+   "runtime_s": 0.010088958000778803,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a852152c04668bc685f8839c062580837374c12f7e5cd2252469c0fa06ea0f78",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1015",
+   "runtime_s": 0.06705091699950572,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:01a79b11643f802a41bba8a690a4a8da32168232adbd926bfc6ee7b679a4e215",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1015",
+   "runtime_s": 0.007536666998930741,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cd2d6193af25016d581162de089df025a4d06870dfed23e7e958a2903d5fb9c4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1015",
+   "runtime_s": 0.017650542000410496,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a164010eeac0fc37980386b4241fddbe858679ae49d488f8aa864de031268c8d",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1015",
+   "runtime_s": 0.030929167000067537,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d447842efbeecb7858ae360d9312925ed6ef5e51cbe624a25cba4223ed171ccb",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1015",
+   "runtime_s": 0.006049957999493927,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3f984e6c61fa6953e990abd2db9202ab57795839a44aa2afba1c2032b7a524b3",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1015",
+   "runtime_s": 0.0070427919999929145,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aa4adacd5369706cd6c4a1e3936f83863c0b64cf6289b14b0ca0dd74d249a519",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1015",
+   "runtime_s": 0.02804962499976682,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:48bd76c1c103b70b9baa76b4f45dd037945c4daf508ffb57a62fdd03afdc1de9",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1015",
+   "runtime_s": 0.019453666998742847,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a4f26049fe9fd61e92036dc9b705dd11ca763b4dc5b11be134f9f69c26a07831",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1015",
+   "runtime_s": 0.041087415998845245,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f9fdcc0085fa36ad37ea16d8d9c31c0c3beda23b8ea82b86d741f982ccec57a2",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1015",
+   "runtime_s": 0.03073141699860571,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:709bc4db1922f5243ddd30012980e1fc1ebba8faba3a43867c9d67d3d1919e9a",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1015",
+   "runtime_s": 0.045889916000305675,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:69d44550ba1aa698fd15f1e00784deaeb7af4d8786a1c05d376ac153203d1287",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1015",
+   "runtime_s": 0.007617208000738174,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cb77c5ca799149b5e3ec320284d2f595bada5b50685f1c8c172fb8691156fe7a",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1015",
+   "runtime_s": 0.004800832999535487,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aced1fa6ea0c143572d141b9355d5ba12a6de600d5a3fe324736e165b6b3410f",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1015",
+   "runtime_s": 0.006332209000902367,
+   "seed": 1015,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dcd840f37e7e16368db9febda91f301cc954774bdb586ec6eec0f88c0d206905",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1016",
+   "runtime_s": 0.006943250000404078,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:11cbc297a8d626b18bbabdeb36a3e3e57c2474b2df377072e074c500d183b5a0",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1016",
+   "runtime_s": 0.045597458998599905,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1d068f65b4e03bddcbdfb36a152266859114c696f8e1ac64a6cfa1511e262b95",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1016",
+   "runtime_s": 0.03869479199966008,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:31c1a05e4b71b4f3594f663f92540b3e8f343acb695626dc07813c68df03bfc6",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1016",
+   "runtime_s": 0.02953325000089535,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5faac51c5921fe3ebf9b0a235bd6bba99c44079b00c43cb715b360817ab31ddc",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1016",
+   "runtime_s": 0.01359187500020198,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a5a5787d831a34573e6ad5dcb81176574c44c58a0fb559060f2f1dd2d476d643",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1016",
+   "runtime_s": 0.03948354200110771,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ec2aed12454271eb9d87514c100b338c34276369d2eac5c6fda280c18832d569",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1016",
+   "runtime_s": 0.02994491699973878,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f343dc34b3ca9601f905cb41d505b2797d3426ac22bf374a721314ece104b221",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1016",
+   "runtime_s": 0.007338416999118635,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:827f05748bee87c1f4db1fb7bce8c172ce31c8dcaeef3827eb201ca46b6ca236",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1016",
+   "runtime_s": 0.043214874998739106,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3a154236dbf16f6dfa9eb9eb41325b6055195a415a755ddeeb4ccd9d0400cbdf",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1016",
+   "runtime_s": 0.010464375000083237,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e07dc0d854458b71ab424269b1fafddaa317a9d06dba907f3772c2b9a317853b",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1016",
+   "runtime_s": 0.010164082999835955,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:01eedd96a84566c5f69b42109fbaf898330d80005226b7d5033d2e30d7d6f9c0",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1016",
+   "runtime_s": 0.020640540999011137,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a26f9c3c77f3fa75fb32b075910c54a4a99a18ead9d81a0f9049df013e42012b",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1016",
+   "runtime_s": 0.0384896249997837,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d40a6a3655eb4d4e2d5dc76d55f802b41010937c5b40c00cf4220d20d99d794d",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1016",
+   "runtime_s": 0.007395708000331069,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c806a875246c1a19d05abab03c1377a4549babbacd470ce048e8ef4ef170c735",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1016",
+   "runtime_s": 0.035939249999501044,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6c6783703db61add64daaef6d70fed3054662450c183c0c614ec3f77585adf56",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1016",
+   "runtime_s": 0.007786957999996957,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ac17490e415c545c68883e94f2f42859b9aae9d1559a28eb8fd9d04d872fd332",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1016",
+   "runtime_s": 0.005938750000495929,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:74cea25bebe017ad005a5d8f8b63253ef7c69b3398692dd0a7e393408fd913f6",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1016",
+   "runtime_s": 0.007540041000538622,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bb593a599c4a993c558e1622dadf8e112cd66177b52ae07e4176b712cdc5c77c",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1016",
+   "runtime_s": 0.004732792000140762,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:671c4d10ee454ffecbf9cabe1bb268beb4d53911d260da8dea12a2b0a97efa8e",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1016",
+   "runtime_s": 0.006400999998732004,
+   "seed": 1016,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5ef0490bfd4251917c3179174c9235dce8f767b53eae4060492cb28bcb223082",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1017",
+   "runtime_s": 0.11330191700108116,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1d7c5114cebdc3b63725bdeb3aea651b57ff933fefd832243ad70e1c59c63879",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1017",
+   "runtime_s": 0.010196667000855086,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:75c001b0d71337c273a8d3ecd1f785c2585a529ab499977a03e88b937ac605b6",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1017",
+   "runtime_s": 0.0058274999992136145,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cb924fe3c6781ea0f1a7f540e9b51280e0cecd10a9fc38acb2202e3b1210bf49",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1017",
+   "runtime_s": 0.007163499998569023,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f9ca03a33019d9315c5d731310035e9fb039ac993a017a64e3aa69d7c2bcdeee",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1017",
+   "runtime_s": 0.005476541999087203,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a5d3e87559847bdc5aeb3fe82e059e9c00ba30b26564794219770efcbe6c2af2",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1017",
+   "runtime_s": 0.061818374999347725,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6c16d90bcc00a0b4edce8a9a6bb7695f13a2576c00cd6eae910d9ef5c75db225",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1017",
+   "runtime_s": 0.02308712500052934,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:287ede68f1e5090bba3c4c3636e3abd152716d421c751df8f16e23c3239506f1",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1017",
+   "runtime_s": 0.03135229100007564,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0b2d76c11f0cfbb8428db6f98597add1e9135b9a8acf1575c53d336bf33712a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1017",
+   "runtime_s": 0.007177625000622356,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d7c51320412cd535472ce6f0eaa541f8c583969eaa32685d815fbd79a3390e50",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1017",
+   "runtime_s": 0.05283374999999069,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d94956d6cc1acf937833b56934ca969f6760934d97bbe91732c77f7642450737",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1017",
+   "runtime_s": 0.006304250000539469,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:64c21044f50f3d3a05393b59f63eba2c669cc2a7edea69e5d9f1f39ba705401a",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1017",
+   "runtime_s": 0.036634165999203105,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:36ba10c464ed3e2052f98e6abe73de1473cbeac6bac051f950a4d00f8473aa9a",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1017",
+   "runtime_s": 0.0056316249992960365,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7b09bfbf14becfc8ea1c1ab55c3840e129fa11c0c323e8806d38ae99f8c68113",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1017",
+   "runtime_s": 0.024386667000726447,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:172f7a3357180dccb0039b6de2f767fa2ac1ca386f5a7f670c7e2c242771dcd6",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1017",
+   "runtime_s": 0.060210333998838905,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:41b1a3a14128ebebd42696a9434632829a2986de1ea4eb306cdd78dc3f2a7a57",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1017",
+   "runtime_s": 0.016837125000165543,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dd65b59a9174ac24d8d03f57c9f496ef436813ac7ff2fdb4bd7fbdd683bf0d8c",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1017",
+   "runtime_s": 0.0067267920003359905,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d1cd33d15f6563d971ffe97ed4ee76c4aac82d21b2268e0461998883e2eb2ca6",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1017",
+   "runtime_s": 0.05502466699908837,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:af1eb87afa0a6cec81e423df738566e09c703dbc523a8e2dd03561d8bc69ffb2",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1017",
+   "runtime_s": 0.027561457998672267,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f2b56d868e3c6bd725a506310da11e976a1675cf3406070389798de3738009fc",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1017",
+   "runtime_s": 0.014423333001104766,
+   "seed": 1017,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:44eeaf5340179b95c686fa596d2bae52cc0e93122980fa2668da9bbeeae3712c",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1018",
+   "runtime_s": 0.007392249999611522,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d6b4ecaa3a8181f404c96d69c5e5ea11bf6468758193bb49b870c7e8d98226a5",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1018",
+   "runtime_s": 0.02453395799966529,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:dbae73c2ae15e99fbdc4d32a7036c87f1975af73114278579f074035c89661fc",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1018",
+   "runtime_s": 0.006067874999644118,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1c940fce133b0d91ad70e2e121d78d4a1f3634553a794adc0ece91dd1eb490c6",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1018",
+   "runtime_s": 0.03699991699977545,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:893a3ad7e070f475999e9d47d79f1f181a681e80b9921e54adbcde04f1bc76de",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1018",
+   "runtime_s": 0.045855791999201756,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:acad5c6f80f84430c04f513404af04ed0bca6e151d0f023c93c425c1731c78c2",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1018",
+   "runtime_s": 0.022330083998895134,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:42d3e3396ec49021e511d39b1e6a8b93240a775a321ef8cf0924c1fed51309ff",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1018",
+   "runtime_s": 0.009739999999510474,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e4024a06b52780c23511164c29d72cb1a5fa8f2bac9b9ce6818c84c23845311f",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1018",
+   "runtime_s": 0.035544125001251814,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a5bfe5c1fc16462190fef909bda67a184576c31c7a0cac470d080420e39c3318",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1018",
+   "runtime_s": 0.005852083000718267,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d9738aaed70a631c657161df6be4d817f5e7bb4db07cf46ee1dae62d2badf31b",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1018",
+   "runtime_s": 0.04049870800008648,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bc156b5308455599d10b85c1659ffa25023c627b5733ff2705112531322cad18",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1018",
+   "runtime_s": 0.030721791999894776,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a49c2df06e61e14fba653b62edec0566e301c2b4122290d409ed627b44c8f126",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1018",
+   "runtime_s": 0.05146587499984889,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1236eb902adeb5af25c7257551b39eaa8123d15dc8b604e4886dafb5bf2b20bd",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1018",
+   "runtime_s": 0.01419375000114087,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7d9905986cfc8ed045e11d9b247c99d33a01fc849aba26c325a37ff3c2efd19c",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1018",
+   "runtime_s": 0.031818250001379056,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d08f2604aeff0ee3e55f1fdc8a6da3bfa24dfa7be1381501dd9a68877a35f1cb",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1018",
+   "runtime_s": 0.014049291999981506,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b165047b150beef5b16f22eb12e5d95ecbd0d8d76a1869390746606e2622f76a",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1018",
+   "runtime_s": 0.04702758300118148,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ad7e83ce488519a163d1c3cf950038e50b69cb9bb88a3f4b35bd9627b5f7e24f",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1018",
+   "runtime_s": 0.014958457999455277,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0baa42afbb7267647d4a421d637de15a67ebd75f558c76c620acdbd3df333b94",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1018",
+   "runtime_s": 0.009672791000411962,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:beaee30ffaef91513d6fb6f444a3cdd6aa951b4133a79baabd9cbb99bbae9499",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1018",
+   "runtime_s": 0.008746875000724685,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e54644b9164a12aaad96c960e3b1e4a75eb8a9fff92e6a81e9d975d35a8e4ac8",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1018",
+   "runtime_s": 0.03700174999903538,
+   "seed": 1018,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1163158ac8fcb6a00509ce9eb5340e905dcff780788d085b2992fc32416cbbd9",
+   "peak_traced_bytes": 3764552,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P0-s1019",
+   "runtime_s": 0.007337125000049127,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8a997faa73e0b165c3d5ae6c62a48c21e7a35c36196367fbd22ddf2826f4746b",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P1-s1019",
+   "runtime_s": 0.010209500000200933,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ee3c61b68fbd66d19e0ff1c838f7ef2e37067061b2791d587a5039cb0c760e4f",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P2-s1019",
+   "runtime_s": 0.005792207999547827,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:739539167e4294874b7f330ebd7521cc8edfef0b4b5882fcfd64f935fd7cbbdb",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.00-r1.00-P3-s1019",
+   "runtime_s": 0.007117249999282649,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fa5f62c7e58b9d562116126bd07e0fbd2e5cd0bf712f23ecc494d8f428306079",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P0-s1019",
+   "runtime_s": 0.005355625000447617,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a982a4a4f4448bff68cea7d5b94c6a6b8099c68cfe9cbf1c8317a58cfbac6104",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P1-s1019",
+   "runtime_s": 0.010019083001679974,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:eb5c08eaee4986711f3d64973c311bde9fafbff552f2dc3313db46d17492863a",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P2-s1019",
+   "runtime_s": 0.005794666998554021,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bf6c770159cde78c4c533efa8c086ea9ecf886b8170d63b0dde14a5034cab4f9",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d0.50-r1.00-P3-s1019",
+   "runtime_s": 0.11503924999851733,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fe0a9b4f431f260c31207893a97e1bd6076b9a9b17138cd407b44f344eed9887",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P0-s1019",
+   "runtime_s": 0.005815167000037036,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aacce62022c6e477d02a2943b7d615a1673dbefd8c76078f76bf4b5ca092ddb4",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P1-s1019",
+   "runtime_s": 0.07139762499900826,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c62c689a0fc0c8184c921dd8656c4412edb4bdecc3cb23c734722790b191f2f2",
+   "peak_traced_bytes": 1523112,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P2-s1019",
+   "runtime_s": 0.02382454200051143,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:74b8963fc4531f9485977e01d228e7368daf315b5c0cc9fb545d6dd9edd7eb53",
+   "peak_traced_bytes": 1523176,
+   "run_id": "RUN-SIZING-d1.00-r2.00-P3-s1019",
+   "runtime_s": 0.03919950000090466,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c5437403fda7c0bca27a6bb112f68cdbbca9be531932c10930a288846e775938",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P0-s1019",
+   "runtime_s": 0.024475416999848676,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ddb9d0b18fd710e851e71c1014e5fd1211a2da11e1eafd954cb5ffcc1a89600f",
+   "peak_traced_bytes": 1523170,
+   "run_id": "RUN-SIZING-B-sB2-P3-s1019",
+   "runtime_s": 0.014711208999869996,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6f44be79209e0835da4c72382342397522533a2e0dba54585076792cb98a412d",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P0-s1019",
+   "runtime_s": 0.016635708998364862,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d366ed9346d51d983b1de9f66020ba198c6680dc07c676c553436ce3eb568fdb",
+   "peak_traced_bytes": 1523153,
+   "run_id": "RUN-SIZING-C-student_t3-P3-s1019",
+   "runtime_s": 0.008552041999791982,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cdbebe4009b2a9b9f283233ec1d5b026211383882cd074c45bb6b88703326ce5",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P0-s1019",
+   "runtime_s": 0.0057307089991809335,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:62a89a4c1b7b83274d1630ce68a3f6ac987a59c9e173a13076fd849925c9017e",
+   "peak_traced_bytes": 1523272,
+   "run_id": "RUN-SIZING-C-lognormal-P3-s1019",
+   "runtime_s": 0.007457625000824919,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2b8703c1c0a65000d2bf52a2f5ba585924aa49296de275f02aba2fcf6079d5db",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P0-s1019",
+   "runtime_s": 0.0046717079985683085,
+   "seed": 1019,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc7025f3bd4ca70bfc7d45b10e9383c9a9da6d3349270bf8b3447079519396ab",
+   "peak_traced_bytes": 1523177,
+   "run_id": "RUN-SIZING-D-k0.1-pB0.2-P3-s1019",
+   "runtime_s": 0.006298500000411877,
+   "seed": 1019,
+   "status": "ok"
+  }
+ ],
+ "schema": "rigged.run_manifest",
+ "schema_version": "1.0.0",
+ "wall_clock_s": 9.875506165999468
+}

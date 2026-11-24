@@ -1,18 +1,18 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "updated": "2026-11-24",
-  "status": "M0: no data downloaded; synthetic generator not yet implemented",
+  "status": "M2: synthetic generator implemented (SYN-001/1.0.0); no external data downloaded",
   "licence_note": "Third-party data keep their own licences. Original synthetic data products are covered by NOTICE.md.",
   "synthetic": [
     {
       "id": "SYN-001",
-      "description": "Two-group latent-qualification generator: Q ~ Normal(mu_g, s_g^2), Y = 1[Q > 0], X = Q + Normal(0, sigma_g^2). Groups A and B are abstract and represent no real population.",
-      "generator": "src/rigged (to be implemented in M2)",
-      "generator_version": null,
+      "description": "Two-group latent-qualification generator: Q ~ Normal(mu_g, s_g^2), Y = 1[Q > 0], X = Q + Normal(0, sigma_g^2). Groups A and B are abstract and represent no real population. Latent family Gaussian (primary), Student t3 or shifted log-normal (EXP-003), standardised to unit variance.",
+      "generator": "src/rigged/generator.py",
+      "generator_version": "SYN-001/1.0.0",
       "parameters": "see research/protocol.md section 2 and research/experiments/EXP-NNN/protocol.md",
-      "seeds": "0-19 per cell (draft)",
+      "seeds": "confirmatory 0-19 per cell (draft); exploratory 1000 and above",
       "bundled": false,
-      "regeneration_command": "to be defined in M2",
+      "regeneration_command": "scripts/rigged smoke --matrix SMOKE | SIZING | DEGEN (exploratory); scripts/rigged run --experiment EXP-NNN (after the owner's freeze)",
       "licence": "LicenseRef-RIGGED-NC-Research-1.0 (original data product)"
     }
   ],

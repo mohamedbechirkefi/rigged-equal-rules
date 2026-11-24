@@ -1,0 +1,219 @@
+{
+ "command": "python -m rigged.cli smoke --matrix SMOKE --pdf",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "finished_utc": "2026-11-24T16:07:01Z",
+  "git_dirty": false,
+  "git_revision": "16e3b4f6980797ec8f09f14ebe6a351d761fc646",
+  "jsonschema": "4.26.0",
+  "machine": "arm64",
+  "numpy": "2.5.4",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "python": "3.12.1",
+  "rigged": "0.2.0",
+  "started_utc": "2026-11-24T16:07:00Z"
+ },
+ "label": "exploratory",
+ "matrix_id": "SMOKE",
+ "peak_rss_bytes": 43581440,
+ "result_file": "results.json",
+ "result_sha256": "deb6b5fb1267c0b2e00c496cdbe79ba2c179345683c128bda8ba956157fb72f4",
+ "runs": [
+  {
+   "config_hash": "sha256:863f8788f27cda3e6764cb5bfb90fb83af655d8886eaaa0cc0a5cf9b09975971",
+   "peak_traced_bytes": 2010064,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s0",
+   "runtime_s": 0.05230383300113317,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ab5b1283739d91f9f0924ab4ac355f103800702b55c7cbd4f69933502ac6cf20",
+   "peak_traced_bytes": 156396,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s0",
+   "runtime_s": 0.0023009579999779817,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:39c50d5ecbd28de409588633ce83e9c104bd8e3dcac78d552f30b255e1518b9b",
+   "peak_traced_bytes": 155284,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s0",
+   "runtime_s": 0.0013100420001137536,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fababcb57dfac3f9fec16484a01d95fdfc3c7361b87ba197e3c6842c585f25e3",
+   "peak_traced_bytes": 155332,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s0",
+   "runtime_s": 0.0022669579993817024,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9049c05f19bade4cc9ab0d40d71100840c70330f290bac36722afa868991be3c",
+   "peak_traced_bytes": 155308,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s0",
+   "runtime_s": 0.001153250001152628,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6374eb2e3604f91797a5bdecff6708409e4827ef3c182d70acd1ad3833fe52ad",
+   "peak_traced_bytes": 155292,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s0",
+   "runtime_s": 0.10043733299971791,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6405660a4f35bd22525b3f9ad453bafbe5b72ee96b35c7ae81ba39d3fd29a3b7",
+   "peak_traced_bytes": 155212,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s0",
+   "runtime_s": 0.0013396250014920952,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c7bf164ced5d53dfeeb820316d52d35b3ee6afea35aa5aa9e75f24e588a63413",
+   "peak_traced_bytes": 155260,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s0",
+   "runtime_s": 0.00214787500044622,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c392f2cb2d5b5dafa67135ebe2c9047ca7e9f2eebd67b9446ac32d1251ded337",
+   "peak_traced_bytes": 380988,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s1",
+   "runtime_s": 0.001535207999040722,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7d7ac1034868d422145238795a80fd0c866e62bf4756c93e00e0a8cf34e791e0",
+   "peak_traced_bytes": 155220,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s1",
+   "runtime_s": 0.0020932079987687757,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d96ab3fe3943b4cca8a1d4fd33f9080ecc5e062207d166dc3bf60ad5b5fd1912",
+   "peak_traced_bytes": 155140,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s1",
+   "runtime_s": 0.0012207919990032678,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d8eba2c3f8d2279f14882f98f4cb7aef402ca3a2a29398a238cbb467098554f6",
+   "peak_traced_bytes": 155188,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s1",
+   "runtime_s": 0.04730083299909893,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9d058f5154efd0fa1b3dcda5edafcd5b06380a318fef2400fafd2e3c9d768d99",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s1",
+   "runtime_s": 0.0012426670000422746,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:78358519c323baef99a5a82a1aa135e54e1859bc2b85f0060c637e3083fcec32",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s1",
+   "runtime_s": 0.002093416000207071,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6d25999a73b56612149839cdc43ba9d18f22265f3d64970183ecba33b6d3447a",
+   "peak_traced_bytes": 155108,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s1",
+   "runtime_s": 0.0012024160005239537,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ffcb0d461a52b86c6c2e07f1367b8a168ec7251bc6a2c56bf93a4b8bb7883a56",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s1",
+   "runtime_s": 0.002136040999175748,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:940e8aff46fd686c311cacca0f131aa1a8428693e010c9d8b3f7e79922e5843f",
+   "peak_traced_bytes": 380892,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s2",
+   "runtime_s": 0.034688208001171006,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a37280f508a44a3e8020937007b40096b5e1f86a3ee0a6b5cbaee43988125129",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s2",
+   "runtime_s": 0.0021356670004024636,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4150e67b8c591a3bacdbbc27ebbb949d518dfb757fdbdd84504a64cb470491a3",
+   "peak_traced_bytes": 155108,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s2",
+   "runtime_s": 0.0011932499983231537,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:76c701b98d9c36ee4fb9305a089553844463133d702ab2a4574cba0650450dc9",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s2",
+   "runtime_s": 0.00220820799950161,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6a3968df63c8a071ee7bcde6e8d69ac44e4fc4a8b71b780aac5e8179f3c432f9",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s2",
+   "runtime_s": 0.0011287920005997876,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3bda332769cf90ca21889295945784d3fd265024ff3162c86df91817ddab6912",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s2",
+   "runtime_s": 0.024601250001069275,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:853e914809f35824ea6332c00d01554f3dbc3482745e2ef40399032d84d4a36a",
+   "peak_traced_bytes": 155108,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s2",
+   "runtime_s": 0.01990029099943058,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c02c610481f81d01838b8109e67214490b21381c96f6dbe5533256e95c578629",
+   "peak_traced_bytes": 155172,
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s2",
+   "runtime_s": 0.0021730000007664785,
+   "seed": 2,
+   "status": "ok"
+  }
+ ],
+ "schema": "rigged.run_manifest",
+ "schema_version": "1.0.0",
+ "wall_clock_s": 0.31031616700056475
+}

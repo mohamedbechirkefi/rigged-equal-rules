@@ -96,3 +96,75 @@ Changed: `CONTRIBUTING.md` (appended section 6, development commands). Licence f
 ### Next action
 
 Owner: review and freeze (or amend) `research/protocol.md` and the three EXP protocols; confirm DEC-003 and DEC-004. Meanwhile (allowed without the freeze): M1 full-text reading and analytic TPR derivation, then M2 implementation starting with the generator, P0 and the metric tests, then the exploratory smoke run.
+
+## 2026-11-24: M2 session (core implementation while the freeze is pending)
+
+**Milestone:** M2. **Starting state:** branch `main` at `9770a5f`, tree clean. The protocol is DRAFT v0.1, not frozen; every run in this session is exploratory.
+
+### What was built
+
+Package `src/rigged/` (pure, typed, seeded; ingestion is not needed because data are synthetic): `config` (validated cells and runs, canonical config hash), `numerics` (normal CDF and quantiles, Gaussian, Student t3 and shifted log-normal latent families, Student t quantile; no SciPy, DEC-006), `generator` (SYN-001/1.0.0, common random numbers, separate fitting and evaluation streams), `policies` (P0 baseline first, then P1, P2, P3; seeded tie-breaking; explicit `PolicyFitError`), `metrics` (group confusion matrices, SR, TPR, FNR, FPR, PPV, ECE, utility, accuracy, gaps; null with a reason on zero denominators), `analytic` (P0 population values by numerical integration; Gaussian posterior for P1), `stats` (percentile bootstrap over seeds, t-interval), `matrices` (draft EXP-001 to EXP-003 matrices; exploratory SMOKE, SIZING, DEGEN), `runner`, `schema` with `schemas/` (result bundle 1.0.0, run manifest 1.0.0, validated at export and import), `protocol_guard` (DEC-008), `report` (CSV, Markdown, SVG, PDF through pandoc and Typst), `cli` (`smoke`, `run`, `report`, `test`). Wrapper `scripts/rigged`. Tests in `tests/` (eight files). `pyproject.toml`: pytest `pythonpath = ["src"]` only; no dependency added; `uv lock --check --offline` reports "Resolved 16 packages".
+
+### Commands and actual outputs
+
+```
+$ .venv/bin/python -m pytest -q          (first full run)
+1 failed, 97 passed      (test_summarise_degenerate compared a float mean of 0.2 values to exactly 0.0; test changed to exactly representable 0.25)
+$ .venv/bin/python -m pytest -q
+98 passed in 7.33s
+$ UV=.../uv scripts/rigged test
+98 passed in 7.19s
+-> commit 95c5f9a
+$ scripts/rigged smoke --matrix SMOKE|SIZING|DEGEN --pdf     (first execution, at 95c5f9a)
+SMOKE ok 24, failed 0, wall clock 0.07 s
+SIZING ok 400, failed 0, wall clock 2.94 s; projected full-matrix runtime: 10.1 s
+DEGEN ok 93, failed 27, wall clock 0.12 s
+```
+
+Visual inspection of the SIZING PDF (pages rendered to PNG): a 12-column table overflowed at a page break and overlapped the footer, axis labels were clipped and the figure caption was duplicated. Fixed in the report generator (two narrower tables, breakable Typst figures, `fontsize=10pt`, rotated labels); re-rendered pages checked. Commit `16e3b4f`. The first outputs were deleted and every exploratory matrix was rerun from the clean revision:
+
+```
+$ scripts/rigged smoke --matrix SMOKE --pdf    ok 24, failed 0, wall clock 0.31 s
+$ scripts/rigged smoke --matrix SIZING --pdf   ok 400, failed 0, wall clock 9.88 s; projected full-matrix runtime: 34.5 s
+$ scripts/rigged smoke --matrix DEGEN --pdf    ok 93, failed 27, wall clock 0.43 s
+$ uptime
+load averages: 81.19 45.91 21.92        (other processes on the machine; explains the slower second execution)
+```
+
+The two SIZING executions gave identical results apart from runtime and memory fields (400 of 400 run records compared). Commit `a74cc18` then added the analytic Gaussian posterior and a P1 calibration check (no change to run outputs): `101 passed in 8.71s`.
+
+### Exploratory measurements (JRN-0002 to JRN-0004; not findings)
+
+- Runtime per run at n = 20,000: mean 6 to 11 ms by policy (first execution) and 21 to 38 ms (recorded execution under load). Projected full draft matrix, 1,380 unique runs: 10.1 s to 34.5 s, against a planning budget of 30 minutes. Peak RSS 75 to 84 MiB.
+- Seed spread at n = 20,000 (20 seeds): P0 EOG per-seed SD 1.05 pp (control) and 1.25 pp (primary cell); SD of the primary paired difference 0.61 pp; bootstrap half-width 0.26 pp against a 2 pp smallest effect of interest. 20 seeds are adequate. Largest per-seed SD seen: 4.60 pp (P1, d1.00-r2.00).
+- Smoke matrix at n = 2,000: P0 EOG SD 3.78 pp and 4.77 pp over 3 seeds, above the protocol's 3 pp trigger, which was meant for n = 20,000 (AP-002).
+- Analytic check of P0: 28 of 28 metric-cell comparisons within 3 bootstrap SE (largest |z| 2.21).
+- Degenerate cases: none in the planned matrices (no failure, no undefined value at n = 20,000). The DEGEN probe produced 27 explicit `PolicyFitError` failures and null metrics with reasons, as designed.
+
+### Proposed amendments (owner's decision; not applied)
+
+`research/protocol_amendment_proposals.md`: AP-001 compute budget; AP-002 seed-count trigger and optional 50 seeds; AP-003 H1b direction (analytic EOG at delta = 0 is 0, 0.177, 0.081 pp for rho = 1, 1.5, 2: not monotone); AP-004 exploratory seeds of 1000 and above; AP-005 P3 capacity tolerance (up to 5 individuals measured); AP-006 disclosure of pre-freeze knowledge (EXP-003 H2 is analytically determined; B-sB2 seen in the exploratory run); AP-007 ECE gap is policy-independent; AP-008 P1 bin resolution.
+
+### Decisions
+
+DEC-006 to DEC-010 in `research/decision_log.md`.
+
+### Files created or changed
+
+Created: `src/rigged/` (15 modules and 2 schemas), `tests/` (conftest and 8 test files), `scripts/rigged`, `results/exploratory/{smoke,sizing,degen}/`, `research/protocol_amendment_proposals.md`. Changed: `pyproject.toml`, `CONTRIBUTING.md` (section 7 appended), `README.md`, `src/README.md`, `tests/README.md`, `results/README.md`, `data/manifest.json`, `roadmap.md`, `research/experiment_registry.csv` (statuses), `research/experiment_journal.jsonl` (JRN-0002 to JRN-0004), `research/decision_log.md`. Protocols, master prompt and licence files untouched.
+
+### Not done, and why
+
+- No confirmatory run, no protocol hash, no experiment report: the protocol is not frozen (G-FREEZE).
+- The analytic TPR expressions are implemented numerically but not written into the draft protocol text, which is the owner's to change.
+- No separate golden-fixture manifest file (golden values are inline in the tests).
+- Nothing pushed (G-PUBLIC). No demo UI (M5).
+
+### Outstanding risks
+
+- The primary hypothesis and EXP-003 grids A and B are analytically determined under the Gaussian model (AP-006).
+- The reproduction commands in the EXP protocols need `PYTHONPATH=src` or `scripts/rigged` (DEC-010).
+
+### Next action
+
+Owner: review AP-001 to AP-008, amend and freeze the protocols, record the hashes in the registry. Then M3: `scripts/rigged run --experiment EXP-001` (and EXP-002, EXP-003) and the per-experiment reports.

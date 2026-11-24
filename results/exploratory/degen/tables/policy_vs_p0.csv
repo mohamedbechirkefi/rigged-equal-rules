@@ -1,0 +1,19 @@
+cell_id,policy,metric,n_seeds,n_missing,mean,sd,boot_lo,boot_hi,boot_se,t_lo,t_hi,standardised
+G-k0,P1,utility_per_capita minus P0,5,0,0,0,0,0,0,0,0,
+G-k0,P2,utility_per_capita minus P0,5,0,0,0,0,0,0,0,0,
+G-k0,P3,utility_per_capita minus P0,5,0,0,0,0,0,0,0,0,
+G-k1,P1,utility_per_capita minus P0,5,0,-0.01666666667,0.02041241452,-0.03333333333,-0.003333333333,0.008246944228,-0.0420120269,0.008678693563,-0.8164965809
+G-k1,P2,utility_per_capita minus P0,5,0,0.03333333333,0.03333333333,0.006666666667,0.06,0.01334893761,-0.008055466607,0.07472213327,1
+G-k1,P3,utility_per_capita minus P0,5,0,0.3866666667,0.07397447007,0.3333333333,0.4433333333,0.02960676936,0.2948152304,0.4785181029,5.227028545
+G-noiseless,P1,utility_per_capita minus P0,5,0,-0.05333333333,0.08771798245,-0.13,0.01,0.03532046767,-0.1622495941,0.05558292747,-0.6080091202
+G-noiseless,P2,utility_per_capita minus P0,5,0,-0.01,0.04346134937,-0.04666666667,0.02333333333,0.01744116183,-0.06396439282,0.04396439282,-0.2300894967
+G-noiseless,P3,utility_per_capita minus P0,5,0,-0.02333333333,0.05602578771,-0.07,0.02,0.02252085647,-0.09289853691,0.04623187024,-0.4164748821
+G-noqualB,P1,utility_per_capita minus P0,5,0,-0.06,0.063025568,-0.1066666667,-0.01,0.02512654419,-0.1382565788,0.01825657876,-0.9519945936
+G-noqualB,P2,utility_per_capita minus P0,5,0,-0.08,0.09675283516,-0.1666666667,-0.01333333333,0.0388988422,-0.2001345121,0.04013451214,-0.8268491551
+G-noqualB,P3,utility_per_capita minus P0,0,5,,,,,,,,
+G-pB0,P1,utility_per_capita minus P0,0,5,,,,,,,,
+G-pB0,P2,utility_per_capita minus P0,0,5,,,,,,,,
+G-pB0,P3,utility_per_capita minus P0,0,5,,,,,,,,
+G-tinyB,P1,utility_per_capita minus P0,4,1,-0.0125,0.02846375213,-0.0375,0.008333333333,0.01237194498,-0.0577921814,0.0327921814,-0.4391550328
+G-tinyB,P2,utility_per_capita minus P0,4,1,0,0,0,0,0,0,0,
+G-tinyB,P3,utility_per_capita minus P0,0,5,,,,,,,,

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400" role="img" aria-labelledby="t d">
+<title id="t">EXPLORATORY: equal-opportunity gap per seed</title><desc id="d">EXPLORATORY simulated results. Strip plot of the per-seed equal-opportunity gap (TPR_A minus TPR_B, percentage points) for each cell and policy; dots are seeds (3 per column), the red bar is the seed mean, the dashed line marks zero. n = 2000 per population.</desc>
+<rect width="760" height="400" fill="#ffffff"/>
+<text x="380.0" y="22" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#111">EXPLORATORY: equal-opportunity gap per seed</text>
+<line x1="110" x2="740" y1="280.0" y2="280.0" stroke="#e3e3e3"/>
+<text x="104" y="284.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">-25.3</text>
+<line x1="110" x2="740" y1="232.0" y2="232.0" stroke="#e3e3e3"/>
+<text x="104" y="236.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">-15.2</text>
+<line x1="110" x2="740" y1="184.0" y2="184.0" stroke="#e3e3e3"/>
+<text x="104" y="188.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">-5.2</text>
+<line x1="110" x2="740" y1="136.0" y2="136.0" stroke="#e3e3e3"/>
+<text x="104" y="140.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">4.9</text>
+<line x1="110" x2="740" y1="88.0" y2="88.0" stroke="#e3e3e3"/>
+<text x="104" y="92.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">15.0</text>
+<line x1="110" x2="740" y1="40.0" y2="40.0" stroke="#e3e3e3"/>
+<text x="104" y="44.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#333">25.0</text>
+<line x1="110" x2="740" y1="159.3" y2="159.3" stroke="#555" stroke-dasharray="4 3"/>
+<text transform="translate(16 160.0) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111">EOG (percentage points)</text>
+<circle cx="137.6" cy="167.3" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="147.0" cy="162.6" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="156.5" cy="134.0" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="125.8" x2="173.0" y1="154.7" y2="154.7" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(149.4 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.00-r1.00 P0</text>
+<circle cx="216.3" cy="164.5" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="225.8" cy="168.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="235.2" cy="134.0" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="204.5" x2="251.8" y1="155.6" y2="155.6" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(228.1 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.00-r1.00 P1</text>
+<circle cx="295.1" cy="166.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="304.5" cy="169.3" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="314.0" cy="133.1" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="283.2" x2="330.5" y1="156.3" y2="156.3" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(306.9 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.00-r1.00 P2</text>
+<circle cx="373.8" cy="180.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="383.3" cy="168.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="392.7" cy="129.3" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="362.0" x2="409.2" y1="159.4" y2="159.4" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(385.6 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.00-r1.00 P3</text>
+<circle cx="452.6" cy="134.2" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="462.0" cy="135.6" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="471.5" cy="95.6" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="440.8" x2="488.0" y1="121.8" y2="121.8" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(464.4 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.50-r1.00 P0</text>
+<circle cx="531.3" cy="102.7" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="540.8" cy="182.9" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="550.2" cy="56.6" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="519.5" x2="566.8" y1="114.0" y2="114.0" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(543.1 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.50-r1.00 P1</text>
+<circle cx="610.1" cy="263.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="619.5" cy="261.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="629.0" cy="224.2" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="598.2" x2="645.5" y1="249.7" y2="249.7" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(621.9 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.50-r1.00 P2</text>
+<circle cx="688.8" cy="165.9" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="698.3" cy="169.5" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<circle cx="707.7" cy="141.4" r="3" fill="#1f4e79" fill-opacity="0.7"/>
+<line x1="677.0" x2="724.2" y1="158.9" y2="158.9" stroke="#b03a2e" stroke-width="2.5"/>
+<text transform="translate(700.6 292) rotate(-35)" text-anchor="end" font-family="sans-serif" font-size="11" fill="#111">d0.50-r1.00 P3</text>
+<line x1="110" x2="110" y1="40" y2="280" stroke="#111"/>
+</svg>

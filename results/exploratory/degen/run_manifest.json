@@ -1,0 +1,987 @@
+{
+ "command": "python -m rigged.cli smoke --matrix DEGEN --pdf",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "finished_utc": "2026-11-24T16:07:43Z",
+  "git_dirty": false,
+  "git_revision": "16e3b4f6980797ec8f09f14ebe6a351d761fc646",
+  "jsonschema": "4.26.0",
+  "machine": "arm64",
+  "numpy": "2.5.4",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "python": "3.12.1",
+  "rigged": "0.2.0",
+  "started_utc": "2026-11-24T16:07:42Z"
+ },
+ "label": "exploratory",
+ "matrix_id": "DEGEN",
+ "peak_rss_bytes": 45957120,
+ "result_file": "results.json",
+ "result_sha256": "6a6bd562361c9f488d6ba135878a71c6aabfc84315a92d2a46b3cd361df4844c",
+ "runs": [
+  {
+   "config_hash": "sha256:5f115e123561e13d54b1cc6febacabcd9d329f05fb0f8b97a4b2d95ccbab7516",
+   "peak_traced_bytes": 1705984,
+   "run_id": "RUN-DEGEN-G-tinyB-P0-s1500",
+   "runtime_s": 0.12871058300152072,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:516d63c7768db1f597a00e51d45857fd0a0d4b7d5c085ef8a1b22f48ae64c862",
+   "peak_traced_bytes": 16455,
+   "run_id": "RUN-DEGEN-G-tinyB-P1-s1500",
+   "runtime_s": 0.001296125001317705,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:edea0be9ac991b14061e5e07e40ed18ec5fc4f62673f4e34a8f2abcf0ac477fb",
+   "peak_traced_bytes": 12511,
+   "run_id": "RUN-DEGEN-G-tinyB-P2-s1500",
+   "runtime_s": 0.0006758750005246839,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:080ad90af7dcd4904be67dbe36ca74467fabdf9a5e8169931b047ab670234779",
+   "peak_traced_bytes": 7891,
+   "run_id": "RUN-DEGEN-G-tinyB-P3-s1500",
+   "runtime_s": 0.00019216699911339674,
+   "seed": 1500,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:76926ba73d94f5dd77d4f9d902e15fbde2abbdcdeab46e65a334d0847be2b530",
+   "peak_traced_bytes": 12145,
+   "run_id": "RUN-DEGEN-G-noqualB-P0-s1500",
+   "runtime_s": 0.0006388339988916414,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:766e709fa69cecb5f77bfe9057d29298f5c2463aa6fd4b2ca7b8e3cab3164a4b",
+   "peak_traced_bytes": 15473,
+   "run_id": "RUN-DEGEN-G-noqualB-P1-s1500",
+   "runtime_s": 0.0011222079992876388,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8cd51959c02f8ccc305eb8a74f2907993b18d7beed3c70b06d30bb03b5ba0d10",
+   "peak_traced_bytes": 12273,
+   "run_id": "RUN-DEGEN-G-noqualB-P2-s1500",
+   "runtime_s": 0.0007037079994915985,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1737af7db1ee8a5e222015f1a005dc1d26b7b226f12166866c6352cb40242080",
+   "peak_traced_bytes": 7821,
+   "run_id": "RUN-DEGEN-G-noqualB-P3-s1500",
+   "runtime_s": 0.00019145800069964025,
+   "seed": 1500,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:51f7ad8ed2505f9c82d0318b081aa95e256df7c332a1dc68ca8b794091b35127",
+   "peak_traced_bytes": 11916,
+   "run_id": "RUN-DEGEN-G-k0-P0-s1500",
+   "runtime_s": 0.01693287500165752,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f60983276eb64acd1f2e1385edcac6de170f886f9dd5ae20359c7c3d10dffa29",
+   "peak_traced_bytes": 15164,
+   "run_id": "RUN-DEGEN-G-k0-P1-s1500",
+   "runtime_s": 0.02937000000019907,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5e26d740a21585a23531d2aeeceb0cc7358e2d7a824702376fe3049f25978adf",
+   "peak_traced_bytes": 12020,
+   "run_id": "RUN-DEGEN-G-k0-P2-s1500",
+   "runtime_s": 0.003729833000761573,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c2527c8ef0fe7fa4494762ba37e543c65d867cfc263c59e292b1632722cdcae2",
+   "peak_traced_bytes": 12348,
+   "run_id": "RUN-DEGEN-G-k0-P3-s1500",
+   "runtime_s": 0.001479250000556931,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8c18762558ee8c1db04a6aa7f3723594b43e9a89b53f2b30ab4a65466e52c325",
+   "peak_traced_bytes": 11772,
+   "run_id": "RUN-DEGEN-G-k1-P0-s1500",
+   "runtime_s": 0.0006701250003970927,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fb1430eb47e30e29eb19e9f21f35d26c7252d3b2f1102a2a642ac0bcb7299588",
+   "peak_traced_bytes": 14780,
+   "run_id": "RUN-DEGEN-G-k1-P1-s1500",
+   "runtime_s": 0.0011349999986123294,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6ced0cb4f34fbe0fef9c2cdae0be9ebef130a43c77b4e539327c930e10ed39c9",
+   "peak_traced_bytes": 11652,
+   "run_id": "RUN-DEGEN-G-k1-P2-s1500",
+   "runtime_s": 0.0006896249997225823,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:592f25524725e42e844318f258c0a04182388e657d63cd2e38a63eb44ca687b3",
+   "peak_traced_bytes": 12372,
+   "run_id": "RUN-DEGEN-G-k1-P3-s1500",
+   "runtime_s": 0.02033954100079427,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:075e61d274f41c490dcf7727e39d30598d61c409f0e5ba613b52a2a67f76526c",
+   "peak_traced_bytes": 11741,
+   "run_id": "RUN-DEGEN-G-pB0-P0-s1500",
+   "runtime_s": 0.009614583001166466,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cdab554e65c4c890223eb578394e0e1f8b205a4e9da59eb78200083bb47d49f5",
+   "peak_traced_bytes": 7705,
+   "run_id": "RUN-DEGEN-G-pB0-P1-s1500",
+   "runtime_s": 0.000583708000704064,
+   "seed": 1500,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:089206f864a000733a51a28fefd85c5237c652404eb3dd4097f9a8c8f5af2a69",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P2-s1500",
+   "runtime_s": 0.0012958330007677432,
+   "seed": 1500,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:76d9124ecae9403b63c5bf21d06174b87b3da0ba5afef981e964b0225af69919",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P3-s1500",
+   "runtime_s": 0.00019820900160993915,
+   "seed": 1500,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:aeae22672edccc0cc520ef6f52064dd706e1dc208549f8ef80ba5267b208d0f1",
+   "peak_traced_bytes": 11571,
+   "run_id": "RUN-DEGEN-G-noiseless-P0-s1500",
+   "runtime_s": 0.0007286669988388894,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:675fb962897218ef7b66ba43122195bb39edc01e4c50a8dbd805c8c82b7c8f86",
+   "peak_traced_bytes": 14611,
+   "run_id": "RUN-DEGEN-G-noiseless-P1-s1500",
+   "runtime_s": 0.0011727499986591283,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1bb607e9088531ae79eed8f0acf0527090bb21b51b2fa25fb9371f0b957d59ee",
+   "peak_traced_bytes": 11611,
+   "run_id": "RUN-DEGEN-G-noiseless-P2-s1500",
+   "runtime_s": 0.0006776669997634599,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5d176bd8d1c237a8a65a0b2fbf076abbadbb6c0a0ea6433bf10c27f117d1cf1c",
+   "peak_traced_bytes": 12355,
+   "run_id": "RUN-DEGEN-G-noiseless-P3-s1500",
+   "runtime_s": 0.0013926249994256068,
+   "seed": 1500,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:adabe03d219a3c9d30d96f8cc58089b62fc183cf538d35291cb77eb3cc3699b2",
+   "peak_traced_bytes": 20167,
+   "run_id": "RUN-DEGEN-G-tinyB-P0-s1501",
+   "runtime_s": 0.006689833000564249,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:22fa673290a306af8844560ff7951ff80df3a925696afd83b20187dc4e55dae2",
+   "peak_traced_bytes": 14135,
+   "run_id": "RUN-DEGEN-G-tinyB-P1-s1501",
+   "runtime_s": 0.025384457998370635,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:60395ecded28ebfe431a3a173b9dcf4104a9680bc95e98378707ff6aa5402cb7",
+   "peak_traced_bytes": 11575,
+   "run_id": "RUN-DEGEN-G-tinyB-P2-s1501",
+   "runtime_s": 0.0007442079986503813,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:28aa1cfed18f50a8c90f4ff2367c6cb50af0fb1c5440833af4d48d4cbbb28e52",
+   "peak_traced_bytes": 7731,
+   "run_id": "RUN-DEGEN-G-tinyB-P3-s1501",
+   "runtime_s": 0.00019899999824701808,
+   "seed": 1501,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:9afbbea167788a38165408a8c581560d4fb26c2cc8d7576bc64c65a480d72055",
+   "peak_traced_bytes": 11513,
+   "run_id": "RUN-DEGEN-G-noqualB-P0-s1501",
+   "runtime_s": 0.0006710420002491446,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc9b34be1dc5c309947422c1f169a2488a1c60f5e617f5a47801b807b308effc",
+   "peak_traced_bytes": 14537,
+   "run_id": "RUN-DEGEN-G-noqualB-P1-s1501",
+   "runtime_s": 0.0011816250007541385,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7a1e0a801f22347cbafe25d8f2a011e471f5add18e20a7a023559320f6cdd996",
+   "peak_traced_bytes": 11545,
+   "run_id": "RUN-DEGEN-G-noqualB-P2-s1501",
+   "runtime_s": 0.0006867499996587867,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bd25ca06de0b4169c3606c9b02f2a30db1ab3f388ff90185bb439ec6317948e1",
+   "peak_traced_bytes": 7733,
+   "run_id": "RUN-DEGEN-G-noqualB-P3-s1501",
+   "runtime_s": 0.00019150000116496813,
+   "seed": 1501,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:bb04633708d7ec309f763dea8bd742c889ab716ca7c125658cc22bce4310e8d9",
+   "peak_traced_bytes": 11468,
+   "run_id": "RUN-DEGEN-G-k0-P0-s1501",
+   "runtime_s": 0.0006563750011991942,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:419965d2414861d7e432bd3935f5c73beb74fb34989e66c45dfecc2d20e45969",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k0-P1-s1501",
+   "runtime_s": 0.0011153750001540175,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:108239ee87beb15214fe393b87c8f717bad14bb5b81384fd92a2a9868e5e6b2a",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k0-P2-s1501",
+   "runtime_s": 0.0007463330002792645,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c6d2f0b5a31530d642aa41534e91c1c385a007a1e62589c5a8f0ed34ce05b288",
+   "peak_traced_bytes": 12196,
+   "run_id": "RUN-DEGEN-G-k0-P3-s1501",
+   "runtime_s": 0.0013197919997764984,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9a8ea202cfcc1cfae711a6fd781aa7b4db6a04c67111d9b78668ca90e69b65b8",
+   "peak_traced_bytes": 11644,
+   "run_id": "RUN-DEGEN-G-k1-P0-s1501",
+   "runtime_s": 0.0006250420010474045,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a068d3484d170a11ce979c526ed7af98bcbfa0437ae616a017da8ab1ba2f57d9",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k1-P1-s1501",
+   "runtime_s": 0.007698249999521067,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:57c53b6bcf5267f5feaab9547ab33b8aed69edd745b47f2e99bb857021aaa0d4",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k1-P2-s1501",
+   "runtime_s": 0.013833375000103842,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:53a442e528db95e472bf7ed91866bafb45421f98a241049c6e59f82bfc82f54c",
+   "peak_traced_bytes": 12268,
+   "run_id": "RUN-DEGEN-G-k1-P3-s1501",
+   "runtime_s": 0.0027992909999738913,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a5ab90892dd49c90a3cfaf37f9c6c07c94dc0db61a51fceb332f4eeabf9090e1",
+   "peak_traced_bytes": 11645,
+   "run_id": "RUN-DEGEN-G-pB0-P0-s1501",
+   "runtime_s": 0.0006590840002900222,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1f9f6dca1017faad8dc7471c7d16cbc19b7d47eb2aa20c61850cd0e9a5c47910",
+   "peak_traced_bytes": 7705,
+   "run_id": "RUN-DEGEN-G-pB0-P1-s1501",
+   "runtime_s": 0.00018395799997961149,
+   "seed": 1501,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:0ade21fd8b19ebc27a8ebe070c051b136dbc73907d626aa4e75f92dd12e20977",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P2-s1501",
+   "runtime_s": 0.0014206659998308169,
+   "seed": 1501,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:f3a266a09ce3e3743ab336da4e3f60dc0ba18959f70bd2f94a72578e8a64e363",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P3-s1501",
+   "runtime_s": 0.00021454099987749942,
+   "seed": 1501,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:f741540c159647fa1793849219269b9024d2bbf631dfa8426e5080946142954b",
+   "peak_traced_bytes": 11491,
+   "run_id": "RUN-DEGEN-G-noiseless-P0-s1501",
+   "runtime_s": 0.0007643750013812678,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5af718ee524f4dea3f1b0e7d8d0a7f8943e2f732c16f9d4397213a6907d9ceea",
+   "peak_traced_bytes": 14531,
+   "run_id": "RUN-DEGEN-G-noiseless-P1-s1501",
+   "runtime_s": 0.032807166999191395,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8726b831192d5930b8d7f543bc0abecbdb04ae5def2c2d2dcbf2192437bbba52",
+   "peak_traced_bytes": 11547,
+   "run_id": "RUN-DEGEN-G-noiseless-P2-s1501",
+   "runtime_s": 0.0023477079994336236,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0932bbf9bcb2e7ba81929bcd742752e3a5ee5f57c1910bf85b8226bf56d49e15",
+   "peak_traced_bytes": 12299,
+   "run_id": "RUN-DEGEN-G-noiseless-P3-s1501",
+   "runtime_s": 0.001435416999811423,
+   "seed": 1501,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:de6f2fedfa8599364cbb4863e837222496351e425279116611f352153c8cefd8",
+   "peak_traced_bytes": 20087,
+   "run_id": "RUN-DEGEN-G-tinyB-P0-s1502",
+   "runtime_s": 0.000870791000124882,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7dd7bff56f094643697149b6aaab1e8a0730733b2c2f0414f0bef58dca85cadd",
+   "peak_traced_bytes": 14095,
+   "run_id": "RUN-DEGEN-G-tinyB-P1-s1502",
+   "runtime_s": 0.0011653330002445728,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ae983b2b3361c921a06f8381ebe53f58ddcd572f5def21c6c832c3faa7fc1019",
+   "peak_traced_bytes": 11543,
+   "run_id": "RUN-DEGEN-G-tinyB-P2-s1502",
+   "runtime_s": 0.0006709999997838167,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:25bec87588a1532221959d12753b45aafc228b89f9d61465e1556d06a271203b",
+   "peak_traced_bytes": 7731,
+   "run_id": "RUN-DEGEN-G-tinyB-P3-s1502",
+   "runtime_s": 0.00019329200040374417,
+   "seed": 1502,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:a3185d30c9d164668e7975a0f2fcf961c4b74afa4feb92e03570868e0b5e32f8",
+   "peak_traced_bytes": 11489,
+   "run_id": "RUN-DEGEN-G-noqualB-P0-s1502",
+   "runtime_s": 0.0006438749987864867,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0ce8939809955796cc9e231d0bfed28ca0ed4443108bd7293f3ab43ea65f3b8",
+   "peak_traced_bytes": 14485,
+   "run_id": "RUN-DEGEN-G-noqualB-P1-s1502",
+   "runtime_s": 0.007699584000874893,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c5009388e9e0284bc1fe1446217acacd2ef3a3031dcd143f8cba9b7bc8a62ed9",
+   "peak_traced_bytes": 11545,
+   "run_id": "RUN-DEGEN-G-noqualB-P2-s1502",
+   "runtime_s": 0.0008992500006570481,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:03d3e117eb8b99d6c9125192c9ba16eda2ed9a3d29bd7cdf81adc6f374318e4d",
+   "peak_traced_bytes": 7733,
+   "run_id": "RUN-DEGEN-G-noqualB-P3-s1502",
+   "runtime_s": 0.00021233300140011124,
+   "seed": 1502,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:59cad0de5a167cadf04d851850975b20a2ca6c1c3e0426ff4915963fbf6db52f",
+   "peak_traced_bytes": 11468,
+   "run_id": "RUN-DEGEN-G-k0-P0-s1502",
+   "runtime_s": 0.0025573330003680894,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:04117faf5cd665125996730fbdb6e646e07fbeb2fca6b3ccede896c87decb731",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k0-P1-s1502",
+   "runtime_s": 0.011806082999100909,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7e0829777b163e1e07b701b53fab0578bae51a8c0562cd221c51048447888cb0",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k0-P2-s1502",
+   "runtime_s": 0.0022106670003267936,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7470b6728201ade98e72efba23e9ab1d071d8ab937205126fbaae1057cc1a86a",
+   "peak_traced_bytes": 12196,
+   "run_id": "RUN-DEGEN-G-k0-P3-s1502",
+   "runtime_s": 0.026877291998971486,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:824fb9a4affb545a769cbf0b4da4e1396fac1aec005c53bb8d3720722ce291e5",
+   "peak_traced_bytes": 11644,
+   "run_id": "RUN-DEGEN-G-k1-P0-s1502",
+   "runtime_s": 0.0007173750000220025,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6a53a836f4576b4c405a8ef94e8e142d2b03b73c02de7196acbb9022160ff2a1",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k1-P1-s1502",
+   "runtime_s": 0.0011621670000749873,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a85d7220e98a1e554d9f32976f03462f6d7c81eb71f8f59c5654c670ef96b369",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k1-P2-s1502",
+   "runtime_s": 0.0006837500004621688,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:231df554d39e4e519c319a8d563954f65637d95f2113ab14ee8a45d66c58898d",
+   "peak_traced_bytes": 12268,
+   "run_id": "RUN-DEGEN-G-k1-P3-s1502",
+   "runtime_s": 0.0013393340013863053,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4b4c679a48ffb3ec5e71b51564071d1b5b36c6729c5e1fcb16187960012ed5bd",
+   "peak_traced_bytes": 11645,
+   "run_id": "RUN-DEGEN-G-pB0-P0-s1502",
+   "runtime_s": 0.0006163339985505445,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:22fd4f0ffc941f656538e635eb6229e133ea3a9274af893f3ec700ba7d9d982a",
+   "peak_traced_bytes": 7705,
+   "run_id": "RUN-DEGEN-G-pB0-P1-s1502",
+   "runtime_s": 0.0001817499996832339,
+   "seed": 1502,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:774334b37e3d991856f242744aeb4ef3ce208d7136c9125350e6dfe2af3e7792",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P2-s1502",
+   "runtime_s": 0.00016829100059112534,
+   "seed": 1502,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:3c1c23ed13fa3dbbd6be61395926e59496a2c4b3be3c723c7ae20a47ac890208",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P3-s1502",
+   "runtime_s": 0.00017212499915331136,
+   "seed": 1502,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:b7b397a1a11eaf38a451f3546465397528f5ce0f1972bbd88db37430ac8c6675",
+   "peak_traced_bytes": 11491,
+   "run_id": "RUN-DEGEN-G-noiseless-P0-s1502",
+   "runtime_s": 0.0006329159987217281,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c62d51104bee02b568e10536373d244bb6f68391e977bcdf771f8bf37da6e43e",
+   "peak_traced_bytes": 14531,
+   "run_id": "RUN-DEGEN-G-noiseless-P1-s1502",
+   "runtime_s": 0.0011347920008120127,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ecef5d547b63e58795ca24ec22883f073d68fd431933f82b372d79f15c687fcf",
+   "peak_traced_bytes": 11547,
+   "run_id": "RUN-DEGEN-G-noiseless-P2-s1502",
+   "runtime_s": 0.0006875409999338444,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0cb191b6f1c204c789dabfd4e76e6908f0e1304c03d1d78ee0dac0365cf16cb",
+   "peak_traced_bytes": 12299,
+   "run_id": "RUN-DEGEN-G-noiseless-P3-s1502",
+   "runtime_s": 0.0029467500007740455,
+   "seed": 1502,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:71db598cb445fb03454858d6681fdb1a13cc3a60a0496ec409382309ec8801df",
+   "peak_traced_bytes": 20047,
+   "run_id": "RUN-DEGEN-G-tinyB-P0-s1503",
+   "runtime_s": 0.0009638749997975538,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d6fcccfa0bd9652d346ba27b9f4b54b90c49fed1f3b5e652e1f40c2a903d1800",
+   "peak_traced_bytes": 14483,
+   "run_id": "RUN-DEGEN-G-tinyB-P1-s1503",
+   "runtime_s": 0.0011604169994825497,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8aff1f9888992bda9daeb4fbb0902e253a38defce230899f14e40c2c8f67e41c",
+   "peak_traced_bytes": 11543,
+   "run_id": "RUN-DEGEN-G-tinyB-P2-s1503",
+   "runtime_s": 0.0006869999997434206,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3501ae042bbb99ad9eed6ceda15029c77a4065cf71239b3e2ec7865f70088a7f",
+   "peak_traced_bytes": 7731,
+   "run_id": "RUN-DEGEN-G-tinyB-P3-s1503",
+   "runtime_s": 0.00018933399951492902,
+   "seed": 1503,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:d64663c22413cbeb26a03be4291064f216fafd0a9d4267eb188f435d8cb63fdc",
+   "peak_traced_bytes": 11489,
+   "run_id": "RUN-DEGEN-G-noqualB-P0-s1503",
+   "runtime_s": 0.0006358749997161794,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:da60666195ccc5a5c2a67f90bb2205f4d92eea839a159dd74b02d23fb1e5d87a",
+   "peak_traced_bytes": 14529,
+   "run_id": "RUN-DEGEN-G-noqualB-P1-s1503",
+   "runtime_s": 0.001145417001680471,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:858ceabda21f0bdc2b35efe72d7e9064e02ac8eb4bff02f0f33665b67344022d",
+   "peak_traced_bytes": 11545,
+   "run_id": "RUN-DEGEN-G-noqualB-P2-s1503",
+   "runtime_s": 0.0006654589997197036,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6876aaca5ab3783afe00c89f8b995e59f9ad66466a26f766c0cc97fd4d3f1236",
+   "peak_traced_bytes": 7733,
+   "run_id": "RUN-DEGEN-G-noqualB-P3-s1503",
+   "runtime_s": 0.00018745799934549723,
+   "seed": 1503,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:f5abc3b616e6806ea1a9efc17e086ca9ebec7164053d96f48514cab360838d6c",
+   "peak_traced_bytes": 11468,
+   "run_id": "RUN-DEGEN-G-k0-P0-s1503",
+   "runtime_s": 0.0006184169997140998,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6535361c00c18bc2615a29298bf305c198b65eaa439ed2f5625d65e73006fab4",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k0-P1-s1503",
+   "runtime_s": 0.0010627920000843005,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e2ac42a874c4aef9a5fd97a6a32ed7525d5c4dc274ac71b709b4019c1d429679",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k0-P2-s1503",
+   "runtime_s": 0.0006308749998424901,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f91a1f9467bc405c74b8a3ba1c997e575b1084dcd4204603333f9678f95afa67",
+   "peak_traced_bytes": 12196,
+   "run_id": "RUN-DEGEN-G-k0-P3-s1503",
+   "runtime_s": 0.0012958329989487538,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1fc3b20dd104f96fbf7a01175e0613df87812cb88cdab151fc8ca3cedc2da246",
+   "peak_traced_bytes": 11644,
+   "run_id": "RUN-DEGEN-G-k1-P0-s1503",
+   "runtime_s": 0.0006438339987653308,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:056eef3b3df1aec95de5031339fa6ba323d06a57b5e8a970475ec61e40530b18",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k1-P1-s1503",
+   "runtime_s": 0.0010750000001280569,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b0b5c52a7f8025744b4cddaa251c8d814f396359f122466a7cc596f7053fcd1a",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k1-P2-s1503",
+   "runtime_s": 0.0006404999985534232,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4337fe4b0e3ee32e99a963aaa9dcf19baa3832bf3b3f5adef21c30519b86d45b",
+   "peak_traced_bytes": 12268,
+   "run_id": "RUN-DEGEN-G-k1-P3-s1503",
+   "runtime_s": 0.0013237500006653136,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2b872fd858cf6dbc2ba4d48db3d02cc9a67cd2ac4b3fb366244f63b52dc31361",
+   "peak_traced_bytes": 11645,
+   "run_id": "RUN-DEGEN-G-pB0-P0-s1503",
+   "runtime_s": 0.0005877910007257015,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1017fc48b7f44ac22e815cbaaaa9abd5e38282fb1ae461d0a0788b30065b6624",
+   "peak_traced_bytes": 7705,
+   "run_id": "RUN-DEGEN-G-pB0-P1-s1503",
+   "runtime_s": 0.00017841599947132636,
+   "seed": 1503,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:abb4874b6215c603efe02221bcecb13f28737f7e15146140e98030ec289d4b97",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P2-s1503",
+   "runtime_s": 0.00016179100020963233,
+   "seed": 1503,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:6e6ff6530bbb8b48a1b90671cddf49dec628717c440fadb661447d9ea15bbeb8",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P3-s1503",
+   "runtime_s": 0.0001670419987931382,
+   "seed": 1503,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:f42ca862147b354de111b1e68d3d450471f8a109376282b08d508c255e945be7",
+   "peak_traced_bytes": 11491,
+   "run_id": "RUN-DEGEN-G-noiseless-P0-s1503",
+   "runtime_s": 0.0006166659986774903,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4915e683b4964c4528d4e945d446020008ef9d4ec6128e34eebe709c8fcb095d",
+   "peak_traced_bytes": 14531,
+   "run_id": "RUN-DEGEN-G-noiseless-P1-s1503",
+   "runtime_s": 0.001102791000448633,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7c36f46bc7afa48ba62c7064537f20f62cba6289d57e094b8e35a9269841fafe",
+   "peak_traced_bytes": 11547,
+   "run_id": "RUN-DEGEN-G-noiseless-P2-s1503",
+   "runtime_s": 0.0006548749988724012,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5af5a720cc7561bc1353e243c0a883bfdf16e88acb390430ac5dd26d0eb420cb",
+   "peak_traced_bytes": 12299,
+   "run_id": "RUN-DEGEN-G-noiseless-P3-s1503",
+   "runtime_s": 0.0013302079987624893,
+   "seed": 1503,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b5074d30d64cad827428d7665f555b589a72105f07458789c693de2fd9effde0",
+   "peak_traced_bytes": 20007,
+   "run_id": "RUN-DEGEN-G-tinyB-P0-s1504",
+   "runtime_s": 0.0008041250002861489,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d3b335953893064ccf0be66d00d8f7eb3e6d86fa864562297f243e6a2aec86b9",
+   "peak_traced_bytes": 7731,
+   "run_id": "RUN-DEGEN-G-tinyB-P1-s1504",
+   "runtime_s": 0.00018237500080431346,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:d77fe740c7c2115b98af744f730d4abe36024401c995b56b011e3c7a06bb58e8",
+   "peak_traced_bytes": 7571,
+   "run_id": "RUN-DEGEN-G-tinyB-P2-s1504",
+   "runtime_s": 0.00016558300012547988,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:5a3fe06168b6102e103a4f3bc5a1e999647c14b2006a8e1c9a66186720d5e51c",
+   "peak_traced_bytes": 7571,
+   "run_id": "RUN-DEGEN-G-tinyB-P3-s1504",
+   "runtime_s": 0.00016887499987205956,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:3250c45fe9e06be2ce5bf6851ab20b4d5f667f572a197692c20b221c87329a78",
+   "peak_traced_bytes": 11489,
+   "run_id": "RUN-DEGEN-G-noqualB-P0-s1504",
+   "runtime_s": 0.0006235420005396008,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:362254cb0d1132a8120d65418e9c9bebeed8e0997bd207e35fd19ae1dd5257d7",
+   "peak_traced_bytes": 14529,
+   "run_id": "RUN-DEGEN-G-noqualB-P1-s1504",
+   "runtime_s": 0.0011183750011696247,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0d31ba9e361b45286bd4332b377b2406ee329cb0277c34a3f6b5c5f0560e0afa",
+   "peak_traced_bytes": 11545,
+   "run_id": "RUN-DEGEN-G-noqualB-P2-s1504",
+   "runtime_s": 0.0006554579995281529,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:79ac740c729d87a386221e1a19c5944d84544cf6139b5fc2709c18086f46a53b",
+   "peak_traced_bytes": 7733,
+   "run_id": "RUN-DEGEN-G-noqualB-P3-s1504",
+   "runtime_s": 0.00018404100046609528,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:b5fb1ac5990eeb547fc10e1c90aae141acf91d199fe3e04378ca4f4fdd9e2dd1",
+   "peak_traced_bytes": 11468,
+   "run_id": "RUN-DEGEN-G-k0-P0-s1504",
+   "runtime_s": 0.0006220420000317972,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0c38aa1f6323b4440cf3d0dddc7b154efc22f061cee89ec397f72d86b7b5be13",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k0-P1-s1504",
+   "runtime_s": 0.0010758330008684425,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:69b12914a5e72a4d02de92e0c63063288756e10f37b7ba6e59748bfe0f49254d",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k0-P2-s1504",
+   "runtime_s": 0.0006398339992301771,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d423077521a3fefa3bf333150dab96a2644f4288345c8a6f533d438338529ef5",
+   "peak_traced_bytes": 12196,
+   "run_id": "RUN-DEGEN-G-k0-P3-s1504",
+   "runtime_s": 0.0012849999984609894,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6dfffcfa5d78d0454d72140db60507d189ca81f438870495ea25322ee9254f65",
+   "peak_traced_bytes": 11644,
+   "run_id": "RUN-DEGEN-G-k1-P0-s1504",
+   "runtime_s": 0.0006132919988885988,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:46198961d043a7935e3f06248f008b3f24919e6176f3a0954d2c77508c1eb057",
+   "peak_traced_bytes": 14524,
+   "run_id": "RUN-DEGEN-G-k1-P1-s1504",
+   "runtime_s": 0.0010847909998119576,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:eec2ac925c9c9f65986e609fdcb24f754c88b772804af5e05c7642199b1839b1",
+   "peak_traced_bytes": 11540,
+   "run_id": "RUN-DEGEN-G-k1-P2-s1504",
+   "runtime_s": 0.0007004580002103467,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3ce827e331a13a8f656a5a564ab644a7627f4fc0e2481923261eef289559f799",
+   "peak_traced_bytes": 12268,
+   "run_id": "RUN-DEGEN-G-k1-P3-s1504",
+   "runtime_s": 0.001337707999482518,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:187670179069a4d4eefe0bc001c91c56170b51367be93def74f0ea4a4636aa30",
+   "peak_traced_bytes": 11645,
+   "run_id": "RUN-DEGEN-G-pB0-P0-s1504",
+   "runtime_s": 0.0005889170006412314,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:83d3aad7e74f928547d7a60801dde66f7db662c26140345614e967174a998007",
+   "peak_traced_bytes": 7705,
+   "run_id": "RUN-DEGEN-G-pB0-P1-s1504",
+   "runtime_s": 0.00017837500126915984,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:a98a051b5b0ad4815a582d9a7bd4b11ea73108e8fbcff2a0bad3e961e759143b",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P2-s1504",
+   "runtime_s": 0.00016366699856007472,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:f266e1e7a6c89fe4625f303429826d29c4bdf6f9bffcd795d21b54e1051167b4",
+   "peak_traced_bytes": 7569,
+   "run_id": "RUN-DEGEN-G-pB0-P3-s1504",
+   "runtime_s": 0.00016775000040070154,
+   "seed": 1504,
+   "status": "failed"
+  },
+  {
+   "config_hash": "sha256:80289eda1f701564afed2b5f4817339339ac005c67ba6b62760f4d99ba847caa",
+   "peak_traced_bytes": 11491,
+   "run_id": "RUN-DEGEN-G-noiseless-P0-s1504",
+   "runtime_s": 0.0006319589992926922,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1e7e6a6d6f317f7f74ea29426ede2685d2a823d436c881e61b922f2b8cbb1c24",
+   "peak_traced_bytes": 14531,
+   "run_id": "RUN-DEGEN-G-noiseless-P1-s1504",
+   "runtime_s": 0.001156416999947396,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ec53726575f39e7f2b350ac046aaa1fc38ca340d6d4c5e700912edb881b49847",
+   "peak_traced_bytes": 11547,
+   "run_id": "RUN-DEGEN-G-noiseless-P2-s1504",
+   "runtime_s": 0.0006662499999947613,
+   "seed": 1504,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1b924fea44f4b322b7e1878ff881211bf0bc3adcf07f7dbdce2249ee28409a7b",
+   "peak_traced_bytes": 12299,
+   "run_id": "RUN-DEGEN-G-noiseless-P3-s1504",
+   "runtime_s": 0.0013236670001788298,
+   "seed": 1504,
+   "status": "ok"
+  }
+ ],
+ "schema": "rigged.run_manifest",
+ "schema_version": "1.0.0",
+ "wall_clock_s": 0.42872970800090116
+}

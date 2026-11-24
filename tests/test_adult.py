@@ -172,3 +172,17 @@ def test_real_run_populations_routes_partitions(monkeypatch):
         assert int(f.group_b.sum() + e.group_b.sum()) == int(groups[attr].sum())
     with pytest.raises(ValueError):
         adult.real_run_populations("ADULT-R1:random", 5)
+
+
+def test_guard_refuses_a_changed_group_b(monkeypatch):
+    """The frozen EXP-004 config pins Group B; flipping it in code is refused by the run guard."""
+    import rigged.adult as adult
+    from rigged.environment import REPO_ROOT
+    from rigged.matrices import exp004, matrix_config
+    from rigged.protocol_guard import FREEZE_RECORD, protocol_status
+    if not (REPO_ROOT / FREEZE_RECORD).exists():
+        pytest.skip("no freeze record yet")
+    assert protocol_status("EXP-004", expected_config=matrix_config(exp004())).frozen
+    monkeypatch.setattr(adult, "GROUP_B_SEX", "Male")
+    s = protocol_status("EXP-004", expected_config=matrix_config(exp004()))
+    assert not s.frozen and "current code" in s.reason

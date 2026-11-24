@@ -9,14 +9,17 @@
   "date": "2026-11-24",
   "sources": [
    "labs/_shared/owner-approvals-2026-11-24.md (outside this repository)",
-   "labs/_shared/owner-approvals-2026-11-24b.md, sections 1 and 7 (outside this repository)"
+   "labs/_shared/owner-approvals-2026-11-24b.md, sections 1 and 7 (outside this repository)",
+   "labs/_shared/owner-approvals-2026-11-24c.md, section 1 (outside this repository)"
   ],
   "owner_answers_quoted": [
    "\"yes for all others\" (amendments, first round)",
-   "\"Approve all\" (second round: real data, section 1, and the section 7 amendments)"
+   "\"Approve all\" (second round: real data, section 1, and the section 7 amendments)",
+   "\"Approve all\" (third round, 2026-11-24: EXP-004 grouping)"
   ],
   "approved_data_quoted": "RIGGED | UCI Adult, CC BY 4.0 | Second test on a real score distribution",
-  "approved_amendments_quoted": "Report EXP-003's sign test as analytically determined. 20 seeds. A lower compute budget. H1b not monotone: state it. A capacity tolerance for P3. Exploratory seeds at 1000 and above."
+  "approved_amendments_quoted": "Report EXP-003's sign test as analytically determined. 20 seeds. A lower compute budget. H1b not monotone: state it. A capacity tolerance for P3. Exploratory seeds at 1000 and above.",
+  "round3_quoted": "The primary comparison in EXP-004 (UCI Adult) uses sex as the group attribute. This is the standard comparison for this dataset. Hours-per-week below 40 stays as a secondary check. Nothing has been computed on the test file. Keep it that way until the confirmatory run. The P3 capacity tolerance of 30, needed because real scores contain ties, is ratified."
  },
  "amendments_applied": {
   "A1": "EXP-003 H2 (sign stability) reported as analytically determined: population P0 EOG of B-sB2 is -9.73 pp, opposite in sign to the primary cell (protocol section 13; EXP-003 protocol section 3).",
@@ -25,11 +28,10 @@
   "A4": "EXP-001 H1b is not directional: analytic EOG at delta = 0 is 0.000, 0.177, 0.081 pp for rho = 1, 1.5, 2 (not monotone); reported descriptively.",
   "A5": "P3 capacity tolerance of 10 individuals on the fitting population; a P3 run outside it is a recorded failure (enforced in rigged.policies.fit_p3).",
   "A6": "Exploratory and test runs use seeds of 1000 and above; the smoke matrix moved to seeds 1000 to 1002.",
-  "R2-data": "UCI Adult adopted for EXP-004 (second test on a real score distribution): score model fitted on adult.data by a method written before the fit; test on adult.test; no synthetic parameter calibrated."
+  "R2-data": "UCI Adult adopted for EXP-004 (second test on a real score distribution): score model fitted on adult.data by a method written before the fit; test on adult.test; no synthetic parameter calibrated.",
+  "R3": "Pre-data amendment (owner-approved 2026-11-24, round 3; protocol section 13 R3-1 to R3-10, EXP-004 protocol v1.1 section 10): primary cells R-sex (Group B = Female, the lower-base-rate value on adult.data by the rule written first, JRN-0007) and R-sex-random; secondary cells R-hours and R-hours-random (formerly R-random); 4 cells x 4 policies x 20 seeds = 320 runs; same draws; a kept row with sex other than Male or Female is a schema error; EXP-004 claims boundary rewritten for a protected attribute."
  },
  "agent_choices_to_ratify": [
-  "EXP-004 group partition: Group B = hours-per-week below 40 (non-protected observed attribute), with a random-permutation control R-random.",
-  "EXP-004 P3 capacity tolerance of 30 individuals (tied real score; training-file check JRN-0006 found deviations up to 19). A5's 10 individuals applies to EXP-001 to EXP-003.",
   "Not applied (not in the approved list): AP-007 (ECE gap per policy) and AP-008 (P1 binning sensitivity); stated as reporting note and limitation."
  ],
  "fitted_values": {
@@ -107,11 +109,12 @@
    }
   ],
   "exp003_cells_seen": "B-sB2, C-student_t3, C-lognormal, D-k0.1-pB0.2 (SIZING, results/exploratory/sizing/)",
-  "smoke_seed_overlap": "The SMOKE run used seeds 0 to 2 at n = 2,000; these seeds are confirmatory at n = 20,000. The first 2,000 group-assignment uniforms of those seeds are shared (AP-004)."
+  "smoke_seed_overlap": "The SMOKE run used seeds 0 to 2 at n = 2,000; these seeds are confirmatory at n = 20,000. The first 2,000 group-assignment uniforms of those seeds are shared (AP-004).",
+  "round3_statement": "Before the round-3 amendment, nothing was computed on adult.test: no EXP-004 metric, no base rate and no group count of the test file. Seen while applying the amendment (training file adult.data only, JRN-0007): base rate P(Y = 1) Female 1,179 / 10,771 = 0.1095, Male 6,662 / 21,790 = 0.3057. Seen earlier and already disclosed: the score model fit (JRN-0005) and the P3 tie check with random partitions on adult.data (JRN-0006). Also known to the agent from the general literature on this dataset (not computed here): sex is the standard comparison on UCI Adult and its base rates differ markedly."
  },
  "project_protocol": {
   "path": "research/protocol.md",
-  "sha256": "e6b0871eb2d518c0fe747f066b90eb9fa9b86ad60ef031c6ca6de28bdc602433"
+  "sha256": "408822479b83377602279c58860e4bfcc427dcf22d0612e423f1e3aa5277d79c"
  },
  "experiments": {
   "EXP-001": {
@@ -140,29 +143,62 @@
   },
   "EXP-004": {
    "protocol_path": "research/experiments/EXP-004/protocol.md",
-   "protocol_sha256": "2cbde0d301d6d9a14d2952d2436ea7cd4b5f9002adf85cdf7afd44851558a2c8",
+   "protocol_sha256": "907f5d29a36c802e7d29f6949916d6792c85f4033c6e61570f3b70aed8f73454",
    "config_path": "research/experiments/EXP-004/config.json",
-   "config_sha256": "28eb940a1d2d7de76067ba7a99f3b9824f8d5b548659accbec00cc38f864386a",
-   "run_count": 160,
+   "config_sha256": "04b34c6880c3d5825af56d55636e6036425e20f9d3f254e854f797f961937a30",
+   "run_count": 320,
    "seeds": "0 to 19",
-   "data_manifest_sha256": "603907ae122af7ee6be3832b8d68801ed09646db107ad47d118641a6b279bef6",
+   "data_manifest_sha256": "4af198a00a8fba9ee4a17f10796d0e297da781d64d1637bfc8336163445efb1c",
    "score_model_path": "research/experiments/EXP-004/score_model.json",
    "score_model_sha256": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b",
-   "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+   "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+   "cells": [
+    "R-sex",
+    "R-sex-random",
+    "R-hours",
+    "R-hours-random"
+   ],
+   "primary_contrast": "R-sex minus R-sex-random (P0 EOG)",
+   "secondary_contrast": "R-hours minus R-hours-random (P0 EOG)",
+   "group_b_sex": "Female (JRN-0007)"
   }
  },
  "data_manifest": {
   "path": "data/manifest.json",
-  "sha256": "603907ae122af7ee6be3832b8d68801ed09646db107ad47d118641a6b279bef6"
+  "sha256": "4af198a00a8fba9ee4a17f10796d0e297da781d64d1637bfc8336163445efb1c"
  },
- "frozen_content_revision": "48f065243f17919ed8a8f2775e01c47ba969a40e",
+ "frozen_content_revision": "97de6864fb1a89e2fdb1c5ee526d57c8009efe34",
  "git_note": "frozen_content_revision is the commit holding the frozen protocols, configs, code and data; this record is committed after it.",
- "tests_at_freeze": "111 passed, 1 skipped (the skipped test needs this record; it runs after it is committed)",
+ "tests_at_freeze": "111 passed, 1 skipped (the skipped test needs this record; it runs after it is committed); after the round-3 amendment: 117 passed (dev dependencies synced)",
  "run_guard": "rigged.protocol_guard.protocol_status with the config built by the current code; scripts/rigged run --experiment EXP-NNN",
  "reproduction": {
   "download": "python3 scripts/download_adult.py",
   "run": "scripts/rigged run --experiment EXP-00N",
   "report": "scripts/rigged report --experiment EXP-00N",
   "configs_check": "scripts/rigged export-configs --check"
- }
+ },
+ "owner_ratifications": {
+  "date": "2026-11-24 (round 3)",
+  "items": [
+   "EXP-004 P3 capacity tolerance of 30 individuals (DEC-013): ratified.",
+   "EXP-004 hours-per-week partition: kept as a secondary check, not the primary comparison (replaced by sex)."
+  ]
+ },
+ "superseded": [
+  {
+   "date": "2026-11-24",
+   "reason": "Round-3 pre-data amendment (owner-approved 2026-11-24): EXP-004 primary group attribute changed from hours-per-week below 40 to sex; hours kept as secondary; the data manifest lists sex as used. No run was made under the superseded hashes.",
+   "revision": "48f065243f17919ed8a8f2775e01c47ba969a40e",
+   "project_protocol_sha256": "e6b0871eb2d518c0fe747f066b90eb9fa9b86ad60ef031c6ca6de28bdc602433",
+   "EXP-004_protocol_sha256": "2cbde0d301d6d9a14d2952d2436ea7cd4b5f9002adf85cdf7afd44851558a2c8",
+   "EXP-004_config_sha256": "28eb940a1d2d7de76067ba7a99f3b9824f8d5b548659accbec00cc38f864386a",
+   "EXP-004_run_count": 160,
+   "data_manifest_sha256": "603907ae122af7ee6be3832b8d68801ed09646db107ad47d118641a6b279bef6"
+  }
+ ],
+ "amended_on": "2026-11-24 (round 3)",
+ "frozen_content_revision_history": [
+  "48f065243f17919ed8a8f2775e01c47ba969a40e (v1.0 freeze)",
+  "97de6864fb1a89e2fdb1c5ee526d57c8009efe34 (round-3 amendment)"
+ ]
 }

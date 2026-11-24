@@ -233,3 +233,59 @@ Changed: protocols (amendments, FROZEN headers), `src/rigged/{config,matrices,po
 ### Next action
 
 M3 when the coordinator schedules it: `scripts/rigged run --experiment EXP-001` to `EXP-004`, then reports.
+
+## 2026-11-24: round 3 of the owner's decisions (EXP-004 grouping)
+
+**Milestone:** M1 gate (amendment to a frozen protocol, before data). **Starting state:** `main` at `77f1efa`, tree clean.
+
+### Decisions
+
+DEC-016 (EXP-004 primary group attribute sex, hours-per-week below 40 secondary; pre-data amendment), DEC-017 (P3 tolerance of 30 ratified).
+
+### What was done, in order
+
+1. Wrote the round-3 amendment into `research/protocol.md` section 13 (R3-1 to R3-10), including the rule for Group B (lower base rate on `adult.data`), before applying it.
+2. Applied the rule on the training file only (JRN-0007, exploratory). Actual output:
+
+```
+adult.data kept 32561; counts {'Male': 21790, 'Female': 10771}; positives {'Male': 6662, 'Female': 1179}
+base rates Male 0.3057, Female 0.1095  -> Group B = Female
+```
+
+3. Recorded the result in the protocol, updated the EXP-004 protocol to v1.1 (cells R-sex, R-sex-random, R-hours, R-hours-random; 320 runs; claims boundary), code (`rigged.adult`: sex column, `group_b_sex`, `sex_base_rates`, `lower_base_rate_value`, `real_populations(..., permute)`; `rigged.config`, `rigged.matrices`, `rigged.cli`), the EXP-004 config (written from the code; it now pins `group_b`), data manifest, registry, limitations and tests.
+
+```
+$ .venv/bin/python -m pytest -q                       (before the freeze record update)
+1 failed, 115 passed   (the guard refused the changed EXP-004 config and protocol, as intended)
+-> commit 97de686 (amendment content)
+(freeze record updated: new hashes, superseded hashes with reason, round-3 approval, ratification, C4 extension)
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+Audited 14 packages
+$ .venv/bin/python -m pytest -q
+117 passed
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs --check
+EXP-001 to EXP-004: matches
+guard with the code-built configs: EXP-001 to EXP-004 frozen: protocol, config and freeze record match
+guard with Group B flipped to Male in code: refused ("the matrix built by the current code differs from the frozen config"; test_guard_refuses_a_changed_group_b)
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs
+REFUSED: EXP-001 is frozen; its config is not rewritten   (exit 2)
+```
+
+Nothing was computed on `adult.test`: no metric, base rate or group count. No run was executed.
+
+### New hashes (SHA-256)
+
+- `research/protocol.md`: 408822479b83377602279c58860e4bfcc427dcf22d0612e423f1e3aa5277d79c
+- `research/experiments/EXP-004/protocol.md`: 907f5d29a36c802e7d29f6949916d6792c85f4033c6e61570f3b70aed8f73454
+- `research/experiments/EXP-004/config.json`: 04b34c6880c3d5825af56d55636e6036425e20f9d3f254e854f797f961937a30
+- `data/manifest.json`: 4af198a00a8fba9ee4a17f10796d0e297da781d64d1637bfc8336163445efb1c
+- EXP-001 to EXP-003 protocols and configs unchanged.
+
+### Risks and items for the owner
+
+- Conflict noted: the master prompt (section 2) says "No real hiring decisions or protected-group claims", and `CLAUDE.md` says groups are never protected groups. The owner's round-3 decision makes sex the EXP-004 primary attribute. It is applied with claims limited to this partition of this 1994 extract under this score (protocol R3-10); `CLAUDE.md` was not edited. The owner may wish to confirm the wording.
+- AP-007 and AP-008 remain not applied (not in any approved list).
+
+### Next action
+
+M3 when the coordinator schedules it: `scripts/rigged run --experiment EXP-001` to `EXP-004`, then reports.

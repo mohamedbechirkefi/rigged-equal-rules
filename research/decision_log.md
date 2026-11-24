@@ -99,3 +99,15 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
 - **Decided by:** the AI assistant.
 - **Context:** a Hypothesis example (tie uniforms 0.0 and 5e-324) made the midpoint round onto the lower value, so `fit_threshold` raised "tie uniforms collide". Generator uniforms are multiples of 2^-53, so no planned run can hit this.
 - **Decision:** when the midpoint fails but the two uniforms differ, gamma = the upper uniform (selects the same individuals). Behaviour is unchanged in every other case; config hashes unchanged.
+
+## DEC-016 (2026-11-24): EXP-004 primary group attribute is sex; hours-per-week below 40 is secondary (pre-data amendment)
+
+- **Decided by:** the owner ("Approve all", 2026-11-24, round 3; `owner-approvals-2026-11-24c.md`, section 1): "The primary comparison in EXP-004 (UCI Adult) uses **sex** as the group attribute. This is the standard comparison for this dataset. Hours-per-week below 40 stays as a secondary check. Nothing has been computed on the test file. Keep it that way until the confirmatory run." Mechanics by the AI assistant.
+- **Decision:** dated pre-data amendment to the frozen v1.0 protocols (project protocol section 13, round 3, R3-1 to R3-10; EXP-004 protocol v1.1, section 10). Cells R-sex and R-sex-random (primary contrast), R-hours and R-hours-random (secondary contrast; R-random renamed). Group B of R-sex set by a rule written into the protocol before it was applied: the sex value with the lower base rate on `adult.data` (JRN-0007: Female 0.1095, Male 0.3057; Group B = Female). Same draws per seed; 320 runs. A kept row with sex other than Male or Female is a schema error. The EXP-004 claims boundary is rewritten for a protected attribute. Nothing was computed on `adult.test`.
+- **Alternatives:** keep hours as primary (overruled by the owner); a sex-random control built with a fresh permutation per attribute (rejected: one shared index permutation keeps the common random numbers of round 2).
+- **Consequences:** supersedes DEC-011's rejection of sex as a group attribute for EXP-004. New hashes in `research/freeze.json`; superseded hashes kept there with the reason. The master prompt (section 2) excludes "protected-group claims"; the owner's decision is applied with claims limited to this partition of this file (flagged in `progress.md`).
+
+## DEC-017 (2026-11-24): EXP-004 P3 capacity tolerance of 30 ratified
+
+- **Decided by:** the owner ("Approve all", 2026-11-24, round 3): "The P3 capacity tolerance of 30, needed because real scores contain ties, is ratified."
+- **Decision:** DEC-013 stands, now owner-ratified, for all four EXP-004 cells. Listed under `owner_ratifications` in `research/freeze.json`.

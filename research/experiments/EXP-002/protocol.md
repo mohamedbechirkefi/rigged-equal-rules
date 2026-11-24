@@ -3,10 +3,10 @@
 
 | Field | Value |
 |---|---|
-| Status | DRAFT v0.1, planned (protocol draft, awaiting owner freeze) |
+| Status | FROZEN v1.0 (owner-approved 2026-11-24), not yet run |
 | Date | 2026-11-24 |
-| Protocol hash | none (recorded at freeze) |
-| Parent protocol | `research/protocol.md` (DRAFT v0.1) |
+| Protocol hash | SHA-256 of this file, in `research/freeze.json` and the registry |
+| Parent protocol | `research/protocol.md` (FROZEN v1.0) |
 | Depends on | EXP-001 pipeline; policies P1, P2, P3 implemented and tested |
 
 ## 1. Precise question
@@ -64,3 +64,7 @@ Tolerance of 2 pp varied to 1 pp and 5 pp in the report (descriptive only).
 uv run python -m rigged.cli run --experiment EXP-002
 uv run python -m rigged.cli report --experiment EXP-002
 ```
+
+## 12. Amendments before freeze (owner-approved 2026-11-24)
+
+A2 (20 seeds), A3 (budget), A5 (P3 capacity tolerance of 10 individuals; a P3 run outside it is a recorded failure) and A6 of `research/protocol.md` section 13 apply here.

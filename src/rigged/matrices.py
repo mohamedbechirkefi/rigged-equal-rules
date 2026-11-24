@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
-"""Experimental matrices from research/protocol.md (DRAFT v0.1) and the experiment protocols.
+"""Experimental matrices from research/protocol.md and the experiment protocols (amended before freeze).
 
 Registered experiments (EXP-001 to EXP-003) use the confirmatory seeds 0 to 19. Exploratory matrices
 (SMOKE, SIZING, DEGEN) are labelled exploratory; SIZING and DEGEN use seeds disjoint from the
@@ -83,11 +83,25 @@ def exp003(n: int = 20_000, seeds=CONFIRMATORY_SEEDS) -> Matrix:
                   tuple(c for c, _ in cp), {c.cell_id: p for c, p in cp}, tuple(seeds), n)
 
 
+ADULT_POOL_N = 16_281  # kept rows of adult.test (data/ingestion_report.json)
+EXP004_P3_TOLERANCE = 30  # protocol section 13, round 2 (tied real scores)
+
+
+def exp004(n: int = ADULT_POOL_N, seeds=CONFIRMATORY_SEEDS) -> Matrix:
+    """EXP-004: second test on the UCI Adult score distribution (cells R-hours and R-random, P0 to P3)."""
+    cells = tuple(CellConfig(cell_id=f"R-{part}", data_source=f"ADULT-R1:{part}", p3_tolerance=EXP004_P3_TOLERANCE)
+                  for part in ("hours", "random"))
+    return Matrix("EXP-004", "EXP-004", "confirmatory", "EXP-004 second test on a real score distribution (UCI Adult)",
+                  cells, {c.cell_id: ("P0", "P1", "P2", "P3") for c in cells}, tuple(seeds), n,
+                  contrasts=(("R-hours", "R-random"),))
+
+
 def smoke() -> Matrix:
-    """Protocol section 9 smoke matrix: delta in {0, 0.5}, rho = 1, P0 to P3, seeds 0 to 2, n = 2,000."""
+    """Protocol section 9 smoke matrix: delta in {0, 0.5}, rho = 1, P0 to P3, seeds 1000 to 1002, n = 2,000."""
     cells = (gaussian_cell(0.0, 1.0), gaussian_cell(0.5, 1.0))
     return Matrix("SMOKE", "SMOKE", "exploratory", "Protocol smoke matrix (exploratory)", cells,
-                  {c.cell_id: ("P0", "P1", "P2", "P3") for c in cells}, (0, 1, 2), 2_000,
+                  {c.cell_id: ("P0", "P1", "P2", "P3") for c in cells},
+                  tuple(range(EXPLORATORY_SEED_BASE, EXPLORATORY_SEED_BASE + 3)), 2_000,
                   contrasts=(("d0.50-r1.00", "d0.00-r1.00"),))
 
 
@@ -123,5 +137,32 @@ def degenerate() -> Matrix:
                   {c.cell_id: ("P0", "P1", "P2", "P3") for c in cells}, seeds, 60)
 
 
-REGISTERED = {"EXP-001": exp001, "EXP-002": exp002, "EXP-003": exp003}
+REGISTERED = {"EXP-001": exp001, "EXP-002": exp002, "EXP-003": exp003, "EXP-004": exp004}
 EXPLORATORY = {"SMOKE": smoke, "SIZING": sizing, "DEGEN": degenerate}
+
+
+def matrix_config(matrix: Matrix) -> dict:
+    """Canonical, JSON-serialisable description of a matrix: the confirmatory config that is frozen.
+
+    It lists every cell (with its policies), the seeds, n, the contrasts and the config hash of every
+    planned run, so any change to the code that builds the matrix changes this document.
+    """
+    runs = matrix.runs()
+    doc = {
+        "config_schema": "rigged.matrix_config/1.0.0",
+        "experiment_id": matrix.experiment_id, "matrix_id": matrix.matrix_id, "label": matrix.label,
+        "description": matrix.description, "n": matrix.n, "seeds": list(matrix.seeds),
+        "contrasts": [list(c) for c in matrix.contrasts],
+        "cells": [{"cell": c.to_dict(), "policies": list(matrix.policies_by_cell[c.cell_id])} for c in matrix.cells],
+        "run_count": len(runs),
+        "run_config_hashes": {r.run_id: r.config_hash() for r in runs},
+    }
+    if any(c.is_real for c in matrix.cells):
+        import json
+
+        from .config import real_data_identity
+        ident = real_data_identity()
+        from .environment import REPO_ROOT
+        doc["data"] = ident
+        doc["score_model"] = json.loads((REPO_ROOT / ident["score_model"]).read_text(encoding="utf-8"))
+    return doc

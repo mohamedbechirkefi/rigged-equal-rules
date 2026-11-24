@@ -1,0 +1,57 @@
+{
+ "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+ "adult.data": {
+  "rows_read": 32561,
+  "rows_kept": 32561,
+  "excluded": {
+   "wrong_field_count": 0,
+   "used_numeric_missing_or_invalid": 0,
+   "invalid_label": 0
+  },
+  "excluded_total": 0,
+  "missing_by_column": {
+   "age": 0,
+   "workclass": 1836,
+   "fnlwgt": 0,
+   "education": 0,
+   "education_num": 0,
+   "marital_status": 0,
+   "occupation": 1843,
+   "relationship": 0,
+   "race": 0,
+   "sex": 0,
+   "capital_gain": 0,
+   "capital_loss": 0,
+   "hours_per_week": 0,
+   "native_country": 583,
+   "income": 0
+  }
+ },
+ "adult.test": {
+  "rows_read": 16281,
+  "rows_kept": 16281,
+  "excluded": {
+   "wrong_field_count": 0,
+   "used_numeric_missing_or_invalid": 0,
+   "invalid_label": 0
+  },
+  "excluded_total": 0,
+  "missing_by_column": {
+   "age": 0,
+   "workclass": 963,
+   "fnlwgt": 0,
+   "education": 0,
+   "education_num": 0,
+   "marital_status": 0,
+   "occupation": 966,
+   "relationship": 0,
+   "race": 0,
+   "sex": 0,
+   "capital_gain": 0,
+   "capital_loss": 0,
+   "hours_per_week": 0,
+   "native_country": 274,
+   "income": 0
+  }
+ }
+}

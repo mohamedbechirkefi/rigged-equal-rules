@@ -3,12 +3,12 @@
 
 | Field | Value |
 |---|---|
-| Status | **DRAFT v0.1, not frozen.** Freezing is the owner's decision (G-FREEZE). |
+| Status | **FROZEN v1.0 (owner-approved 2026-11-24, G-FREEZE).** Freeze record: `research/freeze.json`. |
 | Date | 2026-11-24 |
-| Protocol hash | none yet (recorded at freeze) |
-| Scope | Synthetic populations only. All results are simulated. |
+| Protocol hash | SHA-256 of this file, in `research/freeze.json` (a file cannot contain its own hash) |
+| Scope | Synthetic populations (EXP-001 to EXP-003, simulated) and one second test on a real score distribution (EXP-004, UCI Adult, CC BY 4.0). |
 
-No run made under this draft is confirmatory. Runs before the freeze are exploratory and are labelled so in `research/experiment_journal.jsonl` and in any report.
+Runs made before the freeze (all exploratory) are labelled so in `research/experiment_journal.jsonl` and in any report. The amendments applied before the freeze are listed in section 13. Any later change is a dated deviation.
 
 ## 1. Research question
 
@@ -43,7 +43,7 @@ Each seed draws two independent populations from separate RNG streams: a fitting
 | P2 | Selection-rate parity | Group-specific thresholds so each group's selection rate equals kappa | Constrained selection (independence) |
 | P3 | Equal opportunity | Group-specific thresholds chosen on the fitting population so TPR_A = TPR_B with overall rate kappa | Constrained selection (separation on Y=1) |
 
-Ties at a threshold are broken by a seeded uniform so that realised capacity matches kappa to within one individual.
+Ties at a threshold are broken by a seeded uniform so that realised capacity matches kappa to within one individual for P0, P1 and P2 on the fitting population. P3 (bisection on a common TPR) may miss the target count on a finite population; its tolerance is 10 individuals on the fitting population (amendment A5). The realised count and target are recorded per run as `fit_selected` and `fit_target`; a P3 run outside the tolerance is a failure with the reason recorded (section 8).
 
 ## 4. Hypotheses (project level)
 
@@ -83,8 +83,8 @@ Zero denominators: when a denominator is zero, the metric is undefined; it is st
 
 - Experimental unit: one seed, that is one pair of fitting and evaluation populations. Individuals within a seed are not independent units for the between-condition comparison (they share thresholds).
 - Population size: n = 20,000 per population (about 10,000 per group at p_B = 0.5).
-- Seeds: 20 per cell (at least 5 are required; 20 are cheap). Seeds 0 to 19, fixed in advance.
-- Sample-size rationale: with about 5,000 qualified individuals in Group A and about 3,100 in Group B at delta = 0.5, the binomial standard error of a group TPR near 0.6 is about 0.007 to 0.009, so the per-seed EOG standard deviation is roughly 0.011 (planning estimate, to be checked by the smoke run and recorded before freezing). With 20 paired seeds, the standard error of the mean paired difference is about 0.0025, so a 95% interval half-width near 0.5 pp, well below the 2 pp smallest effect of interest. If the smoke run shows a per-seed SD above 0.03, the seed count is raised to 50 before the freeze.
+- Seeds: 20 per cell, fixed (amendment A2). Confirmatory seeds 0 to 19, fixed in advance. Exploratory and test runs use seeds of 1000 and above, never 0 to 19 (amendment A6).
+- Sample-size rationale: with about 5,000 qualified individuals in Group A and about 3,100 in Group B at delta = 0.5, the binomial standard error of a group TPR near 0.6 is about 0.007 to 0.009, so the per-seed EOG standard deviation is roughly 0.011 (planning estimate, to be checked by the smoke run and recorded before freezing). With 20 paired seeds, the standard error of the mean paired difference is about 0.0025, so a 95% interval half-width near 0.5 pp, well below the 2 pp smallest effect of interest. Measured before the freeze (exploratory SIZING run JRN-0003, seeds 1000 to 1019, n = 20,000): per-seed SD of the P0 EOG 1.05 pp (control) and 1.25 pp (primary cell); SD of the primary paired difference 0.61 pp; bootstrap half-width 0.26 pp. The draft's conditional rule (raise to 50 seeds if the SD exceeds 0.03) is removed: the seed count is 20 (amendment A2).
 
 ## 7. Uncertainty and analysis
 
@@ -104,15 +104,16 @@ Zero denominators: when a denominator is zero, the metric is undefined; it is st
 
 Smoke matrix (exploratory; validates the pipeline and the SD estimate):
 
-- delta in {0, 0.5}; rho = 1; policies P0 to P3; seeds 0 to 2; n = 2,000.
+- delta in {0, 0.5}; rho = 1; policies P0 to P3; seeds 1000 to 1002 (amendment A6; the draft used seeds 0 to 2); n = 2,000.
 
 Full matrix (confirmatory once frozen):
 
 - EXP-001: delta in {0, 0.25, 0.5, 1.0} x rho in {1, 1.5, 2}; policy P0; 20 seeds. 12 cells, 240 runs.
 - EXP-002: same 12 cells; policies P0 to P3; 20 seeds. 960 runs (the P0 runs are shared with EXP-001 under common random numbers and are computed once).
 - EXP-003: sensitivity grid (section 10); policy P0 (and P3 as a check); 20 seeds.
+- EXP-004 (real data, section 13, round 2): cells R-hours and R-random on the UCI Adult test file; policies P0 to P3; 20 seeds. 160 runs.
 
-Compute budget: under 30 minutes of wall-clock on the local laptop for the full matrix (planning estimate, to be measured by the smoke run). No paid compute.
+Compute budget: under 5 minutes of wall clock on the local laptop for the full matrix of EXP-001 to EXP-004, including reports (amendment A3; measured projection 10 to 35 s for EXP-001 to EXP-003, JRN-0003). No paid compute.
 
 ## 10. Sensitivity analysis that could invalidate the main interpretation (EXP-003)
 
@@ -134,8 +135,44 @@ If a non-zero EOG appears at equal base rates, or if the EOG reverses sign at th
 
 ## 12. Claims boundary
 
-No real hiring, lending or justice decisions. No claims about real or protected groups. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
+No real hiring, lending or justice decisions. No claims about real or protected groups. EXP-004 uses real census-derived records (UCI Adult) only as a source of a real score distribution and label; its group partition (hours-per-week below 40) is not a protected attribute, and no claim is made about the people in the data or about any real decision. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
 
 ## 13. Amendments
 
-None. Any amendment after the freeze will be listed here with date, reason and whether it is exploratory.
+### Amendments before freeze (owner-approved 2026-11-24)
+
+The owner approved these amendments ("yes for all others", 2026-11-24; approval list in the coordinator's file `owner-approvals-2026-11-24b.md`, section 7, RIGGED). Each was proposed in `research/protocol_amendment_proposals.md` (AP-001 to AP-006). They were fixed before any confirmatory run.
+
+- **A1 (AP-006): EXP-003's sign test is reported as analytically determined.** Under the Gaussian model, the population P0 EOG of cell B-sB2 (fixed base-rate gap, s_B = 2) is -9.73 pp (numerical integration, `rigged.analytic`), opposite in sign to the primary cell. EXP-003 H2 (sign stability across s_B) is therefore decided analytically before any run. Its confirmatory run quantifies the known result and checks the implementation; it is not reported as a test with an unknown outcome. The hypotheses were finalised with the analytic values and the exploratory SIZING run available.
+- **A2 (AP-002): 20 seeds.** Every confirmatory cell uses seeds 0 to 19. The conditional raise to 50 seeds is removed (section 6).
+- **A3 (AP-001): a lower compute budget.** Under 5 minutes of wall clock for the full matrix including reports (section 9; EXP-001 under 1 minute).
+- **A4 (AP-003): H1b is not monotone, and this is stated.** At delta = 0 the analytic P0 EOG is 0.000 pp (rho = 1), 0.177 pp (rho = 1.5) and 0.081 pp (rho = 2): not monotone in rho and far below 2 pp. EXP-001 H1b is no longer directional; the three values are reported descriptively with intervals, and no equivalence is claimed from a non-significant difference.
+- **A5 (AP-005): a capacity tolerance for P3** of 10 individuals on the fitting population (section 3). The exploratory maximum was 5 individuals over 160 P3 runs at n = 20,000 (JRN-0003).
+- **A6 (AP-004): exploratory seeds at 1000 and above.** Exploratory and test runs never use the confirmatory seeds 0 to 19; the smoke matrix moves to seeds 1000 to 1002 (sections 6 and 9).
+
+Not applied (not in the approved list): AP-007 (ECE gap identical across policies) stays a reporting note: the ECE gap is reported once per cell as a property of the group-blind score, not compared between policies. AP-008 (P1 binning sensitivity) is not added; P1 keeps 20 quantile bins, and its larger per-seed spread is a stated limitation.
+
+### Amendments before freeze (owner-approved 2026-11-24, round 2): real data
+
+The owner approved real data for RIGGED ("Approve all", 2026-11-24; `owner-approvals-2026-11-24b.md`, section 1: "UCI Adult, CC BY 4.0. Second test on a real score distribution"). This section was written before any model was fitted and before any real-data metric was computed.
+
+**What changes and what does not.** The synthetic study (EXP-001 to EXP-003) stays the controlled part of the project and is unchanged by the real data: no parameter of the synthetic generator is calibrated on Adult, because its parameters (delta, rho, sigma_A, kappa, p_B) are design factors, not estimates of a real quantity. DEC-003 (synthetic data only) is superseded for one new experiment, EXP-004.
+
+**Dataset.** UCI Adult (Becker and Kohavi 1996, DOI 10.24432/C5XW20), CC BY 4.0, archive `adult.zip` (620,237 bytes, SHA-256 in `data/manifest.json`), downloaded by `scripts/download_adult.py`. It holds no direct personal identifier. The archive is under 20 MB and CC BY, so it is committed with attribution.
+
+**Ingestion.** `rigged.adult.parse_adult` (pure function) reads `adult.data` and `adult.test`: comment lines (starting with `|`) and blank lines are skipped; a row is excluded if it does not have 15 fields, if any of age, education-num, capital-gain, capital-loss or hours-per-week is missing (`?`) or not numeric, or if the income label is not `<=50K` or `>50K` (a trailing `.` in the test file is removed). Missing values (`?`) in unused columns do not exclude a row; they are counted per column. Counts are recorded in `data/manifest.json`.
+
+**What is fitted (calibration), with which method, on which split.** The only fitted quantity is the real score: a logistic regression of Y = 1[income > 50K] on four features, age, education-num, log(1 + capital-gain), log(1 + capital-loss), each standardised by its mean and SD on the training file. Method: unpenalised maximum likelihood by Newton-Raphson (iteratively reweighted least squares) from all-zero coefficients, stopping when the largest absolute coefficient step is below 1e-10 or after 100 iterations (non-convergence is a fit failure). Split: the official training file `adult.data` only. The fit uses no group variable and no part of `adult.test`, so it cannot use the primary contrast in any way. The score X is the fitted linear predictor (log-odds). Hours-per-week (the group variable below), sex, race, native-country, marital-status, relationship, workclass, occupation and fnlwgt are not score inputs. The fitted coefficients and standardisation constants are written into `research/experiments/EXP-004/config.json`, recorded as an exploratory journal entry, and frozen with the configs.
+
+**What the second test is (EXP-004).** On the official test file `adult.test` (the pool), the four policies P0 to P3 are applied to the real score X with the real label Y, at kappa = 0.30, 20 calibration bins for P1 and cost ratio 1, exactly as in the synthetic study.
+
+- Group partition (cell R-hours): Group B = hours-per-week below 40, Group A = 40 or more. This observed, non-protected partition stands in for two groups with different starting distributions. It is not a protected group, and no claim is made about workers, hours or any real decision.
+- Control (cell R-random): the same individuals, with the group labels randomly permuted within each seed (same group sizes, equal starting distributions by construction). It plays the role of the delta = 0 control.
+- Seeds 0 to 19. In each seed, one RNG (`SeedSequence([seed, 2])`) draws, in this order, a random permutation of the pool (first half fitting population, second half evaluation population), the tie-breaking uniforms, and the permutation of group labels for R-random. Both cells and all policies share these draws (common random numbers). Thresholds are fitted on the fitting half; metrics are computed on the evaluation half.
+- Primary contrast (H1-real): D = EOG(R-hours, P0) - EOG(R-random, P0), paired by seed. Prediction from the synthetic mechanism: D is at least +2 pp (qualified members of the lower-base-rate group are selected less often under one common threshold). Disconfirmation: the 95% percentile bootstrap interval (over seeds, 10,000 resamples, RNG seed 20261124) lies entirely below +2 pp.
+- Secondary: the EXP-002 incompatibility check on R-hours (does any policy meet SR, EO and PPV parity within 2 pp), paired utility differences against P0, and the base-rate gap of the partition, all descriptive.
+- Uncertainty caveat: the pool is fixed, so seed-to-seed variation reflects the random split and tie-breaking, not sampling from a population. This is a stated limitation.
+- The analytic cross-check does not apply (no closed-form model).
+- P3 capacity tolerance in EXP-004: 30 individuals (fitting population of 8,140). The real score is tied (4,257 distinct values among 32,561 training rows), so P3's bisection cannot always hit the target count. An exploratory check on the training file only, with random partitions (seeds 1000 to 1019, no group variable, no test row), found deviations up to 19 individuals with the 10-individual tolerance of A5 exceeded in 4 of 20 fits (journal JRN-0006). The tolerance of 30 was set from that check with headroom, by the agent, and is flagged for the owner's ratification; A5's 10 individuals still applies to EXP-001 to EXP-003.
+- No EXP-004 metric (including the base-rate gap of the partition on the test file) was computed before the freeze.
+

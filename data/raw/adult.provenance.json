@@ -1,0 +1,34 @@
+{
+ "id": "EXT-001",
+ "name": "UCI Adult",
+ "url": "https://archive.ics.uci.edu/static/public/2/adult.zip",
+ "landing_page": "https://archive.ics.uci.edu/dataset/2/adult",
+ "doi": "10.24432/C5XW20",
+ "licence": "CC BY 4.0 (stated on the dataset page)",
+ "file": "data/raw/adult.zip",
+ "bytes": 620237,
+ "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+ "members": {
+  "Index": {
+   "bytes": 140,
+   "sha256": "c53c35ce8a0eb10c12dd4b73830f3c94ae212bb388389d3763bce63e8d6bc684"
+  },
+  "adult.data": {
+   "bytes": 3974305,
+   "sha256": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d"
+  },
+  "adult.names": {
+   "bytes": 5229,
+   "sha256": "c248284c0b5de30c9e1958d6cdd168a34a654758b620e68f46aefa83fc0a576a"
+  },
+  "adult.test": {
+   "bytes": 2003153,
+   "sha256": "a2a9044bc167a35b2361efbabec64e89d69ce82d9790d2980119aac5fd7e9c05"
+  },
+  "old.adult.names": {
+   "bytes": 4267,
+   "sha256": "43cca99f2bdbff47fc2f7e29a27a5c85e7f69dbcf56b99db8cf4f5b68d639408"
+  }
+ },
+ "recorded_utc": "2026-11-24T18:33:11Z"
+}

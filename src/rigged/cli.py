@@ -17,7 +17,7 @@ from dataclasses import replace
 from pathlib import Path
 
 from .environment import REPO_ROOT
-from .matrices import CONFIRMATORY_SEEDS, EXPLORATORY, REGISTERED
+from .matrices import CONFIRMATORY_SEEDS, EXPLORATORY, REGISTERED, matrix_config
 from .protocol_guard import protocol_status
 from .report import build
 from .runner import run_matrix
@@ -49,7 +49,7 @@ def cmd_run(args) -> int:
     if args.experiment not in REGISTERED:
         print(f"unknown experiment {args.experiment}; registered: {sorted(REGISTERED)}", file=sys.stderr)
         return 1
-    status = protocol_status(args.experiment)
+    status = protocol_status(args.experiment, expected_config=matrix_config(REGISTERED[args.experiment]()))
     if not args.exploratory:
         if not status.frozen:
             print(f"REFUSED: {args.experiment} is confirmatory and its protocol is not frozen ({status.reason}). "
@@ -64,7 +64,8 @@ def cmd_run(args) -> int:
             print("REFUSED: exploratory runs must not use the confirmatory seeds 0 to 19; set --seed-offset >= 20.",
                   file=sys.stderr)
             return EXIT_REFUSED
-        base = REGISTERED[args.experiment](n=args.n or 20_000, seeds=seeds)
+        kw = {"n": args.n} if args.n else {}
+        base = REGISTERED[args.experiment](seeds=seeds, **kw)
         matrix = replace(base, matrix_id=f"{args.experiment}-X", label="exploratory",
                          description=f"EXPLORATORY run of the {args.experiment} draft matrix (seeds {seeds[0]}+)")
         out = Path(args.out) if args.out else REPO_ROOT / "results" / "exploratory" / matrix.matrix_id.lower()
@@ -87,9 +88,32 @@ def cmd_report(args) -> int:
         print(f"no results.json in {d}; nothing to report (no run has produced results there)", file=sys.stderr)
         return 1
     matrix_id = json.loads((d / "results.json").read_text(encoding="utf-8")).get("matrix_id", "")
-    contrasts = (("d0.50-r1.00", "d0.00-r1.00"),)
-    res = build(d, contrasts=contrasts, pdf=args.pdf, analytic=matrix_id != "DEGEN")
+    contrasts = (("R-hours", "R-random"),) if matrix_id.startswith("EXP-004") else (("d0.50-r1.00", "d0.00-r1.00"),)
+    res = build(d, contrasts=contrasts, pdf=args.pdf, analytic=matrix_id != "DEGEN" and not matrix_id.startswith("EXP-004"))
     print(json.dumps({k: v for k, v in res.items() if k != "projection"}, indent=1))
+    return 0
+
+
+def config_path(experiment_id: str) -> Path:
+    return REPO_ROOT / "research" / "experiments" / experiment_id / "config.json"
+
+
+def cmd_export_configs(args) -> int:
+    """Write research/experiments/EXP-NNN/config.json from the code (before a freeze only)."""
+    for exp_id, build_matrix in sorted(REGISTERED.items()):
+        path = config_path(exp_id)
+        text = json.dumps(matrix_config(build_matrix()), indent=1, sort_keys=True) + "\n"
+        if args.check:
+            same = path.exists() and path.read_text(encoding="utf-8") == text
+            print(f"{exp_id}: {'matches' if same else 'DIFFERS'} {path.relative_to(REPO_ROOT)}")
+            if not same:
+                return 1
+            continue
+        if protocol_status(exp_id).frozen:
+            print(f"REFUSED: {exp_id} is frozen; its config is not rewritten", file=sys.stderr)
+            return EXIT_REFUSED
+        path.write_text(text, encoding="utf-8")
+        print(f"wrote {path.relative_to(REPO_ROOT)}")
     return 0
 
 
@@ -102,7 +126,7 @@ def _command() -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(prog="rigged", description="RIGGED simulation study (synthetic data only).")
+    p = argparse.ArgumentParser(prog="rigged", description="RIGGED simulation study (synthetic data; EXP-004 uses UCI Adult).")
     sub = p.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("smoke", help="run an exploratory matrix (SMOKE, SIZING or DEGEN) and its report")
     s.add_argument("--matrix", choices=sorted(EXPLORATORY), default="SMOKE")
@@ -123,6 +147,9 @@ def main(argv: list[str] | None = None) -> int:
     q.add_argument("--experiment")
     q.add_argument("--pdf", action="store_true")
     q.set_defaults(func=cmd_report)
+    e = sub.add_parser("export-configs", help="write (or --check) the confirmatory config files")
+    e.add_argument("--check", action="store_true")
+    e.set_defaults(func=cmd_export_configs)
     t = sub.add_parser("test", help="run the test suite")
     t.add_argument("pytest_args", nargs="*")
     t.set_defaults(func=cmd_test)

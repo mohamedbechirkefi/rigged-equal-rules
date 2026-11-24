@@ -8,6 +8,7 @@ import tracemalloc
 from pathlib import Path
 
 from . import GENERATOR_VERSION, RESULT_SCHEMA_VERSION, __version__
+from .adult import real_run_populations
 from .config import RunSpec
 from .environment import environment, peak_rss_bytes, utc_now
 from .generator import STREAM_EVAL, STREAM_FIT, build_population, draw
@@ -27,16 +28,19 @@ def execute(spec: RunSpec, draws_cache: dict | None = None, trace_memory: bool =
            "policy": spec.policy, "seed": spec.seed, "n": spec.n, "config": spec.to_dict(),
            "config_hash": spec.config_hash(), "status": "ok", "failure_reason": None}
     try:
-        key = (spec.seed, spec.n)
-        if draws_cache is not None and key in draws_cache:
-            d_fit, d_eval = draws_cache[key]
+        if spec.cell.is_real:
+            fit, ev = real_run_populations(spec.cell.data_source, spec.seed)
         else:
-            d_fit, d_eval = draw(spec.seed, STREAM_FIT, spec.n), draw(spec.seed, STREAM_EVAL, spec.n)
-            if draws_cache is not None:
-                draws_cache.clear()
-                draws_cache[key] = (d_fit, d_eval)
-        fit = build_population(spec.cell, d_fit)
-        ev = build_population(spec.cell, d_eval)
+            key = (spec.seed, spec.n)
+            if draws_cache is not None and key in draws_cache:
+                d_fit, d_eval = draws_cache[key]
+            else:
+                d_fit, d_eval = draw(spec.seed, STREAM_FIT, spec.n), draw(spec.seed, STREAM_EVAL, spec.n)
+                if draws_cache is not None:
+                    draws_cache.clear()
+                    draws_cache[key] = (d_fit, d_eval)
+            fit = build_population(spec.cell, d_fit)
+            ev = build_population(spec.cell, d_eval)
         fp = fit_policy(spec.policy, fit, spec.cell)
         sel = fp.select(ev)
         # Group-blind calibrated score for the ECE metric, fitted on the fitting population only.

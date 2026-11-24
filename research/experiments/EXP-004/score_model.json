@@ -1,0 +1,35 @@
+{
+ "features": [
+  "age",
+  "education_num",
+  "log1p_capital_gain",
+  "log1p_capital_loss"
+ ],
+ "standardisation": "training-file mean and population SD",
+ "mean": [
+  38.58164675532078,
+  10.0806793403151,
+  0.7346209104536965,
+  0.35030508122367104
+ ],
+ "sd": [
+  13.640223092304081,
+  2.5726808256012395,
+  2.4547000452880123,
+  1.5845566400724875
+ ],
+ "intercept": -1.4611613746445389,
+ "coefficients": [
+  0.545672089569154,
+  0.8867127035735958,
+  0.5154448248177307,
+  0.2745706589080248
+ ],
+ "iterations": 7,
+ "converged": true,
+ "n_train": 32561,
+ "train_log_likelihood": -14167.317542733103,
+ "train_mean_log_loss": 0.4351008120983109,
+ "fitted_on": "adult.data (official training file) after ingestion exclusions",
+ "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+}

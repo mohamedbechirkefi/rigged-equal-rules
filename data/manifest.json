@@ -1,7 +1,7 @@
 {
-  "schema_version": "0.2.0",
+  "schema_version": "0.3.0",
   "updated": "2026-11-24",
-  "status": "M2: synthetic generator implemented (SYN-001/1.0.0); no external data downloaded",
+  "status": "Synthetic generator SYN-001/1.0.0 (EXP-001 to EXP-003); UCI Adult downloaded and adopted for EXP-004 (second test on a real score distribution), owner-approved 2026-11-24",
   "licence_note": "Third-party data keep their own licences. Original synthetic data products are covered by NOTICE.md.",
   "synthetic": [
     {
@@ -10,25 +10,74 @@
       "generator": "src/rigged/generator.py",
       "generator_version": "SYN-001/1.0.0",
       "parameters": "see research/protocol.md section 2 and research/experiments/EXP-NNN/protocol.md",
-      "seeds": "confirmatory 0-19 per cell (draft); exploratory 1000 and above",
+      "seeds": "confirmatory 0-19 per cell (frozen); exploratory 1000 and above",
       "bundled": false,
       "regeneration_command": "scripts/rigged smoke --matrix SMOKE | SIZING | DEGEN (exploratory); scripts/rigged run --experiment EXP-NNN (after the owner's freeze)",
       "licence": "LicenseRef-RIGGED-NC-Research-1.0 (original data product)"
     }
   ],
-  "external_candidates_audited_not_used": [
+  "external": [
     {
       "id": "EXT-001",
       "name": "UCI Adult",
-      "source": "https://archive.ics.uci.edu/dataset/2/adult",
+      "creators": "Barry Becker; Ronny Kohavi",
+      "citation": "Becker, B. and Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20",
+      "landing_page": "https://archive.ics.uci.edu/dataset/2/adult",
+      "download_url": "https://archive.ics.uci.edu/static/public/2/adult.zip",
       "doi": "10.24432/C5XW20",
       "accessed": "2026-11-24",
-      "licence": "CC BY 4.0 (stated on the dataset page)",
-      "redistributable": "yes, with attribution (per CC BY 4.0)",
-      "downloaded": false,
-      "sha256": null,
-      "decision": "not used: real demographic groups fall outside the claims boundary; the study question needs controlled starting distributions"
-    },
+      "licence": "CC BY 4.0. Dataset page, opened 2026-11-24: \"This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.\" Matches the owner's approvals file (section 1: UCI Adult, CC BY 4.0).",
+      "attribution": "Becker and Kohavi (1996), UCI Machine Learning Repository, CC BY 4.0. The archive is redistributed unchanged.",
+      "redistributable": "yes, with attribution (CC BY 4.0)",
+      "personal_identifiers": "none direct (census-derived extract, no names or IDs); demographic attributes present. Only age, education-num, capital-gain, capital-loss, hours-per-week and the income label are used.",
+      "downloaded": true,
+      "download_script": "scripts/download_adult.py",
+      "file": "data/raw/adult.zip",
+      "bytes": 620237,
+      "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+      "members": {
+        "Index": {
+          "bytes": 140,
+          "sha256": "c53c35ce8a0eb10c12dd4b73830f3c94ae212bb388389d3763bce63e8d6bc684"
+        },
+        "adult.data": {
+          "bytes": 3974305,
+          "sha256": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d"
+        },
+        "adult.names": {
+          "bytes": 5229,
+          "sha256": "c248284c0b5de30c9e1958d6cdd168a34a654758b620e68f46aefa83fc0a576a"
+        },
+        "adult.test": {
+          "bytes": 2003153,
+          "sha256": "a2a9044bc167a35b2361efbabec64e89d69ce82d9790d2980119aac5fd7e9c05"
+        },
+        "old.adult.names": {
+          "bytes": 4267,
+          "sha256": "43cca99f2bdbff47fc2f7e29a27a5c85e7f69dbcf56b99db8cf4f5b68d639408"
+        }
+      },
+      "committed": true,
+      "commit_rule": "CC BY and under 20 MB: committed (owner approvals 2026-11-24b, section 1, redistribution rule)",
+      "ingestion": {
+        "function": "rigged.adult.parse_adult",
+        "report": "data/ingestion_report.json",
+        "adult.data": {
+          "rows_read": 32561,
+          "rows_kept": 32561,
+          "excluded_total": 0
+        },
+        "adult.test": {
+          "rows_read": 16281,
+          "rows_kept": 16281,
+          "excluded_total": 0
+        }
+      },
+      "use": "EXP-004 only. Score model fitted on adult.data (JRN-0005); second test on adult.test (protocol section 13, round 2). No synthetic parameter is calibrated on it.",
+      "decision": "adopted (DEC-011), supersedes the 'not used' entry of DEC-003 for EXP-004 only"
+    }
+  ],
+  "external_candidates_audited_not_used": [
     {
       "id": "EXT-002",
       "name": "folktables (ACS PUMS)",

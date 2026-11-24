@@ -49,8 +49,12 @@ def fit_threshold(scores: NDArray[np.float64], tie_u: NDArray[np.float64], k: in
         gamma = 1.0
     else:
         gamma = float(0.5 * (tied[m - 1] + tied[m]))
-        if not tied[m - 1] < gamma <= tied[m]:  # identical tie uniforms: probability zero
-            raise PolicyFitError("tie uniforms collide; cannot break ties exactly")
+        if not tied[m - 1] < gamma <= tied[m]:
+            # The midpoint can round onto tied[m - 1] for adjacent subnormal values; tied[m] itself
+            # still separates the two (u < gamma). Only identical tie uniforms (probability zero) fail.
+            if not tied[m - 1] < tied[m]:
+                raise PolicyFitError("tie uniforms collide; cannot break ties exactly")
+            gamma = float(tied[m])
     return Threshold(float(v), gamma)
 
 
@@ -201,6 +205,10 @@ def fit_p3(fit: Population, cell: CellConfig, iters: int = 64) -> FittedPolicy:
         tprs[g] = float(np.count_nonzero(pos_desc >= ths[g].t) / pos_desc.shape[0])
     diag = {"fit_selected": total, "fit_target": k, "fit_tpr_a": tprs["A"], "fit_tpr_b": tprs["B"],
             "fit_tpr_gap": tprs["A"] - tprs["B"]}
+    if abs(total - k) > cell.p3_tolerance:
+        raise PolicyFitError(f"P3: fitting-population count {total} misses the target {k} by more than the "
+                             f"capacity tolerance of {cell.p3_tolerance} individuals")
+    diag["fit_tolerance"] = cell.p3_tolerance
     return FittedPolicy("P3", ths, diagnostics=diag)
 
 

@@ -1,0 +1,11 @@
+|SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
+|Synthetic rows in the UCI Adult schema, written by hand for tests. No row comes from the real data.
+
+30, Private, 100000, Bachelors, 13, Never-married, Tech-support, Not-in-family, White, Male, 0, 0, 40, United-States, <=50K.
+45, ?, 120000, Masters, 14, Divorced, ?, Unmarried, Other, Female, 5000, 0, 50, ?, >50K.
+52, Local-gov, 90000, HS-grad, 9, Widowed, Sales, Unmarried, Other, Male, 0, 1500, 20, United-States, >50K
+23, Private, 80000, 11th, 7, Never-married, Sales, Own-child, White, Female, 0, 0, 35, United-States, <=50K.
+?, Private, 80000, 11th, 7, Never-married, Sales, Own-child, White, Female, 0, 0, 35, United-States, <=50K.
+40, Private, 80000, 11th, 7, Never-married, Sales, Own-child, White, Female, 0, 0, ?, United-States, <=50K.
+40, Private, 80000, 11th, 7, Never-married, Sales, Own-child, White, Female, 0, 0, 40, United-States, maybe
+40, Private, 80000, 11th, 7, Never-married, Sales

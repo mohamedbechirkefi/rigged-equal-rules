@@ -3,10 +3,10 @@
 
 | Field | Value |
 |---|---|
-| Status | DRAFT v0.1, planned (protocol draft, awaiting owner freeze) |
+| Status | FROZEN v1.0 (owner-approved 2026-11-24), not yet run |
 | Date | 2026-11-24 |
-| Protocol hash | none (recorded at freeze) |
-| Parent protocol | `research/protocol.md` (DRAFT v0.1), section 10 |
+| Protocol hash | SHA-256 of this file, in `research/freeze.json` and the registry |
+| Parent protocol | `research/protocol.md` (FROZEN v1.0), section 10 |
 | Depends on | EXP-001 pipeline; generator extended with latent dispersion and non-Gaussian shapes |
 
 ## 1. Precise question
@@ -21,7 +21,7 @@ If EXP-001's gap were truly a base-rate effect, equal base rates should give no 
 
 - H0 (base-rate sufficiency): with pi_A = pi_B = 0.5 (mu_A = mu_B = 0), varying s_B in {0.5, 1, 2} with s_A = 1 leaves EOG within +/- 2 pp.
 - H1 (shape matters, non-directional): EOG lies outside +/- 2 pp for at least one s_B != 1 at equal base rates.
-- H2 (sign stability): with pi_B fixed at Phi(-0.5) (mu_B = -0.5 * s_B) and s_B in {0.5, 1, 2}, the sign of EOG is the same in all three cells. A sign reversal refutes the base-rate interpretation for that configuration.
+- H2 (sign stability): with pi_B fixed at Phi(-0.5) (mu_B = -0.5 * s_B) and s_B in {0.5, 1, 2}, the sign of EOG is the same in all three cells. A sign reversal refutes the base-rate interpretation for that configuration. **Analytically determined before the run (amendment A1):** under the Gaussian model the population P0 EOG of cell B-sB2 is -9.73 pp, opposite in sign to the primary cell, so H2's outcome (a sign reversal) is known. The run quantifies this known result and checks the implementation; it is reported as analytically determined, not as a test with an unknown outcome.
 - Robustness H3: with matched base rates (pi_A = 0.5, pi_B = Phi(-0.5)), replacing the Gaussian latent distribution with Student t (3 degrees of freedom, scaled to unit variance) or a shifted log-normal (sigma = 0.5, standardised) keeps the EOG sign of EXP-001's primary cell. Non-directional on magnitude.
 - Robustness H4: at delta = 0.5, rho = 1, the EOG sign is unchanged for kappa in {0.1, 0.3, 0.5} and p_B in {0.2, 0.5}.
 
@@ -51,3 +51,7 @@ As in `research/protocol.md` section 8. Heavy-tailed draws can produce extreme s
 uv run python -m rigged.cli run --experiment EXP-003
 uv run python -m rigged.cli report --experiment EXP-003
 ```
+
+## 8. Amendments before freeze (owner-approved 2026-11-24)
+
+A1 (H2 analytically determined), A2 (20 seeds), A3 (budget), A5 (P3 capacity tolerance of 10 individuals, which applies to the P3 runs of grids A and B) and A6 of `research/protocol.md` section 13 apply here. Exploratory estimates for cells B-sB2, C-student_t3, C-lognormal and D-k0.1-pB0.2 were seen before the freeze (SIZING, JRN-0003; `results/exploratory/sizing/`).

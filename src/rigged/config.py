@@ -16,6 +16,7 @@ from . import GENERATOR_VERSION
 from .numerics import FAMILIES, base_rate
 
 POLICIES = ("P0", "P1", "P2", "P3")
+DATA_SOURCES = ("", "ADULT-R1:hours", "ADULT-R1:random")
 
 
 class ConfigError(ValueError):
@@ -40,6 +41,8 @@ class CellConfig:
     calibration_bins: int = 20
     ece_bins: int = 10
     note: str = ""
+    p3_tolerance: int = 10  # protocol section 3, amendment A5 (individuals on the fitting population)
+    data_source: str = ""  # "" = synthetic generator SYN-001; "ADULT-R1:hours" or "ADULT-R1:random" (EXP-004)
 
     def __post_init__(self) -> None:
         if not self.cell_id or not isinstance(self.cell_id, str):
@@ -64,6 +67,10 @@ class CellConfig:
             raise ConfigError("calibration_bins must be a positive integer")
         if not isinstance(self.ece_bins, int) or self.ece_bins < 1:
             raise ConfigError("ece_bins must be a positive integer")
+        if not isinstance(self.p3_tolerance, int) or isinstance(self.p3_tolerance, bool) or self.p3_tolerance < 0:
+            raise ConfigError("p3_tolerance must be a non-negative integer")
+        if self.data_source not in DATA_SOURCES:
+            raise ConfigError(f"data_source must be one of {DATA_SOURCES}, got {self.data_source!r}")
 
     @property
     def base_rate_a(self) -> float:
@@ -73,10 +80,16 @@ class CellConfig:
     def base_rate_b(self) -> float:
         return base_rate(self.family, self.mu_b, self.s_b)
 
+    @property
+    def is_real(self) -> bool:
+        return bool(self.data_source)
+
     def to_dict(self) -> dict:
         d = asdict(self)
-        d["base_rate_a"] = self.base_rate_a
-        d["base_rate_b"] = self.base_rate_b
+        if not self.data_source:
+            del d["data_source"]  # synthetic cells keep their pre-EXP-004 dictionary
+            d["base_rate_a"] = self.base_rate_a
+            d["base_rate_b"] = self.base_rate_b
         return d
 
 
@@ -110,7 +123,7 @@ class RunSpec:
             "seed": self.seed,
             "n": self.n,
             "generator_version": GENERATOR_VERSION,
-        }
+        } | ({"data": real_data_identity()} if self.cell.is_real else {})
 
     def config_hash(self) -> str:
         return canonical_hash(self.to_dict())
@@ -122,3 +135,14 @@ def canonical_json(obj) -> str:
 
 def canonical_hash(obj) -> str:
     return "sha256:" + hashlib.sha256(canonical_json(obj).encode("utf-8")).hexdigest()
+
+
+def real_data_identity() -> dict:
+    """SHA-256 of the Adult archive and of the frozen score model (part of every EXP-004 config hash)."""
+    from .environment import REPO_ROOT
+
+    model = REPO_ROOT / "research" / "experiments" / "EXP-004" / "score_model.json"
+    return {"dataset": "UCI Adult (EXT-001)",
+            "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+            "score_model": "research/experiments/EXP-004/score_model.json",
+            "score_model_sha256": hashlib.sha256(model.read_bytes()).hexdigest() if model.exists() else None}

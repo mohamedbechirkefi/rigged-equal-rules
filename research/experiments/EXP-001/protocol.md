@@ -3,10 +3,10 @@
 
 | Field | Value |
 |---|---|
-| Status | DRAFT v0.1, planned (protocol draft, awaiting owner freeze) |
+| Status | FROZEN v1.0 (owner-approved 2026-11-24), not yet run |
 | Date | 2026-11-24 |
-| Protocol hash | none (recorded at freeze) |
-| Parent protocol | `research/protocol.md` (DRAFT v0.1) |
+| Protocol hash | SHA-256 of this file, in `research/freeze.json` and the registry |
+| Parent protocol | `research/protocol.md` (FROZEN v1.0) |
 | Depends on | M2 core engine (generator, policy P0, metrics) and the smoke run |
 
 ## 1. Precise question
@@ -31,7 +31,7 @@ Error-rate balance cannot generally coexist with other criteria when base rates 
 
 - H0: EOG(delta = 0.5, rho = 1) - EOG(delta = 0, rho = 1) = 0.
 - H1 (directional): this paired difference is at least +2 pp.
-- Secondary H1b: at delta = 0, EOG increases with rho (noisier measurement of B lowers TPR_B when t is above the mean of qualified scores). Direction to be confirmed analytically before freeze; if the analytic sign is ambiguous, H1b becomes non-directional.
+- Secondary H1b (amended before freeze, A4): at delta = 0, the EOG is reported for rho in {1, 1.5, 2} descriptively, with intervals. The draft predicted that EOG increases with rho; the analytic population values (0.000, 0.177 and 0.081 pp) are not monotone in rho, so H1b is not directional. No equivalence is claimed from a non-significant difference.
 - Contradiction: the 95% bootstrap interval of the primary paired difference lies entirely below +2 pp.
 
 ## 6. Estimand
@@ -50,7 +50,7 @@ The population mean, over the generator, of the paired difference in EOG between
 
 ## 8. Sample-size rationale and compute budget
 
-See `research/protocol.md` section 6. 12 cells x 20 seeds = 240 runs. Budget: under 5 minutes wall-clock (planning estimate).
+See `research/protocol.md` section 6. 12 cells x 20 seeds = 240 runs. Budget: under 1 minute wall clock (amendment A3; measured projection a few seconds, JRN-0003).
 
 ## 9. Metric formulas and units
 
@@ -81,3 +81,7 @@ uv run python -m rigged.cli smoke
 uv run python -m rigged.cli run --experiment EXP-001
 uv run python -m rigged.cli report --experiment EXP-001
 ```
+
+## 15. Amendments before freeze (owner-approved 2026-11-24)
+
+A2 (20 seeds), A3 (budget), A4 (H1b not monotone, stated) and A6 (exploratory seeds 1000 and above) of `research/protocol.md` section 13 apply here.

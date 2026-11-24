@@ -162,7 +162,7 @@ def md_table(headers: list[str], rows: list[list[str]]) -> str:
 def strip_plot_svg(series: list[tuple[str, list[float]]], title: str, ylabel: str, desc: str,
                    ref: float | None = None) -> str:
     """Accessible SVG strip plot: one column per series, one dot per seed, a bar at the mean."""
-    w, h, ml, mr, mt, mb = 760, 380, 70, 20, 40, 110
+    w, h, ml, mr, mt, mb = 760, 400, 110, 20, 40, 120
     vals = [v for _, vs in series for v in vs if v is not None]
     if ref is not None:
         vals.append(ref)
@@ -207,8 +207,8 @@ def strip_plot_svg(series: list[tuple[str, list[float]]], title: str, ylabel: st
             m = sum(good) / len(good)
             out.append(f'<line x1="{cx - step * 0.3:.1f}" x2="{cx + step * 0.3:.1f}" y1="{ypix(m):.1f}" '
                        f'y2="{ypix(m):.1f}" stroke="#b03a2e" stroke-width="2.5"/>')
-        out.append(f'<text transform="translate({cx:.1f} {h - mb + 14}) rotate(35)" font-family="sans-serif" '
-                   f'font-size="11" fill="#111">{html.escape(label)}</text>')
+        out.append(f'<text transform="translate({cx:.1f} {h - mb + 12}) rotate(-35)" text-anchor="end" '
+                   f'font-family="sans-serif" font-size="11" fill="#111">{html.escape(label)}</text>')
     out.append(f'<line x1="{ml}" x2="{ml}" y1="{mt}" y2="{mt + ph}" stroke="#111"/>')
     out.append("</svg>")
     return "\n".join(out) + "\n"
@@ -290,15 +290,15 @@ def build(result_dir: Path, contrasts=(("d0.50-r1.00", "d0.00-r1.00"),), pdf: bo
              ]),
              "## Per cell and policy (seed means, 95% percentile bootstrap over seeds)", "",
              "Gaps are group A minus group B, in percentage points; utility is per capita.", ""]
-    rows = []
-    for r in srows:
-        rows.append([r["cell_id"], r["policy"], str(r["runs"]), str(r["failed"]),
-                     f"{_fmt(r['eog_mean'], 100)} [{_fmt(r['eog_lo'], 100)}, {_fmt(r['eog_hi'], 100)}]",
-                     _fmt(r["eog_sd"], 100), _fmt(r["sr_gap_mean"], 100), _fmt(r["fpr_gap_mean"], 100),
-                     _fmt(r["ppv_gap_mean"], 100), _fmt(r["ece_gap_mean"], 100),
-                     _fmt(r["utility_per_capita_mean"], 1, 4), str(r["undefined_values"])])
-    lines.append(md_table(["Cell", "Policy", "Runs", "Failed", "EOG mean [95% CI]", "EOG SD", "SR gap",
-                           "FPR gap", "PPV gap", "ECE gap", "Utility", "Undefined values"], rows))
+    lines.append(md_table(["Cell", "Policy", "Runs", "Failed", "EOG mean", "95% bootstrap", "EOG SD"],
+                          [[r["cell_id"], r["policy"], str(r["runs"]), str(r["failed"]), _fmt(r["eog_mean"], 100),
+                            f"[{_fmt(r['eog_lo'], 100)}, {_fmt(r['eog_hi'], 100)}]", _fmt(r["eog_sd"], 100)]
+                           for r in srows]))
+    lines += ["Secondary metrics (seed means).", ""]
+    lines.append(md_table(["Cell", "Policy", "SR gap", "FPR gap", "PPV gap", "ECE gap", "Utility", "Undefined"],
+                          [[r["cell_id"], r["policy"], _fmt(r["sr_gap_mean"], 100), _fmt(r["fpr_gap_mean"], 100),
+                            _fmt(r["ppv_gap_mean"], 100), _fmt(r["ece_gap_mean"], 100),
+                            _fmt(r["utility_per_capita_mean"], 1, 4), str(r["undefined_values"])] for r in srows]))
     if crows:
         lines += ["## Paired contrasts (treatment minus control, within seed)", ""]
         lines.append(md_table(["Treatment", "Control", "Policy", "Metric", "Mean (pp)", "SD (pp)", "95% bootstrap",
@@ -352,8 +352,7 @@ def build(result_dir: Path, contrasts=(("d0.50-r1.00", "d0.00-r1.00"),), pdf: bo
                               [[c, p, k, v, str(n)] for (c, p, k, v), n in sorted(undef.items())]))
     else:
         lines.append("No metric was undefined.\n")
-    lines += ["## Figure", "", f"![{desc}](figures/{fig_name})", "",
-              f"*Figure {fig_name.removesuffix('.svg')}.* {desc}", ""]
+    lines += ["## Figure", "", f"![{fig_name.removesuffix('.svg')}. {desc}](figures/{fig_name})", ""]
     report = result_dir / "report.md"
     report.write_text("\n".join(lines), encoding="utf-8")
     out = {"report": str(report), "tables": [str(p) for p in sorted(tables.glob("*.csv"))],
@@ -367,7 +366,9 @@ def build_pdf(markdown: Path) -> Path:
     """Markdown to Typst with pandoc, then compile with the typst Python package."""
     typ = markdown.with_suffix(".typ")
     pdf = markdown.with_suffix(".pdf")
-    subprocess.run([PANDOC, markdown.name, "-s", "-t", "typst", "-V", 'mainfont=Libertinus Serif', "-o", typ.name],
+    subprocess.run([PANDOC, markdown.name, "-s", "-t", "typst", "-V", "mainfont=Libertinus Serif",
+                    "-V", "fontsize=10pt", "-V", "header-includes=#show figure: set block(breakable: true)",
+                    "-o", typ.name],
                    cwd=markdown.parent, check=True)
     subprocess.run([TYPST_PYTHON, "-c", f"import typst; typst.compile({typ.name!r}, output={pdf.name!r})"],
                    cwd=markdown.parent, check=True)

@@ -1,0 +1,168 @@
+{
+ "freeze_schema": "rigged-freeze/1.0.0",
+ "project": "RIGGED",
+ "spdx": "LicenseRef-RIGGED-NC-Research-1.0",
+ "frozen_on": "2026-11-24",
+ "gate": "G-FREEZE",
+ "approval": {
+  "by": "the owner",
+  "date": "2026-11-24",
+  "sources": [
+   "labs/_shared/owner-approvals-2026-11-24.md (outside this repository)",
+   "labs/_shared/owner-approvals-2026-11-24b.md, sections 1 and 7 (outside this repository)"
+  ],
+  "owner_answers_quoted": [
+   "\"yes for all others\" (amendments, first round)",
+   "\"Approve all\" (second round: real data, section 1, and the section 7 amendments)"
+  ],
+  "approved_data_quoted": "RIGGED | UCI Adult, CC BY 4.0 | Second test on a real score distribution",
+  "approved_amendments_quoted": "Report EXP-003's sign test as analytically determined. 20 seeds. A lower compute budget. H1b not monotone: state it. A capacity tolerance for P3. Exploratory seeds at 1000 and above."
+ },
+ "amendments_applied": {
+  "A1": "EXP-003 H2 (sign stability) reported as analytically determined: population P0 EOG of B-sB2 is -9.73 pp, opposite in sign to the primary cell (protocol section 13; EXP-003 protocol section 3).",
+  "A2": "20 seeds (0 to 19) in every confirmatory cell; the conditional raise to 50 seeds is removed.",
+  "A3": "Compute budget under 5 minutes wall clock for the full matrix including reports (EXP-001 under 1 minute).",
+  "A4": "EXP-001 H1b is not directional: analytic EOG at delta = 0 is 0.000, 0.177, 0.081 pp for rho = 1, 1.5, 2 (not monotone); reported descriptively.",
+  "A5": "P3 capacity tolerance of 10 individuals on the fitting population; a P3 run outside it is a recorded failure (enforced in rigged.policies.fit_p3).",
+  "A6": "Exploratory and test runs use seeds of 1000 and above; the smoke matrix moved to seeds 1000 to 1002.",
+  "R2-data": "UCI Adult adopted for EXP-004 (second test on a real score distribution): score model fitted on adult.data by a method written before the fit; test on adult.test; no synthetic parameter calibrated."
+ },
+ "agent_choices_to_ratify": [
+  "EXP-004 group partition: Group B = hours-per-week below 40 (non-protected observed attribute), with a random-permutation control R-random.",
+  "EXP-004 P3 capacity tolerance of 30 individuals (tied real score; training-file check JRN-0006 found deviations up to 19). A5's 10 individuals applies to EXP-001 to EXP-003.",
+  "Not applied (not in the approved list): AP-007 (ECE gap per policy) and AP-008 (P1 binning sensitivity); stated as reporting note and limitation."
+ ],
+ "fitted_values": {
+  "journal": "JRN-0005",
+  "method": "unpenalised logistic regression, Newton-Raphson, standardised features, on adult.data only",
+  "features": [
+   "age",
+   "education_num",
+   "log1p_capital_gain",
+   "log1p_capital_loss"
+  ],
+  "mean": [
+   38.58164675532078,
+   10.0806793403151,
+   0.7346209104536965,
+   0.35030508122367104
+  ],
+  "sd": [
+   13.640223092304081,
+   2.5726808256012395,
+   2.4547000452880123,
+   1.5845566400724875
+  ],
+  "intercept": -1.4611613746445389,
+  "coefficients": [
+   0.545672089569154,
+   0.8867127035735958,
+   0.5154448248177307,
+   0.2745706589080248
+  ],
+  "iterations": 7,
+  "train_mean_log_loss": 0.4351008120983109,
+  "primary_contrast_used": false
+ },
+ "common_decisions": {
+  "C1": "Data: real data as approved (UCI Adult, CC BY 4.0, EXP-004 only), synthetic otherwise (EXP-001 to EXP-003).",
+  "C2": "PDFs: built with pandoc and Typst (-V mainfont=\"Libertinus Serif\"); there is no LaTeX on the machine.",
+  "C3": "Authorship: \"Mohamed Bechir Kefi\", no affiliation. The AI is disclosed as a research and development assistant, not as an author.",
+  "C4": "Disclosure: exploratory values of the primary contrast seen before the freeze are listed in c4_disclosure, with where they are stored."
+ },
+ "c4_disclosure": {
+  "statement": "Before the freeze, exploratory values of the EXP-001 primary contrast (mean paired EOG difference, d0.50-r1.00 minus d0.00-r1.00, P0) were computed and seen, and the analytic population values of every Gaussian cell were available. The owner approved the amendments with these values available. All exploratory, none on the confirmatory seeds at the planned n. No EXP-004 metric on adult.test (including the partition's base-rate gap) was computed before the freeze.",
+  "values": [
+   {
+    "run": "SMOKE (JRN-0002)",
+    "design": "n = 2,000, seeds 0 to 2 (as the draft protocol then specified)",
+    "P0_primary_contrast_pp": 6.889,
+    "boot95_pp": [
+     5.661,
+     8.065
+    ],
+    "path": "results/exploratory/smoke/tables/contrasts.csv"
+   },
+   {
+    "run": "SIZING (JRN-0003)",
+    "design": "n = 20,000, seeds 1000 to 1019",
+    "P0_primary_contrast_pp": 6.305,
+    "boot95_pp": [
+     6.042,
+     6.56
+    ],
+    "other_policies_pp": {
+     "P1": 14.592,
+     "P2": -19.913,
+     "P3": -0.239
+    },
+    "path": "results/exploratory/sizing/tables/contrasts.csv"
+   },
+   {
+    "run": "analytic (rigged.analytic, no simulation)",
+    "P0_EOG_primary_cell_pp": 6.307,
+    "P0_EOG_control_pp": 0.0,
+    "B-sB2_P0_EOG_pp": -9.73,
+    "path": "research/protocol_amendment_proposals.md (AP-003, AP-006)"
+   }
+  ],
+  "exp003_cells_seen": "B-sB2, C-student_t3, C-lognormal, D-k0.1-pB0.2 (SIZING, results/exploratory/sizing/)",
+  "smoke_seed_overlap": "The SMOKE run used seeds 0 to 2 at n = 2,000; these seeds are confirmatory at n = 20,000. The first 2,000 group-assignment uniforms of those seeds are shared (AP-004)."
+ },
+ "project_protocol": {
+  "path": "research/protocol.md",
+  "sha256": "e6b0871eb2d518c0fe747f066b90eb9fa9b86ad60ef031c6ca6de28bdc602433"
+ },
+ "experiments": {
+  "EXP-001": {
+   "protocol_path": "research/experiments/EXP-001/protocol.md",
+   "protocol_sha256": "8a98874cd6a9394d493fab35572a5bff78fbd8cb83e2538111fb9c0bf1933bcf",
+   "config_path": "research/experiments/EXP-001/config.json",
+   "config_sha256": "e8be2bc5305426d86c2046060413fc54e975245cff60a5f878effd23d70548cb",
+   "run_count": 240,
+   "seeds": "0 to 19"
+  },
+  "EXP-002": {
+   "protocol_path": "research/experiments/EXP-002/protocol.md",
+   "protocol_sha256": "263ede02caaa43102ff0aee8b2e23653beb968d857632c9e87c6cf4175f2e875",
+   "config_path": "research/experiments/EXP-002/config.json",
+   "config_sha256": "150d6fffba5d2a8ac56cf1c2e187ae48048fe5167ea4050cf891e9eb380ed30e",
+   "run_count": 960,
+   "seeds": "0 to 19"
+  },
+  "EXP-003": {
+   "protocol_path": "research/experiments/EXP-003/protocol.md",
+   "protocol_sha256": "7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214",
+   "config_path": "research/experiments/EXP-003/config.json",
+   "config_sha256": "b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a",
+   "run_count": 420,
+   "seeds": "0 to 19"
+  },
+  "EXP-004": {
+   "protocol_path": "research/experiments/EXP-004/protocol.md",
+   "protocol_sha256": "2cbde0d301d6d9a14d2952d2436ea7cd4b5f9002adf85cdf7afd44851558a2c8",
+   "config_path": "research/experiments/EXP-004/config.json",
+   "config_sha256": "28eb940a1d2d7de76067ba7a99f3b9824f8d5b548659accbec00cc38f864386a",
+   "run_count": 160,
+   "seeds": "0 to 19",
+   "data_manifest_sha256": "603907ae122af7ee6be3832b8d68801ed09646db107ad47d118641a6b279bef6",
+   "score_model_path": "research/experiments/EXP-004/score_model.json",
+   "score_model_sha256": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b",
+   "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+  }
+ },
+ "data_manifest": {
+  "path": "data/manifest.json",
+  "sha256": "603907ae122af7ee6be3832b8d68801ed09646db107ad47d118641a6b279bef6"
+ },
+ "frozen_content_revision": "48f065243f17919ed8a8f2775e01c47ba969a40e",
+ "git_note": "frozen_content_revision is the commit holding the frozen protocols, configs, code and data; this record is committed after it.",
+ "tests_at_freeze": "111 passed, 1 skipped (the skipped test needs this record; it runs after it is committed)",
+ "run_guard": "rigged.protocol_guard.protocol_status with the config built by the current code; scripts/rigged run --experiment EXP-NNN",
+ "reproduction": {
+  "download": "python3 scripts/download_adult.py",
+  "run": "scripts/rigged run --experiment EXP-00N",
+  "report": "scripts/rigged report --experiment EXP-00N",
+  "configs_check": "scripts/rigged export-configs --check"
+ }
+}

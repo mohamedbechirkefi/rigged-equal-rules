@@ -6,9 +6,9 @@ Target: five focused development days (planning estimate). Effort is in focused 
 | ID | Milestone | Depends on | Priority | Effort | Status | Blockers |
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24), pending the owner's read of the gate | none |
-| M1 | Research and preregistration | M0 | P0 | 0.75 | in progress (drafts written in M0) | owner freeze (G-FREEZE) |
+| M1 | Research and preregistration | M0 | P0 | 0.75 | gate passed: protocols frozen (owner-approved 2026-11-24, `research/freeze.json`); full-text reading still open | none for M3 |
 | M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | done (2026-11-24): all acceptance criteria checked; exploratory runs only | none |
-| M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | not started | owner freeze |
+| M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | not started (EXP-001 to EXP-004 frozen, not yet run) | the coordinator schedules M3 |
 | M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
@@ -35,7 +35,7 @@ Acceptance criteria:
 - [ ] Analytic expressions for population TPR per group derived and written into the protocol (needed for the cross-check and for H1b's direction). Implemented numerically in `src/rigged/analytic.py` and used for AP-003; not yet written into the protocol text (owner's draft).
 - [x] Smoke run (exploratory) measures the per-seed SD and runtime (JRN-0002 to JRN-0004). Seed count: 20 adequate at n = 20,000; the owner decides the trigger wording and whether to raise to 50 (AP-002).
 - [ ] Fixture manifest for golden tests. Golden examples are inline in `tests/` (hand-computed); a separate manifest file is not written yet.
-- [ ] Owner freezes the protocols; protocol hashes recorded in the registry (G-FREEZE).
+- [x] Owner freezes the protocols; protocol hashes recorded in the registry (G-FREEZE). Done 2026-11-24 with real data for EXP-004 (UCI Adult); freeze record `research/freeze.json`, content revision 48f0652.
 - Gate: protocol frozen before confirmatory runs; exploratory results visibly separated.
 
 ## M2: Core implementation (11.6: schemas, manifests and report generators alongside the core)
@@ -55,7 +55,7 @@ Acceptance criteria:
 Acceptance criteria:
 
 - [ ] Smoke matrix run and validated. (Run exploratorily in M2, JRN-0002; to be rerun under the frozen protocol.)
-- [ ] Frozen full matrix run for EXP-001 to EXP-003; every run, failure and deviation exported.
+- [ ] Frozen full matrix run for EXP-001 to EXP-004; every run, failure and deviation exported.
 - [ ] Per-experiment report drafted as each finishes.
 - Gate: complete planned matrix or documented failure; no silently dropped runs.
 

@@ -67,3 +67,35 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
 - **Decided by:** the AI assistant (M2).
 - **Decision:** `pyproject.toml` keeps `package = false`; pytest uses `pythonpath = ["src"]`; the CLI runs as `scripts/rigged` or `PYTHONPATH=src uv run --frozen python -m rigged.cli`. Installing a build backend would add a download for no benefit.
 - **Consequences:** The reproduction commands in the EXP protocols (`uv run python -m rigged.cli ...`) need `PYTHONPATH=src` or `scripts/rigged`; this is noted for the owner and not edited in the draft protocols.
+
+## DEC-011 (2026-11-24): UCI Adult adopted for a second test (EXP-004); DEC-003 superseded for EXP-004 only
+
+- **Decided by:** the owner ("Approve all", second round; approvals file section 1: "UCI Adult, CC BY 4.0, second test on a real score distribution"). Design details by the AI assistant under that approval.
+- **Licence check:** dataset page https://archive.ics.uci.edu/dataset/2/adult, opened 2026-11-24: "This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license." DOI 10.24432/C5XW20. Matches the approval.
+- **Data:** `adult.zip` from https://archive.ics.uci.edu/static/public/2/adult.zip, 620,237 bytes, SHA-256 7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb, downloaded by `scripts/download_adult.py`. CC BY and under 20 MB, so committed with attribution (approvals redistribution rule). No direct personal identifier; only six columns are used.
+- **Use:** score model (logistic regression on age, education-num, log1p capital-gain, log1p capital-loss) fitted on `adult.data` only (JRN-0005), method written into the protocol before the fit; EXP-004 tests on `adult.test`: Group B = hours-per-week below 40 versus a random-permutation control, P0 to P3, 20 seeds. No synthetic parameter is calibrated: the synthetic factors are design choices, not estimates.
+- **Alternatives:** groups by sex or race (rejected: protected groups are outside the claims boundary); calibrating sigma_A from the real score's discrimination (rejected: not the approved role, and it would change the primary synthetic design).
+- **Consequences:** EXP-004 registered and frozen. The partition is a stated agent choice for the owner to ratify.
+
+## DEC-012 (2026-11-24): Approved amendments A1 to A6 applied before the freeze
+
+- **Decided by:** the owner ("yes for all others"; approvals file section 7, RIGGED).
+- **Decision:** A1 EXP-003 sign test reported as analytically determined; A2 20 seeds, conditional raise removed; A3 budget under 5 minutes; A4 H1b not monotone, stated, non-directional; A5 P3 capacity tolerance of 10 individuals, enforced in code as a recorded failure; A6 exploratory seeds 1000 and above, smoke matrix moved to 1000 to 1002. AP-007 and AP-008 were not in the approved list and were not applied.
+
+## DEC-013 (2026-11-24): EXP-004 P3 tolerance of 30 individuals (agent choice, to ratify)
+
+- **Decided by:** the AI assistant, before any test-file metric; open to owner ratification.
+- **Context:** the real score has ties (4,257 distinct values in 32,561 training rows). A training-file check with random partitions (JRN-0006) found P3 count deviations up to 19 individuals, 4 of 20 above A5's 10.
+- **Decision:** tolerance 30 for EXP-004 only; A5's 10 stays for EXP-001 to EXP-003.
+- **Alternatives:** keep 10 (about 20% of EXP-004 P3 runs would fail and could halt the cell under section 8); randomised group thresholds for P3 (a change to the policy itself, not approved).
+
+## DEC-014 (2026-11-24): Freeze mechanics (G-FREEZE, owner-approved)
+
+- **Decided by:** the owner approved the freeze; mechanics by the AI assistant.
+- **Decision:** confirmatory configs are the canonical export of each matrix (`research/experiments/EXP-NNN/config.json`, including every run's config hash; EXP-004 also embeds the fitted score model and the archive hash). `research/freeze.json` holds the approvals, C1 to C4, the SHA-256 of the project protocol, of each experiment protocol and config, of the data manifest, and the frozen content revision 48f0652. `run` refuses unless the registry hash, the freeze record, the protocols, the config file, the config built by the current code and (EXP-004) the data manifest all match. `export-configs` refuses to rewrite a frozen config. Extends DEC-008.
+
+## DEC-015 (2026-11-24): fit_threshold fallback for subnormal tie uniforms
+
+- **Decided by:** the AI assistant.
+- **Context:** a Hypothesis example (tie uniforms 0.0 and 5e-324) made the midpoint round onto the lower value, so `fit_threshold` raised "tie uniforms collide". Generator uniforms are multiples of 2^-53, so no planned run can hit this.
+- **Decision:** when the midpoint fails but the two uniforms differ, gamma = the upper uniform (selects the same individuals). Behaviour is unchanged in every other case; config hashes unchanged.

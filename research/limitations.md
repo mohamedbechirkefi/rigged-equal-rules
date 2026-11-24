@@ -11,3 +11,13 @@ No results exist yet. These are the limitations known by design.
 6. **No universal metric.** The equal-opportunity gap is the primary metric for this question only. Other criteria encode other value judgements; the study shows they conflict and does not rank them.
 7. **No human participants.** Nothing is inferred about human behaviour or preferences.
 8. **Local toolchain.** `manuscript.tex` is not compiled locally (no TeX); PDFs come from Typst.
+
+## Added at the freeze (2026-11-24)
+
+- EXP-004 uses real records (UCI Adult, 1994 census extract) only as a source of a real score and label. Its partition (hours-per-week below 40) is non-protected but correlates with other attributes; results describe this partition of this file under this score, not people, income or decisions.
+- EXP-004's pool is fixed: seed-to-seed variation reflects the random split and tie-breaking only, so its intervals understate uncertainty about any wider population.
+- The EXP-004 score model is deliberately simple (four features, logistic); a different score could give a different gap.
+- The real score is tied, so P3 meets capacity only within 30 individuals in EXP-004 (DEC-013).
+- P1 uses 20 quantile bins; its per-seed spread is larger than P0's (AP-008, not applied).
+- The ECE gap does not depend on the policy and is reported once per cell (AP-007).
+- EXP-003 H2 was analytically determined before the run (A1); several primary and EXP-003 values were seen exploratorily before the freeze (`research/freeze.json`, C4).

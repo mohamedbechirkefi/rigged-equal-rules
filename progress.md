@@ -168,3 +168,68 @@ Created: `src/rigged/` (15 modules and 2 schemas), `tests/` (conftest and 8 test
 ### Next action
 
 Owner: review AP-001 to AP-008, amend and freeze the protocols, record the hashes in the registry. Then M3: `scripts/rigged run --experiment EXP-001` (and EXP-002, EXP-003) and the per-experiment reports.
+
+## 2026-11-24: data and freeze session (UCI Adult, amendments, G-FREEZE owner-approved)
+
+**Brief:** `labs/_shared/DATA-FREEZE-brief.md`; authority `labs/_shared/owner-approvals-2026-11-24b.md` sections 1 and 7 (RIGGED). **Starting state:** `main` at `deabab3`, tree clean.
+
+### Decisions
+
+DEC-011 (UCI Adult adopted for EXP-004), DEC-012 (amendments A1 to A6), DEC-013 (EXP-004 P3 tolerance 30, to ratify), DEC-014 (freeze mechanics), DEC-015 (fit_threshold subnormal fallback).
+
+### Commands and actual outputs
+
+```
+WebFetch https://archive.ics.uci.edu/dataset/2/adult (2026-11-24)
+  "This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license." DOI 10.24432/C5XW20; Download (605.7 KB)
+$ python3 -I scripts/download_adult.py
+downloaded https://archive.ics.uci.edu/static/public/2/adult.zip -> data/raw/adult.zip (620237 bytes)
+sha256 7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb
+  adult.data: 3974305 bytes; adult.test: 2003153 bytes; adult.names, old.adult.names, Index
+```
+
+The protocol amendment (section 13, round 2) and the EXP-004 protocol were written before the fit. Then:
+
+```
+$ PYTHONPATH=src .venv/bin/python scripts/fit_adult_score.py        (JRN-0005, exploratory)
+adult.data: 32,561 read, 32,561 kept, 0 excluded; adult.test: 16,281 read, 16,281 kept, 0 excluded
+missing (?): workclass 1,836 / 963, occupation 1,843 / 966, native-country 583 / 274 (unused columns)
+intercept -1.46116; coefficients (standardised) age 0.54567, education-num 0.88671, log1p gain 0.51544, log1p loss 0.27457
+converged in 7 iterations; training mean log loss 0.43510; 0.39 s
+```
+
+P3 feasibility on tied real scores (JRN-0006; training file only, random partitions, seeds 1000 to 1019, no metric computed): 4,257 distinct scores in 32,561 rows; fit_selected minus target ranged -19 to +9, 4 of 20 beyond 10. EXP-004 P3 tolerance set to 30 (DEC-013).
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+Audited 14 packages
+$ .venv/bin/python -m pytest -q        (after the amendments; before the fallback fix)
+1 failed, 110 passed, 1 skipped   (Hypothesis example: tie uniforms 0.0 and 5e-324 in fit_threshold; DEC-015)
+$ .venv/bin/python -m pytest -q
+111 passed, 1 skipped   -> commit 48f0652 (freeze content)
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs --check
+EXP-001 to EXP-004: matches
+(freeze record and registry hashes written)
+$ .venv/bin/python -m pytest -q
+112 passed
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs
+REFUSED: EXP-001 is frozen; its config is not rewritten   (exit 2)
+guard with the code-built configs: EXP-001 to EXP-004 frozen: protocol, config and freeze record match
+```
+
+No confirmatory run was executed. No EXP-004 metric on `adult.test` was computed. The test suite never runs EXP-004 on the real pool.
+
+### Files created or changed
+
+Created: `scripts/download_adult.py`, `scripts/fit_adult_score.py`, `src/rigged/adult.py`, `data/raw/adult.zip`, `data/raw/adult.provenance.json`, `data/ingestion_report.json`, `research/experiments/EXP-00{1,2,3,4}/config.json`, `research/experiments/EXP-004/{protocol.md,score_model.json}`, `research/freeze.json`, `tests/test_adult.py`, `tests/fixtures/adult_synthetic.test` (hand-written synthetic rows).
+Changed: protocols (amendments, FROZEN headers), `src/rigged/{config,matrices,policies,protocol_guard,runner,report,cli}.py`, `tests/test_schema_runner_cli.py`, `data/manifest.json`, registry, journal (JRN-0005, JRN-0006), decision log, limitations, roadmap, CITATION.cff, manuscript.md and .tex.
+
+### Risks and items for the owner
+
+- Ratify the EXP-004 partition (hours-per-week below 40, random-permutation control) and the EXP-004 P3 tolerance of 30.
+- AP-007 and AP-008 were not in the approved list and were not applied.
+- Protocol reproduction commands still read `uv run python -m rigged.cli ...` (need `PYTHONPATH=src` or `scripts/rigged`); correct commands are in `research/freeze.json`.
+
+### Next action
+
+M3 when the coordinator schedules it: `scripts/rigged run --experiment EXP-001` to `EXP-004`, then reports.

@@ -3,7 +3,7 @@
 # (custom licence, SPDX LicenseRef-RIGGED-NC-Research-1.0; see LICENSE).
 # It is deliberately not given in a "license" field, which expects a standard SPDX id.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: M0, no results yet."
+message: "If you use this work, please cite it as below. Status: protocols frozen 2026-11-24, no confirmatory results yet. The AI assistant (Claude) is disclosed as a research and development assistant, not as an author."
 title: "RIGGED: When equal rules produce unequal outcomes (working title)"
 type: software
 authors:
@@ -17,3 +17,16 @@ keywords:
   - threshold rules
   - base rates
   - equal opportunity
+references:
+  - type: dataset
+    title: Adult
+    authors:
+      - family-names: Becker
+        given-names: Barry
+      - family-names: Kohavi
+        given-names: Ronny
+    year: 1996
+    doi: 10.24432/C5XW20
+    publisher:
+      name: UCI Machine Learning Repository
+    license: CC-BY-4.0

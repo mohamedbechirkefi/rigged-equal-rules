@@ -1,7 +1,9 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
 # When equal rules produce unequal outcomes (working title)
 
-Status: skeleton of headings only (M0). Independent research manuscript draft, not peer-reviewed. Author metadata pending owner approval.
+Mohamed Bechir Kefi (no affiliation).
+
+Status: skeleton of headings only; protocols frozen on 2026-11-24 (`research/freeze.json`), no confirmatory results yet. Independent research manuscript draft, not peer-reviewed. AI use: an AI assistant (Claude) served as a research and development assistant; it is not an author. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
 
 ## Abstract
 

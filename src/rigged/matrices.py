@@ -84,16 +84,21 @@ def exp003(n: int = 20_000, seeds=CONFIRMATORY_SEEDS) -> Matrix:
 
 
 ADULT_POOL_N = 16_281  # kept rows of adult.test (data/ingestion_report.json)
-EXP004_P3_TOLERANCE = 30  # protocol section 13, round 2 (tied real scores)
+EXP004_P3_TOLERANCE = 30  # protocol section 13, round 2 (tied real scores); ratified in round 3
+EXP004_PARTITIONS = ("sex", "sex-random", "hours", "hours-random")  # protocol section 13, round 3
+EXP004_CONTRASTS = (("R-sex", "R-sex-random"), ("R-hours", "R-hours-random"))  # primary, then secondary
 
 
 def exp004(n: int = ADULT_POOL_N, seeds=CONFIRMATORY_SEEDS) -> Matrix:
-    """EXP-004: second test on the UCI Adult score distribution (cells R-hours and R-random, P0 to P3)."""
+    """EXP-004: second test on the UCI Adult score distribution, P0 to P3 (protocol section 13, round 3).
+
+    Primary contrast R-sex vs R-sex-random; secondary contrast R-hours vs R-hours-random.
+    """
     cells = tuple(CellConfig(cell_id=f"R-{part}", data_source=f"ADULT-R1:{part}", p3_tolerance=EXP004_P3_TOLERANCE)
-                  for part in ("hours", "random"))
+                  for part in EXP004_PARTITIONS)
     return Matrix("EXP-004", "EXP-004", "confirmatory", "EXP-004 second test on a real score distribution (UCI Adult)",
                   cells, {c.cell_id: ("P0", "P1", "P2", "P3") for c in cells}, tuple(seeds), n,
-                  contrasts=(("R-hours", "R-random"),))
+                  contrasts=EXP004_CONTRASTS)
 
 
 def smoke() -> Matrix:
@@ -165,4 +170,9 @@ def matrix_config(matrix: Matrix) -> dict:
         from .environment import REPO_ROOT
         doc["data"] = ident
         doc["score_model"] = json.loads((REPO_ROOT / ident["score_model"]).read_text(encoding="utf-8"))
+        from .adult import GROUP_B_HOURS_BELOW, GROUP_B_SEX
+        doc["group_b"] = {"sex": f"sex == {GROUP_B_SEX} (lower base rate on adult.data; protocol section 13, round 3, "
+                                 "JRN-0007)",
+                          "hours": f"hours_per_week < {GROUP_B_HOURS_BELOW:g}",
+                          "random": "labels of the named attribute permuted by the seed's row-index permutation"}
     return doc

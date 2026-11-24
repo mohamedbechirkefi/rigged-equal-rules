@@ -17,7 +17,7 @@ from dataclasses import replace
 from pathlib import Path
 
 from .environment import REPO_ROOT
-from .matrices import CONFIRMATORY_SEEDS, EXPLORATORY, REGISTERED, matrix_config
+from .matrices import CONFIRMATORY_SEEDS, EXP004_CONTRASTS, EXPLORATORY, REGISTERED, matrix_config
 from .protocol_guard import protocol_status
 from .report import build
 from .runner import run_matrix
@@ -88,7 +88,7 @@ def cmd_report(args) -> int:
         print(f"no results.json in {d}; nothing to report (no run has produced results there)", file=sys.stderr)
         return 1
     matrix_id = json.loads((d / "results.json").read_text(encoding="utf-8")).get("matrix_id", "")
-    contrasts = (("R-hours", "R-random"),) if matrix_id.startswith("EXP-004") else (("d0.50-r1.00", "d0.00-r1.00"),)
+    contrasts = EXP004_CONTRASTS if matrix_id.startswith("EXP-004") else (("d0.50-r1.00", "d0.00-r1.00"),)
     res = build(d, contrasts=contrasts, pdf=args.pdf, analytic=matrix_id != "DEGEN" and not matrix_id.startswith("EXP-004"))
     print(json.dumps({k: v for k, v in res.items() if k != "projection"}, indent=1))
     return 0

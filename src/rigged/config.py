@@ -16,7 +16,7 @@ from . import GENERATOR_VERSION
 from .numerics import FAMILIES, base_rate
 
 POLICIES = ("P0", "P1", "P2", "P3")
-DATA_SOURCES = ("", "ADULT-R1:hours", "ADULT-R1:random")
+DATA_SOURCES = ("", "ADULT-R1:sex", "ADULT-R1:sex-random", "ADULT-R1:hours", "ADULT-R1:hours-random")
 
 
 class ConfigError(ValueError):
@@ -42,7 +42,7 @@ class CellConfig:
     ece_bins: int = 10
     note: str = ""
     p3_tolerance: int = 10  # protocol section 3, amendment A5 (individuals on the fitting population)
-    data_source: str = ""  # "" = synthetic generator SYN-001; "ADULT-R1:hours" or "ADULT-R1:random" (EXP-004)
+    data_source: str = ""  # "" = synthetic generator SYN-001; "ADULT-R1:<partition>" (EXP-004)
 
     def __post_init__(self) -> None:
         if not self.cell_id or not isinstance(self.cell_id, str):

@@ -3,7 +3,7 @@
 
 | Field | Value |
 |---|---|
-| Status | **FROZEN v1.0 (owner-approved 2026-11-24, G-FREEZE).** Freeze record: `research/freeze.json`. |
+| Status | **FROZEN v1.1 (owner-approved 2026-11-24, G-FREEZE; pre-data amendment of round 3, owner-approved 2026-11-24, section 13).** Freeze record: `research/freeze.json`. |
 | Date | 2026-11-24 |
 | Protocol hash | SHA-256 of this file, in `research/freeze.json` (a file cannot contain its own hash) |
 | Scope | Synthetic populations (EXP-001 to EXP-003, simulated) and one second test on a real score distribution (EXP-004, UCI Adult, CC BY 4.0). |
@@ -111,7 +111,7 @@ Full matrix (confirmatory once frozen):
 - EXP-001: delta in {0, 0.25, 0.5, 1.0} x rho in {1, 1.5, 2}; policy P0; 20 seeds. 12 cells, 240 runs.
 - EXP-002: same 12 cells; policies P0 to P3; 20 seeds. 960 runs (the P0 runs are shared with EXP-001 under common random numbers and are computed once).
 - EXP-003: sensitivity grid (section 10); policy P0 (and P3 as a check); 20 seeds.
-- EXP-004 (real data, section 13, round 2): cells R-hours and R-random on the UCI Adult test file; policies P0 to P3; 20 seeds. 160 runs.
+- EXP-004 (real data, section 13, rounds 2 and 3): cells R-sex and R-sex-random (primary), R-hours and R-hours-random (secondary) on the UCI Adult test file; policies P0 to P3; 20 seeds. 320 runs (160 before the round-3 amendment).
 
 Compute budget: under 5 minutes of wall clock on the local laptop for the full matrix of EXP-001 to EXP-004, including reports (amendment A3; measured projection 10 to 35 s for EXP-001 to EXP-003, JRN-0003). No paid compute.
 
@@ -135,7 +135,7 @@ If a non-zero EOG appears at equal base rates, or if the EOG reverses sign at th
 
 ## 12. Claims boundary
 
-No real hiring, lending or justice decisions. No claims about real or protected groups. EXP-004 uses real census-derived records (UCI Adult) only as a source of a real score distribution and label; its group partition (hours-per-week below 40) is not a protected attribute, and no claim is made about the people in the data or about any real decision. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
+No real hiring, lending or justice decisions. EXP-001 to EXP-003 make no claims about real or protected groups. EXP-004 uses real census-derived records (UCI Adult) only as a source of a real score distribution and label; its primary partition is the recorded sex field (a protected attribute; owner's decision, section 13, round 3) and its secondary partition is hours-per-week below 40. Results describe these partitions of this 1994 extract under this score and these policies only; no claim is made about women or men in general, about the people in the data, about any cause, or about any real decision. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
 
 ## 13. Amendments
 
@@ -176,3 +176,20 @@ The owner approved real data for RIGGED ("Approve all", 2026-11-24; `owner-appro
 - P3 capacity tolerance in EXP-004: 30 individuals (fitting population of 8,140). The real score is tied (4,257 distinct values among 32,561 training rows), so P3's bisection cannot always hit the target count. An exploratory check on the training file only, with random partitions (seeds 1000 to 1019, no group variable, no test row), found deviations up to 19 individuals with the 10-individual tolerance of A5 exceeded in 4 of 20 fits (journal JRN-0006). The tolerance of 30 was set from that check with headroom, by the agent, and is flagged for the owner's ratification; A5's 10 individuals still applies to EXP-001 to EXP-003.
 - No EXP-004 metric (including the base-rate gap of the partition on the test file) was computed before the freeze.
 
+
+### Amendments before data (owner-approved 2026-11-24, round 3): EXP-004 grouping
+
+The owner decided the EXP-004 grouping in the third round ("Approve all", 2026-11-24; coordinator's file `owner-approvals-2026-11-24c.md`, section 1, RIGGED): "The primary comparison in EXP-004 (UCI Adult) uses **sex** as the group attribute. This is the standard comparison for this dataset. Hours-per-week below 40 stays as a secondary check. Nothing has been computed on the test file. Keep it that way until the confirmatory run. The P3 capacity tolerance of 30, needed because real scores contain ties, is ratified." This is a dated pre-data amendment to the frozen v1.0 protocol: it was written before any EXP-004 metric on `adult.test` was computed, and none has been computed since. It supersedes the round-2 partition items above where they conflict; the round-2 text is kept as the record of what was frozen first.
+
+- **R3-1. Primary group attribute: sex.** Cell R-sex: the group attribute is the `sex` column of the Adult files (values `Male` and `Female`). Rule for which value is Group B, stated before it is applied: Group B is the sex value with the lower base rate P(Y = 1) on the official training file `adult.data` (after the ingestion exclusions), so that Group B is the lower-base-rate group as in the synthetic model; the base rates are computed on `adult.data` only and recorded in an exploratory journal entry. No row of `adult.test` is used to choose it. `sex` is not a score input (the score model of round 2 is unchanged).
+- **R3-2. Ingestion of the sex column.** `sex` becomes a used column, but the exclusion rules of round 2 are unchanged. A kept row whose `sex` field is neither `Male` nor `Female` stops ingestion with a schema error; that is a run failure under section 8, and the owner decides what follows. No category is imputed or merged.
+- **R3-3. Control for the primary contrast.** Cell R-sex-random: the same individuals with the sex labels randomly permuted within each seed (same group sizes, equal starting distributions by construction).
+- **R3-4. Secondary check: hours-per-week below 40.** Cells R-hours (Group B = hours-per-week below 40, as in round 2) and R-hours-random (the hours labels permuted within each seed; formerly called R-random). Secondary contrast: D-hours = EOG(R-hours, P0) - EOG(R-hours-random, P0), reported with the same interval method, descriptively; it does not decide H1-real.
+- **R3-5. Draws.** Unchanged in kind and order: per seed, one RNG (`SeedSequence([seed, 2])`) draws a permutation of the pool, the tie uniforms and one permutation of the row indices; the random cells apply that same index permutation to their own labels (sex or hours). All four cells and all policies share these draws.
+- **R3-6. Primary contrast (H1-real).** D = EOG(R-sex, P0) - EOG(R-sex-random, P0), paired by seed; prediction and disconfirmation as in round 2 (+2 pp; 95% percentile bootstrap over seeds, 10,000 resamples, RNG seed 20261124).
+- **R3-7. Secondary analyses** (descriptive): the EXP-002 incompatibility check, paired utility differences against P0 and the base-rate gap, on R-sex and on R-hours.
+- **R3-8. Runs.** 4 cells x 4 policies x 20 seeds = 320 runs.
+- **R3-9. P3 capacity tolerance of 30 individuals in EXP-004 is ratified by the owner** (round 2, DEC-013); it applies to all four cells.
+- **R3-10. Claims boundary for EXP-004.** Sex is a protected attribute in most jurisdictions, so the round-2 statement that the EXP-004 partition is non-protected no longer holds for the primary cell. Results describe this partition of this 1994 census extract under this score and these policies only. No claim is made about women or men in general, about pay, about any cause, or about any real hiring, lending or justice decision; the extract's sex field is a recorded binary category, not a statement about any person's identity. No fairness metric is presented as universal.
+
+Result of applying the R3-1 rule (after the rule above was written; journal JRN-0007, exploratory, training file only): on `adult.data` (32,561 kept rows), P(Y = 1) is 1,179 / 10,771 = 0.1095 for `Female` and 6,662 / 21,790 = 0.3057 for `Male`. Group B = `Female`, Group A = `Male`. No row of `adult.test` was read for this, and no EXP-004 metric was computed.

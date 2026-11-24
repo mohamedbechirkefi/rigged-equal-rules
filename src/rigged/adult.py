@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
-"""UCI Adult ingestion, score model and EXP-004 populations (protocol section 13, round 2).
+"""UCI Adult ingestion, score model and EXP-004 populations (protocol section 13, rounds 2 and 3).
 
 Everything here is a pure function of its inputs except ``load_archive`` (reads the committed zip).
 The score model is fitted once on ``adult.data`` (``fit_logistic``); the fitted values are frozen in
@@ -27,6 +27,11 @@ USED_NUMERIC = ("age", "education_num", "capital_gain", "capital_loss", "hours_p
 FEATURES = ("age", "education_num", "log1p_capital_gain", "log1p_capital_loss")
 LABELS = {"<=50K": False, ">50K": True}
 GROUP_B_HOURS_BELOW = 40.0
+SEX_VALUES = ("Male", "Female")
+# Group B of R-sex: the sex value with the lower base rate on adult.data (protocol section 13, round 3,
+# R3-1; JRN-0007: Female 0.1095, Male 0.3057). Training file only.
+GROUP_B_SEX = "Female"
+PARTITIONS = ("sex", "sex-random", "hours", "hours-random")
 STREAM_REAL = 2
 
 
@@ -44,6 +49,7 @@ class AdultTable:
     capital_loss: NDArray[np.float64]
     hours_per_week: NDArray[np.float64]
     y: NDArray[np.bool_]
+    sex: tuple[str, ...] | None = None  # recorded sex value of each kept row (round 3, R3-2)
 
     @property
     def n(self) -> int:
@@ -55,10 +61,12 @@ def parse_adult(text: str) -> tuple[AdultTable, dict]:
 
     Comment lines (``|``) and blank lines are skipped. A row is excluded if it does not have 15 fields,
     if a used numeric column is missing or not numeric, or if the label is not ``<=50K`` / ``>50K``
-    (a trailing ``.`` is removed). ``?`` in unused columns is counted, never imputed.
+    (a trailing ``.`` is removed). ``?`` in unused columns is counted, never imputed. A kept row whose
+    ``sex`` is neither ``Male`` nor ``Female`` raises ``AdultSchemaError`` (round 3, R3-2): not an exclusion.
     """
     cols: dict[str, list[float]] = {c: [] for c in USED_NUMERIC}
     ys: list[bool] = []
+    sexes: list[str] = []
     missing = {c: 0 for c in COLUMNS}
     excl = {"wrong_field_count": 0, "used_numeric_missing_or_invalid": 0, "invalid_label": 0}
     read = 0
@@ -94,13 +102,16 @@ def parse_adult(text: str) -> tuple[AdultTable, dict]:
         if label not in LABELS:
             excl["invalid_label"] += 1
             continue
+        if row["sex"] not in SEX_VALUES:
+            raise AdultSchemaError(f"kept row with sex {row['sex']!r} (neither Male nor Female)")
         for c in USED_NUMERIC:
             cols[c].append(vals[c])
         ys.append(LABELS[label])
+        sexes.append(row["sex"])
     if read == 0:
         raise AdultSchemaError("no data rows")
     table = AdultTable(**{c: np.asarray(cols[c], dtype=np.float64) for c in USED_NUMERIC},
-                       y=np.asarray(ys, dtype=bool))
+                       y=np.asarray(ys, dtype=bool), sex=tuple(sexes))
     report = {"rows_read": read, "rows_kept": table.n, "excluded": excl,
               "excluded_total": sum(excl.values()), "missing_by_column": missing}
     return table, report
@@ -162,15 +173,44 @@ def group_b_hours(t: AdultTable) -> NDArray[np.bool_]:
     return t.hours_per_week < GROUP_B_HOURS_BELOW
 
 
+def group_b_sex(t: AdultTable) -> NDArray[np.bool_]:
+    """Group B of cell R-sex: recorded sex equal to GROUP_B_SEX (protocol section 13, round 3)."""
+    if t.sex is None:
+        raise AdultSchemaError("table has no sex column")
+    return np.asarray([v == GROUP_B_SEX for v in t.sex], dtype=bool)
+
+
+def sex_base_rates(t: AdultTable) -> dict:
+    """Count and base rate P(Y = 1) per sex value: the R3-1 rule, applied to adult.data only."""
+    if t.sex is None:
+        raise AdultSchemaError("table has no sex column")
+    sex = np.asarray(t.sex)
+    out = {}
+    for v in SEX_VALUES:
+        m = sex == v
+        n = int(m.sum())
+        out[v] = {"n": n, "positives": int(t.y[m].sum()), "base_rate": float(t.y[m].mean()) if n else None}
+    return out
+
+
+def lower_base_rate_value(rates: dict) -> str:
+    """The sex value with the lower base rate (R3-1); a tie is an error, not a choice."""
+    a, b = (rates[v]["base_rate"] for v in SEX_VALUES)
+    if a is None or b is None or a == b:
+        raise AdultSchemaError("base rates undefined or tied; Group B cannot be set by the rule")
+    return SEX_VALUES[0] if a < b else SEX_VALUES[1]
+
+
 def real_populations(x: NDArray[np.float64], y: NDArray[np.bool_], group_b: NDArray[np.bool_], seed: int,
-                     partition: str) -> tuple[Population, Population]:
+                     permute: bool) -> tuple[Population, Population]:
     """Fitting and evaluation populations of one seed (EXP-004 design, protocol section 13).
 
-    Draw order (fixed): pool permutation, tie uniforms, group-label permutation. ``partition`` is
-    ``"hours"`` (observed labels) or ``"random"`` (labels permuted; same group sizes).
+    Draw order (fixed): pool permutation, tie uniforms, row-index permutation. With ``permute`` the
+    group labels are permuted by that index permutation (random cells; same group sizes); otherwise
+    the observed labels are used.
     """
-    if partition not in ("hours", "random"):
-        raise ValueError(f"unknown partition {partition!r}")
+    if not isinstance(permute, bool):
+        raise ValueError(f"permute must be a bool, got {permute!r}")
     n = int(x.shape[0])
     if not (y.shape[0] == n and group_b.shape[0] == n) or n < 2:
         raise ValueError("x, y and group_b must have the same length (at least 2)")
@@ -178,7 +218,7 @@ def real_populations(x: NDArray[np.float64], y: NDArray[np.bool_], group_b: NDAr
     perm = rng.permutation(n)
     tie_u = rng.random(n)
     gperm = rng.permutation(n)
-    g = group_b if partition == "hours" else group_b[gperm]
+    g = group_b[gperm] if permute else group_b
     half = n // 2
     out = []
     for idx in (perm[:half], perm[half:]):
@@ -192,8 +232,8 @@ _POOL_CACHE: dict = {}
 
 
 def load_pool(archive: Path = ARCHIVE, model_path: Path = SCORE_MODEL) -> tuple[NDArray[np.float64], NDArray[np.bool_],
-                                                                                 NDArray[np.bool_]]:
-    """EXP-004 pool: score, label and R-hours group of every kept ``adult.test`` row (cached)."""
+                                                                                 dict[str, NDArray[np.bool_]]]:
+    """EXP-004 pool: score, label and Group B indicators ("sex", "hours") of every kept ``adult.test`` row (cached)."""
     import hashlib
     import json
 
@@ -204,14 +244,15 @@ def load_pool(archive: Path = ARCHIVE, model_path: Path = SCORE_MODEL) -> tuple[
             raise AdultSchemaError(f"archive SHA-256 {digest} differs from the recorded {ARCHIVE_SHA256}")
         model = json.loads(model_path.read_text(encoding="utf-8"))
         table, _ = parse_adult(load_archive(archive)["adult.test"])
-        _POOL_CACHE[key] = (score(table, model), table.y, group_b_hours(table))
+        _POOL_CACHE[key] = (score(table, model), table.y, {"sex": group_b_sex(table), "hours": group_b_hours(table)})
     return _POOL_CACHE[key]
 
 
 def real_run_populations(data_source: str, seed: int) -> tuple[Population, Population]:
-    """Populations of one EXP-004 run from its cell's data source ("ADULT-R1:hours" or "ADULT-R1:random")."""
+    """Populations of one EXP-004 run from its cell's data source ("ADULT-R1:<partition>", PARTITIONS)."""
     prefix, _, partition = data_source.partition(":")
-    if prefix != "ADULT-R1":
+    if prefix != "ADULT-R1" or partition not in PARTITIONS:
         raise ValueError(f"unknown data source {data_source!r}")
-    x, y, g = load_pool()
-    return real_populations(x, y, g, seed, partition)
+    attribute, _, rnd = partition.partition("-")
+    x, y, groups = load_pool()
+    return real_populations(x, y, groups[attribute], seed, rnd == "random")

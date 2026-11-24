@@ -14,10 +14,10 @@ No results exist yet. These are the limitations known by design.
 
 ## Added at the freeze (2026-11-24)
 
-- EXP-004 uses real records (UCI Adult, 1994 census extract) only as a source of a real score and label. Its partition (hours-per-week below 40) is non-protected but correlates with other attributes; results describe this partition of this file under this score, not people, income or decisions.
+- EXP-004 uses real records (UCI Adult, 1994 census extract) only as a source of a real score and label. Its primary partition is the recorded sex field (Group B Female; a protected attribute, the owner's decision of 2026-11-24, round 3), and its secondary partition (hours-per-week below 40) is non-protected but correlates with other attributes. Results describe these partitions of this file under this score, not women or men in general, people, pay, causes or decisions. The sex field is a recorded binary category of the extract.
 - EXP-004's pool is fixed: seed-to-seed variation reflects the random split and tie-breaking only, so its intervals understate uncertainty about any wider population.
 - The EXP-004 score model is deliberately simple (four features, logistic); a different score could give a different gap.
-- The real score is tied, so P3 meets capacity only within 30 individuals in EXP-004 (DEC-013).
+- The real score is tied, so P3 meets capacity only within 30 individuals in EXP-004 (DEC-013, ratified by the owner in round 3).
 - P1 uses 20 quantile bins; its per-seed spread is larger than P0's (AP-008, not applied).
 - The ECE gap does not depend on the policy and is reported once per cell (AP-007).
 - EXP-003 H2 was analytically determined before the run (A1); several primary and EXP-003 values were seen exploratorily before the freeze (`research/freeze.json`, C4).

@@ -29,7 +29,7 @@
       "licence": "CC BY 4.0. Dataset page, opened 2026-11-24: \"This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.\" Matches the owner's approvals file (section 1: UCI Adult, CC BY 4.0).",
       "attribution": "Becker and Kohavi (1996), UCI Machine Learning Repository, CC BY 4.0. The archive is redistributed unchanged.",
       "redistributable": "yes, with attribution (CC BY 4.0)",
-      "personal_identifiers": "none direct (census-derived extract, no names or IDs); demographic attributes present. Only age, education-num, capital-gain, capital-loss, hours-per-week and the income label are used.",
+      "personal_identifiers": "none direct (census-derived extract, no names or IDs); demographic attributes present. Only age, education-num, capital-gain, capital-loss, hours-per-week, sex (EXP-004 primary group attribute, owner's decision of 2026-11-24, round 3; not a score input) and the income label are used.",
       "downloaded": true,
       "download_script": "scripts/download_adult.py",
       "file": "data/raw/adult.zip",
@@ -73,7 +73,7 @@
           "excluded_total": 0
         }
       },
-      "use": "EXP-004 only. Score model fitted on adult.data (JRN-0005); second test on adult.test (protocol section 13, round 2). No synthetic parameter is calibrated on it.",
+      "use": "EXP-004 only. Score model fitted on adult.data (JRN-0005); second test on adult.test (protocol section 13, rounds 2 and 3; primary group attribute sex, secondary hours-per-week below 40). No synthetic parameter is calibrated on it.",
       "decision": "adopted (DEC-011), supersedes the 'not used' entry of DEC-003 for EXP-004 only"
     }
   ],

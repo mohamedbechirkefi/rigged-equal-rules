@@ -53,3 +53,31 @@ def test_simulation_agrees_with_population_values(cell):
             for s in range(5)]
     se = 1.2 * math.sqrt(0.25 / 25_000 + 0.25 / 15_000) / math.sqrt(5)
     assert np.mean(eogs) == pytest.approx(pop["eog"], abs=4 * se)
+
+
+@pytest.mark.parametrize("cell", [gaussian_cell(0.5, 1.0), gaussian_cell(1.0, 2.0)], ids=lambda c: c.cell_id)
+def test_p1_calibration_bins_match_analytic_posterior(cell):
+    """Each fitted bin rate of P1 agrees with the mean analytic posterior of its members within 4 binomial SE."""
+    from rigged.analytic import gaussian_posterior
+    from rigged.generator import populations
+    from rigged.policies import fit_calibration
+
+    fit, _ = populations(cell, 5100, 20_000)
+    for g, mask in (("A", ~fit.group_b), ("B", fit.group_b)):
+        x, y = fit.x[mask], fit.y[mask]
+        cal = fit_calibration(x, y, 20)
+        idx = np.searchsorted(cal.inner_edges, x, side="right")
+        post = gaussian_posterior(cell, g, x)
+        for b in range(cal.bin_rate.shape[0]):
+            members = idx == b
+            p = post[members].mean()
+            se = math.sqrt(max(p * (1 - p), 1e-4) / members.sum())
+            assert abs(cal.bin_rate[b] - p) <= 4 * se + 1e-9, (g, b)
+
+
+def test_gaussian_posterior_limits():
+    from rigged.analytic import gaussian_posterior
+    cell = gaussian_cell(0.5, 1.0)
+    p = gaussian_posterior(cell, "B", np.array([-10.0, 0.0, 10.0]))
+    assert p[0] < 1e-6 and p[2] > 1 - 1e-6 and 0 < p[1] < 1
+    assert np.all(np.diff(gaussian_posterior(cell, "A", np.linspace(-3, 3, 50))) > 0)

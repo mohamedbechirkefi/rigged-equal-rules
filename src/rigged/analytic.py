@@ -84,3 +84,18 @@ def p0_population_metrics(cell: CellConfig) -> dict:
     out["fpr_gap"] = ga["fpr"] - gb["fpr"]
     out["ppv_gap"] = ga["ppv"] - gb["ppv"]
     return out
+
+
+def gaussian_posterior(cell: CellConfig, group: str, x: np.ndarray) -> np.ndarray:
+    """P(Y = 1 | X = x, G = g) for the Gaussian family: Q | X is Normal with mean
+    mu + s^2 / (s^2 + sigma^2) (x - mu) and variance s^2 sigma^2 / (s^2 + sigma^2).
+    Reference for the calibration maps of P1 (protocol section 11)."""
+    if cell.family != "gaussian":
+        raise ValueError("closed-form posterior only for the Gaussian family")
+    mu, s, sigma = _group_params(cell, group)
+    if sigma == 0:
+        return (np.asarray(x) > 0).astype(np.float64)
+    k = s * s / (s * s + sigma * sigma)
+    m = mu + k * (np.asarray(x, dtype=np.float64) - mu)
+    sd = np.sqrt(s * s * sigma * sigma / (s * s + sigma * sigma))
+    return norm_cdf(m / sd)

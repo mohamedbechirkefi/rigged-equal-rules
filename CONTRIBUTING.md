@@ -35,3 +35,25 @@ Mohamed Bechir Kefi is the project owner and lead maintainer, and the only perso
 ## 5. Privacy and disclosure
 
 Never commit an e-mail address, a name or any other personal identifier in code, logs, fixtures or results. Report security issues privately through GitHub's private vulnerability reporting.
+
+## 6. Development commands
+
+Tool paths are those of the maintainer's machine; adjust them to your installation.
+
+```
+# Resolve and lock dependencies (uv 0.9.5; distributions uploaded before 2026-11-10 only)
+uv lock
+
+# Install the locked environment
+uv sync --frozen
+
+# Run the tests (available from M2)
+uv run pytest
+
+# Generate the manuscript LaTeX source (not compiled locally: no TeX distribution)
+pandoc research/paper/manuscript.md -s -t latex -o research/paper/manuscript.tex
+
+# Build a PDF through Typst (pandoc to Typst, then the typst Python package)
+pandoc research/paper/manuscript.md -s -t typst -V mainfont="Libertinus Serif" -o build/manuscript.typ
+python -c "import typst; typst.compile('build/manuscript.typ', output='build/manuscript.pdf')"
+```

@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
+[project]
+name = "rigged"
+version = "0.0.0"
+description = "RIGGED: a reproducible simulation study of whether equal decision rules yield unequal outcomes under different starting distributions."
+readme = "README.md"
+requires-python = ">=3.12"
+# Licence: custom "RIGGED Source-Available Non-Commercial Research License v1.0"
+# (SPDX LicenseRef-RIGGED-NC-Research-1.0). See LICENSE and NOTICE.md.
+license-files = ["LICENSE", "NOTICE.md"]
+dependencies = [
+    "numpy==2.5.4",
+    "jsonschema==4.26.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "hypothesis==6.170.15",
+]
+
+[tool.uv]
+# Only resolve distributions uploaded at least two weeks before 2026-11-24.
+exclude-newer = "2026-11-10T00:00:00Z"
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

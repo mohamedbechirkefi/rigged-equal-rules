@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1.0",
+  "updated": "2026-11-24",
+  "status": "M0: no data downloaded; synthetic generator not yet implemented",
+  "licence_note": "Third-party data keep their own licences. Original synthetic data products are covered by NOTICE.md.",
+  "synthetic": [
+    {
+      "id": "SYN-001",
+      "description": "Two-group latent-qualification generator: Q ~ Normal(mu_g, s_g^2), Y = 1[Q > 0], X = Q + Normal(0, sigma_g^2). Groups A and B are abstract and represent no real population.",
+      "generator": "src/rigged (to be implemented in M2)",
+      "generator_version": null,
+      "parameters": "see research/protocol.md section 2 and research/experiments/EXP-NNN/protocol.md",
+      "seeds": "0-19 per cell (draft)",
+      "bundled": false,
+      "regeneration_command": "to be defined in M2",
+      "licence": "LicenseRef-RIGGED-NC-Research-1.0 (original data product)"
+    }
+  ],
+  "external_candidates_audited_not_used": [
+    {
+      "id": "EXT-001",
+      "name": "UCI Adult",
+      "source": "https://archive.ics.uci.edu/dataset/2/adult",
+      "doi": "10.24432/C5XW20",
+      "accessed": "2026-11-24",
+      "licence": "CC BY 4.0 (stated on the dataset page)",
+      "redistributable": "yes, with attribution (per CC BY 4.0)",
+      "downloaded": false,
+      "sha256": null,
+      "decision": "not used: real demographic groups fall outside the claims boundary; the study question needs controlled starting distributions"
+    },
+    {
+      "id": "EXT-002",
+      "name": "folktables (ACS PUMS)",
+      "source": "https://github.com/socialfoundations/folktables",
+      "accessed": "2026-11-24",
+      "licence": "code MIT; data governed by US Census Bureau terms (https://www.census.gov/data/developers/about/terms-of-service.html), which forbid re-identification and require a non-endorsement notice for API-based services. The README states the separate Adult reconstruction (IPUMS CPS) may not be redistributed without permission.",
+      "redistributable": "unclear for ACS microdata extracts (not stated in the pages opened); no for the Adult reconstruction",
+      "downloaded": false,
+      "sha256": null,
+      "decision": "not used; would need owner review of rights before any use (G-RIGHTS)"
+    },
+    {
+      "id": "EXT-003",
+      "name": "ProPublica COMPAS analysis data",
+      "source": "https://github.com/propublica/compas-analysis",
+      "accessed": "2026-11-24",
+      "licence": "none stated: no LICENSE file or licence statement found on the repository page",
+      "redistributable": "unclear (no licence); treated as not redistributable",
+      "downloaded": false,
+      "sha256": null,
+      "decision": "not used: unclear rights and real criminal-justice data outside the claims boundary"
+    }
+  ]
+}

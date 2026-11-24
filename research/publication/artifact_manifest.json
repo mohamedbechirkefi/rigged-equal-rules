@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.1.0",
+  "updated": "2026-11-24",
+  "status": "M0: no quantitative artifact exists yet",
+  "entries": [],
+  "entry_fields": ["artifact_id", "kind", "experiment_id", "run_ids", "metric_definition", "result_path", "generator_script", "config_hash", "protocol_hash", "code_revision", "sha256"]
+}

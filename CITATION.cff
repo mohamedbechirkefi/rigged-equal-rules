@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
+# Licence: RIGGED Source-Available Non-Commercial Research License v1.0
+# (custom licence, SPDX LicenseRef-RIGGED-NC-Research-1.0; see LICENSE).
+# It is deliberately not given in a "license" field, which expects a standard SPDX id.
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. Status: M0, no results yet."
+title: "RIGGED: When equal rules produce unequal outcomes (working title)"
+type: software
+authors:
+  - family-names: Kefi
+    given-names: Mohamed Bechir
+version: 0.0.0
+date-released: 2026-11-24
+keywords:
+  - algorithmic fairness
+  - simulation
+  - threshold rules
+  - base rates
+  - equal opportunity

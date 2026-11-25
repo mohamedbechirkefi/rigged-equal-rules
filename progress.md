@@ -289,3 +289,42 @@ Nothing was computed on `adult.test`: no metric, base rate or group count. No ru
 ### Next action
 
 M3 when the coordinator schedules it: `scripts/rigged run --experiment EXP-001` to `EXP-004`, then reports.
+
+## 2026-11-25: pre-data amendment, EXP-004 grouping option A
+
+**Authority:** `labs/_shared/owner-approvals-2026-11-25.md`, item 1 ("approve all recommendations, RIGGED A"), replacing item 1 of `owner-approvals-2026-11-24c.md`. **Starting state:** `main` at `50aac6b`, tree clean.
+
+### What was done, in order
+
+1. Wrote the amendment into `research/protocol.md` (section 12 rewritten; section 13, A25-1 to A25-9) and the EXP-004 protocol (v1.2, section 11) before any code change; committed alone (`4daea38`).
+2. Code, config, tests and records (`618a352`): `rigged.adult` no longer reads sex as a used column (no `group_b_sex`, `sex_base_rates`, `lower_base_rate_value`; no schema error on sex values); EXP-004 cells R-hours and R-hours-random, 160 runs; config written from the code; data manifest, registry and limitations updated.
+
+```
+$ .venv/bin/python -m pytest -q                        (before the freeze record update)
+2 failed, 114 passed    (the guard refused the changed EXP-004 files, as intended)
+(freeze record updated: new hashes, round-3 hashes kept under superseded with the reason, approval quoted, C4 extended)
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+Audited 14 packages in 3ms
+$ .venv/bin/python -m pytest -q
+116 passed in 7.34s
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs --check
+EXP-001 to EXP-004: matches
+guard with the code-built configs: EXP-001 to EXP-004 frozen: protocol, config and freeze record match
+guard on a scratch copy with a changed EXP-004 config: refused ("config file differs from the freeze record")
+guard with Group B threshold changed to 35 in code: refused ("the matrix built by the current code differs from the frozen config")
+```
+
+Nothing was computed on `adult.test`.
+
+### New hashes (SHA-256)
+
+- `research/protocol.md`: d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b
+- `research/experiments/EXP-004/protocol.md`: ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae
+- `research/experiments/EXP-004/config.json`: 6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1
+- `data/manifest.json`: 37194645cd251abaab069a90a26908b3032bdd573097633fb9908bfe9540192d
+
+The round-3 master-prompt conflict is resolved (DEC-018).
+
+### Next action
+
+M3 (`labs/_shared/M3-brief.md`).

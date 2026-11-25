@@ -111,3 +111,9 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
 
 - **Decided by:** the owner ("Approve all", 2026-11-24, round 3): "The P3 capacity tolerance of 30, needed because real scores contain ties, is ratified."
 - **Decision:** DEC-013 stands, now owner-ratified, for all four EXP-004 cells. Listed under `owner_ratifications` in `research/freeze.json`.
+
+## DEC-018 (2026-11-25): EXP-004 grouping, option A: hours-per-week below 40 primary, sex removed (pre-data amendment)
+
+- **Decided by:** the owner, 2026-11-25, "approve all recommendations, RIGGED A" (`owner-approvals-2026-11-25.md`, item 1, which replaces item 1 of `owner-approvals-2026-11-24c.md`): "EXP-004's primary group attribute is hours-per-week below 40." Sex is "not used in any confirmatory or exploratory analysis. This respects the master prompt's claims boundary: 'No real hiring decisions or protected-group claims; do not suggest a universal fairness metric.'" "The P3 capacity tolerance of 30 is still ratified." Mechanics by the AI assistant.
+- **Decision:** dated pre-data amendment to the frozen v1.1 protocols (project protocol section 13, A25-1 to A25-9; EXP-004 protocol v1.2, section 11), written into the protocols before code was changed (commit 4daea38). Cells R-hours (primary) and R-hours-random (control), 160 runs, same draws. R-sex and R-sex-random withdrawn; sex is no longer a used column; JRN-0007 (training-file base rates by sex) withdrawn from use. History is not rewritten: commits 97de686 and 50aac6b stay as the record of the superseded round-3 design.
+- **Consequences:** supersedes DEC-016 (DEC-017 stands). Resolves the conflict with the master prompt and `CLAUDE.md` flagged in round 3. New hashes in `research/freeze.json`; v1.1 hashes kept under `superseded` with the reason. Nothing was computed on `adult.test` before or during the amendment.

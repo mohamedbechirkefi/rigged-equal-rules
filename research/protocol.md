@@ -3,7 +3,7 @@
 
 | Field | Value |
 |---|---|
-| Status | **FROZEN v1.1 (owner-approved 2026-11-24, G-FREEZE; pre-data amendment of round 3, owner-approved 2026-11-24, section 13).** Freeze record: `research/freeze.json`. |
+| Status | **FROZEN v1.2 (owner-approved 2026-11-24, G-FREEZE; pre-data amendments of round 3, owner-approved 2026-11-24, and of 2026-11-25, owner-approved 2026-11-25, section 13).** Freeze record: `research/freeze.json`. |
 | Date | 2026-11-24 |
 | Protocol hash | SHA-256 of this file, in `research/freeze.json` (a file cannot contain its own hash) |
 | Scope | Synthetic populations (EXP-001 to EXP-003, simulated) and one second test on a real score distribution (EXP-004, UCI Adult, CC BY 4.0). |
@@ -111,7 +111,7 @@ Full matrix (confirmatory once frozen):
 - EXP-001: delta in {0, 0.25, 0.5, 1.0} x rho in {1, 1.5, 2}; policy P0; 20 seeds. 12 cells, 240 runs.
 - EXP-002: same 12 cells; policies P0 to P3; 20 seeds. 960 runs (the P0 runs are shared with EXP-001 under common random numbers and are computed once).
 - EXP-003: sensitivity grid (section 10); policy P0 (and P3 as a check); 20 seeds.
-- EXP-004 (real data, section 13, rounds 2 and 3): cells R-sex and R-sex-random (primary), R-hours and R-hours-random (secondary) on the UCI Adult test file; policies P0 to P3; 20 seeds. 320 runs (160 before the round-3 amendment).
+- EXP-004 (real data, section 13, round 2 and the amendment of 2026-11-25): cells R-hours (primary; Group B = hours-per-week below 40) and R-hours-random (its random-permutation control) on the UCI Adult test file; policies P0 to P3; 20 seeds. 160 runs (320 under the superseded round-3 design; no run was made under it).
 
 Compute budget: under 5 minutes of wall clock on the local laptop for the full matrix of EXP-001 to EXP-004, including reports (amendment A3; measured projection 10 to 35 s for EXP-001 to EXP-003, JRN-0003). No paid compute.
 
@@ -135,7 +135,7 @@ If a non-zero EOG appears at equal base rates, or if the EOG reverses sign at th
 
 ## 12. Claims boundary
 
-No real hiring, lending or justice decisions. EXP-001 to EXP-003 make no claims about real or protected groups. EXP-004 uses real census-derived records (UCI Adult) only as a source of a real score distribution and label; its primary partition is the recorded sex field (a protected attribute; owner's decision, section 13, round 3) and its secondary partition is hours-per-week below 40. Results describe these partitions of this 1994 extract under this score and these policies only; no claim is made about women or men in general, about the people in the data, about any cause, or about any real decision. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
+No real hiring, lending or justice decisions, and no protected-group claims (master prompt, claims boundary: "No real hiring decisions or protected-group claims; do not suggest a universal fairness metric."). EXP-001 to EXP-003 make no claims about real or protected groups. EXP-004 uses real census-derived records (UCI Adult) only as a source of a real score distribution and label; its only partition is hours-per-week below 40 (a non-protected partition that correlates with other attributes). Sex, race and every other protected attribute are used in no confirmatory and no exploratory analysis (amendment of 2026-11-25, section 13). Results describe this partition of this 1994 extract under this score and these policies only; no claim is made about workers, hours, pay, any cause, the people in the data or any real decision. No fairness metric is presented as universal. Results hold only within the stated generator assumptions.
 
 ## 13. Amendments
 
@@ -193,3 +193,19 @@ The owner decided the EXP-004 grouping in the third round ("Approve all", 2026-1
 - **R3-10. Claims boundary for EXP-004.** Sex is a protected attribute in most jurisdictions, so the round-2 statement that the EXP-004 partition is non-protected no longer holds for the primary cell. Results describe this partition of this 1994 census extract under this score and these policies only. No claim is made about women or men in general, about pay, about any cause, or about any real hiring, lending or justice decision; the extract's sex field is a recorded binary category, not a statement about any person's identity. No fairness metric is presented as universal.
 
 Result of applying the R3-1 rule (after the rule above was written; journal JRN-0007, exploratory, training file only): on `adult.data` (32,561 kept rows), P(Y = 1) is 1,179 / 10,771 = 0.1095 for `Female` and 6,662 / 21,790 = 0.3057 for `Male`. Group B = `Female`, Group A = `Male`. No row of `adult.test` was read for this, and no EXP-004 metric was computed.
+
+### Amendment before data (owner-approved 2026-11-25): EXP-004 grouping, option A
+
+The owner chose option A on 2026-11-25 ("approve all recommendations, RIGGED A"; coordinator's file `owner-approvals-2026-11-25.md`, item 1, which replaces item 1 of `owner-approvals-2026-11-24c.md`): "This replaces the round-3 item 1 (sex as the primary group). It is made before any computation on the Adult test file and recorded as a dated pre-data amendment. EXP-004's primary group attribute is hours-per-week below 40. Sex: not used in any confirmatory or exploratory analysis. This respects the master prompt's claims boundary: 'No real hiring decisions or protected-group claims; do not suggest a universal fairness metric.' The P3 capacity tolerance of 30 is still ratified."
+
+This is a dated pre-data amendment to the frozen v1.1 protocol. It was written into this section before any code, config or test was changed. No EXP-004 metric, base rate or group count of `adult.test` had been computed when it was written. It supersedes the round-3 subsection above (R3-1 to R3-10) wherever they conflict; the round-3 text is kept, unchanged, as the record of what was frozen before.
+
+- **A25-1. Primary group attribute: hours-per-week below 40.** Cell R-hours: Group B = hours-per-week below 40, Group A = 40 or more (the round-2 partition). The primary contrast is D = EOG(R-hours, P0) - EOG(R-hours-random, P0), paired by seed; the prediction (D at least +2 pp) and the disconfirmation rule (95% percentile bootstrap over seeds, 10,000 resamples, RNG seed 20261124, interval entirely below +2 pp) are those of round 2, unchanged.
+- **A25-2. Control.** Cell R-hours-random: the hours labels permuted by the seed's row-index permutation (same group sizes, equal starting distributions by construction). This is the round-2 control R-random under its round-3 name.
+- **A25-3. Sex removed from every analysis.** The cells R-sex and R-sex-random are withdrawn. Sex is not a group attribute, not a score input (it never was), not a stratifier, not a covariate and not a subgroup of any confirmatory or exploratory analysis, in EXP-004 or elsewhere. R3-1 (rule for Group B by sex), R3-2 (sex as a used column and its schema error), R3-3 (sex-random control), R3-6 (sex as primary contrast), the sex parts of R3-7 and R3-10 are withdrawn. The ingestion reads the `sex` field no more than any other unused column (its `?` count is still recorded with every column's).
+- **A25-4. Withdrawn exploratory result.** The training-file base rates by sex computed under R3-1 (journal JRN-0007) are withdrawn from use: they enter no analysis, table, figure, report or claim. They stay in the journal and in the freeze record's disclosure as the record of what was seen.
+- **A25-5. Draws.** Unchanged: per seed, one RNG (`SeedSequence([seed, 2])`) draws a permutation of the pool, the tie uniforms and one permutation of the row indices; R-hours-random applies that index permutation to the hours labels. Both cells and all policies share these draws.
+- **A25-6. Secondary analyses** (descriptive, on R-hours only): the EXP-002 incompatibility check (does any of P0 to P3 meet selection-rate parity, equal opportunity and predictive parity within 2 pp), paired utility differences of P1 to P3 against P0, and the base-rate gap of the partition.
+- **A25-7. Runs.** 2 cells x 4 policies x 20 seeds = 160 runs.
+- **A25-8. P3 capacity tolerance.** 30 individuals in both EXP-004 cells, still ratified by the owner.
+- **A25-9. Claims boundary.** Section 12 as rewritten on 2026-11-25: no protected-group claims; hours-per-week below 40 is a non-protected partition; results describe this partition of this file under this score only.

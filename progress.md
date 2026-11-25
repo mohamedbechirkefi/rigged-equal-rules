@@ -423,3 +423,25 @@ Every numerical claim maps to a claim row with a result ID, a config hash and a 
 ### Next action
 
 M5 (interactive experience), using the M4 labels.
+
+
+## 2026-11-25: post-M4 owner decisions (statements)
+
+**Starting state:** `69f4227`, working tree clean. Authority: owner, 2026-11-25, "Approve all" (post-M4) (`/Users/bechir/research/labs/_shared/owner-approvals-2026-11-25c.md`, item 2; coordinator brief `/Users/bechir/research/labs/_shared/POST-M4-brief.md`, item 2 only).
+
+- Item 2: the funding, competing-interest and AI-use wording in manuscript section 11 is recorded as owner-approved (DEC-023). No wording changed.
+- No frozen protocol, config, seed or result changed. No computation. No manuscript rebuild (the manuscript text did not change).
+
+### Owner placeholders for M5
+
+1. Manuscript author line: "Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval)". Only the owner can confirm the author metadata.
+2. Manuscript section 10: "The public URL is a placeholder until the owner approves a release: `<repository URL, not yet published>`". Only the owner can supply it, at a release decision (G-PUBLIC).
+3. Manuscript section 11: "The owner has not yet reviewed this manuscript's text (pending, M6 owner checklist)." Only the owner can state that this review was done.
+
+### Tests
+
+`.venv/bin/python -m pytest -q`: 116 passed in 7.27s (after the changes; src/ and tests/ unchanged).
+
+### Next action
+
+M5, with the placeholders above put to the owner.

@@ -157,3 +157,10 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
   - `research/freeze.json` and the frozen protocols, configs and seeds are not touched.
 - **Alternatives:** a P1 binning sensitivity by simulation (rejected: it would be a new analysis with no frozen config, and integration answers the protocol's question directly); per-seed bootstrap intervals for JRN-0016 (rejected: the check is descriptive, and the confirmatory intervals already exist).
 
+
+## DEC-023 (2026-11-25): Funding, competing-interest and AI-use statements approved by the owner (post-M4 item 2)
+
+- **Date:** 2026-11-25
+- **Decided by:** the owner: owner, 2026-11-25, "Approve all" (post-M4), item 2 (`/Users/bechir/research/labs/_shared/owner-approvals-2026-11-25c.md`): "The wording drafted in each manuscript is approved. Where a draft still has a placeholder that needs a fact only the owner knows, it stays a placeholder. M5 lists any such placeholder for the owner." Recorded by the AI assistant under the coordinator brief `/Users/bechir/research/labs/_shared/POST-M4-brief.md`.
+- **Decision:** the funding, competing-interest and AI-use wording in manuscript section 11 (`research/paper/manuscript.md` as of commit `69f4227`) is owner-approved. No wording was changed. Placeholders that need a fact only the owner knows stay as placeholders and are listed in `progress.md` under "Owner placeholders for M5".
+- **Consequences:** no change to the manuscript, protocols, configs, seeds or results; no computation; `research/freeze.json` untouched. The unticked boxes in `research/publication/author_review.md` are left for the owner.

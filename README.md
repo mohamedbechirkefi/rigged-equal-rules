@@ -3,7 +3,7 @@
 
 **Question.** Can equal rules yield unequal outcomes under different starting distributions?
 
-**Status:** independent research manuscript / preprint draft, not peer-reviewed. Protocols frozen by the owner (2026-11-24, amended before data on 2026-11-25); 1,780 confirmatory runs at code revision b455d59, all ok; M4 (interpretation and evidence audit) and M5 (interactive demo) done. The owner's full-text review of the manuscript is pending (M6). Nothing is published.
+**Status:** independent research manuscript / preprint draft, not peer-reviewed. Protocols frozen by the owner (2026-11-24, amended before data on 2026-11-25); 1,780 confirmatory runs at code revision b455d59, all ok; M4 (interpretation and evidence audit) and M5 (interactive demo) done; M6 release candidate 0.1.0-rc1 prepared (2026-11-25), awaiting the owner's review. The owner's full-text review of the manuscript is pending. Nothing is released or published.
 
 ![Screenshot of the RIGGED demo: the overview with the two headline results, 6.59 pp [6.20, 6.97] in simulation and -7.45 pp [-8.75, -6.05] on a real score, above the fairness trade-off explorer with its delta by rho cell picker and four dot-and-interval panels for the SR, EOG, PPV and FPR gaps.](docs/demo.png)
 
@@ -35,7 +35,7 @@ Exploratory checks (JRN-0014 to JRN-0016) are labelled exploratory everywhere an
 
 ## Research navigation
 
-- Manuscript: `research/paper/manuscript.md` (canonical), `research/paper/manuscript.tex` (generated), `research/paper/supplementary.md`.
+- Manuscript: `research/paper/manuscript.md` (canonical), `research/paper/manuscript.pdf` and `research/paper/manuscript.tex` (generated), `research/paper/supplementary.md` and `research/paper/supplementary.pdf`. Each experiment report has a PDF next to it (`research/experiments/EXP-NNN/report.pdf`). PDFs are built with `scripts/build_pdfs.py` (pandoc to Typst).
 - Protocols and registry: `research/protocol.md`, `research/experiments/EXP-NNN/protocol.md`, `research/experiment_registry.csv`, `research/freeze.json`.
 - Evidence: `research/claims_register.csv`, `research/publication/` (artifact manifest, claims and evidence audits, second review pass).
 - Raw results, tables and figures: `results/EXP-NNN/`.

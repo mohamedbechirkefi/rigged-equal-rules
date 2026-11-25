@@ -8,7 +8,7 @@ Checklist per claim (one row in `../claims_register.csv`, CLM-001 to CLM-030):
 - [x] Each numerical claim maps to its experiment ID, run IDs, config hash, result path and figure or table ID (columns of the register; `artifact_manifest.json`).
 - [x] Each number is re-derived from the raw output, with denominator, unit, precision and sample count checked (evidence audit, sections 1 and 3).
 - [x] Uncertainty is stated at the seed level (95% percentile bootstrap over 20 seeds; the EXP-004 fixed-pool caveat is stated).
-- [x] Each external claim maps to a source actually opened, with access date. All are abstract-only and marked so (CLM-020 to CLM-025).
+- [x] Each external claim maps to a source actually opened, with access date. At M4 all were abstract-only and marked so (CLM-020 to CLM-025). M6 (2026-11-25): for CLM-020 to CLM-024 the full text was opened and the cited passage checked; CLM-021 and CLM-022 were narrowed (evidence audit, section 9).
 - [x] Scope is stated (synthetic generator, abstract groups; one non-protected partition of one file). There is no protected-group or real-decision claim.
 - [x] No fairness metric is presented as universal.
 - [x] The second review pass challenged the preferred hypothesis (`review_pass_2.md`).

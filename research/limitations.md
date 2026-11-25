@@ -37,5 +37,9 @@ The M0 list below gives the limitations known by design; later sections add what
 - **EXP-004's exploratory account is post hoc (JRN-0016).** It shows the reversal is not a split artefact and where qualified members lie on the score. It establishes no cause (R4).
 - **Cells are not independent replications.** All cells share the same 20 seeds (R7).
 - **Freeze-record hash.** `research/freeze.json` was appended after the runs (M3 deviation records). Its hash at run time, recorded in each `provenance.json`, differs from the current file. No frozen hash changed (evidence audit, section 2).
-- **Literature at abstract level.** No cited source was read in full. Related-work statements are limited to abstracts.
+- **Literature at abstract level** (M4 state; superseded in M6, below). No cited source was read in full. Related-work statements were limited to abstracts.
 
+## Added in M6 (2026-11-25)
+
+- **Literature checked at passage level.** The full text of each cited paper was opened from a free source and the passage behind each related-work statement was checked (section or theorem recorded in `research/literature_review.md`, section 5). No paper was read in full, and the search remains non-systematic. Two statements were narrowed as a result: the calibration result holds when base rates differ and the classifiers are not perfect (pleiss2017), and the threshold-rule result covers statistical parity, conditional statistical parity and predictive equality, not equal opportunity (corbettdavies2017).
+- **Figure 2 (FIG-002) axis labels.** With 48 columns, the rotated cell and policy labels of the EXP-002 strip plot overlap in places in the PDF. Every plotted value is in `results/EXP-002/tables/summary.csv` and Supplementary Table S2. The figure was not regenerated because it is a checksummed result file (`results/EXP-002/SHA256SUMS`).

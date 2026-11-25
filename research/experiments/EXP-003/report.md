@@ -18,6 +18,7 @@
 **Question.** Is EXP-001's gap a base-rate effect or an effect of the shape of the qualification distribution near the cutoff?
 
 **Outcome.**
+
 - At equal base rates, changing only Group B's dispersion gives EOGs of 19.44 pp (s_B 0.5) and -22.50 pp (s_B 2). H0 is rejected: shape matters.
 - At a fixed base-rate gap, the EOG reverses sign at s_B = 2 (-9.56 pp), as analytically determined before the run (A1).
 - The sign of the primary cell is kept under Student t3 and log-normal shapes (H3) and across six operating points (H4).
@@ -62,6 +63,7 @@ If the gap were a base-rate effect, equal base rates would give no gap, and a fi
 | D-k0.5-pB0.2 | PPV gap | 9.34 | 8.63 | 0.21 | -3.38 |
 
 **Exploratory diagnosis (JRN-0014).** It ran after the failure, changed nothing, and does not alter the confirmatory outcome:
+
 - The same frozen matrix on exploratory seeds 1000 to 1019 passed 60 of 60. The largest |z| in the two flagged cells was 1.72.
 - All cells share the same 20 seeds under common random numbers, so the 60 comparisons are correlated.
 - The pattern suggests a realisation of the confirmatory seed set rather than a code fault. This is not proven.
@@ -100,6 +102,7 @@ P0 EOG (seed means in pp, 95% bootstrap; `results/EXP-003/tables/summary.csv`):
 | D | kappa 0.5, p_B 0.5 | 2.09 [1.85, 2.32] | 2.02 |
 
 P3 EOG on grids A and B, by cell:
+
 - A-sB0.5: 0.14 [-0.49, 0.76]
 - A-sB1: -0.18 [-0.85, 0.49]
 - A-sB2: -0.25 [-0.87, 0.36]
@@ -108,6 +111,8 @@ P3 EOG on grids A and B, by cell:
 - B-sB2: 0.31 [-0.20, 0.85]
 
 Strip plot: `figures/XFIG-EXP-003-01-eog.svg`.
+
+![Per-seed equal-opportunity gap (EOG, percentage points) by cell, EXP-003: P0 in every cell and P3 in grids A and B, 20 seeds per column, simulated. The red bar is the seed mean; the dashed line marks zero.](figures/XFIG-EXP-003-01-eog.svg)
 
 ## 8. Interpretation and verdicts
 

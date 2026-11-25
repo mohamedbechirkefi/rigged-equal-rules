@@ -42,10 +42,12 @@ This is a second test of the synthetic mechanism on a real score distribution, n
 **Score.** Logistic regression on age, education-num, log1p capital-gain and log1p capital-loss, standardised and fitted once on `adult.data` (JRN-0005, frozen in the config). No group variable is a score input.
 
 **Pool.** The 16,281 kept rows of `adult.test`. Per seed:
+
 - one RNG (`SeedSequence([seed, 2])`) draws, in order, the pool permutation (8,140 rows to fit, 8,141 to evaluate), the tie uniforms, and the row-index permutation;
 - these draws are shared by both cells and all policies.
 
 **Policies and design.**
+
 - P0 to P3 with kappa 0.30, 20 calibration bins and cost ratio 1.
 - P3 capacity tolerance of 30 individuals, owner-ratified.
 - Seeds 0 to 19; 160 runs.
@@ -70,8 +72,9 @@ This is a second test of the synthetic mechanism on a real score distribution, n
 - **Runs:** 160 planned, 160 ok, 0 failed. Run IDs RUN-EXP-004-<cell>-<policy>-s<seed>; config hashes in `provenance.json`.
 
 **Deviations and owner decisions:**
+
 - **Pre-data amendment (owner, 2026-11-25, "approve all recommendations, RIGGED A", DEC-018).** Hours-per-week below 40 is the primary group, and sex is removed from every analysis. It replaces the round-3 design (sex primary, 320 runs), which was never run.
-- **Base-rate table (DEC-020).** `tables/base_rate_gap.csv` was produced after the run by `scripts/exp004_base_rates.py`, written then. It computes the protocol's descriptive base-rate gap from `results.json` with the frozen interval method.
+- **Base-rate table (DEC-020).** `results/EXP-004/tables/base_rate_gap.csv` was produced after the run by `scripts/exp004_base_rates.py`, written then. It computes the protocol's descriptive base-rate gap from `results.json` with the frozen interval method.
 - **Prior knowledge.** The agent knew from the general literature, without computing it, that lower hours go with a lower share of high incomes on this dataset (C4).
 
 ## 7. Results
@@ -99,21 +102,26 @@ This is a second test of the synthetic mechanism on a real score distribution, n
 | R-hours-random | P3 | 0.49 [-0.42, 1.42] | 0.10 [-1.29, 1.57] | -0.90 [-1.87, 0.14] | 0.64 [-0.19, 1.49] |
 
 **Incompatibility check on R-hours.** No policy meets all three criteria within 2 pp. The failures by policy are:
+
 - P0: EO and PPV;
 - P1: SR, EO and PPV;
 - P2: EO and PPV;
 - P3: SR and PPV.
 
 **Utility per capita against P0 on R-hours** (`policy_vs_p0.csv`):
+
 - P1 +0.0043 [0.0025, 0.0059];
 - P2 -0.0063 [-0.0074, -0.0053];
 - P3 +0.0038 [0.0028, 0.0049].
 
 **Base rates on the evaluation half** (`base_rate_gap.csv`):
+
 - R-hours: Group A 28.20% [28.03, 28.38]; Group B 9.13% [8.97, 9.28]; gap 19.07 pp [18.84, 19.34]; Group B share 24.16%.
 - Control: gap -0.07 pp [-0.54, 0.47].
 
 Strip plot: `figures/XFIG-EXP-004-01-eog.svg`.
+
+![Per-seed equal-opportunity gap (EOG, percentage points) by partition and policy, EXP-004, 20 seeds per column, real data (UCI Adult score and label; abstract partition). The red bar is the seed mean; the dashed line marks zero.](figures/XFIG-EXP-004-01-eog.svg)
 
 ## 8. Interpretation
 
@@ -122,6 +130,7 @@ Strip plot: `figures/XFIG-EXP-004-01-eog.svg`.
 **Model-dependent reading (a hypothesis for M4, not a finding).** EXP-003 showed that the sign of the gap depends on where qualified individuals sit relative to the cutoff, not on the base rate alone. A lower base rate with a reversed gap fits that narrower interpretation. This file does not establish why.
 
 **Other observations.**
+
 - P3 closes the EOG at the cost of a 13.85 pp SR gap.
 - P1's calibrated threshold produces a large EOG of 30.52 pp, with wide intervals.
 - On the random control P1 shows non-zero gaps (SR -3.99 pp) while P0, P2 and P3 stay within 2 pp. P1's per-seed spread is a known limitation (AP-008).

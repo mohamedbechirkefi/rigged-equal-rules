@@ -40,3 +40,22 @@ No novelty is claimed. Whether item 2 has been done in this exact form is unknow
 - Read the full texts of hardt2016, kleinberg2016, chouldechova2017, pleiss2017, corbettdavies2017 and chapter 3 of barocas2023; record exact definitions and theorem statements used.
 - Search for prior simulation studies of threshold rules under shifted latent distributions and differential measurement noise (search terms: "differential measurement error fairness threshold", "label bias base rate simulation").
 - Build `research/paper/references.bib` only from verified entries.
+
+## 5. M6 full-text check (2026-11-25)
+
+On 2026-11-25 the full text of each cited paper was opened from a free, legal source (arXiv PDF or the PMLR PDF; no login, no paid access). Text was extracted locally and the passage behind each statement in manuscript section 2 was read and compared with the statement. **No paper was read in full**; each is labelled "full text opened, cited passage checked".
+
+| Key | Full text opened | Passage checked | Result |
+|---|---|---|---|
+| kleinberg2016 | https://arxiv.org/pdf/1609.05807 (v2, 2016-11-17) | Abstract; section 1.1, conditions (A) to (C); section 1.2, Theorem 1.1 (p. 5) | Supported: the three conditions hold together only under perfect prediction or equal base rates. |
+| chouldechova2017 | https://arxiv.org/pdf/1703.00056 (v1, revised February 2017) | Abstract; section 2.3, equation (2.6) (p. 7); section 3 (pp. 7 to 8) | Supported: with unequal prevalence, predictive parity excludes equal FPR and FNR; section 3 shows how disparate impact arises from error-rate imbalance. |
+| pleiss2017 | https://arxiv.org/pdf/1709.02012 (v2, 2017-11-03) | Abstract; section 4, Theorem 1 (p. 6) | Supported with a qualification now stated in the manuscript: the result assumes unequal base rates and excludes perfect classifiers. |
+| corbettdavies2017 | https://arxiv.org/pdf/1701.08230 (v4) | Abstract; section 3, "Optimal decision rules" (pp. 3 to 5); section 4, Table 1 (p. 6) | Supported with a qualification now stated: the group-specific threshold result covers statistical parity, conditional statistical parity and predictive equality; equal opportunity is not analysed. The cost estimate is on Broward County data (4% to 9% estimated increase in violent crime across the three constraints, their Table 1). |
+| hardt2016 | https://arxiv.org/pdf/1610.02413 (v1) | Abstract; section 2, Definition 2.2 (p. 4); section 4, Definition 4.1 (pp. 5 to 6) | Supported: equal opportunity is equality of true positive rates across groups, so the study's EOG is zero exactly when it holds; the derived predictor depends only on the joint distribution of score, group and target. |
+| liu2018 | https://proceedings.mlr.press/v80/liu18c/liu18c.pdf; landing page https://proceedings.mlr.press/v80/liu18c.html | Abstract; section 3, Theorems 3.3 and 3.4 (pp. 5 to 6); venue and pages 3150 to 3158 from the PMLR page | Supported. |
+| barocas2023 | https://fairmlbook.org/classification.html | Chapter 3 "Classification": sections on statistical non-discrimination criteria (independence, separation, sufficiency) | Supported (framing only). |
+| becker1996 | UCI dataset page (2026-11-24) | Licence and DOI | Unchanged: verified at M0. |
+| ding2021 | not opened | none | Still unverified; not cited in the manuscript. |
+
+The KDD DOI of corbettdavies2017 remains unverified, as before.
+

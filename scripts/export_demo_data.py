@@ -382,7 +382,8 @@ def build() -> dict:
             "makes no claim about workers, hours, pay, causes or any real hiring or selection decision.",
             "No universal metric: the EOG is the primary metric for this question only.",
             "Static decisions: no feedback over time.",
-            "Literature at abstract level; the search was not systematic.",
+            "Literature checked at passage level: the cited passages of each source's full text, not full "
+            "readings; the search was not systematic.",
         ],
         "explorer": explorer,
         "real_score": real_score,

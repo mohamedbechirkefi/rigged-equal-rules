@@ -85,7 +85,7 @@ Every number with a decimal point in the audited documents (final run after the 
 | becker1996 | UCI dataset page, 2026-11-24 | CLM-025 (licence, DOI) | dataset page read |
 | ding2021 | folktables README only | not cited in the manuscript | paper unverified |
 
-Every statement in manuscript section 2 was compared with the abstract summary recorded in `research/literature_review.md`, and none goes beyond it. The manuscript labels every reference "abstract only" or names the page that was checked. No source was read in full; this is stated in sections 2 and 7.
+At M4, every statement in manuscript section 2 was compared with the abstract summary recorded in `research/literature_review.md`, and none goes beyond it. The manuscript labels every reference "abstract only" or names the page that was checked. No source was read in full; this is stated in sections 2 and 7.
 
 ## 6. Contradictions, leakage and missing runs
 
@@ -108,3 +108,12 @@ Every statement in manuscript section 2 was compared with the abstract summary r
 ## 8. Gate
 
 Every numerical claim in the manuscript maps to a claim row (CLM-001 to CLM-019, CLM-025 to CLM-030), which gives a result ID, a config hash and a table or figure. Every table and figure maps to an artifact manifest entry. Every external claim maps to a source that was opened, marked abstract-only where that applies (CLM-020 to CLM-025). The M4 gate holds, subject to the owner's review of the manuscript text, which is an M6 item.
+
+## 9. M6 addendum (2026-11-25): full-text passages, links and manifests
+
+**External sources.** The table in section 5 is the M4 state. In M6 the full text of each cited paper was opened from a free source and the passage behind each claim was checked (`research/literature_review.md`, section 5). Labels now: **read in full: 0**; **full text opened, cited passage checked: 7** (kleinberg2016, chouldechova2017, pleiss2017, corbettdavies2017, hardt2016, liu2018, and chapter 3 of barocas2023); **abstract or record only: 1** (becker1996, a dataset page, which is the right level for a licence and DOI claim); **unverified: 1** (ding2021, not cited in the manuscript and not in `references.bib`). Claims narrowed: CLM-021 (constraints covered), CLM-022 (unequal base rates, non-perfect classifiers); CLM-020, CLM-023 and CLM-024 are supported as worded. The manuscript reference list and section 2 now name the section or theorem checked. The section and theorem numbers added to manuscript section 2 refer to the sources, not to results, and are not in `number_trace.csv`.
+
+**Links and citations.** `scripts/check_links.py` (tested by `tests/test_links.py`): 55 tracked Markdown files, 23 Markdown links, every back-quoted repository path in the reader-facing documents, and the 8 `references.bib` entries: PASS after one fix (the EXP-004 report quoted the base-rate table as tables/base_rate_gap.csv, without its `results/EXP-004/` prefix). Every bib entry is cited in the manuscript text and listed in its reference list; every citation key in the experiment reports resolves.
+
+**Manifests.** `data/manifest.json`: the archive SHA-256 and all 5 member SHA-256 values match `data/raw/adult.zip`; every path it names exists. `artifact_manifest.json`: 21 entries, 42 paths, all exist; 21 of 21 result-file SHA-256 values and 45 of 45 config and protocol hashes match the files. `SHA256SUMS` in `results/EXP-001/` to `results/EXP-004/`: 41 of 41 files OK.
+

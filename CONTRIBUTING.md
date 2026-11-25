@@ -96,3 +96,15 @@ PYTHONPATH=src .venv/bin/python scripts/make_demo_fixture.py
 cd demo && npm ci && npm test && npm run build && npm run preview
 node tools/a11y_check.mjs dist --screenshots <dir>   # from demo/
 ```
+
+
+## M6 release candidate (2026-11-25)
+
+```
+# Manuscript, supplementary and experiment-report PDFs (pandoc to Typst; optional page PNGs for inspection)
+../.tools/py/bin/python scripts/build_pdfs.py [--typ-dir <dir>] [--png-dir <dir>]
+# LaTeX source of the manuscript (not compiled locally)
+../.tools/pandoc research/paper/manuscript.md -s -t latex -o research/paper/manuscript.tex
+# Relative links, quoted repository paths and citation keys (also run by tests/test_links.py)
+python3 scripts/check_links.py
+```

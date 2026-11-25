@@ -79,6 +79,8 @@ Error-rate balance generally cannot hold together with other criteria when base 
 
 **Distributions:** the per-seed strip plot is `research/experiments/EXP-001/figures/XFIG-EXP-001-01-eog.svg`, also in `results/EXP-001/figures/`. Per-seed SD of the P0 EOG ranges from 0.91 to 1.48 pp across cells.
 
+![Per-seed P0 equal-opportunity gap (EOG, percentage points) by cell, EXP-001, 20 seeds per column, simulated. The red bar is the seed mean; the dashed line marks zero.](figures/XFIG-EXP-001-01-eog.svg)
+
 ## 8. Interpretation
 
 **H1 (primary).** Measured: the mean paired difference is 6.59 pp, and its interval lies entirely above +2 pp, so H1 is supported.

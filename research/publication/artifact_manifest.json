@@ -190,7 +190,7 @@
    "kind": "figure",
    "experiment_id": "EXP-003",
    "run_ids": "420 runs",
-   "metric_definition": "Per-seed P0 EOG by cell (strip plot)",
+   "metric_definition": "Per-seed EOG by cell: P0 in every cell, P3 in grids A and B (strip plot)",
    "result_path": "results/EXP-003/figures/XFIG-EXP-003-01-eog.svg",
    "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
    "used_in": [
@@ -280,7 +280,7 @@
    "kind": "figure",
    "experiment_id": "EXP-004",
    "run_ids": "160 runs",
-   "metric_definition": "Per-seed P0 EOG, R-hours and R-hours-random (strip plot)",
+   "metric_definition": "Per-seed EOG by partition and policy P0 to P3, R-hours and R-hours-random (strip plot)",
    "result_path": "results/EXP-004/figures/XFIG-EXP-004-01-eog.svg",
    "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
    "used_in": [

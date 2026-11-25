@@ -11,7 +11,7 @@ Target: five focused development days (planning estimate). Effort is in focused 
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | done (2026-11-25): 1,780 confirmatory runs at b455d59, all ok; reports written from committed results; deviations DEC-019 (disclosed limitation, DEC-021) and DEC-020 | none |
 | M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | done (2026-11-25): confounder review, expected versus observed, claims register and evidence audit, manuscript synthesised, second review pass | owner review of the manuscript text (M6 checklist) |
 | M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | done (2026-11-25): static demo, explorer and subgroup charts, faithful sandbox port, checker PASS, numbers tested against the manuscript (DEC-024) | owner placeholders: author line, repository URL, demo URL |
-| M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
+| M6 | Release candidate | M4, M5 | P0 | 0.5 | release candidate prepared, awaiting owner review and G-PUBLIC (2026-11-25, 0.1.0-rc1, DEC-025) | owner sign-off of `author_review.md`; owner approval for any publication (G-PUBLIC) |
 
 ## M0: Bootstrap and feasibility
 
@@ -83,9 +83,9 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- [ ] Clean clone, locked install, tests, smoke reproduction, demo build, manifest and link checks, secret and licence scans, with actual outputs.
-- [ ] Manuscript and report PDFs compiled and visually inspected.
-- [ ] Owner review checklist completed.
+- [x] Clean clone, locked install, tests, smoke reproduction, demo build, manifest and link checks, secret and licence scans, with actual outputs (`research/publication/reproducibility_report.md`).
+- [x] Manuscript and report PDFs compiled and visually inspected (`scripts/build_pdfs.py`; reproducibility report, section 3).
+- [ ] Owner review checklist completed: prepared for the owner (`research/publication/author_review.md`, M6 section); only the owner signs it off.
 - Gate: verified facts only; the owner approves any publication.
 
 ## Cut order if the five-day target is threatened

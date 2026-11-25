@@ -66,7 +66,7 @@ def main() -> int:
                    "results/EXP-003/tables/summary.csv", GEN, ["manuscript Table 4", "EXP-003 report", "CLM-006 to CLM-010"]))
     E.append(entry("TAB-004a", "table", "EXP-003", "300 P0 runs", "Implementation check: simulated P0 seed mean within 3 bootstrap SE of the population value",
                    "results/EXP-003/tables/analytic_check.csv", GEN, ["manuscript Table 4 and section 5.3", "CLM-011"]))
-    E.append(entry("FIG-003", "figure", "EXP-003", "420 runs", "Per-seed P0 EOG by cell (strip plot)",
+    E.append(entry("FIG-003", "figure", "EXP-003", "420 runs", "Per-seed EOG by cell: P0 in every cell, P3 in grids A and B (strip plot)",
                    "results/EXP-003/figures/XFIG-EXP-003-01-eog.svg", GEN, ["manuscript Figure 3"]))
     E.append(entry("TAB-005", "table", "EXP-004", "RUN-EXP-004-{R-hours,R-hours-random}-P0-s{0..19} (40 runs)",
                    "D = EOG(R-hours, P0) - EOG(R-hours-random, P0), paired by seed; " + GAPS,
@@ -78,7 +78,7 @@ def main() -> int:
     E.append(entry("TAB-005c", "table", "EXP-004", "RUN-EXP-004-<cell>-P0-s{0..19} (40 runs)",
                    "Evaluation-half base rate P(Y = 1) per group and gap A minus B; Group B share", "results/EXP-004/tables/base_rate_gap.csv",
                    "scripts/exp004_base_rates.py (written after the run, DEC-020)", ["manuscript section 5.4", "CLM-015"]))
-    E.append(entry("FIG-004", "figure", "EXP-004", "160 runs", "Per-seed P0 EOG, R-hours and R-hours-random (strip plot)",
+    E.append(entry("FIG-004", "figure", "EXP-004", "160 runs", "Per-seed EOG by partition and policy P0 to P3, R-hours and R-hours-random (strip plot)",
                    "results/EXP-004/figures/XFIG-EXP-004-01-eog.svg", GEN, ["manuscript Figure 4"]))
     E.append(entry("TAB-006", "table", "EXP-001 to EXP-004", "all 1,780 runs", "Expected versus observed (verdicts under the frozen rules)",
                    "research/publication/interpretation.md", "hand-written from TAB-001 to TAB-005", ["manuscript Table 6"],

@@ -12,11 +12,11 @@
   },
   {
    "path": "research/claims_register.csv",
-   "sha256": "1ede66142805e696106ad942543e4bc5d96831e7a459edd2f6be0cdf013fc9b8"
+   "sha256": "1fcb92d626c8ac13899ef2ca3b5102cf42915adb0f10ff9957577f59c436e8b2"
   },
   {
    "path": "research/publication/artifact_manifest.json",
-   "sha256": "1995ea241c8d138e77c1d60f2cf133611a06ada7155c9a7cf72ba48a19da4e13"
+   "sha256": "cce40dec85b30eabbbf5829c163df30c4fe3363c13e4a0a8848aa9c71a41b4a9"
   },
   {
    "path": "results/EXP-001/tables/contrasts.csv",
@@ -583,7 +583,7 @@
   "No protected attributes were used. Nothing can be inferred about protected groups, and the study makes no claim about workers, hours, pay, causes or any real hiring or selection decision.",
   "No universal metric: the EOG is the primary metric for this question only.",
   "Static decisions: no feedback over time.",
-  "Literature at abstract level; the search was not systematic."
+  "Literature checked at passage level: the cited passages of each source's full text, not full readings; the search was not systematic."
  ],
  "explorer": {
   "experiment_id": "EXP-002",

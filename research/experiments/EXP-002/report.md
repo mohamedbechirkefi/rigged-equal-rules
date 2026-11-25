@@ -16,6 +16,7 @@
 ## 1. Executive summary
 
 **Question.** At a fixed capacity, can any of four rules meet selection-rate parity, equal opportunity and predictive parity together when starting distributions differ? The rules are:
+
 - P0: common raw threshold;
 - P1: common calibrated threshold;
 - P2: selection-rate parity;
@@ -93,10 +94,14 @@ When base rates differ, a classifier generally cannot equalise selection rates, 
 P0's mean utility per capita is 0.2455 at d0.50-r1.00 and 0.2763 at d0.00-r1.00.
 
 **Other values.**
+
 - The ECE gap is 0.14 [-0.13, 0.41] pp at d0.50-r1.00 for every policy. It is a property of the group-blind score (AP-007).
 - Every cell and policy is in `summary.csv`; the strip plot is `figures/XFIG-EXP-002-01-eog.svg`.
 
+![Per-seed equal-opportunity gap (EOG, percentage points) by cell and policy, EXP-002, 20 seeds per column, simulated. The red bar is the seed mean; the dashed line marks zero. With 48 columns the axis labels are small; every value is in `summary.csv`.](figures/XFIG-EXP-002-01-eog.svg)
+
 **Tolerance sensitivity** (protocol section 10; read from the intervals above, with no new computation):
+
 - At 5 pp, no policy meets all three at d0.50-r1.00. The smallest worst violation is P3's SR gap of 11.74 pp.
 - At 1 pp, all four still meet all three at the control. Every control interval lies within [-0.88, 0.61].
 - The verdict is the same at 1, 2 and 5 pp.
@@ -104,6 +109,7 @@ P0's mean utility per capita is 0.2455 at d0.50-r1.00 and 0.2763 at d0.00-r1.00.
 ## 8. Interpretation
 
 **H1 is supported.** Each rule fixes at most one criterion, and the others widen:
+
 - P2 equalises selection rates but moves the EOG to -19.99 pp.
 - P3 closes the EOG (0.12 pp) but leaves an SR gap of 11.74 pp and a PPV gap of 7.34 pp.
 - P1 brings PPV parity within 2 pp (1.00 pp) but more than doubles P0's EOG (14.89 against 6.50 pp).

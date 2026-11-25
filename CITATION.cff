@@ -2,16 +2,17 @@
 # Licence: RIGGED Source-Available Non-Commercial Research License v1.0
 # (custom licence, SPDX LicenseRef-RIGGED-NC-Research-1.0; see LICENSE).
 # It is deliberately not given in a "license" field, which expects a standard SPDX id.
+# Release candidate (M6, 2026-11-25): no release exists, so date-released is omitted
+# (owner-approvals-2026-11-25e, coordinator default); the owner re-adds it at publication.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: independent research manuscript / preprint draft, not peer-reviewed; confirmatory results at code revision b455d59 (EXP-001 to EXP-003 simulated, EXP-004 on UCI Adult). Author metadata pending the owner's approval; repository URL not yet published. The AI assistant (Claude) is disclosed as a research and development assistant, not as an author."
-title: "RIGGED: When equal rules produce unequal outcomes (working title)"
+message: "If you use this work, please cite it as below. Status: release candidate 0.1.0-rc1, not released; independent research manuscript / preprint draft, not peer-reviewed; confirmatory results at code revision b455d59 (EXP-001 to EXP-003 simulated, EXP-004 on UCI Adult). The title is a working title, and the author metadata is pending the owner's approval; repository URL not yet published. The AI assistant (Claude) is disclosed as a research and development assistant, not as an author."
+title: "When equal rules produce unequal outcomes: a seeded simulation of one common threshold, with a contradicting test on a real score"
 type: software
 # Author metadata (name, no affiliation) pending the owner's approval; repository URL to be added at release.
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
-version: 0.0.0
-date-released: 2026-11-24
+version: 0.1.0-rc1
 keywords:
   - algorithmic fairness
   - simulation
@@ -21,8 +22,7 @@ keywords:
 references:
   - type: dataset
     title: Adult
-    # Author metadata (name, no affiliation) pending the owner's approval; repository URL to be added at release.
-authors:
+    authors:
       - family-names: Becker
         given-names: Barry
       - family-names: Kohavi

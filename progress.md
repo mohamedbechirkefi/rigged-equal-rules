@@ -507,3 +507,69 @@ Offline after the initial load (checker step 7), responsive (no horizontal scrol
 ### Next action
 
 M6 (release candidate), on the owner's word.
+
+
+## 2026-11-25: M6 release candidate 0.1.0-rc1
+
+**Authority:** owner, 2026-11-25, "Next" (second) (`labs/_shared/owner-approvals-2026-11-25e.md`); coordinator brief `labs/_shared/M6-brief.md`. **Starting state:** `98e57b1`, working tree clean. Decisions: DEC-025. `$S` below is the session scratch folder outside the repository.
+
+### Commands and actual outputs
+
+```
+# Clean clone of 98e57b1 (local, no network)
+$ git clone -q <this repository> $S/clone && cd $S/clone
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras      (absolute path to labs/.tools used)
+$ .venv/bin/python -m pytest -q                                   121 passed in 26.01s
+$ UV=<uv> scripts/rigged smoke                                     M2 smoke (revision 16e3b4f): all 4 tables differ (expected: src changed in the pre-data amendments)
+$ scripts/rigged smoke --matrix SMOKE --out results/exploratory/m3-smoke
+$ scripts/rigged smoke --matrix SIZING --out results/exploratory/m3-sizing
+  3 tables and the SVG byte-identical in each; summary.csv differs only in runtime_mean_s (8 and 20 rows, max deviation 0 elsewhere)
+$ for e in EXP-001..EXP-004: PYTHONPATH=src .venv/bin/python -m rigged.cli report --experiment $e
+  exit 0 x4; git status clean (generated tables, figures and reports byte-identical)
+$ shasum -a 256 -c SHA256SUMS (results/EXP-001..004)              10, 10, 10, 11 OK; 0 failures
+$ cd demo && npm ci --prefer-offline                              added 53 packages in 619ms
+$ npm test                                                        Test Files 2 passed (2); Tests 18 passed (18)
+$ npm run build                                                   index-B05VWmE4.js 251.67 kB; built in 265ms
+$ node tools/a11y_check.mjs dist                                  9 PASS lines; A11Y-CHECK PASS
+$ python3 scripts/export_demo_data.py && --check                  wrote 108217 bytes; matches; git status: 0 lines
+
+# Working repository
+$ ../.tools/py/bin/python scripts/build_pdfs.py --typ-dir $S/typ --png-dir $S/png
+  manuscript.pdf 14 pages, supplementary.pdf 8, EXP-001 4, EXP-002 4, EXP-003 5, EXP-004 5 (largest 0.33 MB)
+$ pypdf metadata check                                            6 of 6 titled; no e-mail address; no home-directory path
+$ pandoc research/paper/manuscript.md -s -t latex -o research/paper/manuscript.tex   regenerated (pandoc 3.6.3)
+$ python3 scripts/check_links.py                                  55 Markdown files, 23 links, 8 bib entries: PASS (after 1 fix)
+$ python3 scripts/build_artifact_manifest.py                      21 entries (2 figure definitions corrected)
+$ python3 scripts/export_demo_data.py                             wrote demo/public/data/results.json (108290 bytes)
+$ manifest checks (Python, scratch script)                        data: 6 of 6 hashes match; artifact: 42 of 42 paths, 21 of 21 result hashes, 45 of 45 config and protocol hashes
+$ secret scan of 247 tracked files                                e-mail 1 (public no-reply trailer in CLAUDE.md), tokens 0, private keys 0, secret assignments 0, .env 0, home paths 51 in 10 files
+$ licence list (.venv metadata, demo/node_modules, package-lock)  14 Python + 84 npm; 0 flagged
+$ .venv/bin/python -m pytest -q                                   124 passed in 7.21s (3 new tests in tests/test_links.py)
+$ cd demo && npm ci --prefer-offline && npm test && npm run build && node tools/a11y_check.mjs dist
+  Tests 18 passed (18); built in 269ms; A11Y-CHECK PASS
+```
+
+### What was done
+
+1. **Clean clone:** `research/publication/reproducibility_report.md` rewritten with the outputs above. The M3 smoke matrices reproduce exactly (runtime fields aside); the M2 smoke outputs predate the amendments and do not, as expected (now stated in `results/README.md`, which was stale since M3).
+2. **PDFs:** `scripts/build_pdfs.py` added; six PDFs committed. Every manuscript and supplementary page, and the first page and figure page of each report, were rendered to PNG and inspected. Builder fixes: title block and PDF title metadata; duplicated "Figure N: Figure N" captions; cramped table columns. Source fixes: strip plots embedded in the four reports; 14 lists that rendered inline; Figure 3 and 4 captions that said "P0" for plots that also show other policies; one code comment that wrapped. Disclosed, not fixed: Figure 2's crowded axis labels (checksummed result file).
+3. **References and links:** each cited paper's full text was opened (arXiv or PMLR PDF, text extracted locally) and the passage behind each statement checked; 0 read in full, 7 passage-checked, 1 dataset page, 1 unverified (not cited). CLM-021 and CLM-022 narrowed; manuscript section 2 names the section or theorem. `scripts/check_links.py` and `tests/test_links.py` added.
+4. **Scans:** `research/publication/dependency_licences.md` added; `demo/.npmrc` gained its SPDX header.
+5. **CITATION.cff:** did not parse at HEAD; repaired; `date-released` removed; version 0.1.0-rc1; title equal to the manuscript's.
+6. **Owner checklist:** no box ticked or unticked (none was agent-ticked); "Prepared for the owner (M6, 2026-11-25)" added with what to read, open decisions and the placeholder table.
+7. **Release checklist:** 10 items ticked with evidence; the two owner items open.
+
+Nothing frozen was touched (protocols, configs, seeds, `freeze.json`, `results/` apart from `results/README.md`); `src/` unchanged; no confirmatory run; licence files unchanged; nothing pushed.
+
+### Note on home-directory paths (append-only records)
+
+Earlier entries of this file, `research/decision_log.md` and `research/experiment_journal.jsonl` contain absolute paths under the owner's home folder (10 occurrences in total at M6). They are left as written because these records are append-only; an owner-approved edit could replace them with repository-relative paths before a public release.
+
+### Risks and items for the owner
+
+- The owner review checklist and every open decision are in `research/publication/author_review.md`, M6 section.
+- Figure 2 remains crowded; regenerating it would touch a checksummed result file.
+
+### Next action
+
+The owner's review (`author_review.md`) and, separately, any G-PUBLIC decision. M6 is not done until the owner signs off.

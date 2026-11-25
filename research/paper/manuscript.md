@@ -3,7 +3,7 @@
 
 Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval).
 
-**Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M5, 2026-11-25. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
+**Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M6 release candidate (0.1.0-rc1), 2026-11-25; not released. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
 
 ## Abstract
 
@@ -19,7 +19,7 @@ Selection rules that apply one threshold to everyone are often described as "equ
 
 **Research question.** Can equal rules yield unequal outcomes under different starting distributions? Operationally: when one decision rule is applied identically to two abstract groups that differ only in the distribution of a latent qualification and, separately, in how noisily it is measured, do equally qualified individuals face different chances of selection, and which fairness criteria can alternative rules satisfy at the same time?
 
-**Gap.** We found no source, among those we could verify (all at abstract level, section 2), that reports a seeded, pre-registered quantification of the equal-opportunity gap under one common threshold that separates the starting distribution from measurement noise, tests whether the gap is a base-rate effect, and carries the prediction to a real score with a rule that could disconfirm it. We do not claim that no such study exists; the literature search was not systematic.
+**Gap.** We found no source, among those we could verify (section 2), that reports a seeded, pre-registered quantification of the equal-opportunity gap under one common threshold that separates the starting distribution from measurement noise, tests whether the gap is a base-rate effect, and carries the prediction to a real score with a rule that could disconfirm it. We do not claim that no such study exists; the literature search was not systematic.
 
 **Hypotheses.** The primary hypothesis (EXP-001 H1) is that at a starting-distribution gap delta = 0.5 with equal noise, the EOG under one common threshold exceeds the equal-distribution control by at least 2 pp. Secondary hypotheses concern incompatibility of criteria (EXP-002), base rate against shape (EXP-003) and a real-score test (EXP-004).
 
@@ -34,17 +34,17 @@ The first two results were implied by the model before any run; the study quanti
 
 ## 2. Related work
 
-All sources below were checked at the level of their bibliographic record and abstract on 2026-11-24; their full texts were not read for this draft. Statements attributed to them are limited to what their abstracts say (`research/literature_review.md`).
+All sources below were checked at the level of their bibliographic record and abstract on 2026-11-24. On 2026-11-25 the full text of each was opened from a free source and the passage behind each statement was checked; the section or theorem is named below. The papers were not read in full, and statements attributed to them are limited to those passages (`research/literature_review.md`, section 5).
 
-**Incompatibility of criteria.** Kleinberg, Mullainathan and Raghavan (2016) state that, outside highly constrained special cases, three fairness conditions for risk scores cannot hold simultaneously. Chouldechova (2017) states that criteria cannot all hold when base rates differ and that disparate impact can follow from error-rate imbalance. Pleiss et al. (2017) state that calibration is compatible with at most one error-balance condition. EXP-002 measures the size of each violation in one controlled model; it is a measurement consistent with these results, not a new theorem.
+**Incompatibility of criteria.** Kleinberg, Mullainathan and Raghavan (2016) prove that calibration within groups and balance for the positive and negative classes can hold together only under perfect prediction or equal base rates (their Theorem 1.1). Chouldechova (2017) shows that, when prevalence differs between groups, predictive parity excludes equal false positive and false negative rates (her section 2.3), and that disparate impact can follow from error-rate imbalance (her section 3). Pleiss et al. (2017) prove that, when base rates differ, calibrated classifiers can satisfy at most one equal-cost (error-balance) constraint unless they are perfect (their section 4, Theorem 1). EXP-002 measures the size of each violation in one controlled model; it is a measurement consistent with these results, not a new theorem.
 
-**Threshold rules and their cost.** Corbett-Davies et al. (2017) state that optimal rules under common fairness constraints use group-specific thresholds, that the unconstrained optimum is a single threshold, and that the cost of the constraints can be substantial. Policies P0, P2 and P3 follow this framing; EXP-002 H2 measures the utility cost in our model.
+**Threshold rules and their cost.** Corbett-Davies et al. (2017) show that the optimal rules under statistical parity, conditional statistical parity and predictive equality use group-specific thresholds, that the unconstrained optimum is a single threshold (their section 3), and that the cost of these constraints can be substantial on one county's pretrial data (their section 4). Equal opportunity is not among the constraints they analyse. Policies P0, P2 and P3 follow this framing; EXP-002 H2 measures the utility cost in our model.
 
-**Equal opportunity.** Hardt, Price and Srebro (2016) introduce a criterion and post-processing based on the joint statistics of predictor, target and group; our primary metric, the difference in true positive rates, and policy P3 follow the equal-opportunity idea. The exact definition in the full text was not checked.
+**Equal opportunity.** Hardt, Price and Srebro (2016) define equal opportunity as equal true positive rates across groups (their Definition 2.2) and give a post-processing that depends only on the joint distribution of predictor, target and group (their section 4). Our primary metric, the difference in true positive rates, is zero exactly when this criterion holds, and policy P3 enforces it.
 
-**Dynamics.** Liu et al. (2018) show, in a one-step feedback model, that fairness criteria can fail to help or can harm. Our study is static and does not address this.
+**Dynamics.** Liu et al. (2018) show, in a one-step feedback model, that fairness criteria can fail to help or can harm (their section 3). Our study is static and does not address this.
 
-**Textbook framing.** Barocas, Hardt and Narayanan (2023) cover formal non-discrimination criteria in their classification chapter; we use the book only for framing.
+**Textbook framing.** Barocas, Hardt and Narayanan (2023) cover formal non-discrimination criteria (independence, separation and sufficiency) in their chapter "Classification"; we use the book only for framing.
 
 **Replication, extension, original.** The incompatibility of criteria is replicated in kind, not extended. The base-rate against shape experiment and the real-score test are, as far as our non-systematic search shows, specific to this study, and are presented as checks of our own interpretation, not as contributions beyond prior work.
 
@@ -176,7 +176,7 @@ At $\delta = 0.5, \rho = 1$, no policy meets the three parity criteria within 2 
 - **P3** brings the EOG within [-0.87, 0.85] pp in all six cells of grids A and B.
 - **Cells are not independent replications.** All cells share the same 20 seeds under common random numbers, so "positive in all six cells" and "56 of 60 checks pass" are not counts of independent confirmations.
 
-![Figure 3 (FIG-003). Per-seed P0 EOG by cell, EXP-003, 20 seeds per cell, simulated.](../experiments/EXP-003/figures/XFIG-EXP-003-01-eog.svg)
+![Figure 3 (FIG-003). Per-seed EOG by cell, EXP-003: P0 in every cell and P3 in grids A and B, 20 seeds per column, simulated.](../experiments/EXP-003/figures/XFIG-EXP-003-01-eog.svg)
 
 ### 5.4 RQ4: a real score (EXP-004)
 
@@ -201,7 +201,7 @@ At $\delta = 0.5, \rho = 1$, no policy meets the three parity criteria within 2 
 
 **Exploratory, post hoc description of the contradiction (JRN-0016).** This check was designed after the result was seen and is not a test. On the full test pool, 62.05% of qualified members of group A and 70.31% of qualified members of group B score above the pool's 70th percentile, which reproduces the reversed sign without any split. The median score of qualified members is -0.29 in group B against -0.53 in group A, while unqualified members of group B score lower (median -2.19 against -1.83). The group-blind logistic probability over-predicts group B by 11.23 pp on average and under-predicts group A by 2.98 pp, and group B's observed rate is lower than group A's in every score decile (top decile 40.12% against 74.47%). The ECE gap on R-hours is -7.05 pp [-7.51, -6.56] against -0.86 pp [-1.15, -0.56] on the control (committed). The direction of the calibration difference (a lower observed rate for group B at equal score) also arises in the synthetic model through the prior shift, so it does not explain the reversal by itself; its size shows that the generator's measurement assumptions do not describe this score. These descriptions do not establish a cause.
 
-![Figure 4 (FIG-004). Per-seed P0 EOG, EXP-004, R-hours and R-hours-random, 20 seeds, real data.](../experiments/EXP-004/figures/XFIG-EXP-004-01-eog.svg)
+![Figure 4 (FIG-004). Per-seed EOG by partition and policy (P0 to P3), EXP-004, R-hours and R-hours-random, 20 seeds, real data.](../experiments/EXP-004/figures/XFIG-EXP-004-01-eog.svg)
 
 ### 5.5 Expected versus observed
 
@@ -227,7 +227,7 @@ At $\delta = 0.5, \rho = 1$, no policy meets the three parity criteria within 2 
 
 **The scale of "equal".** On the same real data, the equal rule on the raw score reverses the predicted sign (-7.78 pp for P0 on R-hours), while the equal rule on a within-group calibrated score gives the predicted sign at a large size (+30.52 pp for P1). In the model, P1 also more than doubles P0's gap. Whether an equal rule favours or disfavours the qualified members of a group therefore depends on the scale on which it is equal, not only on the groups' distributions, and any statement about direction is specific to a rule. The utility pattern also changes outside the model: on R-hours P3 gains utility over P0, against the direction found in EXP-002, consistent with a raw common threshold not being the unconstrained optimum when the score is not calibrated within groups.
 
-**Relation to prior work.** The EXP-002 pattern, where each policy repairs at most one criterion, is what the incompatibility results cited in section 2 lead one to expect. The utility cost of the constrained policies agrees in direction with the trade-off described by Corbett-Davies et al. (2017). Both comparisons rest on abstracts.
+**Relation to prior work.** The EXP-002 pattern, where each policy repairs at most one criterion, is what the incompatibility results cited in section 2 lead one to expect. The utility cost of the constrained policies agrees in direction with the trade-off described by Corbett-Davies et al. (2017). Both comparisons rest on the cited passages, not on full readings.
 
 **Practical significance.** The study gives a reproducible way to see the size of these gaps and to test a mechanism statement against a design that can refute it. It does not say which criterion should be preferred, and it supports no statement about any real decision system.
 
@@ -244,7 +244,7 @@ At $\delta = 0.5, \rho = 1$, no policy meets the three parity criteria within 2 
 - **No protected attributes.** None was used. Nothing can be inferred about protected groups, and the study makes no claim about workers, hours, pay, causes, the people in the data or any real decision.
 - **No universal metric.** The EOG is the primary metric for this question only.
 - **Static decisions.** No feedback over time (Liu et al. 2018).
-- **Literature at abstract level.** Related-work statements rest on abstracts; the search was not systematic.
+- **Literature checked at passage level.** Related-work statements rest on the cited passages of each source's full text, not on full readings; the search was not systematic.
 - **Records.** The runner records per-run durations and matrix start and end times, not per-run timestamps.
 
 ## 8. Ethics and responsible research
@@ -265,8 +265,9 @@ Code, configurations, frozen protocols, raw results (`results/EXP-NNN/results.js
 python3 scripts/download_adult.py            # EXP-004 only; checks the archive SHA-256
 scripts/run_confirmatory.sh EXP-001          # likewise EXP-002, EXP-003, EXP-004
 PYTHONPATH=src .venv/bin/python scripts/exp004_base_rates.py
-PYTHONPATH=src .venv/bin/python scripts/m4_exploratory.py      # exploratory, JRN-0015 and JRN-0016
-PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py   # evidence audit
+# exploratory checks JRN-0015 and JRN-0016, then the evidence audit
+PYTHONPATH=src .venv/bin/python scripts/m4_exploratory.py
+PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py
 ```
 
 The UCI Adult archive is redistributed unchanged under CC BY 4.0 (Becker and Kohavi 1996).
@@ -279,14 +280,14 @@ No funding was received. The author declares no competing interests. An AI assis
 
 ## References
 
-- Barocas, S., Hardt, M., Narayanan, A. (2023). *Fairness and Machine Learning: Limitations and Opportunities.* MIT Press. https://fairmlbook.org/ (home page checked 2026-11-24).
+- Barocas, S., Hardt, M., Narayanan, A. (2023). *Fairness and Machine Learning: Limitations and Opportunities.* MIT Press. https://fairmlbook.org/ (home page checked 2026-11-24; chapter "Classification" opened 2026-11-25).
 - Becker, B., Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20 (dataset page checked 2026-11-24).
-- Chouldechova, A. (2017). Fair prediction with disparate impact: A study of bias in recidivism prediction instruments. arXiv:1703.00056. https://arxiv.org/abs/1703.00056 (abstract only).
-- Corbett-Davies, S., Pierson, E., Feller, A., Goel, S., Huq, A. (2017). Algorithmic decision making and the cost of fairness. arXiv:1701.08230; KDD 2017. https://arxiv.org/abs/1701.08230 (abstract only).
-- Hardt, M., Price, E., Srebro, N. (2016). Equality of Opportunity in Supervised Learning. arXiv:1610.02413. https://arxiv.org/abs/1610.02413 (abstract only).
-- Kleinberg, J., Mullainathan, S., Raghavan, M. (2016). Inherent Trade-Offs in the Fair Determination of Risk Scores. arXiv:1609.05807. https://arxiv.org/abs/1609.05807 (abstract only).
-- Liu, L. T., Dean, S., Rolf, E., Simchowitz, M., Hardt, M. (2018). Delayed Impact of Fair Machine Learning. ICML 2018, PMLR 80:3150-3158. arXiv:1803.04383 (abstract only).
-- Pleiss, G., Raghavan, M., Wu, F., Kleinberg, J., Weinberger, K. Q. (2017). On Fairness and Calibration. arXiv:1709.02012; NIPS 2017 per the arXiv comment (abstract only).
+- Chouldechova, A. (2017). Fair prediction with disparate impact: A study of bias in recidivism prediction instruments. arXiv:1703.00056. https://arxiv.org/abs/1703.00056 (full text opened 2026-11-25; cited passages checked).
+- Corbett-Davies, S., Pierson, E., Feller, A., Goel, S., Huq, A. (2017). Algorithmic decision making and the cost of fairness. arXiv:1701.08230; KDD 2017. https://arxiv.org/abs/1701.08230 (full text opened 2026-11-25; cited passages checked).
+- Hardt, M., Price, E., Srebro, N. (2016). Equality of Opportunity in Supervised Learning. arXiv:1610.02413. https://arxiv.org/abs/1610.02413 (full text opened 2026-11-25; cited passages checked).
+- Kleinberg, J., Mullainathan, S., Raghavan, M. (2016). Inherent Trade-Offs in the Fair Determination of Risk Scores. arXiv:1609.05807. https://arxiv.org/abs/1609.05807 (full text opened 2026-11-25; cited passages checked).
+- Liu, L. T., Dean, S., Rolf, E., Simchowitz, M., Hardt, M. (2018). Delayed Impact of Fair Machine Learning. ICML 2018, PMLR 80:3150-3158. arXiv:1803.04383 (full text opened 2026-11-25; cited passages checked).
+- Pleiss, G., Raghavan, M., Wu, F., Kleinberg, J., Weinberger, K. Q. (2017). On Fairness and Calibration. arXiv:1709.02012; NIPS 2017 per the arXiv comment (full text opened 2026-11-25; cited passages checked).
 
 ## Supplementary appendix
 

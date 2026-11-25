@@ -6,7 +6,7 @@
 | Experiment | EXP-003 |
 | Date | 2026-11-25 |
 | Version | 1.0 |
-| Status | Complete (420 of 420 runs ok). Confirmatory, simulated data. Implementation check failed on 4 of 60 comparisons (deviation DEC-019, open for the owner). |
+| Status | Complete (420 of 420 runs ok). Confirmatory, simulated data. Implementation check failed on 4 of 60 comparisons (deviation DEC-019; the owner decided on 2026-11-25 that it is a disclosed limitation on H4, with no rerun, DEC-021). |
 | Authorship | Mohamed Bechir Kefi (C3). AI assistant disclosed as a research and development assistant, not an author. |
 | Protocol | `research/experiments/EXP-003/protocol.md`, FROZEN v1.0, SHA-256 7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214 |
 | Config | SHA-256 b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a |
@@ -24,7 +24,7 @@
 
 The base-rate interpretation, "a lower base rate lowers TPR", is refuted as stated. It must be narrowed to "the distribution of qualified individuals near the cutoff".
 
-**Caveat.** The frozen implementation check passed only 56 of 60 comparisons. Four failures are in two grid-D cells, so H4 carries a caveat (DEC-019).
+**Caveat.** The frozen implementation check passed only 56 of 60 comparisons. Four failures are in two grid-D cells, so H4 carries a caveat (DEC-019). The owner decided on 2026-11-25 that this is a disclosed limitation on H4; nothing is rerun (DEC-021).
 
 ## 2. Why this experiment exists
 
@@ -74,7 +74,7 @@ If the gap were a base-rate effect, equal base rates would give no gap, and a fi
 - **Time:** 2026-11-25, 00:15:34Z to 00:15:37Z UTC; wall clock 2.56 s; exit 0.
 - **Resources:** peak RSS 79.6 MiB. Mean runtime per run: P0 0.006 s, P3 0.007 s.
 - **Runs:** 420 planned, 420 ok, 0 failed. Config hashes are in `provenance.json`.
-- **Deviation DEC-019:** the implementation check failure above. Nothing was changed or rerun as confirmatory, and the owner decides what follows.
+- **Deviation DEC-019:** the implementation check failure above. Nothing was changed or rerun as confirmatory. Owner decision (2026-11-25, "Approve all recommendations, push then next", item 2): a disclosed limitation on H4, no rerun (DEC-021).
 - **Prior knowledge:** cells B-sB2, C-student_t3, C-lognormal and D-k0.1-pB0.2 were seen exploratorily before the freeze (C4).
 
 ## 7. Results
@@ -121,14 +121,14 @@ Strip plot: `figures/XFIG-EXP-003-01-eog.svg`.
 ## 9. Threats to validity
 
 - Results are simulated, for two groups and one score.
-- The check failure is unresolved (DEC-019).
+- The check failure is not explained; the owner accepted it as a disclosed limitation on H4 (DEC-019, DEC-021).
 - H2 was known before the run.
 - Grid C uses one parameterisation per family.
 - The 60 check comparisons are correlated through common random numbers.
 
 ## 10. Conclusion and next experiment
 
-The distribution-shape interpretation replaces the base-rate interpretation within this model. The next step is EXP-004, the real-data test. For the owner: decide whether DEC-019 stands as a disclosed limitation or needs an investigation.
+The distribution-shape interpretation replaces the base-rate interpretation within this model. The next step is EXP-004, the real-data test. The owner decided that DEC-019 stands as a disclosed limitation on H4 (DEC-021).
 
 ## 11. Reproduction
 

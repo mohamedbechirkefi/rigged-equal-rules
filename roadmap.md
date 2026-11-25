@@ -8,8 +8,8 @@ Target: five focused development days (planning estimate). Effort is in focused 
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24), pending the owner's read of the gate | none |
 | M1 | Research and preregistration | M0 | P0 | 0.75 | gate passed: protocols frozen (owner-approved 2026-11-24, `research/freeze.json`); full-text reading still open | none for M3 |
 | M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | done (2026-11-24): all acceptance criteria checked; exploratory runs only | none |
-| M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | not started (EXP-001 to EXP-004 frozen, not yet run; EXP-004 amended before data on 2026-11-25, option A: hours-per-week primary, sex removed, 160 runs) | the coordinator schedules M3 |
-| M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | not started | none |
+| M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | done (2026-11-25): 1,780 confirmatory runs at b455d59, all ok; reports written from committed results; deviations DEC-019 (disclosed limitation, DEC-021) and DEC-020 | none |
+| M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | done (2026-11-25): confounder review, expected versus observed, claims register and evidence audit, manuscript synthesised, second review pass | owner review of the manuscript text (M6 checklist) |
 | M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
 
@@ -56,17 +56,17 @@ Acceptance criteria:
 
 - [x] Smoke matrix run and validated (2026-11-25: JRN-0008 smoke 24/24 ok; JRN-0009 metric validation, analytic check 28/28).
 - [x] Frozen full matrix run for EXP-001 to EXP-004 (2026-11-25, revision b455d59): 240, 960, 420 and 160 runs, all ok; deviations DEC-019 (EXP-003 implementation check 56/60) and DEC-020.
-- [ ] Per-experiment report drafted as each finishes (text composed 2026-11-25; written by the coordinator).
+- [x] Per-experiment report drafted as each finishes (text composed 2026-11-25; written by the coordinator; M4 corrections and addenda).
 - Gate: complete planned matrix or documented failure; no silently dropped runs.
 
 ## M4: Interpretation (11.6: finish reports, evidence audit, manuscript synthesis)
 
 Acceptance criteria:
 
-- [ ] Confounders and sensitivity (EXP-003) analysed; expected versus observed compared.
-- [ ] Claims register and claims audit complete; artifact manifest complete.
-- [ ] Manuscript synthesised, including contradictory and null results.
-- [ ] Second review pass challenging the preferred hypothesis.
+- [x] Confounders and sensitivity (EXP-003) analysed; expected versus observed compared (`research/publication/interpretation.md`; exploratory JRN-0015, JRN-0016).
+- [x] Claims register and claims audit complete; artifact manifest complete (CLM-001 to CLM-030; `evidence_audit.md`; 21 manifest entries; `number_trace.csv`).
+- [x] Manuscript synthesised, including contradictory and null results (EXP-004 contradiction; P3 utility against H2's direction; H1b descriptive).
+- [x] Second review pass challenging the preferred hypothesis (`research/publication/review_pass_2.md`, 12 challenges, 7 manuscript changes).
 - Gate: every numerical claim maps to result ID, config and figure; every external claim to a verified source.
 
 ## M5: Interactive experience (11.6: identical results and labels across outputs)

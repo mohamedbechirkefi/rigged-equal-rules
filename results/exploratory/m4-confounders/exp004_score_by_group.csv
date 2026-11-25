@@ -1,0 +1,3 @@
+group,n,positives,base_rate,mean_logistic_probability,calibration_in_the_large_pp,share_qualified_above_p70,share_unqualified_above_p70,share_selected_above_p70,score_q10_qualified,score_q25_qualified,score_q50_qualified,score_q75_qualified,score_q90_qualified,score_q25_unqualified,score_q50_unqualified,score_q75_unqualified
+A (40 or more hours),12357,3489,0.282350085,0.2525854474,-2.976463753,0.6205216394,0.1974515111,0.3169053978,-1.991851222,-1.43178639,-0.533182478,0.3670352457,1.427375337,-2.39189753,-1.831832698,-1.111749343
+B (below 40 hours),3924,357,0.09097859327,0.2033056123,11.2327019,0.7030812325,0.1928791702,0.2392966361,-1.727195613,-1.037865872,-0.2939856828,0.7315889021,1.794200565,-2.593483297,-2.191874376,-1.173256572

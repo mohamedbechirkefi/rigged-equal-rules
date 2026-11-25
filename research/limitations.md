@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
-# Limitations (living document, M0 draft)
+# Limitations (living document; M0 design limitations, updated at the freeze, M3 and M4)
 
-No results exist yet. These are the limitations known by design.
+The M0 list below gives the limitations known by design; later sections add what the runs and the M4 review found.
 
 1. **Simulation only.** Every result comes from a synthetic generator. It holds only within the generator's assumptions (Gaussian latent qualification, additive Gaussian measurement noise, a hard qualification cutoff). It is not evidence about any real decision system, population or protected group.
 2. **The qualification label is assumed correct.** Y is defined by the generator, so it is measured without error. Real labels are often proxies that can themselves be biased; this study does not model label bias beyond the sensitivity checks of EXP-003.
@@ -24,6 +24,18 @@ No results exist yet. These are the limitations known by design.
 
 ## Added in M3 (2026-11-25)
 
-- EXP-003's implementation check (simulated P0 seed means against the numerical-integration population values, within 3 bootstrap SE) failed on 4 of 60 comparisons on the confirmatory seeds, in grid-D cells D-k0.1-pB0.5 (EOG, SR gap) and D-k0.5-pB0.2 (FPR gap, PPV gap). An exploratory rerun on seeds 1000 to 1019 passed 60 of 60 (JRN-0014). The 60 comparisons share one set of 20 seeds, so they are correlated. Unresolved; the owner decides (DEC-019). EXP-003 H4 rests on grid D and carries this caveat.
+- EXP-003's implementation check (simulated P0 seed means against the numerical-integration population values, within 3 bootstrap SE) failed on 4 of 60 comparisons on the confirmatory seeds, in grid-D cells D-k0.1-pB0.5 (EOG, SR gap) and D-k0.5-pB0.2 (FPR gap, PPV gap). An exploratory rerun on seeds 1000 to 1019 passed 60 of 60 (JRN-0014). The 60 comparisons share one set of 20 seeds, so they are correlated. Unexplained. The owner decided on 2026-11-25 that it is a disclosed limitation on H4, with no rerun (DEC-019, DEC-021). EXP-003 H4 rests on grid D and carries this limitation.
 - EXP-004's primary contrast is negative (-7.45 pp): on this real distribution, the synthetic mechanism's prediction did not hold for the hours partition. The study does not explain why; any explanation is a hypothesis for M4, not a finding.
 - The runner records per-run durations and matrix start and end times, not per-run timestamps (schema 1.0.0); `results/EXP-NNN/provenance.json` states this.
+
+## Added in M4 (2026-11-25)
+
+- **P1 depends on its 20-bin calibration map (JRN-0015, exploratory).** With the exact Gaussian posterior, P1's population EOG differs from the binned simulation by -3.86 to +7.67 pp across the 12 EXP-001/EXP-002 cells. The exact value is outside the binned interval in 5 of them. At the primary cell, the PPV gap is 2.10 pp exact against 1.00 pp binned. P1's magnitudes and its PPV-parity result are therefore implementation-specific. The EXP-002 verdicts do not change.
+- **The narrowed mechanism is near-definitional.** "The gap follows where qualified members sit relative to the cutoff" restates what TPR measures. Its testable content is negative: the base rate neither creates nor signs the gap (second review pass, R1).
+- **EXP-004 tests only the base-rate prediction.** The real data have no latent qualification. The reversal contradicts the prediction made from the base rate; it does not test a latent mechanism (R3).
+- **Direction is rule-specific.** On R-hours, P0 gives -7.78 pp and P1 gives +30.52 pp (R5).
+- **EXP-004's exploratory account is post hoc (JRN-0016).** It shows the reversal is not a split artefact and where qualified members lie on the score. It establishes no cause (R4).
+- **Cells are not independent replications.** All cells share the same 20 seeds (R7).
+- **Freeze-record hash.** `research/freeze.json` was appended after the runs (M3 deviation records). Its hash at run time, recorded in each `provenance.json`, differs from the current file. No frozen hash changed (evidence audit, section 2).
+- **Literature at abstract level.** No cited source was read in full. Related-work statements are limited to abstracts.
+

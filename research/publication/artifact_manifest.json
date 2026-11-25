@@ -1,7 +1,428 @@
 {
-  "schema_version": "0.1.0",
-  "updated": "2026-11-24",
-  "status": "M0: no quantitative artifact exists yet",
-  "entries": [],
-  "entry_fields": ["artifact_id", "kind", "experiment_id", "run_ids", "metric_definition", "result_path", "generator_script", "config_hash", "protocol_hash", "code_revision", "sha256"]
+ "schema_version": "1.0.0",
+ "updated": "2026-11-25",
+ "status": "M4: complete for the manuscript, supplementary and experiment reports",
+ "line_level_trace": "research/publication/number_trace.csv (every decimal number in the manuscript, supplementary, reports and claims register, matched to a committed table)",
+ "entry_fields": [
+  "artifact_id",
+  "kind",
+  "experiment_id",
+  "run_ids",
+  "metric_definition",
+  "result_path",
+  "generator_script",
+  "used_in",
+  "config_hash",
+  "protocol_hash",
+  "project_protocol_hash",
+  "code_revision",
+  "sha256"
+ ],
+ "entries": [
+  {
+   "artifact_id": "TAB-001",
+   "kind": "table",
+   "experiment_id": "EXP-001",
+   "run_ids": "RUN-EXP-001-{d0.50-r1.00,d0.00-r1.00}-P0-s{0..19} (40 runs)",
+   "metric_definition": "Paired difference over seeds of each gap, treatment minus control; Group A minus group B of SR, TPR (EOG), FPR, PPV and ECE (protocol section 5); seed means and 95% percentile bootstrap over seeds (section 7)",
+   "result_path": "results/EXP-001/tables/contrasts.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 1, abstract, section 5.1",
+    "EXP-001 report section 7",
+    "CLM-001"
+   ],
+   "config_hash": "sha256:e8be2bc5305426d86c2046060413fc54e975245cff60a5f878effd23d70548cb",
+   "protocol_hash": "sha256:8a98874cd6a9394d493fab35572a5bff78fbd8cb83e2538111fb9c0bf1933bcf",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "1ca632943ce879b8d490ad2d827beccede775cf1adb4a4d8b09e41e78d017096"
+  },
+  {
+   "artifact_id": "TAB-002",
+   "kind": "table",
+   "experiment_id": "EXP-001",
+   "run_ids": "RUN-EXP-001-<cell>-P0-s{0..19} (240 runs)",
+   "metric_definition": "EOG = TPR_A - TPR_B on the evaluation population (protocol section 5), pp; seed means, 95% bootstrap",
+   "result_path": "results/EXP-001/tables/summary.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 2",
+    "EXP-001 report section 7",
+    "CLM-002"
+   ],
+   "config_hash": "sha256:e8be2bc5305426d86c2046060413fc54e975245cff60a5f878effd23d70548cb",
+   "protocol_hash": "sha256:8a98874cd6a9394d493fab35572a5bff78fbd8cb83e2538111fb9c0bf1933bcf",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "101608f54deef41edfdcacca58db1fb43135f1113e38dc049234ee07215a08ad"
+  },
+  {
+   "artifact_id": "TAB-002a",
+   "kind": "table",
+   "experiment_id": "EXP-001",
+   "run_ids": "240 runs",
+   "metric_definition": "Simulated P0 seed mean against population value (numerical integration); z = difference / bootstrap SE",
+   "result_path": "results/EXP-001/tables/analytic_check.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript sections 5.1 and 3",
+    "CLM-003"
+   ],
+   "config_hash": "sha256:e8be2bc5305426d86c2046060413fc54e975245cff60a5f878effd23d70548cb",
+   "protocol_hash": "sha256:8a98874cd6a9394d493fab35572a5bff78fbd8cb83e2538111fb9c0bf1933bcf",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "b139bd921a859765d17868cafc8e72239659ac673698a509a25d8fe8b875e78d"
+  },
+  {
+   "artifact_id": "FIG-001",
+   "kind": "figure",
+   "experiment_id": "EXP-001",
+   "run_ids": "240 runs",
+   "metric_definition": "Per-seed P0 EOG by cell (strip plot)",
+   "result_path": "results/EXP-001/figures/XFIG-EXP-001-01-eog.svg",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Figure 1"
+   ],
+   "config_hash": "sha256:e8be2bc5305426d86c2046060413fc54e975245cff60a5f878effd23d70548cb",
+   "protocol_hash": "sha256:8a98874cd6a9394d493fab35572a5bff78fbd8cb83e2538111fb9c0bf1933bcf",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "b9b201e0625bdbc898570a9aaf0dbc0753542a383425cb6938127d88ced4f15e",
+   "note": "Identical copy at research/experiments/EXP-001/figures/ (SHA-256 checked)"
+  },
+  {
+   "artifact_id": "TAB-003",
+   "kind": "table",
+   "experiment_id": "EXP-002",
+   "run_ids": "RUN-EXP-002-<cell>-<P0..P3>-s{0..19} (960 runs)",
+   "metric_definition": "Group A minus group B of SR, TPR (EOG), FPR, PPV and ECE (protocol section 5); seed means and 95% percentile bootstrap over seeds (section 7)",
+   "result_path": "results/EXP-002/tables/summary.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 3, supplementary S2",
+    "EXP-002 report",
+    "CLM-004",
+    "CLM-016"
+   ],
+   "config_hash": "sha256:150d6fffba5d2a8ac56cf1c2e187ae48048fe5167ea4050cf891e9eb380ed30e",
+   "protocol_hash": "sha256:263ede02caaa43102ff0aee8b2e23653beb968d857632c9e87c6cf4175f2e875",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79"
+  },
+  {
+   "artifact_id": "TAB-003a",
+   "kind": "table",
+   "experiment_id": "EXP-002",
+   "run_ids": "960 runs",
+   "metric_definition": "Utility per capita (TP - c FP)/n, c = 1, policy minus P0, paired over seeds",
+   "result_path": "results/EXP-002/tables/policy_vs_p0.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript section 5.2, supplementary S3",
+    "CLM-005"
+   ],
+   "config_hash": "sha256:150d6fffba5d2a8ac56cf1c2e187ae48048fe5167ea4050cf891e9eb380ed30e",
+   "protocol_hash": "sha256:263ede02caaa43102ff0aee8b2e23653beb968d857632c9e87c6cf4175f2e875",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "6d2bc9c262d756ab41cc6d115f97d006dcfb9d63831f36a1b810271522f0797a"
+  },
+  {
+   "artifact_id": "FIG-002",
+   "kind": "figure",
+   "experiment_id": "EXP-002",
+   "run_ids": "960 runs",
+   "metric_definition": "Per-seed EOG by cell and policy (strip plot)",
+   "result_path": "results/EXP-002/figures/XFIG-EXP-002-01-eog.svg",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Figure 2"
+   ],
+   "config_hash": "sha256:150d6fffba5d2a8ac56cf1c2e187ae48048fe5167ea4050cf891e9eb380ed30e",
+   "protocol_hash": "sha256:263ede02caaa43102ff0aee8b2e23653beb968d857632c9e87c6cf4175f2e875",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "2a50e4098097c1007d0697a3ad5dcf866e9146109436e29a31745a49e005773c"
+  },
+  {
+   "artifact_id": "TAB-004",
+   "kind": "table",
+   "experiment_id": "EXP-003",
+   "run_ids": "RUN-EXP-003-<cell>-<P0|P3>-s{0..19} (420 runs)",
+   "metric_definition": "EOG = TPR_A - TPR_B on the evaluation population (protocol section 5), pp; seed means, 95% bootstrap",
+   "result_path": "results/EXP-003/tables/summary.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 4",
+    "EXP-003 report",
+    "CLM-006 to CLM-010"
+   ],
+   "config_hash": "sha256:b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a",
+   "protocol_hash": "sha256:7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "a2d790e4ea55f9192b32dc067e8943f972e2f87fdd552860f355091c6ffb374e"
+  },
+  {
+   "artifact_id": "TAB-004a",
+   "kind": "table",
+   "experiment_id": "EXP-003",
+   "run_ids": "300 P0 runs",
+   "metric_definition": "Implementation check: simulated P0 seed mean within 3 bootstrap SE of the population value",
+   "result_path": "results/EXP-003/tables/analytic_check.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 4 and section 5.3",
+    "CLM-011"
+   ],
+   "config_hash": "sha256:b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a",
+   "protocol_hash": "sha256:7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "b7bd8ccf8026a11bc8c3f97d86fdfbecc281f5f4618d52e1e40d243c88d8043b"
+  },
+  {
+   "artifact_id": "FIG-003",
+   "kind": "figure",
+   "experiment_id": "EXP-003",
+   "run_ids": "420 runs",
+   "metric_definition": "Per-seed P0 EOG by cell (strip plot)",
+   "result_path": "results/EXP-003/figures/XFIG-EXP-003-01-eog.svg",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Figure 3"
+   ],
+   "config_hash": "sha256:b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a",
+   "protocol_hash": "sha256:7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "a3af7d0911b061f60e568b13bdc2050c97ca540f8ef72f77a945bca70bfb5e1d"
+  },
+  {
+   "artifact_id": "TAB-005",
+   "kind": "table",
+   "experiment_id": "EXP-004",
+   "run_ids": "RUN-EXP-004-{R-hours,R-hours-random}-P0-s{0..19} (40 runs)",
+   "metric_definition": "D = EOG(R-hours, P0) - EOG(R-hours-random, P0), paired by seed; Group A minus group B of SR, TPR (EOG), FPR, PPV and ECE (protocol section 5); seed means and 95% percentile bootstrap over seeds (section 7)",
+   "result_path": "results/EXP-004/tables/contrasts.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "abstract, manuscript section 5.4",
+    "CLM-012"
+   ],
+   "config_hash": "sha256:6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+   "protocol_hash": "sha256:ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "6be849665f3b3f72ec88d2c1dba19675cc3976075a90c41e28fb2de61043a101"
+  },
+  {
+   "artifact_id": "TAB-005a",
+   "kind": "table",
+   "experiment_id": "EXP-004",
+   "run_ids": "RUN-EXP-004-<cell>-<P0..P3>-s{0..19} (160 runs)",
+   "metric_definition": "Group A minus group B of SR, TPR (EOG), FPR, PPV and ECE (protocol section 5); seed means and 95% percentile bootstrap over seeds (section 7)",
+   "result_path": "results/EXP-004/tables/summary.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Table 5, supplementary S5",
+    "CLM-013",
+    "CLM-017"
+   ],
+   "config_hash": "sha256:6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+   "protocol_hash": "sha256:ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "366c0c09c65ceb989b0ce05bf2bbb5f0d1e4a095398dce5efd530cd96319779d"
+  },
+  {
+   "artifact_id": "TAB-005b",
+   "kind": "table",
+   "experiment_id": "EXP-004",
+   "run_ids": "160 runs",
+   "metric_definition": "Utility per capita, policy minus P0, paired over seeds",
+   "result_path": "results/EXP-004/tables/policy_vs_p0.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript section 5.4",
+    "CLM-014"
+   ],
+   "config_hash": "sha256:6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+   "protocol_hash": "sha256:ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "4a747a3943be63ae7dfd28ee178fb1b1694795dd0ad9996f26121c489f5dbcaa"
+  },
+  {
+   "artifact_id": "TAB-005c",
+   "kind": "table",
+   "experiment_id": "EXP-004",
+   "run_ids": "RUN-EXP-004-<cell>-P0-s{0..19} (40 runs)",
+   "metric_definition": "Evaluation-half base rate P(Y = 1) per group and gap A minus B; Group B share",
+   "result_path": "results/EXP-004/tables/base_rate_gap.csv",
+   "generator_script": "scripts/exp004_base_rates.py (written after the run, DEC-020)",
+   "used_in": [
+    "manuscript section 5.4",
+    "CLM-015"
+   ],
+   "config_hash": "sha256:6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+   "protocol_hash": "sha256:ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "f8a533cd511f9cfa23034ec0dbaf05f70b6f5b56bc2cd91dc44a5c508cf6273b"
+  },
+  {
+   "artifact_id": "FIG-004",
+   "kind": "figure",
+   "experiment_id": "EXP-004",
+   "run_ids": "160 runs",
+   "metric_definition": "Per-seed P0 EOG, R-hours and R-hours-random (strip plot)",
+   "result_path": "results/EXP-004/figures/XFIG-EXP-004-01-eog.svg",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript Figure 4"
+   ],
+   "config_hash": "sha256:6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+   "protocol_hash": "sha256:ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+   "project_protocol_hash": "sha256:d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "e70e55af408628c6aac572394c80650b34655612970ec1fa2fc17714762e115c"
+  },
+  {
+   "artifact_id": "TAB-006",
+   "kind": "table",
+   "experiment_id": "EXP-001 to EXP-004",
+   "run_ids": "all 1,780 runs",
+   "metric_definition": "Expected versus observed (verdicts under the frozen rules)",
+   "result_path": "research/publication/interpretation.md",
+   "generator_script": "hand-written from TAB-001 to TAB-005",
+   "used_in": [
+    "manuscript Table 6"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": null,
+   "sha256": "f8b7b7e63489532ac682676d1378ba07aa6b42c53dd053dfa929cd39e0d02d2c",
+   "note": "Every number in it appears in TAB-001 to TAB-005c (number_trace.csv)"
+  },
+  {
+   "artifact_id": "XTAB-001",
+   "kind": "table (EXPLORATORY)",
+   "experiment_id": "EXP-002",
+   "run_ids": "none (no runs; JRN-0015)",
+   "metric_definition": "P1 population gaps with the exact Gaussian posterior (numerical integration) against binned simulated P1",
+   "result_path": "results/exploratory/m4-confounders/p1_exact_posterior.csv",
+   "generator_script": "scripts/m4_exploratory.py",
+   "used_in": [
+    "manuscript section 5.2, supplementary S4",
+    "CLM-018"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": "1cd5a513ace16e9b3b866c4f9ad0e47a48452ae4",
+   "sha256": "88b874ea5965197e418d98ba5c762be7df1df38434c9dda2bbe1276c61c7011f",
+   "code_revision_note": "script uncommitted at run time; committed unchanged in the M4 commit",
+   "inputs_sha256": {
+    "results/EXP-002/tables/summary.csv": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79",
+    "data/raw/adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+    "research/experiments/EXP-004/score_model.json": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b"
+   }
+  },
+  {
+   "artifact_id": "XTAB-002",
+   "kind": "table (EXPLORATORY)",
+   "experiment_id": "EXP-004",
+   "run_ids": "none (no runs; JRN-0016)",
+   "metric_definition": "Full-pool score quantiles, shares above the pool p70, calibration in the large, by hours partition",
+   "result_path": "results/exploratory/m4-confounders/exp004_score_by_group.csv",
+   "generator_script": "scripts/m4_exploratory.py",
+   "used_in": [
+    "manuscript section 5.4, supplementary S7",
+    "CLM-019"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": "1cd5a513ace16e9b3b866c4f9ad0e47a48452ae4",
+   "sha256": "519ce191c7d5356ebcf24ae409976bf2cbfed6969bf080097e8d32eba710c9bc",
+   "code_revision_note": "script uncommitted at run time; committed unchanged in the M4 commit",
+   "inputs_sha256": {
+    "results/EXP-002/tables/summary.csv": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79",
+    "data/raw/adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+    "research/experiments/EXP-004/score_model.json": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b"
+   }
+  },
+  {
+   "artifact_id": "XTAB-003",
+   "kind": "table (EXPLORATORY)",
+   "experiment_id": "EXP-004",
+   "run_ids": "none (no runs; JRN-0016)",
+   "metric_definition": "Observed rate and mean logistic probability by pool-wide score decile and group",
+   "result_path": "results/exploratory/m4-confounders/exp004_calibration_by_decile.csv",
+   "generator_script": "scripts/m4_exploratory.py",
+   "used_in": [
+    "supplementary S7",
+    "CLM-019"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": "1cd5a513ace16e9b3b866c4f9ad0e47a48452ae4",
+   "sha256": "1497f59e08741cbb4186338f5272bcfde5ba0db0eec65af51c2f81007ad3878f",
+   "code_revision_note": "script uncommitted at run time; committed unchanged in the M4 commit",
+   "inputs_sha256": {
+    "results/EXP-002/tables/summary.csv": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79",
+    "data/raw/adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+    "research/experiments/EXP-004/score_model.json": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b"
+   }
+  },
+  {
+   "artifact_id": "XTAB-004",
+   "kind": "table (EXPLORATORY)",
+   "experiment_id": "EXP-004",
+   "run_ids": "none (no runs; JRN-0016)",
+   "metric_definition": "Score inputs by group and label",
+   "result_path": "results/exploratory/m4-confounders/exp004_features_by_label.csv",
+   "generator_script": "scripts/m4_exploratory.py",
+   "used_in": [
+    "supplementary S7",
+    "interpretation.md"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": "1cd5a513ace16e9b3b866c4f9ad0e47a48452ae4",
+   "sha256": "53edf515633046fe53112bf7364ae954be00a4762677e3632ea4eaff0ef31261",
+   "code_revision_note": "script uncommitted at run time; committed unchanged in the M4 commit",
+   "inputs_sha256": {
+    "results/EXP-002/tables/summary.csv": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79",
+    "data/raw/adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+    "research/experiments/EXP-004/score_model.json": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b"
+   }
+  },
+  {
+   "artifact_id": "XTAB-005",
+   "kind": "table (EXPLORATORY)",
+   "experiment_id": "EXP-003",
+   "run_ids": "RUN-EXP-003-<cell>-<P0|P3>-s{1000..1019} (420 exploratory runs; JRN-0014)",
+   "metric_definition": "Implementation check on exploratory seeds",
+   "result_path": "results/exploratory/exp-003-x/tables/analytic_check.csv",
+   "generator_script": "src/rigged/report.py (python -m rigged.cli report), run by scripts/run_confirmatory.sh",
+   "used_in": [
+    "manuscript section 5.3",
+    "CLM-011"
+   ],
+   "config_hash": null,
+   "protocol_hash": null,
+   "project_protocol_hash": null,
+   "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+   "sha256": "0f8204467a9d10e3acb20115d94bb7f4f5ab0074950876c808d77ef7ec34a4ea"
+  }
+ ]
 }

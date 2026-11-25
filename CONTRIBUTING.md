@@ -71,3 +71,16 @@ scripts/rigged report --input results/exploratory/smoke --pdf
 ```
 
 PDFs use pandoc and the typst Python package; set `RIGGED_PANDOC` and `RIGGED_TYPST_PYTHON` if the tools live elsewhere.
+
+## M4 evidence pipeline (2026-11-25)
+
+```
+# Exploratory M4 confounder checks (JRN-0015, JRN-0016); never change a frozen verdict
+PYTHONPATH=src .venv/bin/python scripts/m4_exploratory.py
+# Evidence audit: raw-output re-derivation and number trace
+PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py
+# Supplementary tables and artifact manifest, from committed results
+python3 scripts/build_supplementary.py
+python3 scripts/build_artifact_manifest.py
+```
+

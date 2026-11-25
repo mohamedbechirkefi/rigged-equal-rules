@@ -128,3 +128,8 @@ In this model, once starting distributions differ, no rule tested satisfies the 
 ## 11. Reproduction
 
 See `research/experiments/EXP-002/reproduction.md`.
+
+## 12. M4 addendum (2026-11-25, exploratory; the verdicts above are unchanged)
+
+- **P1 calibration-fit error (protocol section 11), JRN-0015.** With the exact Gaussian posterior in place of the 20-bin map, P1's population EOG at d0.50-r1.00 is 13.04 pp, outside the binned interval [14.30, 15.45]. Its PPV gap is 2.10 pp instead of 1.00 pp. The exact value is outside the binned interval in 5 of 12 cells. H1 is unchanged, because P1 still fails SR and EO parity. The statement "P1 brings PPV parity within 2 pp" in section 8 holds for the 20-bin implementation only. Source: `results/exploratory/m4-confounders/p1_exact_posterior.csv`; manuscript section 5.2 and supplementary S4.
+- **Evidence audit.** All 960 runs and all summary and contrast values were re-derived from `results.json` without discrepancy (`research/publication/evidence_audit.md`).

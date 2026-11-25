@@ -1,0 +1,86 @@
+{
+ "part_a": {
+  "EXP-001": {
+   "runs": 240,
+   "status": {
+    "ok": 240
+   },
+   "identity_issues": [],
+   "n_identity_issues": 0,
+   "summary_values_checked": 432,
+   "summary_max_abs_deviation": 4.983757850851589e-11,
+   "contrast_values_checked": 24,
+   "contrast_max_abs_deviation": 3.8281072756163326e-11,
+   "sha256sums_mismatch": []
+  },
+  "EXP-002": {
+   "runs": 960,
+   "status": {
+    "ok": 960
+   },
+   "identity_issues": [],
+   "n_identity_issues": 0,
+   "summary_values_checked": 1728,
+   "summary_max_abs_deviation": 4.983757850851589e-11,
+   "contrast_values_checked": 96,
+   "contrast_max_abs_deviation": 4.628503136316908e-11,
+   "sha256sums_mismatch": []
+  },
+  "EXP-003": {
+   "runs": 420,
+   "status": {
+    "ok": 420
+   },
+   "identity_issues": [],
+   "n_identity_issues": 0,
+   "summary_values_checked": 756,
+   "summary_max_abs_deviation": 4.99505437012715e-11,
+   "contrast_values_checked": 0,
+   "contrast_max_abs_deviation": 0.0,
+   "sha256sums_mismatch": []
+  },
+  "EXP-004": {
+   "runs": 160,
+   "status": {
+    "ok": 160
+   },
+   "identity_issues": [],
+   "n_identity_issues": 0,
+   "summary_values_checked": 288,
+   "summary_max_abs_deviation": 4.832334532522964e-11,
+   "contrast_values_checked": 96,
+   "contrast_max_abs_deviation": 4.925904129038372e-11,
+   "sha256sums_mismatch": []
+  }
+ },
+ "part_b_summary": {
+  "research/paper/manuscript.md": {
+   "numbers": 441,
+   "unmatched": 10
+  },
+  "research/paper/supplementary.md": {
+   "numbers": 993,
+   "unmatched": 0
+  },
+  "research/experiments/EXP-001/report.md": {
+   "numbers": 108,
+   "unmatched": 1
+  },
+  "research/experiments/EXP-002/report.md": {
+   "numbers": 139,
+   "unmatched": 0
+  },
+  "research/experiments/EXP-003/report.md": {
+   "numbers": 141,
+   "unmatched": 0
+  },
+  "research/experiments/EXP-004/report.md": {
+   "numbers": 178,
+   "unmatched": 0
+  },
+  "research/claims_register.csv": {
+   "numbers": 172,
+   "unmatched": 1
+  }
+ }
+}

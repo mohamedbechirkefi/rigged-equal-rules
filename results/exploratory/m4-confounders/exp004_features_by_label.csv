@@ -1,0 +1,5 @@
+group,label,n,mean_age,mean_education_num,share_capital_gain_positive,share_capital_loss_positive
+A (40 or more hours),qualified,3489,43.90025795,11.56520493,0.2098022356,0.09601605044
+A (40 or more hours),unqualified,8868,37.54871448,9.683355886,0.04138475417,0.03439332431
+B (below 40 hours),qualified,357,48.49579832,11.77591036,0.2296918768,0.1008403361
+B (below 40 hours),unqualified,3567,35.80319596,9.411269975,0.03980936361,0.0243902439

@@ -95,7 +95,7 @@ Error-rate balance generally cannot hold together with other criteria when base 
 - **Construct:** EOG is one criterion among several; no metric is universal.
 - **External:** these are simulated Gaussian populations with two groups and one score. Nothing is claimed about real groups or decisions.
 - **Statistical:** the seed is the unit. 20 seeds give interval half-widths of about 0.4 pp, against a 2 pp smallest effect of interest.
-- **Pre-registration:** the result was analytically implied, and exploratory values of the primary contrast were seen before the freeze (C4: SIZING 6.31 pp [6.04, 6.56]).
+- **Pre-registration:** the result was analytically implied, and exploratory values of the primary contrast were seen before the freeze (C4: SIZING 6.30 pp [6.04, 6.56]; corrected in M4 from 6.31, see `research/publication/evidence_audit.md`).
 
 ## 10. Conclusion and next experiment
 

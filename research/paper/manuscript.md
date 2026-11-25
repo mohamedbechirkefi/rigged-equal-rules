@@ -1,54 +1,291 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
-# When equal rules produce unequal outcomes (working title)
+# When equal rules produce unequal outcomes: a seeded simulation of one common threshold, with a contradicting test on a real score
 
-Mohamed Bechir Kefi (no affiliation).
+Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval).
 
-Status: skeleton of headings only; protocols frozen on 2026-11-24 (`research/freeze.json`), no confirmatory results yet. Independent research manuscript draft, not peer-reviewed. AI use: an AI assistant (Claude) served as a research and development assistant; it is not an author. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
+**Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M4, 2026-11-25. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
 
 ## Abstract
 
+Fairness criteria conflict when groups differ in base rates, but the size and driver of the gaps under the simplest "equal rule", one common score threshold, are less often quantified with uncertainty and a design that could prove the interpretation wrong. We simulate two abstract groups whose latent qualification differs in location (the starting distribution) and whose scores differ in measurement noise, apply four threshold policies at 30% capacity, and measure the equal-opportunity gap (EOG), the difference in true positive rates, over 20 seeds under frozen, pre-registered protocols. Under one common raw threshold, a starting-distribution gap of half a standard deviation raises the EOG by 6.59 pp (95% bootstrap interval [6.20, 6.97]) against an equal-distribution control, close to its analytic value of 6.31 pp. No policy among four meets selection-rate, equal-opportunity and predictive parity together once distributions differ, and constrained policies cost utility. A sensitivity experiment refutes the base-rate reading of the gap within the model: at equal base rates, changing only dispersion produces gaps of 19.44 and -22.50 pp, and at a fixed base-rate gap the sign reverses (-9.56 pp). On a real score (UCI Adult, partition hours-per-week below 40), the base-rate prediction fails with a sign reversal: -7.45 pp [-8.75, -6.05], although a calibrated common rule restores the predicted sign. The base rate therefore does not fix the sign or size of the gap; what remains is the near-definitional statement that the gap follows where each group's qualified members sit relative to the cutoff.
+
 ## Keywords
+
+algorithmic fairness; threshold rules; equal opportunity; base rates; simulation study; pre-registration
 
 ## 1. Introduction
 
+Selection rules that apply one threshold to everyone are often described as "equal rules". A large literature shows that, when groups differ in base rates, common fairness criteria cannot all hold at once (Kleinberg et al. 2016; Chouldechova 2017; Pleiss et al. 2017), and that constrained rules use group-specific thresholds at some cost in utility (Corbett-Davies et al. 2017). These results are statements about what cannot hold together. They leave open a practical, quantitative question that this study addresses in a deliberately small and controlled setting.
+
+**Research question.** Can equal rules yield unequal outcomes under different starting distributions? Operationally: when one decision rule is applied identically to two abstract groups that differ only in the distribution of a latent qualification and, separately, in how noisily it is measured, do equally qualified individuals face different chances of selection, and which fairness criteria can alternative rules satisfy at the same time?
+
+**Gap.** We found no source, among those we could verify (all at abstract level, section 2), that reports a seeded, pre-registered quantification of the equal-opportunity gap under one common threshold that separates the starting distribution from measurement noise, tests whether the gap is a base-rate effect, and carries the prediction to a real score with a rule that could disconfirm it. We do not claim that no such study exists; the literature search was not systematic.
+
+**Hypotheses.** The primary hypothesis (EXP-001 H1) is that at a starting-distribution gap delta = 0.5 with equal noise, the EOG under one common threshold exceeds the equal-distribution control by at least 2 pp. Secondary hypotheses concern incompatibility of criteria (EXP-002), base rate against shape (EXP-003) and a real-score test (EXP-004).
+
+**Contributions.** The contributions are modest and are stated as such:
+
+1. A reproducible quantification, with seed-level uncertainty and an analytic cross-check, of the equal-opportunity gap under one common threshold across a factorial grid of starting-distribution gap and noise ratio (EXP-001).
+2. A measured comparison of four threshold policies on three parity criteria and utility (EXP-002), consistent with the known impossibility results.
+3. A sensitivity experiment designed to refute the base-rate reading of the gap, which did refute it within the model (EXP-003).
+4. A pre-registered test of the synthetic prediction on a real score, which was disconfirmed with a sign reversal (EXP-004), and an exploratory account of that contradiction.
+
+The first two results were implied by the model before any run; the study quantifies them. The third and fourth carry the scientific weight: one narrows the mechanism, the other contradicts its broad form outside the model.
+
 ## 2. Related work
 
+All sources below were checked at the level of their bibliographic record and abstract on 2026-11-24; their full texts were not read for this draft. Statements attributed to them are limited to what their abstracts say (`research/literature_review.md`).
+
+**Incompatibility of criteria.** Kleinberg, Mullainathan and Raghavan (2016) state that, outside highly constrained special cases, three fairness conditions for risk scores cannot hold simultaneously. Chouldechova (2017) states that criteria cannot all hold when base rates differ and that disparate impact can follow from error-rate imbalance. Pleiss et al. (2017) state that calibration is compatible with at most one error-balance condition. EXP-002 measures the size of each violation in one controlled model; it is a measurement consistent with these results, not a new theorem.
+
+**Threshold rules and their cost.** Corbett-Davies et al. (2017) state that optimal rules under common fairness constraints use group-specific thresholds, that the unconstrained optimum is a single threshold, and that the cost of the constraints can be substantial. Policies P0, P2 and P3 follow this framing; EXP-002 H2 measures the utility cost in our model.
+
+**Equal opportunity.** Hardt, Price and Srebro (2016) introduce a criterion and post-processing based on the joint statistics of predictor, target and group; our primary metric, the difference in true positive rates, and policy P3 follow the equal-opportunity idea. The exact definition in the full text was not checked.
+
+**Dynamics.** Liu et al. (2018) show, in a one-step feedback model, that fairness criteria can fail to help or can harm. Our study is static and does not address this.
+
+**Textbook framing.** Barocas, Hardt and Narayanan (2023) cover formal non-discrimination criteria in their classification chapter; we use the book only for framing.
+
+**Replication, extension, original.** The incompatibility of criteria is replicated in kind, not extended. The base-rate against shape experiment and the real-score test are, as far as our non-systematic search shows, specific to this study, and are presented as checks of our own interpretation, not as contributions beyond prior work.
+
 ## 3. Background and formal model
+
+**Generator (SYN-001).** For an individual in group $g \in \{A, B\}$, the latent qualification is $Q \sim \mathcal{N}(\mu_g, s_g^2)$, the label is $Y = \mathbf{1}[Q > 0]$ with base rate $\pi_g = \Phi(\mu_g / s_g)$, and the observed score is $X = Q + e$ with $e \sim \mathcal{N}(0, \sigma_g^2)$ independent of $Q$. In the primary design $\mu_A = 0$, $\mu_B = -\delta$, $s_A = s_B = 1$, $\sigma_A = 0.5$ and $\sigma_B = 0.5\rho$. A fraction $p_B = 0.5$ of the population is in group B, and a fixed fraction $\kappa = 0.30$ is selected.
+
+**Metrics.** For a selection rule, $\mathrm{TPR}_g = \mathrm{TP}_g / (\mathrm{TP}_g + \mathrm{FN}_g)$ and the primary metric is
+$$\mathrm{EOG} = \mathrm{TPR}_A - \mathrm{TPR}_B,$$
+in percentage points (pp); a positive value means qualified members of group B are selected less often. Secondary gaps (A minus B) are the selection-rate gap (SR), the false-positive-rate gap (FPR), the predictive-value gap (PPV) and the within-group expected calibration error gap (ECE, 10 equal-width bins, for the group-blind calibrated score). Utility per capita is $U = (\mathrm{TP} - c\,\mathrm{FP})/n$ with cost ratio $c = 1$. The EOG is one criterion among several; no metric is presented as universal.
+
+**Population values.** Under P0 with threshold $t$, $P(X > t, Y = 1 \mid g) = \int_{0}^{\infty} f_{Q \mid g}(q)\,[1 - \Phi((t - q)/\sigma_g)]\,dq$, and the population threshold solves $(1 - p_B) P(X_A > t) + p_B P(X_B > t) = \kappa$. These integrals, computed numerically (`rigged.analytic`), give the analytic reference used by the implementation check. They are cheap: the cost of the whole study is a few seconds of compute (section 4.6).
+
+**Why the primary hypothesis is implied.** In the Gaussian model, lowering $\mu_B$ moves group B's qualified mass toward the cutoff $Q = 0$, so a smaller share of it clears a common score threshold. The primary result therefore follows analytically; the simulation measures it, checks the implementation and supports the experiments in which the outcome was not known.
 
 ## 4. Methods
 
 ### 4.1 Design and protocol registration
 
-### 4.2 Synthetic data generator
+Four experiments were registered (`research/experiment_registry.csv`) and their protocols frozen by the owner on 2026-11-24 before any confirmatory run (`research/freeze.json`). EXP-004's design was amended twice before any computation on its test file: a round-3 amendment made sex the primary group attribute, and a second amendment on 2026-11-25 (the owner's option A, DEC-018) replaced it with hours-per-week below 40 and removed sex from every analysis. The superseded design was never run. Values of several cells were seen in exploratory runs before the freeze (freeze record C4), and EXP-003 H2 was analytically determined before its run (amendment A1). Confirmatory runs used seeds 0 to 19; exploratory runs use seeds 1000 and above.
+
+### 4.2 Synthetic data
+
+Each seed draws a fitting population and an evaluation population of $n = 20{,}000$ each from separate random streams. Thresholds and calibration maps are fitted on the fitting population only; metrics are computed on the evaluation population only. Within a seed, every cell and policy uses the same standard-normal draws (common random numbers), so differences between cells and between policies are paired by seed.
 
 ### 4.3 Decision rules and baseline
 
-### 4.4 Metrics
+- **P0 (baseline):** one raw threshold for both groups, set so that a fraction $\kappa$ is selected.
+- **P1:** a within-group calibration map (20 quantile bins per group) and one common threshold on the calibrated score.
+- **P2:** group-specific thresholds giving each group a selection rate of $\kappa$ (selection-rate parity).
+- **P3:** group-specific thresholds with equal TPR on the fitting population at overall rate $\kappa$ (equal opportunity).
+
+Ties are broken by seeded uniforms. P3 uses bisection and may miss the capacity target; its tolerance is 10 individuals in the synthetic study (amendment A5) and 30 in EXP-004 (owner-ratified, DEC-017).
+
+### 4.4 Experiments
+
+- **EXP-001** (240 runs): P0 on a factorial grid $\delta \in \{0, 0.25, 0.5, 1\}$ by $\rho \in \{1, 1.5, 2\}$. Primary contrast: EOG at $(\delta, \rho) = (0.5, 1)$ minus EOG at $(0, 1)$.
+- **EXP-002** (960 runs): P0 to P3 on the same 12 cells. H1: no policy meets SR, EO and PPV parity within 2 pp at $(0.5, 1)$, while all do at $(0, 1)$. H2: P2 and P3 have lower utility than P0 at $\delta = 0.5$.
+- **EXP-003** (420 runs): grid A, equal base rates with $s_B \in \{0.5, 1, 2\}$; grid B, fixed base-rate gap $\pi_B = \Phi(-0.5)$ with the same $s_B$; grid C, Student t (3 degrees of freedom) and shifted log-normal latent families with matched base rates; grid D, $\kappa \in \{0.1, 0.3, 0.5\}$ by $p_B \in \{0.2, 0.5\}$. P0 on all 15 cells and P3 on grids A and B.
+- **EXP-004** (160 runs): a logistic score of income above 50K on age, education-num, log(1 + capital-gain) and log(1 + capital-loss), fitted once on the 32,561 rows of the official training file (`adult.data`) and frozen. Policies applied to the 16,281 rows of the official test file (`adult.test`). Cell R-hours: group B is hours-per-week below 40. Cell R-hours-random: the same labels permuted within each seed. Each seed draws a random half split (8,140 fitting rows, 8,141 evaluation rows), tie uniforms and the label permutation. Primary contrast: $D = \mathrm{EOG}(\text{R-hours}, P0) - \mathrm{EOG}(\text{R-hours-random}, P0)$. No protected attribute is a group, input, stratifier or covariate.
 
 ### 4.5 Statistical analysis
 
+The experimental unit is the seed. Each estimate is the mean over 20 seeds of a per-seed value or of a paired per-seed difference. The 95% interval is a percentile bootstrap over seeds (10,000 resamples, generator seed 20261124), with a t-interval reported as a check. The decision rule for every directional hypothesis compares the interval with a smallest effect size of interest of 2 pp; no p-value threshold is used. The implementation check requires simulated P0 seed means to agree with the population values within 3 bootstrap standard errors. Its failure is a deviation, not a hypothesis test.
+
 ### 4.6 Implementation and reproducibility
+
+The code is Python 3.12.1 with numpy 2.5.4, locked with uv; 116 tests passed before the confirmatory runs. Each experiment ran through a guard that refuses to run unless the protocol, the config, the freeze record and the configuration built by the code match. Every run carries a run ID (RUN-EXP-NNN-cell-policy-sSEED) and a configuration hash; every result directory has `provenance.json` and `SHA256SUMS`. The four matrices took 1.38, 6.97, 2.56 and 1.42 s of wall clock on one laptop process (Apple M1 Pro). Tables and figures are generated once from `results.json` and reused here. Commands are listed in `research/experiments/EXP-NNN/reproduction.md` and in section 10.
+
+### 4.7 Exploratory work after the confirmatory runs
+
+Every exploratory run used seeds 1000 and above or no simulation at all, and none changes a frozen verdict. Before the freeze: the SMOKE, SIZING and DEGEN matrices (M2; JRN-0003 and related entries) and the EXP-004 score fit and tolerance check on the training file (JRN-0005, JRN-0006). Also before the freeze, JRN-0007 computed training-file base rates under the superseded design; it is withdrawn from every analysis. Before the confirmatory runs: an M3 smoke run and metric validation (JRN-0008, JRN-0009). After them: JRN-0014 reran EXP-003 on seeds 1000 to 1019 to diagnose its implementation-check failure. In M4, JRN-0015 recomputed P1 with the exact Gaussian posterior, and JRN-0016 described the EXP-004 score by the hours partition on the full test pool. Every deviation and owner decision is listed in Supplementary S9.
 
 ## 5. Results
 
-### 5.1 EXP-001
+All synthetic results are simulated. Intervals are 95% percentile bootstrap intervals over 20 seeds. All runs completed: 240, 960, 420 and 160 of 240, 960, 420 and 160, with no failed run and no undefined metric.
 
-### 5.2 EXP-002
+### 5.1 RQ1: one common threshold (EXP-001)
 
-### 5.3 EXP-003 (sensitivity)
+**Primary contrast.** The EOG at $\delta = 0.5, \rho = 1$ exceeds the control by 6.59 pp [6.20, 6.97] (t-interval [6.17, 7.01]; SD over seeds 0.90 pp; standardised mean difference 7.29). The interval lies entirely above +2 pp: **H1 is supported**. The analytic population value is 6.31 pp. The selection-rate, PPV and FPR gaps rise by 15.47, 4.82 and 1.61 pp in the same contrast (Table 1).
+
+**Table 1.** EXP-001 primary contrast, P0, d0.50-r1.00 minus d0.00-r1.00, paired over 20 seeds (`results/EXP-001/tables/contrasts.csv`).
+
+| Metric | Mean (pp) | SD (pp) | 95% bootstrap | 95% t-interval |
+|---|---|---|---|---|
+| EOG (primary) | 6.59 | 0.90 | [6.20, 6.97] | [6.17, 7.01] |
+| SR gap | 15.47 | 0.34 | [15.32, 15.60] | [15.31, 15.63] |
+| PPV gap | 4.82 | 0.91 | [4.45, 5.22] | [4.39, 5.24] |
+| FPR gap | 1.61 | 0.44 | [1.41, 1.79] | [1.40, 1.81] |
+
+**Grid.** The EOG grows with $\delta$ at every $\rho$, and with $\rho$ at every $\delta > 0$ (Table 2). At $\delta = 0$ it is -0.09, 0.15 and 0.11 pp for $\rho = 1, 1.5, 2$, against analytic values of 0.000, 0.177 and 0.081 pp (H1b, descriptive). These intervals include zero; this is not evidence of equivalence. The implementation check passed in 48 of 48 comparisons (largest |z| 2.83). Per-seed values are plotted in Figure 1.
+
+**Table 2.** EXP-001 P0 EOG by cell, seed means in pp with 95% bootstrap intervals (`results/EXP-001/tables/summary.csv`).
+
+| delta \ rho | 1 | 1.5 | 2 |
+|---|---|---|---|
+| 0 | -0.09 [-0.60, 0.38] | 0.15 [-0.34, 0.62] | 0.11 [-0.40, 0.59] |
+| 0.25 | 3.66 [3.20, 4.11] | 4.61 [4.13, 5.09] | 4.80 [4.21, 5.39] |
+| 0.5 | 6.50 [6.12, 6.89] | 8.41 [7.99, 8.83] | 9.20 [8.71, 9.68] |
+| 1.0 | 8.65 [8.22, 9.16] | 13.01 [12.46, 13.65] | 15.22 [14.64, 15.92] |
+
+![Figure 1 (FIG-001). Per-seed P0 EOG by cell, EXP-001, 20 seeds per cell, simulated.](../experiments/EXP-001/figures/XFIG-EXP-001-01-eog.svg)
+
+### 5.2 RQ2: alternative rules and incompatible criteria (EXP-002)
+
+At $\delta = 0.5, \rho = 1$, no policy meets the three parity criteria within 2 pp (Table 3); the smallest worst violation is P3's selection-rate gap of 11.74 pp. At the control, all four policies meet all three, with every interval inside [-0.88, 0.61] pp. **H1 is supported**, and the verdict is the same at tolerances of 1 and 5 pp. Each rule repairs at most one criterion: P2 equalises selection rates and moves the EOG to -19.99 pp; P3 closes the EOG (0.12 pp) and leaves SR and PPV gaps of 11.74 and 7.34 pp; P1 brings the PPV gap to 1.00 pp and raises the EOG to 14.89 pp, more than double P0's 6.50 pp.
+
+**Table 3.** EXP-002 at d0.50-r1.00, seed means in pp with 95% bootstrap intervals (`results/EXP-002/tables/summary.csv`).
+
+| Policy | SR gap | EOG | PPV gap | FPR gap | All three within 2 pp |
+|---|---|---|---|---|---|
+| P0 | 15.37 [15.09, 15.64] | 6.50 [6.12, 6.89] | 4.56 [4.19, 4.97] | 1.74 [1.54, 1.94] | no |
+| P1 | 20.02 [19.65, 20.39] | 14.89 [14.30, 15.45] | 1.00 [0.55, 1.45] | 4.17 [3.93, 4.42] | no |
+| P2 | -0.14 [-0.60, 0.35] | -19.99 [-20.63, -19.35] | 15.94 [15.50, 16.40] | -6.30 [-6.58, -6.02] | no |
+| P3 | 11.74 [11.33, 12.16] | 0.12 [-0.52, 0.74] | 7.34 [6.90, 7.76] | -0.16 [-0.37, 0.05] | no |
+
+**Utility.** Relative to P0 (0.2455 per capita), utility changes by -0.01773 [-0.01859, -0.01688] for P2 and -0.00215 [-0.00249, -0.00181] for P3: **H2 is supported**. P1 gains +0.00058 [0.00010, 0.00108], a small amount (`policy_vs_p0.csv`). At the control, every difference is within 0.0002 of zero.
+
+![Figure 2 (FIG-002). Per-seed EOG by cell and policy, EXP-002, 20 seeds per cell, simulated.](../experiments/EXP-002/figures/XFIG-EXP-002-01-eog.svg)
+
+**Exploratory qualification of P1 (JRN-0015).** With the exact Gaussian posterior in place of the 20-bin map, P1's population EOG at the primary cell is 13.04 pp, outside the binned interval [14.30, 15.45], and its PPV gap is 2.10 pp rather than 1.00 pp. The exact value falls outside the binned interval in 5 of 12 cells (differences -3.86 to +7.67 pp). The H1 verdict is unchanged, since P1 still fails SR and EO parity, but P1's PPV-parity result and its magnitudes partly reflect the 20-bin implementation (Supplementary Table S4).
+
+### 5.3 RQ3: base rate or shape? (EXP-003)
+
+**Table 4.** EXP-003 P0 EOG, seed means in pp with 95% bootstrap intervals, and population values (`results/EXP-003/tables/summary.csv`, `analytic_check.csv`).
+
+| Grid | Cell | EOG | Population |
+|---|---|---|---|
+| A (equal base rates) | s_B 0.5 | 19.44 [18.98, 19.89] | 19.45 |
+| A | s_B 1 | -0.09 [-0.60, 0.38] | 0 |
+| A | s_B 2 | -22.50 [-22.93, -22.06] | -22.28 |
+| B (pi_B = Phi(-0.5)) | s_B 0.5 | 22.10 [21.68, 22.56] | 22.13 |
+| B | s_B 1 | 6.50 [6.12, 6.89] | 6.31 |
+| B | s_B 2 | -9.56 [-10.01, -9.12] | -9.73 |
+| C | Student t3 | 2.29 [1.87, 2.69] | 2.43 |
+| C | shifted log-normal | 1.43 [1.07, 1.81] | 1.23 |
+| D | kappa 0.1, p_B 0.2 | 6.40 [5.86, 6.87] | 6.84 |
+| D | kappa 0.1, p_B 0.5 | 6.95 [6.63, 7.31] | 7.49 (check failed) |
+| D | kappa 0.3, p_B 0.2 | 6.90 [6.37, 7.44] | 7.22 |
+| D | kappa 0.5, p_B 0.2 | 2.82 [2.40, 3.27] | 2.96 |
+| D | kappa 0.5, p_B 0.5 | 2.09 [1.85, 2.32] | 2.02 |
+
+(The Gaussian cell of grid C and the kappa 0.3, p_B 0.5 cell of grid D are the EXP-001 primary cell, 6.50 pp.)
+
+- **H0 rejected.** At equal base rates, changing only group B's dispersion produces EOGs of 19.44 and -22.50 pp. A base-rate difference is not necessary for an equal-opportunity gap in this model.
+- **H2: sign reversal, analytically determined.** At a fixed base-rate gap the EOG goes from +22.10 to +6.50 to -9.56 pp as $s_B$ rises. This was known before the run (population value -9.73 pp) and is reported as a quantification, not as a test.
+- **H3 supported (sign).** The EOG stays positive under Student t3 and log-normal shapes but is smaller (2.29 and 1.43 pp).
+- **H4 supported (sign), with a limitation.** All six grid-D cells are positive (2.09 to 6.95 pp). The implementation check passed only 56 of 60 comparisons; the four failures are in cells D-k0.1-pB0.5 (EOG z -3.08, SR z -4.07) and D-k0.5-pB0.2 (FPR z 5.05, PPV z -3.38). An exploratory rerun on seeds 1000 to 1019 passed 60 of 60 (JRN-0014). The owner accepted the failures as a disclosed limitation on H4, with no rerun (DEC-019, DEC-021). The magnitudes in the two cells are therefore not confirmed at the frozen standard.
+- **P3** brings the EOG within [-0.87, 0.85] pp in all six cells of grids A and B.
+- **Cells are not independent replications.** All cells share the same 20 seeds under common random numbers, so "positive in all six cells" and "56 of 60 checks pass" are not counts of independent confirmations.
+
+![Figure 3 (FIG-003). Per-seed P0 EOG by cell, EXP-003, 20 seeds per cell, simulated.](../experiments/EXP-003/figures/XFIG-EXP-003-01-eog.svg)
+
+### 5.4 RQ4: a real score (EXP-004)
+
+**Primary contrast.** $D = -7.45$ pp [-8.75, -6.05] (t-interval [-8.90, -6.00]; SD 3.11 pp). The interval lies entirely below +2 pp: **H1-real is disconfirmed**, and because $D$ is negative the frozen rule reports a contradiction. Qualified members of the below-40-hours group were selected more often under one common threshold, although that group's base rate on the evaluation halves is much lower: 9.13% [8.97, 9.28] against 28.20% [28.03, 28.38], a gap of 19.07 pp [18.84, 19.34]. Group B is 24.16% of the pool. The random control behaves as designed: P0 EOG -0.33 pp [-1.34, 0.70], base-rate gap -0.07 pp [-0.54, 0.47].
+
+**Table 5.** EXP-004, seed means in pp with 95% bootstrap intervals (`results/EXP-004/tables/summary.csv`).
+
+| Cell | Policy | SR gap | EOG | PPV gap | FPR gap |
+|---|---|---|---|---|---|
+| R-hours | P0 | 7.92 [7.68, 8.15] | -7.78 [-8.76, -6.80] | 28.45 [27.75, 29.24] | 0.57 [0.24, 0.87] |
+| R-hours | P1 | 28.27 [26.16, 30.38] | 30.52 [25.63, 35.58] | 10.47 [7.19, 13.69] | 19.22 [17.37, 21.01] |
+| R-hours | P2 | -0.21 [-0.83, 0.38] | -17.54 [-18.63, -16.45] | 33.10 [32.41, 33.86] | -7.33 [-7.97, -6.73] |
+| R-hours | P3 | 13.85 [13.00, 14.65] | 0.95 [-1.03, 2.83] | 24.68 [24.07, 25.34] | 6.16 [5.44, 6.82] |
+| R-hours-random | P0 | 0.17 [-0.28, 0.64] | -0.33 [-1.34, 0.70] | -0.66 [-1.44, 0.24] | 0.35 [-0.08, 0.77] |
+| R-hours-random | P1 | -3.99 [-6.76, -1.24] | -4.71 [-7.45, -1.96] | 2.01 [-0.43, 4.40] | -3.73 [-6.53, -0.93] |
+
+(P2 and P3 on the control are within 2 pp on every gap; Supplementary Table S5.)
+
+**Secondary results (descriptive).** No policy meets SR, EO and PPV parity within 2 pp on R-hours. Utility relative to P0 is +0.0043 [0.0025, 0.0059] for P1, -0.0063 [-0.0074, -0.0053] for P2 and +0.0038 [0.0028, 0.0049] for P3. P3's gain runs against the direction of EXP-002 H2 (constrained rules cost utility), which was not a hypothesis of EXP-004; P0's own utility per capita on R-hours is -0.0025, close to zero. On the control, P1 alone shows non-zero gaps (SR -3.99 pp), consistent with its larger per-seed spread.
+
+**Under the calibrated equal rule, the sign is as predicted.** P1, which also applies one threshold to everyone but on a within-group calibrated score, gives an EOG of +30.52 pp [25.63, 35.58] on R-hours: the direction the synthetic model predicts.
+
+**Exploratory, post hoc description of the contradiction (JRN-0016).** This check was designed after the result was seen and is not a test. On the full test pool, 62.05% of qualified members of group A and 70.31% of qualified members of group B score above the pool's 70th percentile, which reproduces the reversed sign without any split. The median score of qualified members is -0.29 in group B against -0.53 in group A, while unqualified members of group B score lower (median -2.19 against -1.83). The group-blind logistic probability over-predicts group B by 11.23 pp on average and under-predicts group A by 2.98 pp, and group B's observed rate is lower than group A's in every score decile (top decile 40.12% against 74.47%). The ECE gap on R-hours is -7.05 pp [-7.51, -6.56] against -0.86 pp [-1.15, -0.56] on the control (committed). The direction of the calibration difference (a lower observed rate for group B at equal score) also arises in the synthetic model through the prior shift, so it does not explain the reversal by itself; its size shows that the generator's measurement assumptions do not describe this score. These descriptions do not establish a cause.
+
+![Figure 4 (FIG-004). Per-seed P0 EOG, EXP-004, R-hours and R-hours-random, 20 seeds, real data.](../experiments/EXP-004/figures/XFIG-EXP-004-01-eog.svg)
+
+### 5.5 Expected versus observed
+
+**Table 6.** Predictions under the frozen protocols and observations (full version: `research/publication/interpretation.md`, section 4).
+
+| Experiment | Prediction | Observation | Verdict | Known in advance |
+|---|---|---|---|---|
+| EXP-001 H1 | D at least +2 pp | 6.59 [6.20, 6.97] pp | Supported | Yes (analytic, exploratory) |
+| EXP-002 H1 | No policy meets all three; all do at control | As predicted | Supported | From theory |
+| EXP-002 H2 | P2, P3 utility below P0 | -0.01773, -0.00215 | Supported | No |
+| EXP-003 H0 | EOG within +/-2 pp at equal base rates | 19.44 and -22.50 pp | Rejected | Partly |
+| EXP-003 H2 | Sign stable at fixed base-rate gap | -9.56 pp at s_B 2 | Sign reversal | Yes (analytic) |
+| EXP-003 H3, H4 | Sign kept | Kept in all cells | Supported (sign); H4 with DEC-019 | Partly |
+| EXP-004 H1-real | D at least +2 pp | -7.45 [-8.75, -6.05] pp | Disconfirmed (contradiction) | No |
 
 ## 6. Discussion
 
+**What the evidence supports.** Within the Gaussian model, one common threshold separates equally qualified individuals by several percentage points once starting distributions differ (6.59 pp at half a standard deviation), more with noisier measurement of the lower group, and no tested rule removes that gap without opening another. These results match theory and add a measured size with uncertainty.
+
+**What the evidence refutes.** The natural reading of EXP-001, "a lower base rate lowers the selection chance of qualified members", is refuted in the model by EXP-003 and contradicted on the real score by EXP-004. The refutation concerns the base rate as a sufficient description. Within equal-dispersion Gaussian groups, a lower base rate and a lower location are the same thing, and there the positive gap holds (EXP-001). EXP-004 tests only the base-rate proxy: the real data have no latent qualification, so its reversal contradicts the prediction made from the base rate, not a latent mechanism. A base-rate difference is neither necessary for a gap (grid A) nor sufficient for its sign (grid B, and EXP-004). The supported statement is narrower: under one common rule the EOG follows where each group's qualified members sit relative to the cutoff. In the Gaussian model with equal dispersion, a lower location puts them nearer the cutoff; with a larger dispersion (grid B, $s_B = 2$) or on the Adult score, they sit farther above it and the sign reverses.
+
+**Competing explanations.** The second review pass (`research/publication/review_pass_2.md`) notes that TPR is by definition the share of qualified individuals above the threshold, so the narrowed statement is close to an identity. Its testable content is negative: the base rate, which is what is usually observed, does not fix the sign or size of the gap. For EXP-004, three alternative accounts were examined (`research/publication/interpretation.md`). A split artefact is ruled out by the control and the full-pool description. A difference in where qualified members sit is supported descriptively. A difference in how the score relates to the label in each group is present and large, which means the synthetic generator's assumption of one latent scale with group-independent measurement does not describe this score and partition. The data do not separate these accounts causally.
+
+**The scale of "equal".** On the same real data, the equal rule on the raw score reverses the predicted sign (-7.78 pp for P0 on R-hours), while the equal rule on a within-group calibrated score gives the predicted sign at a large size (+30.52 pp for P1). In the model, P1 also more than doubles P0's gap. Whether an equal rule favours or disfavours the qualified members of a group therefore depends on the scale on which it is equal, not only on the groups' distributions, and any statement about direction is specific to a rule. The utility pattern also changes outside the model: on R-hours P3 gains utility over P0, against the direction found in EXP-002, consistent with a raw common threshold not being the unconstrained optimum when the score is not calibrated within groups.
+
+**Relation to prior work.** The EXP-002 pattern, where each policy repairs at most one criterion, is what the incompatibility results cited in section 2 lead one to expect. The utility cost of the constrained policies agrees in direction with the trade-off described by Corbett-Davies et al. (2017). Both comparisons rest on abstracts.
+
+**Practical significance.** The study gives a reproducible way to see the size of these gaps and to test a mechanism statement against a design that can refute it. It does not say which criterion should be preferred, and it supports no statement about any real decision system.
+
 ## 7. Limitations and threats to validity
+
+- **Simulation.** EXP-001 to EXP-003 hold only within the generator: a hard cutoff on a latent qualification, additive Gaussian noise independent of the qualification, two groups and one score. The label is error-free by construction.
+- **Analytic predictability.** EXP-001, EXP-002 and EXP-003 H2 were implied before the runs; several values were seen exploratorily before the freeze (C4). Their confirmatory status adds reproducibility, not discovery.
+- **Implementation check (DEC-019).** EXP-003 passed 56 of 60 comparisons. The failures are unexplained; an exploratory rerun on other seeds passed 60 of 60. The owner accepted them as a disclosed limitation on H4.
+- **Correlated cells.** All cells share the same 20 seeds by design, so cell-level results are not independent replications, and the 60 check comparisons are correlated.
+- **P1 binning.** P1's magnitudes and its PPV-parity result depend on the 20-bin calibration map (JRN-0015). The binning sensitivity proposal AP-008 was not adopted.
+- **One parameterisation per family** in grid C.
+- **EXP-004 fixed pool.** Its intervals cover the random split and tie-breaking only, not sampling from a population.
+- **EXP-004 score and partition.** One simple four-feature logistic score, one non-protected partition of one 1994 extract. The partition correlates with other attributes. A different score could change the gap. The real score is tied, so P3 meets capacity only within 30 individuals.
+- **No protected attributes.** None was used. Nothing can be inferred about protected groups, and the study makes no claim about workers, hours, pay, causes, the people in the data or any real decision.
+- **No universal metric.** The EOG is the primary metric for this question only.
+- **Static decisions.** No feedback over time (Liu et al. 2018).
+- **Literature at abstract level.** Related-work statements rest on abstracts; the search was not systematic.
+- **Records.** The runner records per-run durations and matrix start and end times, not per-run timestamps.
 
 ## 8. Ethics and responsible research
 
+The synthetic study involves no people. EXP-004 uses a public, CC BY 4.0, census-derived extract with no direct identifiers. Only age, education-num, capital-gain, capital-loss, hours-per-week and the income label are read for analysis. Sex and every other protected attribute are excluded from every analysis by the owner's decision of 2026-11-25 (DEC-018), which respects the project's claims boundary ("No real hiring decisions or protected-group claims; do not suggest a universal fairness metric."). One exploratory step under the superseded design computed training-file base rates by sex (JRN-0007). It was withdrawn from use and enters no analysis. No human-subject research was conducted and no ethics approval is claimed. The study gives no guidance for any real selection decision.
+
 ## 9. Conclusion and future work
+
+In the Gaussian model, one common threshold gives equally qualified members of a group with a lower starting distribution a lower selection chance, by 6.59 pp at half a standard deviation, and no tested rule removes that gap without opening another. The base rate alone does not determine the gap: in the model it can appear at equal base rates and reverse at a fixed base-rate gap, and on one real score it reversed, while a calibrated common rule gave the predicted sign. What survives is the near-definitional statement that the gap follows where each group's qualified members sit relative to the cutoff; its useful consequence is negative, that base rates are not a safe guide to the sign. Feasible extensions are a binning sensitivity for P1, more than one parameterisation per non-Gaussian family, other real scores and partitions with a location measure of qualified individuals registered before the data are seen, and a dynamic version.
 
 ## 10. Data and code availability
 
+Code, configurations, frozen protocols, raw results (`results/EXP-NNN/results.json`), tables, figures, provenance and checksums are in this repository. The public URL is a placeholder until the owner approves a release: `<repository URL, not yet published>`. Reproduction, from the repository root:
+
+```
+../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+.venv/bin/python -m pytest -q
+python3 scripts/download_adult.py            # EXP-004 only; checks the archive SHA-256
+scripts/run_confirmatory.sh EXP-001          # likewise EXP-002, EXP-003, EXP-004
+PYTHONPATH=src .venv/bin/python scripts/exp004_base_rates.py
+PYTHONPATH=src .venv/bin/python scripts/m4_exploratory.py      # exploratory, JRN-0015 and JRN-0016
+PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py   # evidence audit
+```
+
+The UCI Adult archive is redistributed unchanged under CC BY 4.0 (Becker and Kohavi 1996).
+
 ## 11. Funding, competing interests and AI assistance disclosure
+
+No funding was received. The author declares no competing interests. An AI assistant (Claude, Anthropic) served as a research and development assistant. It drafted protocols, code, tests, reports and this manuscript. It also ran the experiments and the evidence audit. It is not an author. The owner approved the protocols and their freezes, the amendments, the deviations listed in the supplementary material and the decision to write reports from committed results. The owner has not yet reviewed this manuscript's text (pending, M6 owner checklist). The automated evidence audit and the second review pass are internal quality control, not peer review.
 
 ## References
 
+- Barocas, S., Hardt, M., Narayanan, A. (2023). *Fairness and Machine Learning: Limitations and Opportunities.* MIT Press. https://fairmlbook.org/ (home page checked 2026-11-24).
+- Becker, B., Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20 (dataset page checked 2026-11-24).
+- Chouldechova, A. (2017). Fair prediction with disparate impact: A study of bias in recidivism prediction instruments. arXiv:1703.00056. https://arxiv.org/abs/1703.00056 (abstract only).
+- Corbett-Davies, S., Pierson, E., Feller, A., Goel, S., Huq, A. (2017). Algorithmic decision making and the cost of fairness. arXiv:1701.08230; KDD 2017. https://arxiv.org/abs/1701.08230 (abstract only).
+- Hardt, M., Price, E., Srebro, N. (2016). Equality of Opportunity in Supervised Learning. arXiv:1610.02413. https://arxiv.org/abs/1610.02413 (abstract only).
+- Kleinberg, J., Mullainathan, S., Raghavan, M. (2016). Inherent Trade-Offs in the Fair Determination of Risk Scores. arXiv:1609.05807. https://arxiv.org/abs/1609.05807 (abstract only).
+- Liu, L. T., Dean, S., Rolf, E., Simchowitz, M., Hardt, M. (2018). Delayed Impact of Fair Machine Learning. ICML 2018, PMLR 80:3150-3158. arXiv:1803.04383 (abstract only).
+- Pleiss, G., Raghavan, M., Wu, F., Kleinberg, J., Weinberger, K. Q. (2017). On Fairness and Calibration. arXiv:1709.02012; NIPS 2017 per the arXiv comment (abstract only).
+
 ## Supplementary appendix
+
+See `research/paper/supplementary.md`: complete experimental matrix (S1), extended tables (S2 to S5), configurations (S6), robustness and exploratory results (S7), report links (S8) and every deviation and owner decision (S9).

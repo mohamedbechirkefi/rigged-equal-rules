@@ -1,0 +1,26 @@
+{
+ "label": "exploratory (M4 confounder checks); never changes or replaces a frozen verdict",
+ "journal": [
+  "JRN-0015 (part 1)",
+  "JRN-0016 (part 2)"
+ ],
+ "command": "PYTHONPATH=src .venv/bin/python scripts/m4_exploratory.py",
+ "code_revision_at_run": "1cd5a513ace16e9b3b866c4f9ad0e47a48452ae4",
+ "git_dirty_at_run": true,
+ "python": "3.12.1",
+ "numpy": "2.5.4",
+ "platform": "macOS-15.3.1-arm64-arm-64bit",
+ "inputs": {
+  "results/EXP-002/tables/summary.csv": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79",
+  "data/raw/adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+  "research/experiments/EXP-004/score_model.json": "369ad5a731f0ef214d4740f07d972a686c358f4f780830efd17b96522713381b"
+ },
+ "exp004_pool_score_p70": -0.9332287865488215,
+ "protected_attributes_used": "none (hours-per-week partition only)",
+ "outputs": {
+  "exp004_calibration_by_decile.csv": "1497f59e08741cbb4186338f5272bcfde5ba0db0eec65af51c2f81007ad3878f",
+  "exp004_features_by_label.csv": "53edf515633046fe53112bf7364ae954be00a4762677e3632ea4eaff0ef31261",
+  "exp004_score_by_group.csv": "519ce191c7d5356ebcf24ae409976bf2cbfed6969bf080097e8d32eba710c9bc",
+  "p1_exact_posterior.csv": "88b874ea5965197e418d98ba5c762be7df1df38434c9dda2bbe1276c61c7011f"
+ }
+}

@@ -135,3 +135,25 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
   - EXP-004's descriptive base-rate gap (protocol section 3) is not produced by the report generator; `scripts/exp004_base_rates.py` was written after the run to compute it from `results.json` with the frozen interval method. No other analysis was added.
   - EXP-002's tolerance sensitivity (1 pp and 5 pp, protocol section 10) is read from the committed intervals; no new computation.
 - **Owner decision recorded:** item 4 of `owner-approvals-2026-11-25.md` ("approve all recommendations, RIGGED A"): the 11.3/11.6 experiment reports are written from committed results only. Per the coordinator's instruction, the coordinator writes `research/experiments/EXP-NNN/report.md` and `reproduction.md`; this session returned their text.
+
+## DEC-021 (2026-11-25): DEC-019 is a disclosed limitation on EXP-003 H4; nothing is rerun
+
+- **Decided by:** the owner, 2026-11-25, "Approve all recommendations, push then next" (`owner-approvals-2026-11-25b.md`, item 2): "The EXP-003 implementation-check failures (4 of 60) are a disclosed limitation on H4. Nothing is rerun."
+- **Decision:** EXP-003 keeps its frozen verdicts. H4 is reported as supported in sign, with the limitation stated wherever H4 appears (EXP-003 report, manuscript sections 5.3 and 7, CLM-009, CLM-011, `research/limitations.md`). No confirmatory or further exploratory rerun.
+- **Consequences:** closes the open item of DEC-019.
+
+## DEC-022 (2026-11-25): M4 choices (exploratory checks, audit, manuscript)
+
+- **Decided by:** the AI assistant, under the M4 brief (`labs/_shared/M4-brief.md`), except where stated.
+- **Decision:**
+  - Two cheap exploratory checks, both in one process (8.6 s), written to `results/exploratory/m4-confounders/` by `scripts/m4_exploratory.py`:
+    - JRN-0015 checks the protocol's named confounder "calibration-fit error in P1", which had no policy-level committed evidence. It uses the exact Gaussian posterior by numerical integration, with an in-session Monte Carlo cross-check in three cells.
+    - JRN-0016 describes the EXP-004 score on the full test pool by the hours partition only. No protected attribute is used and no model is fitted.
+    - Neither check changes a frozen verdict.
+  - Evidence audit by `scripts/m4_evidence_audit.py`: per-run identities, an independent re-derivation of the summary and contrast tables, SHA256SUMS, and a number trace for the manuscript, the supplementary file, the reports and the claims register. The artifact manifest is built by `scripts/build_artifact_manifest.py` and the supplementary file by `scripts/build_supplementary.py`, both from committed tables.
+  - One wrong number corrected in the EXP-001 report: the C4 SIZING value 6.31 became 6.30 pp. Stale status text corrected in the EXP-003 report and the registry. Two short M4 addenda appended to the EXP-002 and EXP-004 reports; their frozen verdicts and existing text are unchanged.
+  - Claims register: new columns (experiment, run IDs, config hash, figure or table, manuscript section). Rows CLM-016 to CLM-030 added, CLM-020 to CLM-025 being external claims marked abstract-only. CLM-012 narrowed to "contradiction of the base-rate prediction".
+  - Manuscript synthesised to master prompt 11.4, then revised after the second review pass (`research/publication/review_pass_2.md`, section 3).
+  - `research/freeze.json` and the frozen protocols, configs and seeds are not touched.
+- **Alternatives:** a P1 binning sensitivity by simulation (rejected: it would be a new analysis with no frozen config, and integration answers the protocol's question directly); per-seed bootstrap intervals for JRN-0016 (rejected: the check is descriptive, and the confirmatory intervals already exist).
+

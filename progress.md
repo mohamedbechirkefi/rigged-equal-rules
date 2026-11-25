@@ -370,3 +370,56 @@ Results (under 20 MB in total) are committed with `SHA256SUMS` and `provenance.j
 ## 2026-11-25: M3 done (coordinator)
 
 The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
+
+## 2026-11-25: M4 interpretation, evidence audit and manuscript
+
+**Brief:** `labs/_shared/M4-brief.md`, including the RIGGED follow-up of `owner-approvals-2026-11-25b.md`, item 2: "The EXP-003 implementation-check failures (4 of 60) are a disclosed limitation on H4. Nothing is rerun." That follow-up is recorded as DEC-021. **Starting state:** `main` at `1cd5a51`, tree clean.
+
+### Commands and actual outputs
+
+```
+$ .venv/bin/python -m pytest -q                                  116 passed in 7.60s   (before any change)
+$ PYTHONPATH=src nice -n 10 .venv/bin/python scripts/m4_exploratory.py
+wrote 4 tables to results/exploratory/m4-confounders            (8.6 s wall clock, one process; JRN-0015, JRN-0016)
+in-session Monte Carlo cross-check of JRN-0015 (4,000,000 draws per cell, seed 1234, not saved):
+  13.00, 22.26, 15.18 pp against 13.04, 22.25, 15.20 pp by integration
+$ PYTHONPATH=src .venv/bin/python -m rigged.cli export-configs --check     EXP-001 to EXP-004: matches
+$ PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py   (final run)
+EXP-001 240 ok, identity issues 0, summary max dev 4.98e-11 (432), contrast max dev 3.83e-11 (24), sha mismatches []
+EXP-002 960 ok, identity issues 0, summary max dev 4.98e-11 (1728), contrast max dev 4.63e-11 (96), sha mismatches []
+EXP-003 420 ok, identity issues 0, summary max dev 5.00e-11 (756), contrast 0 rows, sha mismatches []
+EXP-004 160 ok, identity issues 0, summary max dev 4.83e-11 (288), contrast max dev 4.93e-11 (96), sha mismatches []
+number trace unmatched: manuscript 10 (8 DOI/arXiv ids, 7.67 a derived difference), EXP-001 report 1 (71.7 MiB, unit conversion), claims register 1 (DOI); all others 0
+$ python3 scripts/build_supplementary.py                         wrote research/paper/supplementary.md
+$ python3 scripts/build_artifact_manifest.py                     21 entries
+$ pandoc research/paper/manuscript.md -s -t latex                manuscript.tex regenerated (pandoc 3.6.3)
+$ .venv/bin/python -m pytest -q                                  116 passed in 7.42s   (after all changes; src/ and tests/ unchanged)
+```
+
+### What was done
+
+1. **Confounders and sensitivity:** `research/publication/interpretation.md`. Each protocol-named competing explanation is marked addressed or not. Two cheap exploratory checks were added:
+   - JRN-0015: P1 with the exact Gaussian posterior. At the primary cell the EOG is 13.04 pp, against the binned 14.89 [14.30, 15.45] pp, and the PPV gap is 2.10 pp against 1.00 pp. The exact value is outside the binned interval in 5 of 12 cells.
+   - JRN-0016: the EXP-004 score on the full pool by the hours partition. 70.31% of qualified Group B members and 62.05% of qualified Group A members score above the pool's 70th percentile. Calibration in the large is +11.23 pp for Group B and -2.98 pp for Group A.
+   No frozen verdict changed.
+2. **Expected versus observed:** table in `interpretation.md` section 4 and manuscript Table 6.
+3. **Claims register:** columns added, 30 rows (CLM-016 to CLM-030 new; CLM-020 to CLM-025 are external, abstract-only). CLM-012 narrowed.
+4. **Evidence audit:** `research/publication/evidence_audit.md`, `evidence_audit_output.json`, `number_trace.csv`, `artifact_manifest.json`. Mismatches fixed: EXP-001 report C4 value 6.31 corrected to 6.30 pp; stale DEC-019 text in the EXP-003 report; stale registry statuses; `references.bib` header and missing becker1996. Finding disclosed: `research/freeze.json` was appended after the runs, so its run-time hash differs; no frozen hash changed.
+5. **Manuscript:** `research/paper/manuscript.md` synthesised to 11.4 (abstract 246 words; about 5,300 words outside tables), plus `supplementary.md` generated from committed tables. Status line: independent research manuscript / preprint draft, not peer-reviewed.
+6. **Second review pass:** `research/publication/review_pass_2.md`. Of 12 challenges, 11 hold in full or in part (R8 does not); 7 manuscript changes are recorded. They include P3's utility gain on the real score, reported as running against EXP-002 H2's direction; the EXP-004 reading narrowed to the base-rate prediction; and the mechanism presented as near-definitional.
+7. **Records:** limitations, DEC-021 and DEC-022, journal JRN-0015 and JRN-0016, registry, roadmap, CONTRIBUTING (M4 commands), author review and release checklist. M4 addenda were appended to the EXP-002 and EXP-004 reports, with their verdicts unchanged.
+
+Nothing frozen was touched (protocols, configs, seeds, `freeze.json`). No confirmatory rerun. No sex or other protected attribute was read in any new computation.
+
+### M4 gate
+
+Every numerical claim maps to a claim row with a result ID, a config hash and a table or figure (`claims_register.csv`, `artifact_manifest.json`). Every external claim maps to a source that was opened, marked abstract-only. **M4 is done.** The owner's review of the manuscript text is open (M6 checklist).
+
+### Risks and items for the owner
+
+- Every cited source is used at abstract level only. The owner may want full-text reading before any release.
+- The EXP-004 interpretation (a contradiction of the base-rate prediction, with the predicted sign under P1) is the main scientific judgement for the owner to review.
+
+### Next action
+
+M5 (interactive experience), using the M4 labels.

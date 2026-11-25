@@ -146,3 +146,10 @@ On this real distribution, the synthetic mechanism's prediction fails, with a si
 ## 11. Reproduction
 
 See `research/experiments/EXP-004/reproduction.md`.
+
+## 12. M4 addendum (2026-11-25, exploratory; the verdict above is unchanged)
+
+- **Scope of the contradiction.** The real data have no latent qualification, so what is contradicted is the prediction made from the partition's lower base rate. A latent mechanism is not tested (second review pass, R3).
+- **The sign depends on the scale of the equal rule.** Under P1 (one threshold on a within-group calibrated score) the R-hours EOG is +30.52 [25.63, 35.58] pp, the predicted sign (section 7, committed).
+- **Post hoc description, JRN-0016.** On the full pool, 70.31% of qualified Group B members and 62.05% of qualified Group A members score above the pool's 70th percentile, so the sign does not depend on the split. Qualified Group B members have a higher median score (-0.29 against -0.53). The logistic probability over-predicts Group B by 11.23 pp and under-predicts Group A by 2.98 pp. This establishes no cause. Source: `results/exploratory/m4-confounders/`; manuscript section 5.4 and supplementary S7.
+- **Utility.** P3's utility gain over P0 (+0.0038) runs against the direction of EXP-002 H2. That was not a hypothesis here.

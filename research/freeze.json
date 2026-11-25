@@ -214,5 +214,32 @@
   "48f065243f17919ed8a8f2775e01c47ba969a40e (v1.0 freeze)",
   "97de6864fb1a89e2fdb1c5ee526d57c8009efe34 (round-3 amendment)",
   "618a352bb2610653b29ec2301b2a9d2ee8e30c8d (amendment of 2026-11-25, option A; protocol text first at 4daea38)"
- ]
+ ],
+ "m3_deviations": [
+  {
+   "id": "DEC-019",
+   "date": "2026-11-25",
+   "experiment": "EXP-003",
+   "text": "Implementation check 56/60 within 3 bootstrap SE on the confirmatory seeds; 4 comparisons in D-k0.1-pB0.5 and D-k0.5-pB0.2 outside (largest |z| 5.05). Nothing changed or rerun; exploratory rerun on seeds 1000 to 1019 passed 60/60 (JRN-0014). For the owner."
+  },
+  {
+   "id": "DEC-020",
+   "date": "2026-11-25",
+   "experiment": "EXP-001, EXP-002",
+   "text": "Shared P0 runs computed in both matrices (identical apart from runtime) rather than once."
+  },
+  {
+   "id": "DEC-020",
+   "date": "2026-11-25",
+   "experiment": "EXP-004",
+   "text": "Base-rate gap table produced by scripts/exp004_base_rates.py, written after the run; the analysis is the protocol's descriptive secondary with the frozen interval method."
+  },
+  {
+   "id": "DEC-020",
+   "date": "2026-11-25",
+   "experiment": "all",
+   "text": "Per-run timestamps not recorded by the runner (schema 1.0.0); matrix start and end plus per-run durations in results/EXP-NNN/provenance.json."
+  }
+ ],
+ "m3_provenance_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e"
 }

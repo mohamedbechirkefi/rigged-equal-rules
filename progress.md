@@ -328,3 +328,41 @@ The round-3 master-prompt conflict is resolved (DEC-018).
 ### Next action
 
 M3 (`labs/_shared/M3-brief.md`).
+
+## 2026-11-25: M3 confirmatory runs (EXP-001 to EXP-004)
+
+**Brief:** `labs/_shared/M3-brief.md`; reports per the coordinator's `report-return-note.md` (text returned, written by the coordinator). **Starting state:** `main` at `9f464c5`, tree clean.
+
+### Before the runs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras      Audited 14 packages
+$ .venv/bin/python -m pytest -q                                    116 passed in 7.32s
+$ shasum -a 256 data/raw/adult.zip                                 7537312dd56c...cc21bb (matches the manifest)
+guard: EXP-001 to EXP-004 frozen: protocol, config and freeze record match; export-configs --check: 4 matches
+$ rigged.cli smoke --matrix SMOKE --out results/exploratory/m3-smoke     ok 24, failed 0, wall clock 0.07 s   (JRN-0008)
+$ rigged.cli smoke --matrix SIZING --out results/exploratory/m3-sizing   ok 400, failed 0, 2.82 s; analytic 28/28 within 3 SE,
+  tables identical to the M2 SIZING run                                                                    (JRN-0009)
+```
+
+Provenance revision `b455d59` (commit of the preparation; tree clean, no editable install).
+
+### Confirmatory runs (`scripts/run_confirmatory.sh EXP-NNN`, nice 10, one process)
+
+```
+EXP-001 ok 240, failed 0, wall clock 1.38 s, exit 0   (2026-11-25T00:15:05Z to 00:15:06Z)
+EXP-002 ok 960, failed 0, wall clock 6.97 s, exit 0   (00:15:13Z to 00:15:21Z)
+EXP-003 ok 420, failed 0, wall clock 2.56 s, exit 0   (00:15:34Z to 00:15:37Z)
+EXP-004 ok 160, failed 0, wall clock 1.42 s, exit 0   (00:15:47Z to 00:15:49Z)
+```
+
+Headlines (95% percentile bootstrap over 20 seeds): EXP-001 D = 6.59 [6.20, 6.97] pp, H1 supported; EXP-002 H1 and H2 supported; EXP-003 H0 rejected (19.44 and -22.50 pp at equal base rates), B-sB2 -9.56 [-10.01, -9.12] pp (sign reversal, analytically determined), H3 and H4 sign kept; EXP-004 D = -7.45 [-8.75, -6.05] pp, H1-real disconfirmed (sign reversal). Journal JRN-0010 to JRN-0013; claims CLM-001 to CLM-015.
+
+Deviation: EXP-003 implementation check 56/60 within 3 SE (DEC-019); exploratory rerun on seeds 1000 to 1019 passed 60/60 (JRN-0014). Other choices DEC-020.
+
+```
+$ PYTHONPATH=src .venv/bin/python scripts/exp004_base_rates.py    wrote results/EXP-004/tables/base_rate_gap.csv (8 rows)
+$ .venv/bin/python -m pytest -q                                   116 passed in 6.79s
+```
+
+Results (under 20 MB in total) are committed with `SHA256SUMS` and `provenance.json` per experiment; `run_manifest.json`, `metrics.csv` and figures copied into `research/experiments/EXP-NNN/`. The M3 status line is left to the coordinator, who writes the experiment reports.

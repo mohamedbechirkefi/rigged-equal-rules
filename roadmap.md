@@ -54,9 +54,9 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- [ ] Smoke matrix run and validated. (Run exploratorily in M2, JRN-0002; to be rerun under the frozen protocol.)
-- [ ] Frozen full matrix run for EXP-001 to EXP-004; every run, failure and deviation exported.
-- [ ] Per-experiment report drafted as each finishes.
+- [x] Smoke matrix run and validated (2026-11-25: JRN-0008 smoke 24/24 ok; JRN-0009 metric validation, analytic check 28/28).
+- [x] Frozen full matrix run for EXP-001 to EXP-004 (2026-11-25, revision b455d59): 240, 960, 420 and 160 runs, all ok; deviations DEC-019 (EXP-003 implementation check 56/60) and DEC-020.
+- [ ] Per-experiment report drafted as each finishes (text composed 2026-11-25; written by the coordinator).
 - Gate: complete planned matrix or documented failure; no silently dropped runs.
 
 ## M4: Interpretation (11.6: finish reports, evidence audit, manuscript synthesis)

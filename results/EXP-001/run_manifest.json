@@ -1,0 +1,1947 @@
+{
+ "command": "python -m rigged.cli run --experiment EXP-001",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "finished_utc": "2026-11-25T00:15:06Z",
+  "git_dirty": false,
+  "git_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+  "jsonschema": "4.26.0",
+  "machine": "arm64",
+  "numpy": "2.5.4",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "python": "3.12.1",
+  "rigged": "0.2.0",
+  "started_utc": "2026-11-25T00:15:05Z"
+ },
+ "label": "confirmatory",
+ "matrix_id": "EXP-001",
+ "peak_rss_bytes": 75202560,
+ "result_file": "results.json",
+ "result_sha256": "df4a452c70f2fa2c433cabce83c40c3aa247406f15c8ee5f48d90ebee8b520a2",
+ "runs": [
+  {
+   "config_hash": "sha256:82cb407abb747ded2af25112b2f038cd4341851f3c24858cc71ca57d53618ff4",
+   "peak_traced_bytes": 5044630,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s0",
+   "runtime_s": 0.03830987500259653,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6156cba35d77ca739325c9a8ea9412f31b23ce11abdb7c71ad206555c13939d3",
+   "peak_traced_bytes": 1524342,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s0",
+   "runtime_s": 0.0057262499976786785,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2582c00daa5a4175a0d5e785dc2152199420035cd5a3e543370f07d0f5461e1c",
+   "peak_traced_bytes": 1523382,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s0",
+   "runtime_s": 0.005614583998976741,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a7c615236a5e0fddc61668c96d6f8a47f0b913acdedfe382225a001f254e034c",
+   "peak_traced_bytes": 1523366,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s0",
+   "runtime_s": 0.005637333000777289,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6cd7a06d01b6dc4e7bf5db3c228518356e87e30b5f614bba723a0305bd79afd5",
+   "peak_traced_bytes": 1523342,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s0",
+   "runtime_s": 0.005816333999973722,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b2293f4dc72dcb4e9c08bb225189b0c8a10125a7f6aa85adf917409bd5d875ee",
+   "peak_traced_bytes": 1523326,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s0",
+   "runtime_s": 0.005574582995905075,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:495aa0bb6b0f0538cfa9922c77d93d97d1de8ce15bfdccbbed7c65335cc6eba7",
+   "peak_traced_bytes": 1523310,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s0",
+   "runtime_s": 0.005608500003290828,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:51aa8fce68abe6296dc50d3866e6afe8b24730386c6d91d784edeb908cf2fc1f",
+   "peak_traced_bytes": 1523294,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s0",
+   "runtime_s": 0.005565999999816995,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:911020d84f1c8b723ce7c40f86e66ad32bc6f614a062f9a706be787c3cd00684",
+   "peak_traced_bytes": 1523270,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s0",
+   "runtime_s": 0.0055250410005101,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:353274cc6d0dfb1e404b92ecbbbc9f48a74d2118ed1e53231fd9c601095270c9",
+   "peak_traced_bytes": 1523254,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s0",
+   "runtime_s": 0.005686458993295673,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:edb6721e8e0ba4f7614deff5eef89ecfa4e3fa86eee651f963264044d31cdd08",
+   "peak_traced_bytes": 1523238,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s0",
+   "runtime_s": 0.00556920900271507,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c8924ff6d253978d1d7d248d86ce7e93c201957342f1e37b145f822851927820",
+   "peak_traced_bytes": 1523222,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s0",
+   "runtime_s": 0.0055334999997285195,
+   "seed": 0,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e732d5e35062246a97e490311b09791f6a5c2683fc927ff9e9557755fc5ccce5",
+   "peak_traced_bytes": 3764958,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s1",
+   "runtime_s": 0.00713108300260501,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bd8df299346bd411a8380db721b822fdd484e71c3adfcec63a179d57b6727a16",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s1",
+   "runtime_s": 0.005513582997082267,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:77bca20728b12f6f5049028f11dfefb67a2ace568e7a093913efbf3654014eee",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s1",
+   "runtime_s": 0.00556329199753236,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a6e5f29bf539c4030a6c28ce62f689c01eac36da9d60c801d07c7ca1845e5a22",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s1",
+   "runtime_s": 0.005373291998694185,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5301589f5f9e14513ae4d0987411eeb1b36f0c3232ee00d2cc115f427f12271d",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s1",
+   "runtime_s": 0.005420666995632928,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c5f90107901321f4d3c5648461d02ed8d6c066a0886977157634b73b41c341e6",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s1",
+   "runtime_s": 0.005624124998576008,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3fe543ad3b76e6c9509c2eb8935cf415f6d571e5edf2f2db2d5a5d4fd3a90030",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s1",
+   "runtime_s": 0.005473499993968289,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5ed5c06e022f9f0b20dafacec534958b662a228a53638599162a1b6a778864ee",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s1",
+   "runtime_s": 0.005575290997512639,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d256ba626bd9548f3c2eccf57deac1102bd1bf388a37dfaab32857f9a7b82823",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s1",
+   "runtime_s": 0.005449124997539911,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:efc41c4c9ba7e32c33cad6074ce0ae4fe99a99d00c094dfae80b419e68a79246",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s1",
+   "runtime_s": 0.005274916999042034,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3c931385e3aefcade67a8aacf4a62ed1cdb947b824e143f228c0021fab077cfd",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s1",
+   "runtime_s": 0.005456709004647564,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e3f83cf5f1439acb1492c3d6998db34e23a3a2ff90919c364f10cd2c90a21f6e",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s1",
+   "runtime_s": 0.005611000000499189,
+   "seed": 1,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6552a50ad61d18f797bad0bd91aa7eacd012eaebae00da06385bc3e11596d386",
+   "peak_traced_bytes": 3764926,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s2",
+   "runtime_s": 0.00691529200412333,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cb8e0c33ed713a483e066d92ad5215bc9b70e00854a258ed8933c6d26997164f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s2",
+   "runtime_s": 0.005546167005377356,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f1f54d574872431fb1c64950418257f042ffb5a2a470497a53c969e45d942e89",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s2",
+   "runtime_s": 0.005070999999588821,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aa3251c59740319f9c05c83604669b967a115ce49aca712ed90af5663bd446fc",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s2",
+   "runtime_s": 0.0055990830005612224,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b966d8f5a4157c93f0eb0b8a69f9d626d7e29ef6cae311dd99e9ff3322996964",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s2",
+   "runtime_s": 0.005731583994929679,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:adea1d5f2fdfaa6fd3c881cecbde7ece6847be6b463cc9342069f0a87ad8a4b3",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s2",
+   "runtime_s": 0.0055954999988898635,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d555e8c8884b7348926359d035d3ee3608547cfa01deca17d6fa85a4c0ab8bfe",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s2",
+   "runtime_s": 0.00550995900266571,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1d4690ebf2ed49ceafea91d0b4a70b743edd9cf37839dec23882cbb715206b5a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s2",
+   "runtime_s": 0.0054648329969495535,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d53caff35fc8663c9f852175c9e7a98cefecd40278f6d8b92a7bef30b53c1729",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s2",
+   "runtime_s": 0.005369375001464505,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fd72b4407ca9a0100c6f7d3e7381b39a554270c087fbf54e61fe39e414c27565",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s2",
+   "runtime_s": 0.005540124999242835,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e5cba68e728c1db43940c4c31b4b81017701a12b6a8dc7410b7a9b4489c85c9b",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s2",
+   "runtime_s": 0.00560291699366644,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:09d0ab40ebb0c4df3481e96a5c429624615be952345f18526910b4e457a1e276",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s2",
+   "runtime_s": 0.005563208003877662,
+   "seed": 2,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:581bdadfdd584cf4be614b0dd9a768378f0c696fef09635f3724855c0f515fdc",
+   "peak_traced_bytes": 3764886,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s3",
+   "runtime_s": 0.007245291002618615,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:acdae675ea06e0d3952eaccc84c29f32117c74359dcef4559006feb0ee64613a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s3",
+   "runtime_s": 0.005494666998856701,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ecfdd5d11fa2e891d170d022c9160e49d6ee3f8f9e12016e9f4a5da984c0966e",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s3",
+   "runtime_s": 0.0054140829961397685,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ca516c9e2727d390cf31dad560d2965f0fe90433cc9f4c25c86e43e81daa4f42",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s3",
+   "runtime_s": 0.005544166997424327,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:42ecb8fbeb5ba52d2b02a733dd0989db287cee6afd40454b9049a905d85ce5e0",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s3",
+   "runtime_s": 0.00551029199414188,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ebfebeccc453ed0ce344bcb1de3f2ccff3eb71d1b07e5b58187054832925200f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s3",
+   "runtime_s": 0.00546458299504593,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4e3fdcd6079ad4c0091bd3df59fe51db60d4fdf5e7a22693b1acbe58f84bac83",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s3",
+   "runtime_s": 0.005396666994784027,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:014f586850ac52f92fab9552c76e141f09d730de8146a1412ac31e8c35dcbc7a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s3",
+   "runtime_s": 0.005536500000744127,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3f78d182b68f7d9fbef7dac841e428d271c867b438538c930ac45557c2c260b0",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s3",
+   "runtime_s": 0.005464458998176269,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b62a366686875f76fb6a21775af3cb7301900b35d3c2ed5b849379af113fd7db",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s3",
+   "runtime_s": 0.005552375005208887,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7553a61978cb226039d8321924ef26f5dc6987382626009cff6d1fc61d0c718a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s3",
+   "runtime_s": 0.0055039169965311885,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:681aa3060deb1e6a231c5aae16db468d7a31919af27d32cb04ea30605f8a6650",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s3",
+   "runtime_s": 0.005472999997437,
+   "seed": 3,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b1dbbc60a76edfd19df8b2250854449b814380131eb62815b5ceb4ede2078c4b",
+   "peak_traced_bytes": 3764846,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s4",
+   "runtime_s": 0.007320999997318722,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a3dfef499a1be0f4e0287c8b44ab9933add2e7fc45b51bc34ee271bc9f5cdc4e",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s4",
+   "runtime_s": 0.005549415996938478,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a764f38a6f4fd64e23b9a9ce735739d0664eae8538a52f582d3cbfbd74879da7",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s4",
+   "runtime_s": 0.005498499995155726,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e7c1defda58bc2a1e3e966df9941d9124db98c76566bf1ed8080bd2a3b028ac9",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s4",
+   "runtime_s": 0.0054284999932860956,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:068f4f0d85097bf38b2514392821beade98dbdd729299bc639031a14b97ca3bf",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s4",
+   "runtime_s": 0.005375499997171573,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5af2d56d9e8b7575d3fc4f38edc9febebbce2a2dbc80737ddab748bf5080d0c2",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s4",
+   "runtime_s": 0.005304459002218209,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:655478d05b7e77b47fcedaa81a8254781f2f4461dab6663f0c3742df09823c92",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s4",
+   "runtime_s": 0.005468041999847628,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d557782ef333273c8943189f1bb7023c88307165769aa9265cca1f60ba9c4bda",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s4",
+   "runtime_s": 0.005372374995204154,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:04edfe4f1d6c24992cbd2620590c13e2053b388888d2a60bbe4ea11e890b4aa0",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s4",
+   "runtime_s": 0.005405584000982344,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2463554529a2d5a3ec8bde362090cb56d8000155182bebc679d30f6b286728c3",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s4",
+   "runtime_s": 0.005564582999795675,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8203d566292fc8aad7fdd89e6a540e4e78532a6f23a8daa206e318978d1e2235",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s4",
+   "runtime_s": 0.005204124994634185,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0481dfeec35ecfe7d9c65a2810ea5a5a2bf6c9f4845796d9b5e08ef689fa181f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s4",
+   "runtime_s": 0.005146290997799952,
+   "seed": 4,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9bf1c6a917e74fe74354f137d50e307e4e2cfe1f39f9f37a08992592968c2ce7",
+   "peak_traced_bytes": 3764814,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s5",
+   "runtime_s": 0.0066545420049806125,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f386306ecf893332cf495a99b78e1e16d59c030e25d8b40d0b9711f923e33d3e",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s5",
+   "runtime_s": 0.005489582996233366,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6a610d26c084880278fd7c14ef8959e437c1b7cbb9e4ac200fb0d8eec93b8cc0",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s5",
+   "runtime_s": 0.005427000003692228,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a1a52949c82e42d7c0b748ec848e1bd414a0965aebb59200cfbf5e5b0421ddc8",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s5",
+   "runtime_s": 0.005227165995165706,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:eb2ce368270dc45fbab2a6dc9ddaf9294e2eaf1372eb67c9342532479c4083a7",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s5",
+   "runtime_s": 0.0054255830036709085,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5c974cfb004215aaacbea9ed659813dbeafd2f7baf2785549e0a9ae27d29b56f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s5",
+   "runtime_s": 0.005418958004156593,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:345aca587e502abed8511373c0ed5daeb32b7a23e9516a738c6c3e74f574ab2c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s5",
+   "runtime_s": 0.005378959001973271,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:690f7788c100662936553fda2cd2856aaa6dacb7a5fe9d535170ba2b4e3ea64f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s5",
+   "runtime_s": 0.005445374998089392,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:191f951ae509ccf3fb27c2a9c77670d95be7b825ad6713b3e4c85e847720971c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s5",
+   "runtime_s": 0.005364958000427578,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9d209981c53cb3b2b9b0150b40385600214baef730f7fd56bee89f6c78f4915b",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s5",
+   "runtime_s": 0.005481333995703608,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c1893a6ab17c06884faf14898171f23fe63ecc53a0aa5619c90a95ad5c0631eb",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s5",
+   "runtime_s": 0.0055927499997778796,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aec20ba9bc55bee1bdf1cc94494a0886d6d5a93b196b124b44ffccec202c7fff",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s5",
+   "runtime_s": 0.00544179200369399,
+   "seed": 5,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:737db88f42f15b2bbb36cbfde9352c6bff3d8f2b52f6f9a5cc1bbb909612ab9c",
+   "peak_traced_bytes": 3764782,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s6",
+   "runtime_s": 0.007376291003311053,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cb5fe1f2d60665e49a87f1246bd73097b7f87a0963518d9b08ad06571c72b3dd",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s6",
+   "runtime_s": 0.005079290996945929,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:896f1c33f172cd062e75f6c05048ac3ab971d478813d51daa02a77e1cfd7377d",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s6",
+   "runtime_s": 0.005343124998034909,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bf53718710509c9f4fbc213caae678c1eaef9982efb2f4173b44f0adab09ef8e",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s6",
+   "runtime_s": 0.005574666000029538,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:331d18ea1a92d1f5a5414a681e7e2ec9791e94b35a2abdb2c8f60f5c6310f54c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s6",
+   "runtime_s": 0.005452375000459142,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:aa906eb7236e862315b7d72f5dfdd197bde583e69751f279c0b97db6e02c4319",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s6",
+   "runtime_s": 0.005357584006560501,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8eb334fcb60ebf6f39225f54373e80a0e0151fc67566aeb32182ec71d55e7d09",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s6",
+   "runtime_s": 0.005360333001590334,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:31320624c12bb00ddb9a3ab9ededc69b529881cd3a6c57dab4bd3ca9dd82277b",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s6",
+   "runtime_s": 0.005388290999690071,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3e103d420a805300f0bb2582440c8edbe9b3e8f76ccd129c58781281cddeb7b6",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s6",
+   "runtime_s": 0.005264958999759983,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8950827cf045491a7554852e21590203b21f4b764c4feeb26de53a2264fdd7c2",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s6",
+   "runtime_s": 0.005608041996310931,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fad7b9f5bb4fb5f0d67fdaf755db2604ccc1eb535a793e96759e364913817b59",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s6",
+   "runtime_s": 0.005313875000865664,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:73d683d8a5b0f66459b5445e7ff3f2ab4104fed04a898ea83ac286ea7eaba36d",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s6",
+   "runtime_s": 0.005687541997758672,
+   "seed": 6,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:96e77d963febdfe58f0f009e7a011dc81052011b463c069ac813a513ca991494",
+   "peak_traced_bytes": 3764742,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s7",
+   "runtime_s": 0.007265457999892533,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:eb093741ad7626c105f613d60f0d81b8ebdbe6e2837604400f5c1880e058b122",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s7",
+   "runtime_s": 0.00531508399581071,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:316cd30ca88529a61ffd1362e817c50295db635827c13dc1e24c1538a96caed6",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s7",
+   "runtime_s": 0.005418166001618374,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:21db069085e565f96c542ec5986f6240b2206207f68f2858360eb63f7ca485b1",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s7",
+   "runtime_s": 0.005162000001291744,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:130c1c1eac077c7bfa1b7c1113f1115ad47d5ccbc2bcebbe132be7cb602afdbf",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s7",
+   "runtime_s": 0.005730915996537078,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:753106ca90271a03b9e6fc92b9031396930b28cbcc8c48b3d186533613e010f1",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s7",
+   "runtime_s": 0.005656375004036818,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8392ee2247b998ae499df784dfa3b9a1a87360d63338a764d45c4978dcc2b72b",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s7",
+   "runtime_s": 0.005453958998259623,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8b685242c9d511974663cd053bde0d495adb01726a0403f9864a541f1aa8912a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s7",
+   "runtime_s": 0.005357750000257511,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a847abf91aa0998bdadc5369da5ab862b972eba26a3516c09797ca426b9d0809",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s7",
+   "runtime_s": 0.005569084001763258,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:db335dc9810353349d8fe1e4d52ce4b910204fed6e3903679404668cf9a6d566",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s7",
+   "runtime_s": 0.005504624998138752,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:18d596b4479616b40f140e005cf21b5b13953dd809305137dfa913f855b8c6fe",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s7",
+   "runtime_s": 0.0055637499972363,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8bbae3b92932c1ea6219305111b887af7cf113424b015d83538ff2f87ae79b29",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s7",
+   "runtime_s": 0.005793459000415169,
+   "seed": 7,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e810a0e198d300a3d90cabf65b504aaae3064304ae6146ddfb35b393e41a55fc",
+   "peak_traced_bytes": 3764702,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s8",
+   "runtime_s": 0.007073916996887419,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:34308b16b3e0363d9c0edc6dbb2d451a645661edaedd82987d92f60dbda1d5ae",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s8",
+   "runtime_s": 0.005613374996755738,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7560cc27ba551d1ee071c2ad4409d2e1d5c49daf5c65db35f7edf4ffe6b9b891",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s8",
+   "runtime_s": 0.005157832994882483,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ba11b527982fa85ee5613fe2801bca4102334484879ec0e99c2c6fd8f92c2a8a",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s8",
+   "runtime_s": 0.005196625003009103,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6fbdd6bbb3c9a194a1f2beb90f5fd30688e74f4fa2f004319b8417cdd683329f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s8",
+   "runtime_s": 0.0057545419986126944,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ccf7538dd811a6c23fb6df1aaa9871fbcfa4d347b2ace73af16ddcac817871d3",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s8",
+   "runtime_s": 0.005592999994405545,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b8ef19048dbc4c381cbf182cb17f993787a68659effa1a388ea7a9ee8f1c535d",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s8",
+   "runtime_s": 0.005715291001251899,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b65f1cd7aa032b15d8f5e3498abb5c3e6401ceb0c26c082685ce0c3dea150fb7",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s8",
+   "runtime_s": 0.005491916002938524,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:855316bd81e2bec1ec852eb259bbee04b91e17af029dd3b22796e1368eef9a73",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s8",
+   "runtime_s": 0.0054267089944914915,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:15a183ccc79267e8fc33b95b288085a1850045a8f7a0258f46224166f136e335",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s8",
+   "runtime_s": 0.005574916998739354,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8bdb6527cc9b8bd2c72cc61655d395bc5560a4af75b22c2ea8ec2023bca6701c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s8",
+   "runtime_s": 0.00555750000057742,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b3391ed1b0811886f5a1e960225a061d33af993a2bf86cb25ad5762dbe42c66c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s8",
+   "runtime_s": 0.00566087500192225,
+   "seed": 8,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c9750df9e40cf3864cddc2dda38bfebbc482b034d630038acf389b02f51d925a",
+   "peak_traced_bytes": 3764670,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s9",
+   "runtime_s": 0.0072371250062133186,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:30f9556049e00c16b050fdfad6082d94c8da0f63488658a85edc7028013b836c",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s9",
+   "runtime_s": 0.0056065420067170635,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b38ea87cb438e154c328545cfee454952767622c97de3a89b2b45c7682fe80dc",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s9",
+   "runtime_s": 0.0052551670014509,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:32b45f71756c1211dd64ffe057bfa6aa3ee4113f59a0d07e8126c3b93db5a6a8",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s9",
+   "runtime_s": 0.005465124995680526,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2b78ae0750ad41af135adda39d4034189575e5ba06bd416c889cd67eaa4a2e94",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s9",
+   "runtime_s": 0.0053627919987775385,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5fc54f24fe243e5051dc3f16a16c596aba026a2c1b848996a06bbca18dbf0583",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s9",
+   "runtime_s": 0.005732208999688737,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3cc2dc7d926838bf1ca702865a79273d3f52ec7c367452da1b76fed33aa2775f",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s9",
+   "runtime_s": 0.005470290998346172,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9011044391a4276349a72b1eb982958f4c48b22218d7b6b2ebbc7c424a90d458",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s9",
+   "runtime_s": 0.005736833001719788,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d1ad33300b030c8c94566790738bce38052d93a52569e106b47e11ed3529e8d0",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s9",
+   "runtime_s": 0.005200332998356316,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:be41c40566bca0b2b4670901f6c930109f06c743ff7e256ff6c6d7a06449a764",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s9",
+   "runtime_s": 0.005538249999517575,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:788081a05a4461ca42857f90f21b77f194e190bc4f845591c380fa2b100890ac",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s9",
+   "runtime_s": 0.005293000001984183,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:763e0aa16abe7d164c1f35f1763dfbbe0eceaffdfca4f0e4cbfdfa652ba99ff4",
+   "peak_traced_bytes": 1523206,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s9",
+   "runtime_s": 0.005626792000839487,
+   "seed": 9,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:59ce25cde3adb6749217f348e8d3dfb99fdff4951b834ab96965d40e9d254dbc",
+   "peak_traced_bytes": 3764639,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s10",
+   "runtime_s": 0.0073895829991670325,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4701a2cd34d803a99594321fcab4212a27a791ab985a50078e84305d118a9256",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s10",
+   "runtime_s": 0.00547674999688752,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3ad7a6ae6e4981b7620937f9d22a78b2f32b66de6aedc5196785a4841ec7bd86",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s10",
+   "runtime_s": 0.005329749998054467,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e6c470970c4f02699b8e0c579c221157c4dc8602d46d1bb42e4f228427d8e230",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s10",
+   "runtime_s": 0.00550758300232701,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:466124a3a83e1a990f54984de02a0ed2a38c376a375948623c1163927833b7b7",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s10",
+   "runtime_s": 0.005489874994964339,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9e0c19c35c8d5eea922feb8eaae755786c56d87ba86d20d93161b65b18ebe750",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s10",
+   "runtime_s": 0.005390666003222577,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ce52a67f4f3e1248d85b2ae9f22425cb43325764da5a455494b455c5995f8fcc",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s10",
+   "runtime_s": 0.005534165997232776,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c4e767913adbb1b35cd8345632b1b814bfacfaf8bcb9a41b7bb4d5a012952db6",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s10",
+   "runtime_s": 0.005765958005213179,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a3fdc8abd9cf224df5e0558f62153507d3bd50d149325d24437c902784449541",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s10",
+   "runtime_s": 0.005499457998666912,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:47f9387963a0049870f28657a37e885d89ba3530aa795b74261005a7d631d161",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s10",
+   "runtime_s": 0.005552416994760279,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8cee183bb46b7a9ed4c073bf6f9b0836cd10046d2a4deae5a829fe282580df67",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s10",
+   "runtime_s": 0.00569750000431668,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:774acc591fb592cbebfaf8c52f6be1d5f4cba3d21966c81c5c2e4d8048ca908d",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s10",
+   "runtime_s": 0.005662125004164409,
+   "seed": 10,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:251d1bece6b8b0d567ec64faa1d514c2f7f77a5a7a602eddb9bc1f55fb5a3a6d",
+   "peak_traced_bytes": 3764599,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s11",
+   "runtime_s": 0.007323832993279211,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f6fec9f6bfa5af9ed8b11e1633de1c2acbfa6fe5cdaba5f035ccbfd0f68ccc27",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s11",
+   "runtime_s": 0.005743749999965075,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7c469be2a81c6874af60bad304f0b036ee2778bd0f6e9f5237fc8d5fb241bbe1",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s11",
+   "runtime_s": 0.005690666999726091,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ebb659152352306c2a39437ee895382eb076c049be3a777e5458b472b5c10b8d",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s11",
+   "runtime_s": 0.00564058300369652,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:21aa6e7dbe46782fe1a31320bc4281cdc471e49dacb525d083f422810da16063",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s11",
+   "runtime_s": 0.005371374994865619,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5fc3c5642ef91e25766f4d50354f5b10f44fbb0a53133f5b109b4dc6bc8b71ff",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s11",
+   "runtime_s": 0.005061834002844989,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a7eee5faf1e52026eaa98ccc13eea93e6d7d9c6b5c89df21a1168c4972264289",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s11",
+   "runtime_s": 0.005733291996875778,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:346e023b8219294bdd3d6108c5e875a1728c221531a3acdfb885cbcee6f57db4",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s11",
+   "runtime_s": 0.005477416998473927,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5ce4f8a12b97b74d11aa054a1ce45a7fbdde51b6d3a6b9500c91af1d940fd262",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s11",
+   "runtime_s": 0.005090999999083579,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9e3589b5a95fe9447be62c915aa9c48bbb49f62d432e4bd3d5fd7c35407b15e8",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s11",
+   "runtime_s": 0.005318041999998968,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:961e130cfd81445747992cee5ea8cdff8d37358c438086be7345b29c7b3a2bc4",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s11",
+   "runtime_s": 0.005687292003131006,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:19ea17e0f9c19c813d0c392eb18ed54170bff5200d2e35169c2fd56aa8c3fa28",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s11",
+   "runtime_s": 0.005653749998600688,
+   "seed": 11,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f8865b643d0fb405f4456b1f7cd7ac9974f5fa0db8d5dd1ce966d0e0849cfa92",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s12",
+   "runtime_s": 0.007058208000671584,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bcd362edaa184bace03f647ae7c6a126e271f6591edf1e99f9e5ad1bc3cfd8ac",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s12",
+   "runtime_s": 0.0053080829966347665,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ae03cbc866d1d1c0e8222e02cd1d88343e10ef840dd2078a3e71897720da09b2",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s12",
+   "runtime_s": 0.005433874997834209,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:653c98f9ab1fac62f9571b2b3272faa0a8d585aadb361f28c0541cd4feca633f",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s12",
+   "runtime_s": 0.005426707997685298,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:23e4dabd4fed54801ddc64f9496dc649c55f2f10831af958c17f945667459e64",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s12",
+   "runtime_s": 0.005491584000992589,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e6641ec5b94fdf1ad0917390254b2bc9000bf69e2da7832fabc9fdc4176f0400",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s12",
+   "runtime_s": 0.005353874999855179,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7cffb00ecbeccd102415963878ee847db47715865e77231598dffb33b9b6f625",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s12",
+   "runtime_s": 0.005458125000586733,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3fcde7c066c58ad9b61e689ae17cc8c52e9b59ade87b90d61b5ef783686d05f9",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s12",
+   "runtime_s": 0.005213958997046575,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c55565e6e14534946f34366db1530932770488b4b1589b9268715bfeab8c6b8a",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s12",
+   "runtime_s": 0.005061000003479421,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5a361e605f8544f2b091b811ea3206a1685eefda050d552927ed925d50402cc8",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s12",
+   "runtime_s": 0.005619542003842071,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8861e46a6c1b27f0be0956186491c54a1f6495e0c8d820ca7abd673230e59b9a",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s12",
+   "runtime_s": 0.005686375006916933,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5a5a88accd5d4c99fb35f6096dbc94d96183d2464ffd4e7ec3f9292b233001bf",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s12",
+   "runtime_s": 0.005734291997214314,
+   "seed": 12,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:19931847a9cf000e590f367e17f2707b3a37556956b6be3bd28f057530077198",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s13",
+   "runtime_s": 0.007343749995925464,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1e5bea4c27036343bc4aa0e1205733afa9c76fcc071f77a3efb3110ec6913378",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s13",
+   "runtime_s": 0.005075207998743281,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6e0c75d32b6387e1fa4333f8a5dfa2cebbd6bdfaf324f999535c52be13d827b5",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s13",
+   "runtime_s": 0.005264833998808172,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:219afc0b1ee852ca3592ead6bb5a1beaaa4ae9cc4cc6b85ccd9f772b58973dc9",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s13",
+   "runtime_s": 0.005327291997673456,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c86a77ea9dfa75b130af55d734169fc5e7f2047fd1e5ec6022a602795ada06be",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s13",
+   "runtime_s": 0.005466417002025992,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9f2bfe9ecf4ddad3192613665a9394ef5335aa68b2bca2e3cf841838f6092591",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s13",
+   "runtime_s": 0.005507000001671258,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a08d52446b402bccfb39f6311b2317a6f01b33a5b3e8a8fa3fb9808179024b27",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s13",
+   "runtime_s": 0.0054535000017494895,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b1fe5b8c7614cd53320de934b77f3bdc6d1740753fd3f054bef521c24fffa97f",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s13",
+   "runtime_s": 0.005532792005396914,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bad49e04bf1dccf0f42e3c85056745304db60bfac8f8f4a665bf7e5c5ebaa606",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s13",
+   "runtime_s": 0.005388249999668915,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6fa3a41fa9b12e6b8597605112681cdd2f9059365f0dcca64b40ba0f80100267",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s13",
+   "runtime_s": 0.005386707998695783,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:46ad129dc50315680e97894242e6e4d8a43f2a5172305aa23b2ad94191bc0f4f",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s13",
+   "runtime_s": 0.005394250001700129,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f2d255212974ea5d564ca12f0fbd11626ff70514ef5d4f40aff3e82c700f20c6",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s13",
+   "runtime_s": 0.0054926669981796294,
+   "seed": 13,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ca7ad1be5351f9102830508717a0b6540b3af8816abda656f686652af508c3a2",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s14",
+   "runtime_s": 0.0070818340027472,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3c0ca1ce3a1c798ae9602138ff9813c6824d5c2a719f215b4bdca7f905af926e",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s14",
+   "runtime_s": 0.005627875005302485,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:20a8f74b3af920e08be992eb96b7a965e2724ae1abd4e9599dd3bb93062114c5",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s14",
+   "runtime_s": 0.005437707994133234,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:7de93e5085e015d0950845ebefdad1a151e2386e02b9638190d61e4cf7e67763",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s14",
+   "runtime_s": 0.005359124996175524,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bb3b105b16932344b723ef65c43c14b6c69bd84bed4c6fc58061ce67321429a6",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s14",
+   "runtime_s": 0.0054602919990429655,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c626859faa9cd0b85dadcfddb958d2b0843ae0a15084c171411d8e1ec3dab63e",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s14",
+   "runtime_s": 0.005410500001744367,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:21a0737283fcf5fb4b908626bec218a1f2a74c9f706c5bc96f0245f9140ae7da",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s14",
+   "runtime_s": 0.00546675000077812,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5f3005f4281804c64fe324f70fb15bed3763211a98338cdbaa1ca104acd42a95",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s14",
+   "runtime_s": 0.005364416996599175,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:48001d927f06ac04e693d4c7517f106bff879dea2788d19c4d880ed5a27581c1",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s14",
+   "runtime_s": 0.005457749997731298,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:adf019628c32a9f70c7f493cf5fe6b74b9e0cd3ebe5437e1d504df8212b798db",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s14",
+   "runtime_s": 0.005443458001536783,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:146fbe20e7b3ef95a07a4eff6103ee177aae61696a13e1158978f2dc6ab0ef75",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s14",
+   "runtime_s": 0.005496083002071828,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:07c107eb2380aa72edce677e211924aa8bff0aa52fa8a4d090c72bd807a86129",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s14",
+   "runtime_s": 0.0055155000009108335,
+   "seed": 14,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c3b14eacde9fbfe1abd6cbcb46892a90bb0891e22c9619e66c2e30588a875b78",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s15",
+   "runtime_s": 0.006763707999198232,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1f32befd22c6e0ac691fb7b7dd27b1c55866433edf4163d93de43f164f64c2ed",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s15",
+   "runtime_s": 0.00544879100198159,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:94ee4d4166f8de6a0686c08e81836d4f0836e940846458026c95d02f6f18c103",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s15",
+   "runtime_s": 0.005304500002239365,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:866400c8fea640d2d8a897162eb41043966cb8cb48e5e65bb4c49fe99d262e90",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s15",
+   "runtime_s": 0.005272292000881862,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1cb06a412cc03bdfa881e93f1c0398f3529c66c04c379c56b497f27d96a2e5c7",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s15",
+   "runtime_s": 0.005391250000684522,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:05e1a53962db77be9cc87f5ffbb32e1ac6fc03e8a7d25005c4dd81cde0cb505f",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s15",
+   "runtime_s": 0.005495249999512453,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bf084d60e6012a852c55dd914dcf5de33d4a5138e13f8bd77faaa4204a9944be",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s15",
+   "runtime_s": 0.005631624997477047,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:25b07e667443b7d5caea61f99b44e3e5dd2c8ce40d7d5d934ba663dcd7a803e5",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s15",
+   "runtime_s": 0.005700207999325357,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:98079578c195069e58aa8cc6f469b5ffc1f79a45463da704fad60eccb5a2890a",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s15",
+   "runtime_s": 0.0056638339956407435,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b4a60408542b59a334c1c4af0beade1564c685c21fe0b855f55def705c703490",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s15",
+   "runtime_s": 0.005574082999373786,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1169c3f036a274b808e87d6a906fc6d0f3e31d2bd85a3369aa1907d1a1607352",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s15",
+   "runtime_s": 0.005253209004877135,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5287d34079d0ba5368c193a079da4ba3aa0202c60fab7243aa30118bb950e0a0",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s15",
+   "runtime_s": 0.005583459002082236,
+   "seed": 15,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a55a0aed6c4b84d6cd5d99bd645f38e24e41a1ca721e34640f6dd4b062a22730",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s16",
+   "runtime_s": 0.007295000003068708,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:60d89fb6a44250d63047086a28b05de43d5a6dd3a57478de54e16c32954867a8",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s16",
+   "runtime_s": 0.0052168749971315265,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8ba08d784dba86b528f3111f8f14760ac395109394ca78b58914b0093ee58dba",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s16",
+   "runtime_s": 0.005115125000884291,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:14c8043e8477892606a17d8848852fa4652c76e02fda844c20eaa479ffcb43ad",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s16",
+   "runtime_s": 0.005419959001301322,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc7b228a4d5da66ce4f3745ec9177957ef4f037621344b2551ea39947acf17da",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s16",
+   "runtime_s": 0.005234207994362805,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:3577bc988da598b162efff7e59ee27e1f1bd8c0232a27434682e5e064e893bea",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s16",
+   "runtime_s": 0.00541374999738764,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:6ebcd491389d61d98120801f66ce61c56d4fcbe20309c6542849c0c3482183ca",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s16",
+   "runtime_s": 0.0054691250043106265,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:48aa9b1ff8d3498196a64c05a8a09b0dfc2f71a76c010c376ef6df549c777851",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s16",
+   "runtime_s": 0.005351915999199264,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:9e6895fcee2f8745e7b093857d1c5a3c81731fc711d08b589f739cb18496aa40",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s16",
+   "runtime_s": 0.005183041001146194,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:06c30e6c5f6c6c5744dea714ef7fd199e20ad2d9c971c512a70172155403949a",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s16",
+   "runtime_s": 0.005718582993722521,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5b6a2c9938764231f672fa27c280abccf655ca5451beb027618f60d08898df08",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s16",
+   "runtime_s": 0.0057522909992258064,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d01f48a618fda06ff90a53d519c4119621a2e72d76247d68256f55cf8c17a7f5",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s16",
+   "runtime_s": 0.005560666002565995,
+   "seed": 16,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:b51713be66ae46193b1ab29cc8f7eb69704226c833707e2e0791015025daaeb4",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s17",
+   "runtime_s": 0.007527999994636048,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2856dc6009c0a85015041bf1b2940b12074dcda71f917e37a13fd0bea9ad8260",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s17",
+   "runtime_s": 0.005424000002676621,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:91f55aee3cfda764b9c520abbdf4b3a9792255a6120533b747f64069cf697fef",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s17",
+   "runtime_s": 0.005573208996793255,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc8cc790130452f5cac75c74a36203d801b3cb23b260ecce0e42097d3382bf79",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s17",
+   "runtime_s": 0.005636041998513974,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a074e4e849d9866e96cb87346547f204b80ad6bd3eeb70be530171af2816db81",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s17",
+   "runtime_s": 0.0055272079989663325,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:adbdc6aa2a98c2868eb9454936c69d00cbeaa273c14d385978378a2813bfd4d0",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s17",
+   "runtime_s": 0.0056624159988132305,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:e079a40485a7608b9776c18f650c2de93efc2f375a11d1eeccf5bd0a0411abd1",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s17",
+   "runtime_s": 0.005205791996559128,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8ed7f2d60c3e6ad11a0585c11d54f72ede58c9ed94e910b379d5f6b74feaeb44",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s17",
+   "runtime_s": 0.005521250001038425,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0447432cba8a8f640405711e8def41304d9bd74b3d9707f1000ac5d1cfe4ffdf",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s17",
+   "runtime_s": 0.005495749996043742,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:ad592656b335b8e6df46342d70347a00b26ad774f425b589efc64e7a28bdd7c9",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s17",
+   "runtime_s": 0.005691665995982476,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:06a1b657e95b7b4de0ed5d00425b2cbfd1e8206a61ac8aa7c6da2dd3f2e32735",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s17",
+   "runtime_s": 0.005568792003032286,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:a7692e16510b2786375351cfd766b3c7eb79fb81c62a06f58db74dcc202951e5",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s17",
+   "runtime_s": 0.005632082997180987,
+   "seed": 17,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c8117ef25508b7f2d6631fc611e83fe8eb7941169202b889392cf59674a3c97c",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s18",
+   "runtime_s": 0.007395749998977408,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:1f468431b15aa390038fe2c41727dee2c2e34fd4183e183266e63a02ed6cfc03",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s18",
+   "runtime_s": 0.005677041997842025,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:0949667aafee1f03953a4cfdf40bc7a8cdfbe5f0267e0a6c56f75567731adf74",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s18",
+   "runtime_s": 0.00522508400172228,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c2d3d82ed615ab4b2493eb38b9739666b33a0de58c8c3e9a9f396c931159323d",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s18",
+   "runtime_s": 0.0054715000005671754,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:fc7f503cfc22d555b5dcff0b690434cea20526741c9d489b5290778fc5bc9ab6",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s18",
+   "runtime_s": 0.0056763329994282685,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:5ed1304eb01390456501b388e63716351faec50f94eac661de1310391e97bf04",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s18",
+   "runtime_s": 0.0054715419973945245,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:78361b600e8a26624688107b5e9fe7ed9abd6035c5516d282e57c849f29f407a",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s18",
+   "runtime_s": 0.005610540996713098,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:097926fb550fcbce3fc69116ca2fa5f3bc13fd245d8cfe3e245fc9918377dba2",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s18",
+   "runtime_s": 0.005183458000828978,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:bb7abed6f27d38c6c431e372531356308fbce47b16836427499cab867f2d081c",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s18",
+   "runtime_s": 0.005553375005547423,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:383966f7b0a52fdbb9d23e44eaf1c9f27f7a4fc2f1ef2dc57f1a0cda4e6942b8",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s18",
+   "runtime_s": 0.005832832997839432,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d9bc45f299539dfeca77cdb4579b7bc25cfb2144372b3c73c92620ca1870b9fc",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s18",
+   "runtime_s": 0.005879999996977858,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:30c666e8b855e7212e220f10fed71775dbbf456bdc76877c0a0af000578369ee",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s18",
+   "runtime_s": 0.005544042003748473,
+   "seed": 18,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:c40e62821ebe28f484378e397957ea4688c0e2734c3d27cc604ccef4e2bb2e4e",
+   "peak_traced_bytes": 3764583,
+   "run_id": "RUN-EXP-001-d0.00-r1.00-P0-s19",
+   "runtime_s": 0.00757987499673618,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:42ee69e25c256eeb6ea86313661c5bddebcaca99dd762e1e86c1b3d3e12ce9f8",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r1.50-P0-s19",
+   "runtime_s": 0.005537707998882979,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:2dd40844ba408e1327d23d4f4468552c3356394742065b298263cf8f04e4c6e7",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.00-r2.00-P0-s19",
+   "runtime_s": 0.005461000000650529,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:d5e6e044aa86b50ef1485421ed70ab2cb0770437d26f5498cf1928452f2238bf",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.00-P0-s19",
+   "runtime_s": 0.005532499999389984,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:cccb6b07131a1683d07a9cd41967fea5d50df94ae621b326a1e7fe639d1d6127",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r1.50-P0-s19",
+   "runtime_s": 0.005361374998756219,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:8258f551908352cf36cab64877e46dd6b61ecb954bde3db9cb830e871b152499",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.25-r2.00-P0-s19",
+   "runtime_s": 0.005612209002720192,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:34ffb04306c28e05659526ce31e1dc619675f66641238e8fecb923408d450d57",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.00-P0-s19",
+   "runtime_s": 0.005514000004041009,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:4e3288f8685eac23e037b0e4978da9166a1c627ad9156397f03a944500ce4b81",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r1.50-P0-s19",
+   "runtime_s": 0.005466875001729932,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:04bb04b898a80b74dad74ac96cb7aec620edca01b23da4a763462c501b274a71",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d0.50-r2.00-P0-s19",
+   "runtime_s": 0.005363708005461376,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:562c5fc43139fd64edec7910c0028569adde6dea0081b0cbc08d157f5c55e396",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.00-P0-s19",
+   "runtime_s": 0.005558915996516589,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:f4322179fe718d8ec4b3601b3357da566c9642c59c497d31f383f07be4b19b6b",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r1.50-P0-s19",
+   "runtime_s": 0.0054216659991652705,
+   "seed": 19,
+   "status": "ok"
+  },
+  {
+   "config_hash": "sha256:53881882695cb0f79030e741e1da8951813012d15b0c0b17b3ec9cba12e6117f",
+   "peak_traced_bytes": 1523207,
+   "run_id": "RUN-EXP-001-d1.00-r2.00-P0-s19",
+   "runtime_s": 0.005893875000765547,
+   "seed": 19,
+   "status": "ok"
+  }
+ ],
+ "schema": "rigged.run_manifest",
+ "schema_version": "1.0.0",
+ "wall_clock_s": 1.382841541999369
+}

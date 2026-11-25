@@ -1,0 +1,21 @@
+  50/240 runs (RUN-EXP-001-d0.00-r1.50-P0-s4: ok)
+  100/240 runs (RUN-EXP-001-d0.25-r1.00-P0-s8: ok)
+  150/240 runs (RUN-EXP-001-d0.25-r2.00-P0-s12: ok)
+  200/240 runs (RUN-EXP-001-d0.50-r1.50-P0-s16: ok)
+  240/240 runs (RUN-EXP-001-d1.00-r2.00-P0-s19: ok)
+CONFIRMATORY EXP-001: 240 runs -> /Users/bechir/research/labs/rigged-equal-rules/results/EXP-001
+ok 240, failed 0, wall clock 1.38 s
+exit status 0
+{
+ "report": "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/report.md",
+ "tables": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/tables/analytic_check.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/tables/contrasts.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/tables/policy_vs_p0.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/tables/summary.csv"
+ ],
+ "figures": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-001/figures/XFIG-EXP-001-01-eog.svg"
+ ],
+ "pdf": null
+}

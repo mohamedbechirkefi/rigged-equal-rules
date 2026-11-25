@@ -21,3 +21,9 @@ No results exist yet. These are the limitations known by design.
 - P1 uses 20 quantile bins; its per-seed spread is larger than P0's (AP-008, not applied).
 - The ECE gap does not depend on the policy and is reported once per cell (AP-007).
 - EXP-003 H2 was analytically determined before the run (A1); several primary and EXP-003 values were seen exploratorily before the freeze (`research/freeze.json`, C4).
+
+## Added in M3 (2026-11-25)
+
+- EXP-003's implementation check (simulated P0 seed means against the numerical-integration population values, within 3 bootstrap SE) failed on 4 of 60 comparisons on the confirmatory seeds, in grid-D cells D-k0.1-pB0.5 (EOG, SR gap) and D-k0.5-pB0.2 (FPR gap, PPV gap). An exploratory rerun on seeds 1000 to 1019 passed 60 of 60 (JRN-0014). The 60 comparisons share one set of 20 seeds, so they are correlated. Unresolved; the owner decides (DEC-019). EXP-003 H4 rests on grid D and carries this caveat.
+- EXP-004's primary contrast is negative (-7.45 pp): on this real distribution, the synthetic mechanism's prediction did not hold for the hours partition. The study does not explain why; any explanation is a hypothesis for M4, not a finding.
+- The runner records per-run durations and matrix start and end times, not per-run timestamps (schema 1.0.0); `results/EXP-NNN/provenance.json` states this.

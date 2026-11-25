@@ -117,3 +117,21 @@ Append-only. Each entry: id, date, decision, who decided, context, alternatives,
 - **Decided by:** the owner, 2026-11-25, "approve all recommendations, RIGGED A" (`owner-approvals-2026-11-25.md`, item 1, which replaces item 1 of `owner-approvals-2026-11-24c.md`): "EXP-004's primary group attribute is hours-per-week below 40." Sex is "not used in any confirmatory or exploratory analysis. This respects the master prompt's claims boundary: 'No real hiring decisions or protected-group claims; do not suggest a universal fairness metric.'" "The P3 capacity tolerance of 30 is still ratified." Mechanics by the AI assistant.
 - **Decision:** dated pre-data amendment to the frozen v1.1 protocols (project protocol section 13, A25-1 to A25-9; EXP-004 protocol v1.2, section 11), written into the protocols before code was changed (commit 4daea38). Cells R-hours (primary) and R-hours-random (control), 160 runs, same draws. R-sex and R-sex-random withdrawn; sex is no longer a used column; JRN-0007 (training-file base rates by sex) withdrawn from use. History is not rewritten: commits 97de686 and 50aac6b stay as the record of the superseded round-3 design.
 - **Consequences:** supersedes DEC-016 (DEC-017 stands). Resolves the conflict with the master prompt and `CLAUDE.md` flagged in round 3. New hashes in `research/freeze.json`; v1.1 hashes kept under `superseded` with the reason. Nothing was computed on `adult.test` before or during the amendment.
+
+## DEC-019 (2026-11-25): EXP-003 implementation check failed on 4 of 60 comparisons (deviation, for the owner)
+
+- **Decided by:** the AI assistant records it; the owner decides what follows.
+- **Context:** protocol section 7 requires the simulated P0 seed means to agree with the population values within 3 bootstrap SE ("implementation check, not a hypothesis test"); EXP-001 section 12 treats disagreement as an implementation bug. On the confirmatory seeds, EXP-001 and EXP-002 passed 48/48 each; EXP-003 passed 56/60. Outside: D-k0.1-pB0.5 EOG (z -3.08) and SR gap (z -4.07); D-k0.5-pB0.2 FPR gap (z 5.05) and PPV gap (z -3.38).
+- **Action:** nothing was changed or rerun as confirmatory. One exploratory diagnosis (JRN-0014): the same frozen matrix on seeds 1000 to 1019 passed 60/60 (largest |z| in those cells 1.72). This suggests a realisation of the confirmatory seed set, shared by all cells under common random numbers, rather than a code fault; it is not proof.
+- **Consequences:** EXP-003 results are reported in full with the failed check stated; H4 (grid D) carries the caveat. The owner may accept it as a disclosed limitation or ask for an investigation.
+
+## DEC-020 (2026-11-25): M3 execution choices and minor deviations
+
+- **Decided by:** the AI assistant, before any confirmatory output, except where stated.
+- **Decision:**
+  - Provenance revision b455d59 (tree clean; all frozen hashes matched; 116 tests passed; archive SHA-256 matched). `scripts/run_confirmatory.sh` runs each experiment through the guard, then the report generator, then `scripts/write_provenance.py` (exit status, times, data manifest, config and protocol hashes, per-run id, config hash, seed, status and runtime, file hashes).
+  - Smoke and metric validation were written to new directories (`results/exploratory/m3-smoke`, `m3-sizing`) so the M2 outputs are kept.
+  - EXP-001 and EXP-002 were run as separate matrices, so the 240 shared P0 runs were computed twice rather than once (EXP-002 protocol section 6). The two copies are identical apart from runtime (checked on every summary field).
+  - EXP-004's descriptive base-rate gap (protocol section 3) is not produced by the report generator; `scripts/exp004_base_rates.py` was written after the run to compute it from `results.json` with the frozen interval method. No other analysis was added.
+  - EXP-002's tolerance sensitivity (1 pp and 5 pp, protocol section 10) is read from the committed intervals; no new computation.
+- **Owner decision recorded:** item 4 of `owner-approvals-2026-11-25.md` ("approve all recommendations, RIGGED A"): the 11.3/11.6 experiment reports are written from committed results only. Per the coordinator's instruction, the coordinator writes `research/experiments/EXP-NNN/report.md` and `reproduction.md`; this session returned their text.

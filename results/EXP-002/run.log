@@ -1,0 +1,36 @@
+  50/960 runs (RUN-EXP-002-d0.00-r1.00-P1-s1: ok)
+  100/960 runs (RUN-EXP-002-d0.00-r1.00-P3-s2: ok)
+  150/960 runs (RUN-EXP-002-d0.00-r1.50-P1-s3: ok)
+  200/960 runs (RUN-EXP-002-d0.00-r1.50-P3-s4: ok)
+  250/960 runs (RUN-EXP-002-d0.00-r2.00-P1-s5: ok)
+  300/960 runs (RUN-EXP-002-d0.00-r2.00-P3-s6: ok)
+  350/960 runs (RUN-EXP-002-d0.25-r1.00-P1-s7: ok)
+  400/960 runs (RUN-EXP-002-d0.25-r1.00-P3-s8: ok)
+  450/960 runs (RUN-EXP-002-d0.25-r1.50-P1-s9: ok)
+  500/960 runs (RUN-EXP-002-d0.25-r1.50-P3-s10: ok)
+  550/960 runs (RUN-EXP-002-d0.25-r2.00-P1-s11: ok)
+  600/960 runs (RUN-EXP-002-d0.25-r2.00-P3-s12: ok)
+  650/960 runs (RUN-EXP-002-d0.50-r1.00-P1-s13: ok)
+  700/960 runs (RUN-EXP-002-d0.50-r1.00-P3-s14: ok)
+  750/960 runs (RUN-EXP-002-d0.50-r1.50-P1-s15: ok)
+  800/960 runs (RUN-EXP-002-d0.50-r1.50-P3-s16: ok)
+  850/960 runs (RUN-EXP-002-d0.50-r2.00-P1-s17: ok)
+  900/960 runs (RUN-EXP-002-d0.50-r2.00-P3-s18: ok)
+  950/960 runs (RUN-EXP-002-d1.00-r1.00-P1-s19: ok)
+  960/960 runs (RUN-EXP-002-d1.00-r2.00-P3-s19: ok)
+CONFIRMATORY EXP-002: 960 runs -> /Users/bechir/research/labs/rigged-equal-rules/results/EXP-002
+ok 960, failed 0, wall clock 6.97 s
+exit status 0
+{
+ "report": "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/report.md",
+ "tables": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/tables/analytic_check.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/tables/contrasts.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/tables/policy_vs_p0.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/tables/summary.csv"
+ ],
+ "figures": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-002/figures/XFIG-EXP-002-01-eog.svg"
+ ],
+ "pdf": null
+}

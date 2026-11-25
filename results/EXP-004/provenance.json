@@ -1,0 +1,1157 @@
+{
+ "experiment_id": "EXP-004",
+ "command": "PYTHONPATH=src nice -n 10 .venv/bin/python -m rigged.cli run --experiment EXP-004",
+ "exit_status": 0,
+ "wrapper_start_utc": "2026-11-25T00:15:47Z",
+ "wrapper_end_utc": "2026-11-25T00:15:49Z",
+ "git_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+ "git_dirty": false,
+ "hardware": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "machine": "arm64",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)"
+ },
+ "matrix_start_utc": "2026-11-25T00:15:47Z",
+ "matrix_end_utc": "2026-11-25T00:15:49Z",
+ "wall_clock_s": 1.4156238750001648,
+ "data_manifest_sha256": "37194645cd251abaab069a90a26908b3032bdd573097633fb9908bfe9540192d",
+ "freeze_record_sha256": "f13466cd84d02d522d5edf26687f410c56a860394afa41f2ecca3c838b681705",
+ "project_protocol_sha256": "d4690c159f45dfb91f0de44dd55a5ec4a7fb83a7e17bb79e378db01f1fae893b",
+ "experiment_protocol_sha256": "ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae",
+ "config_sha256": "6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1",
+ "runs": [
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s0",
+   "config_hash": "sha256:1801b2c12e43e5f253522d488d847f318d27e5d986f7cd3c48c9f35417120a07",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.7787860410026042
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s0",
+   "config_hash": "sha256:492dc80be8af545bd1137c55a8938609017462bd6ceaeca4a60d38d9445e67cb",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.005462750006699935
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s0",
+   "config_hash": "sha256:070074030d3c6fa332098aea2703c9856d97c0bd80e80564262da4071b932461",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.003352833002281841
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s0",
+   "config_hash": "sha256:83ccf37f7bdf21a3fd1f28ed13633a66379bac0f5e5edfc79803bbf5a2190cd5",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.004065749999426771
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s0",
+   "config_hash": "sha256:81dbf59f83cf837c05dd7b2b1443e9496dc468b3df90e7cf7d7986bffcc6a42c",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.00308874999609543
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s0",
+   "config_hash": "sha256:2fcec4463bb23c09b68527e6db7ab85e8734ee0877c7890931f2d53f9be808d5",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.005146041003172286
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s0",
+   "config_hash": "sha256:02a502db22bfe26e62fd22f79198e091e1c34bcfd5fd54d9d32aac2640f6dab8",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.003220375001546927
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s0",
+   "config_hash": "sha256:a7e4bce02747fa485206beddf2ed411a20e922ab9354249f4b17c81dd83b4934",
+   "seed": 0,
+   "status": "ok",
+   "runtime_s": 0.004163875004451256
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s1",
+   "config_hash": "sha256:7f5007a53c00730b51edd222d0cb4d3e88f615171badfd8cb454c1a7633fc2f2",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.002861875000235159
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s1",
+   "config_hash": "sha256:5b0235a57b43599e993f916a62dae6472d84d00ddbb9816f9d0245c7387f98af",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.005157999999937601
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s1",
+   "config_hash": "sha256:ef2717e56969e66a600a9ac20b91fd8b67f0ff2dfce8b3c75772e89b41c306e9",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.0032305419954354875
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s1",
+   "config_hash": "sha256:74d7af675fe34ae71671e3ddafab1fc137916b425b3a9e2ad73f3431306d9e66",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.0042141660014749505
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s1",
+   "config_hash": "sha256:7804f93f9f88f98057cdd39d623d8a19e89ae8c6176f47318dc936a369cd52fe",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.0030319579964270815
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s1",
+   "config_hash": "sha256:7efb6b6a50ccf2a8f93bbcb62e953a0193e88ffea625a782b8affc5114ebef51",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.005118749999382999
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s1",
+   "config_hash": "sha256:431f3667a8d797c686f235b8152e5dfa8950bdc6eb2abd30c388988078a9b83f",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.0032444999960716814
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s1",
+   "config_hash": "sha256:bc6cfb44823355ebc3718805ca7ad0641edf6d9b2809ce7c6ccd9bd00eeeac19",
+   "seed": 1,
+   "status": "ok",
+   "runtime_s": 0.004352666997874621
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s2",
+   "config_hash": "sha256:03b9668e425c49efb00b353df698b0ebb8d6c32191acaee9ea1b24ea39497e5f",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.0031514590009464882
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s2",
+   "config_hash": "sha256:578d5a4412524098c7a054ed77e0f3a9246c7fef674d1ef0576b3c5271e3f72e",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.005096166998555418
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s2",
+   "config_hash": "sha256:c433acaadc69f870940770595d228f0a1bea663c59bd22f37c00ecfc96a7f418",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.003207333997124806
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s2",
+   "config_hash": "sha256:d6787904253ef476afb11cf4c5a73d97bc5595bd6e399353a30b1b9158a140ad",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.004252042002917733
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s2",
+   "config_hash": "sha256:fc71e43eb1570d066b9c3b1d7f2fda73e8cecf532140ffe48d14800d3aef7227",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.003082333001657389
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s2",
+   "config_hash": "sha256:195cf2b579072fd7070b2b960a32fdb3680218d1bd6b71ff75232aca69cfdc45",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.0051560000065364875
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s2",
+   "config_hash": "sha256:8c1067b820383a9e89141a4c91feff64c1a22d4e4882ac37abf5ecc40286f41a",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.0032223329981206916
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s2",
+   "config_hash": "sha256:04e0197fbd5ee99dab2929b2810e0339e1ea103d9869a41177df2d0e12555982",
+   "seed": 2,
+   "status": "ok",
+   "runtime_s": 0.004325832996983081
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s3",
+   "config_hash": "sha256:20402bdc09590ee91f1dfc28ddc17aca7fd1aa8d8181575c00384f19877fd9b1",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.0030474589948426
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s3",
+   "config_hash": "sha256:78c13c54470c96ffcdc507e13184a680a879f8984442274229a6b34603f6a3e5",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.004869457996392157
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s3",
+   "config_hash": "sha256:53574bb0755db56a841b483b291437b089934b603a2be4018d739140b19e5d1d",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.003355542001372669
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s3",
+   "config_hash": "sha256:f30c59947d3d9b307c3fffbe07c6abb2cc250a1243cf5c7ca26c008034280d7f",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.004371499999251682
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s3",
+   "config_hash": "sha256:f8806813b9d0d828941b3600000ac14a38fabb096e3bfe2b279737fee1a0822f",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.0029937500003143214
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s3",
+   "config_hash": "sha256:022d4b49e332e742299443497f448d8b68b21818ceb4217c739991df90f90b6c",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.005336832997272722
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s3",
+   "config_hash": "sha256:97931beabe14404e54f08c7cde559b561ec5af8fd1b39c5ec7c0ccc1a2cce8d0",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.0032776660009403713
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s3",
+   "config_hash": "sha256:e042a735f5f2e03aa48563b0f978e1e5f21d87868d0243d8ba4544b30d04c090",
+   "seed": 3,
+   "status": "ok",
+   "runtime_s": 0.004655333003029227
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s4",
+   "config_hash": "sha256:62e1eee9cd55b9fa22e563a6e067868f62068f74c25c6a60753a4ed8927eb8c1",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.0031531659988104366
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s4",
+   "config_hash": "sha256:af13480d3ac3541e6dcc017d8c3bd09e83443c581a4f59e5ea64bd5f42aebf33",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.005161417000635993
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s4",
+   "config_hash": "sha256:75a24f2708f93b1d033ee58546f5b461d62786640800068155dcef8b0bc811bf",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.003209957998478785
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s4",
+   "config_hash": "sha256:bb6997bd5dcf57877a7cd812f2036548d1997e1f129dfc90121ffe4d48b7cf68",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.0041593749992898665
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s4",
+   "config_hash": "sha256:3918bb921c464d235ccb84df19bc474c735970d792c3667245fdf51da406bc52",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.0030147500001476146
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s4",
+   "config_hash": "sha256:250d2fd2ee4c01278f0b9c252a1546da6871d07180f360496676e0199b430ace",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.0051238329979241826
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s4",
+   "config_hash": "sha256:afa3345c67bf710fcd67cae792edeac16b86f27b4a509f2fba12aa81e0396025",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.0032326250002370216
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s4",
+   "config_hash": "sha256:2cbe67ab5616c8920195567ca54059dcac958f96ba75c0c5cdab2c43cb5e9365",
+   "seed": 4,
+   "status": "ok",
+   "runtime_s": 0.004246249998686835
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s5",
+   "config_hash": "sha256:43e3660272a68c23629ba78e04823292a7713471557d7f8dce3b9b57eb94936e",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.003170999996655155
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s5",
+   "config_hash": "sha256:e1c54373a50b78a2afbeeb0381ab129f6bfc51a1fd4b15de4a9fbb8d0f46a26c",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.005303875004756264
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s5",
+   "config_hash": "sha256:15ccfc9930a94563c7ab908ba30deadc10f2ea3c30a172b2bd95a3814b966944",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.00327054200170096
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s5",
+   "config_hash": "sha256:fcf434fef1b4ba553236fcefd10f38a2f9e3691463fd606280f2d4b09738127f",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.004194332999759354
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s5",
+   "config_hash": "sha256:5f4fd1a52e23a6641c10825cc5989826849119c45f3989848eb6e1a4fa49f610",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.0030614589995821007
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s5",
+   "config_hash": "sha256:fdf6b5181aa1c17ecfd006d755f88d7bf30248f14b66f34a4efdf3b0452945d7",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.005128333003085572
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s5",
+   "config_hash": "sha256:086f585b8242839deb4653ffa9c2a212b0c6c3b72a15425304deb8c706b30899",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.003335958994284738
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s5",
+   "config_hash": "sha256:269d4c38d27cf4822e9633badd80ec61f3abea84d9299a188e2d70a25add5a04",
+   "seed": 5,
+   "status": "ok",
+   "runtime_s": 0.00429075000283774
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s6",
+   "config_hash": "sha256:a42eb2ebe92e1fe33187d7a6335deed3c9fb6fbb6536c5855545eb76fdfb48ae",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.0032606249951641075
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s6",
+   "config_hash": "sha256:044a0f06461d2f4db0af85e47f457df408490e557e3bb5965d02f6663c56e23d",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.005305166007019579
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s6",
+   "config_hash": "sha256:26276a604de4b17cc831ab6d4ce0da266fcab0403055808b2b349b9f449538a3",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.003257749995100312
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s6",
+   "config_hash": "sha256:d77a99194318fdf664a5c8bc1f20171ea9161d2f253102826e1cd9dde421aa7e",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.004190915999060962
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s6",
+   "config_hash": "sha256:5e7f075c34bdccbbe794ca49d1fee2d1625768c0b26a7d5784fedf2b6a97b173",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.0030907920008758083
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s6",
+   "config_hash": "sha256:50bb9c0a8a65cab09e7d63ad14ebfaac17d54739e38be6f04092ede415c914ca",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.005193167002289556
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s6",
+   "config_hash": "sha256:17050b359600cdee2cecac61ace0a2d87ae5722476279abd710dbfbbdc9c902e",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.0033377500003552996
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s6",
+   "config_hash": "sha256:21d066e5985d8c52f5d04235bcd376451114282c22725538813493232f59c806",
+   "seed": 6,
+   "status": "ok",
+   "runtime_s": 0.004367082998214755
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s7",
+   "config_hash": "sha256:079c3297f36d4a8fbdb3a392de5a1490ec058545a849d2f72f6664f33d7914ac",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.0030701669966219924
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s7",
+   "config_hash": "sha256:9709731ed82dc1f524a93aa27105e2d1628ecfa87c8ba31f06094e7a14ec3d78",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.005073708998679649
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s7",
+   "config_hash": "sha256:5104bd964f8866790736e29ee15094c07c836cb29c12f27d1e8dff2fd57becb8",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.0032354169961763546
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s7",
+   "config_hash": "sha256:aa04c89862a00ba371bc18ec2c2954986c0e7b018034fa32018618f5ae010442",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.004204999997455161
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s7",
+   "config_hash": "sha256:8a4dc013e9da807a511dd3b6e6a229c0508329dd9724228d90e45ccd884a6c24",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.0033778750002966262
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s7",
+   "config_hash": "sha256:4c41d39e00024766b04f0ef13719821721fe6551b03b4cdd7882957d6a7b6521",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.005177582999749575
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s7",
+   "config_hash": "sha256:f05cc8c80d73e1eaf511fdd355ef0ea9daac175cd4b216a42590845d2d228bd4",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.0031526660022791475
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s7",
+   "config_hash": "sha256:60ab33761be73e76b1e10daefd02df4ff61c7a01fd88899cd291e00fdbec0a9a",
+   "seed": 7,
+   "status": "ok",
+   "runtime_s": 0.004962499995599501
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s8",
+   "config_hash": "sha256:939dff66f88c0d717b718c84d83127cb914d266f8ebe2a1c4eb31b5018b23020",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.0032352909984183498
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s8",
+   "config_hash": "sha256:03f46d9b33fe74567d2642033c071563298f11df6f4f3b034abe4411f9814402",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.005284874998324085
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s8",
+   "config_hash": "sha256:495e23c98c50e507948c71a88090d4428ef7bb2b4449bd304a05f171bc2c2aa0",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.0032331670008716173
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s8",
+   "config_hash": "sha256:686fa1568d9c615b70af7bc3d996a37bf553be6cc982eb433259be04979b6db1",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.004106084001250565
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s8",
+   "config_hash": "sha256:fd075186eddf89016f6adb351ec1beaad5ee7024a8ef6f315b7c2879a7343219",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.003375625004991889
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s8",
+   "config_hash": "sha256:0ae8ab276e5dab3300cf1e693bab30c173ac489fe9ba098b56db635101458c1a",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.005494208999152761
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s8",
+   "config_hash": "sha256:92a72eac76cfb53c0424d6f46b31658d6df3dbc72996bb89a1115b21f3ef0330",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.0034528749965829775
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s8",
+   "config_hash": "sha256:76747e36b980632261c9063f00eceebde681fac0a2aeaf7d017d0603830a14a0",
+   "seed": 8,
+   "status": "ok",
+   "runtime_s": 0.004500833005295135
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s9",
+   "config_hash": "sha256:8fe006e60c718311cfdd3102d259d59d8013aa66efeebc3b9669094cba7b8b65",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.0034267910014023073
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s9",
+   "config_hash": "sha256:8482e054e0626fdd3f3759521b916b95f41b91bb94b4977b88f10b8c7ee81113",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.005446332994324621
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s9",
+   "config_hash": "sha256:cbaa9abd57551c67aaa19f39e1f0a542f81d603905dc7f1e2f5305359fba9a98",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.0031585830001858994
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s9",
+   "config_hash": "sha256:cb59c439617417983dca4edbe6e9b5a3fd05ab6683339fb819f89e1095a6522d",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.004325750000134576
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s9",
+   "config_hash": "sha256:3147f6786cd8077d8606444e36cd1928fb60a4deef1830e753ed4106e2c0189f",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.0030996659988886677
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s9",
+   "config_hash": "sha256:b15a01df52d45d2a654694fcef242bb627acc893bfef09775b9a82bbf040fe4f",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.0051399590010987595
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s9",
+   "config_hash": "sha256:2365ad48ebd317c7d86c2867f47a731cd0db65ab9ac7bf3cab3f1c7a78bcb9ac",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.003285750004579313
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s9",
+   "config_hash": "sha256:3dc1a71d5e6d824eea2e8b2cffe79328631cb82eccfef48cfa89d3153dceec2e",
+   "seed": 9,
+   "status": "ok",
+   "runtime_s": 0.004362916995887645
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s10",
+   "config_hash": "sha256:87f0349d0717b9ce10df28ec122b9e7a6b4d2bd5d6667926815ddec18926ddac",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.0030881249986123294
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s10",
+   "config_hash": "sha256:9b043c3f4a93452ea2207838e3480397ac861f49630e53807f4f410cb15093ba",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.005145582996192388
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s10",
+   "config_hash": "sha256:07a36db248a4203091a1b9b83c8e8843d91b4ae267ae7a1a857dfe88a1476b38",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.0030600410027545877
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s10",
+   "config_hash": "sha256:2fc4698b0e526bed801710e17721fbf65b60d82a1c29a377e0cfe75a9d8e6881",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.004338708997238427
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s10",
+   "config_hash": "sha256:6b4ca2ea5c66562134d00a07430aca15ddd622ee41323b07ce3e961fba69dccb",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.0030038750046514906
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s10",
+   "config_hash": "sha256:cb74010290894398ea0ed34b9fc5f069bef329ef9c8c0209983d9e5b29bed6ab",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.004961833998095244
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s10",
+   "config_hash": "sha256:a17fccc7caa27d8e95671d360d64f6e6b97e1f9414aac652a306f5b67757937c",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.003448792005656287
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s10",
+   "config_hash": "sha256:54b03a561ea02cb31d8be699df9aef4385046887a3e9a3567eb0efe19fb30659",
+   "seed": 10,
+   "status": "ok",
+   "runtime_s": 0.004169708998233546
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s11",
+   "config_hash": "sha256:5489119b846f641c485a9a766a4fb0268b8713a2bc23a84bbcea52e2c51e02f8",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.002996666997205466
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s11",
+   "config_hash": "sha256:2004db6b75a07157d1654cac099dce316928b26e56b2c29bff4a5ffa62936b7c",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.005057499998656567
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s11",
+   "config_hash": "sha256:a7fb67abd1681cfaa59985d72e626786c6eb4cf05ba963d90c48d03584b83b0d",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.003223084000637755
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s11",
+   "config_hash": "sha256:12fe656cefd0dd914ab92eed4e1165214969a9db9f7e2f509a791d2507887fdf",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.004324667002947535
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s11",
+   "config_hash": "sha256:8f6bf21d34dbaaddc9504cf4d6eba627e53a3091382ad9af7fb11b460a373235",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.003017374998307787
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s11",
+   "config_hash": "sha256:38d9f161fec81ac35ceba2b8c6d444f176b6910559e46a87c8a70ad415eb27d2",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.005253166993497871
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s11",
+   "config_hash": "sha256:80b284a9594e3569171ca0fbbeab79df24d7f6f69c9bb344220c6b58ef0cc29e",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.0034137080001528375
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s11",
+   "config_hash": "sha256:d6ef0f8b27afca801bc6cf62698482c0daacb0773a4b8535af43ddd1ba6c030a",
+   "seed": 11,
+   "status": "ok",
+   "runtime_s": 0.0043308750027790666
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s12",
+   "config_hash": "sha256:6c46c93a4e182561968d8988698d4f8685c4c2329c447a38e370681531d38d9e",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.0031873330008238554
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s12",
+   "config_hash": "sha256:b837c785a5b8e99cf6ac1227b745d6a80eeddda7be72afba15831b947ff88e0b",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.0048677500017220154
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s12",
+   "config_hash": "sha256:3ac23bf44fea9e0b9c0d44dce259d13677c28cfa1719e3943aedea93588dfe5c",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.0032169580008485354
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s12",
+   "config_hash": "sha256:2b383740ccc412ae5d4be9eebf99db89b05b77bc4185e0d4d4180f3393f4ad98",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.004345583001850173
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s12",
+   "config_hash": "sha256:3008b9d152abc763fd11c5c7e42f60ee8a14d490468af8f2c63e3959d4f7c40f",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.003017666000232566
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s12",
+   "config_hash": "sha256:abfcbef1443dba01f7d8c37c1fa4e97e17c21c7e4ba3f9acae7b7db6acd9118d",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.005185916998016182
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s12",
+   "config_hash": "sha256:caca2b02a71883c6765e7c622bd923df68005bcfc20c491771da789d66ab0c93",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.0030863329957355745
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s12",
+   "config_hash": "sha256:1f49eb06d03b5d7415b2f53f55d88f28c86d8e175641deb5b1b041f8630230a0",
+   "seed": 12,
+   "status": "ok",
+   "runtime_s": 0.004212749998259824
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s13",
+   "config_hash": "sha256:17f7718e6c99ff735d50eac22174d2947278a623d48b3fb8f39d4d98dcb7eccf",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.002950374997453764
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s13",
+   "config_hash": "sha256:c2da20e5dc711b84bb66a97905abc24b5d893ce0b480025ec467372d4cda08e2",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.0049089170061051846
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s13",
+   "config_hash": "sha256:87ebc45578764010f8d071e8845435db635914051b63299861798a8cd5bf54ab",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.0033701249994919635
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s13",
+   "config_hash": "sha256:96c598d5b954dd7b62a52e0a933484d340601e900a927f336b174432d35cc524",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.0045125409960746765
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s13",
+   "config_hash": "sha256:64685131aedae7f6b92982bf6280070ba22861e4ba750c1c2e2bf6a4233b6958",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.003167791997839231
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s13",
+   "config_hash": "sha256:cfcf7f0b0989dce9c2de0ec005fab1e386cfefa9d44e3b1154f51f9552356c29",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.00521149999985937
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s13",
+   "config_hash": "sha256:a627f3491d200a9c0f6a1032dac9416cf2ac187bda2c9542cdeed40facdf75c1",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.003108999997493811
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s13",
+   "config_hash": "sha256:b8dc353ee7f577666dc970de99152388f29eb9845b8ad55e475139c7801bee64",
+   "seed": 13,
+   "status": "ok",
+   "runtime_s": 0.004014916004962288
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s14",
+   "config_hash": "sha256:cf3c95e075f65c0dc2f2bdf1a0727ae4323808e0c1097ccd3ba142014fc8c74e",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.003074874999583699
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s14",
+   "config_hash": "sha256:b1f492ed754da34bf0d9c74c38ddc7bb1755fe57c579896c617a5894edb65b6e",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.0052308749945950694
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s14",
+   "config_hash": "sha256:980a6552e24b43b916be265078a2cb1a65b3de75db95f37cdd5a666ce9c8ecf9",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.0033062500006053597
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s14",
+   "config_hash": "sha256:8d251e8b80efab68db3edfb696af01062eef21621c8332be642bbfafa30a0fab",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.004422707999765407
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s14",
+   "config_hash": "sha256:ceb1f1fc7c3a6915a898e4d66f6f045db9ba7b93a04f231b7992683cdfde6336",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.0032062919999589212
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s14",
+   "config_hash": "sha256:04a84d97525b73fc18947d9c2875f137841fd8e14115bef311e464e03557c5b4",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.005362583004171029
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s14",
+   "config_hash": "sha256:af7d6ca352ef76a33933f44823f37a422db5644e6ab2022c281c80e628f3e0a1",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.0032159580005099997
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s14",
+   "config_hash": "sha256:22415a670a181337745765f627315039d6e6d310d1a0e90f5436166c61a6a1f5",
+   "seed": 14,
+   "status": "ok",
+   "runtime_s": 0.004340208004578017
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s15",
+   "config_hash": "sha256:c975a65b5779b56f0a2679995e3f3781f42be463607c13ef6d37464071c2a4b3",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.003313832996354904
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s15",
+   "config_hash": "sha256:0c4896dfe947f860bb30a0779fbb5ccff36f4f2cff76645db9e7c0e7c4b7b4af",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.005232916999375448
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s15",
+   "config_hash": "sha256:de8ccc127739c6916d2eb46fbdb5a3c254a659118b5b8a96994bd353721b524c",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.003310583000711631
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s15",
+   "config_hash": "sha256:8531c7def4677e496d596d26b38ec62b74f3c351ad257bd6d200b1f5437ee88a",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.004185166995739564
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s15",
+   "config_hash": "sha256:9c854cb41884814b2484d087fbb9eb1729420660f01f989d2ffa2a20b05988dc",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.0029222909943200648
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s15",
+   "config_hash": "sha256:49f8627cac99b7f73b41d656a2baf290ca8dccab1e5d428a8bf6fc77e53e5436",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.0053892919968348
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s15",
+   "config_hash": "sha256:db71e99afc2fd3a088859d8d44af161f4f169bca382eb66a291bdded261def37",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.0031397080019814894
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s15",
+   "config_hash": "sha256:4e9eee0d6be2bdf8ff58be766368c88647606103e9827e7627491b4e0b816fcb",
+   "seed": 15,
+   "status": "ok",
+   "runtime_s": 0.004236250002577435
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s16",
+   "config_hash": "sha256:a10c930c8fa2e3e53cf677a08bb0a824de4854e839812ba55360c006418b55ca",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.0029246669946587645
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s16",
+   "config_hash": "sha256:27590ac61daa4a0c152811d8e4003378ae666918deef7537b4848d4a8f86c98c",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.004844249997404404
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s16",
+   "config_hash": "sha256:f356bc4c3ab73a4694810111049aa78095a683c1fecd7be56e3614cb637ad690",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.003055333007068839
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s16",
+   "config_hash": "sha256:ddcaaeaea0a096a521af032cf5a17858ff34769ec6ab2f46b817b7a175f8841d",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.0040162499935831875
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s16",
+   "config_hash": "sha256:6ab62ff2b2123f3b6a6421ae3898eb45104549a45173105cceff5c3d04f44eb1",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.0030116669950075448
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s16",
+   "config_hash": "sha256:9ce25e27c3d3b0128e40e5a22e24313b482ad5b96038941158a2cb6ae1b26183",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.005088292004074901
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s16",
+   "config_hash": "sha256:cb7a60627659c7559ced8dfb956d6c31ee2a559860b95e48b2abb0fe26476b4c",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.0031674170022597536
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s16",
+   "config_hash": "sha256:f83eef00b17ba95fd815968db11800692ce65213c3bbf40f467eac711fe20f8d",
+   "seed": 16,
+   "status": "ok",
+   "runtime_s": 0.004905333000351675
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s17",
+   "config_hash": "sha256:a88905fc578b4504bbbc763a8a782d0bf911310201f5fdf9d214489f44064aba",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.0032512499965378083
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s17",
+   "config_hash": "sha256:0561ac8c8c0e875eccd7ac0377d4d479a6eb147cea5e8f0f69b83209240c9ae7",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.005281208002998028
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s17",
+   "config_hash": "sha256:5e85e9a2edb88da3f678b0c67508eb0e293b276fe0c9db82efabad55496ea3ac",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.003384750001714565
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s17",
+   "config_hash": "sha256:a83e26acc20dc77445a02d081e04b2192d00634c67a8daafbae705f521fbde2c",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.004406332998769358
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s17",
+   "config_hash": "sha256:a7abdae06c12541173ca8edf635fea88edb990d3b127e66368728e562e261219",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.0030634159993496723
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s17",
+   "config_hash": "sha256:bff6e14b0fc29e339b4ebc202e2ef86672959d08cd23fcca783bd4fd34a9d648",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.005346915997506585
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s17",
+   "config_hash": "sha256:7c0bb13bcce74f6acf6aa9c1e6fe056ceff98ec2d94974c9b299341224ea88db",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.0034856659985962324
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s17",
+   "config_hash": "sha256:88f4f972372b72c280a503d1e08bca0b01300bbd91da2302155cac0f9c2cad7e",
+   "seed": 17,
+   "status": "ok",
+   "runtime_s": 0.004341166997619439
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s18",
+   "config_hash": "sha256:fffdcd8892503f921e16fb4001bbfc3997bd61d01c6299eaa9f4db1cebe5985f",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.003232875002140645
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s18",
+   "config_hash": "sha256:3c71cddca21c99eb9dcb6abbfea003eec1edc1c3d5188e3e5d5cff00a07afdf8",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.005242207997071091
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s18",
+   "config_hash": "sha256:d14845aeb61ed5d69c7e4fd92b9d7cc47d0fb41060eded501a7a22460abd1afe",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.0035932920000050217
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s18",
+   "config_hash": "sha256:3f420808d0d3992f449e5165f274208b32797f43382f1fa75c82c3670ab0fe01",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.005578916003287304
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s18",
+   "config_hash": "sha256:dcfe6fbe3712b1b6c536db701febd7eaef593c94e45e495e3f83f958b26a838f",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.0035902500021620654
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s18",
+   "config_hash": "sha256:49d923dc0d8bf80687e2d13efab0f931b757bfb4462fd6cf4e0b285a5b2ee7f2",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.00544270800310187
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s18",
+   "config_hash": "sha256:75f9e3e024093a23f66a5ed8f2a3e02ece4486981d1aee43911033469fae08cd",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.003425165996304713
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s18",
+   "config_hash": "sha256:8cf970a718702601c066db73da9bd51eed951c48b3e92848d6f5563542ed4dd4",
+   "seed": 18,
+   "status": "ok",
+   "runtime_s": 0.004698249998909887
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P0-s19",
+   "config_hash": "sha256:4f7da49061f4363f5f096088df3893f315c0908a95ffe7b514e9665951f71c1e",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.0034129169944208115
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P1-s19",
+   "config_hash": "sha256:e34373184f57c373b4541c093b0035af59779a287b49fb81045852e434b84a2d",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.0053668330001528375
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P2-s19",
+   "config_hash": "sha256:4801bde06ccbeaa52e72c963f66074daff32b3321ad4d6b03b35d32afbdeeb57",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.003301583004940767
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-P3-s19",
+   "config_hash": "sha256:df054ebbe19e1e651ff8aa16d389d2521382c046b5d0f0091534b422625fc5e3",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.00428887500311248
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P0-s19",
+   "config_hash": "sha256:a8bc4a24c0bedc239721cd2a24ab8f8e733a0508850fcab0996bc504961c0986",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.0030411670013563707
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P1-s19",
+   "config_hash": "sha256:e7085a332b71b245f2d5f9ffbf9730095c18a11f4507fa7dccbc5e34e3887839",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.0049625419997028075
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P2-s19",
+   "config_hash": "sha256:e8de74d7a704b5f9dcc497a13cb546bcb2819166b7d00e17246c6a039d3a4916",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.0030355839990079403
+  },
+  {
+   "run_id": "RUN-EXP-004-R-hours-random-P3-s19",
+   "config_hash": "sha256:ee5a7cd70edd24830366411533c63dca7dcb122dc7321874524b275b0502326d",
+   "seed": 19,
+   "status": "ok",
+   "runtime_s": 0.004133916001592297
+  }
+ ],
+ "per_run_timestamps": "not recorded per run by the runner (schema 1.0.0); each run's duration is runtime_s, runs execute sequentially in run order between matrix_start_utc and matrix_end_utc",
+ "files_sha256": {
+  "figures/XFIG-EXP-004-01-eog.svg": "e70e55af408628c6aac572394c80650b34655612970ec1fa2fc17714762e115c",
+  "report.md": "021198bea0169f71faf43e3e0efc23ea059241fdff3f110086318a27b6f2362e",
+  "results.json": "d00eae903565c63d58bba98477928dbe60bbde4ee4b1c17e980e4f8656ea58c5",
+  "run.log": "66e184f3514c205bdde94389bc75bede0dc37b97ad7b77f22318977a99bc599d",
+  "run_manifest.json": "6f7dd1aa459c0a16c2cbd128cb239754e01ae247ff936c2561fb119faf090bba",
+  "tables/analytic_check.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tables/contrasts.csv": "6be849665f3b3f72ec88d2c1dba19675cc3976075a90c41e28fb2de61043a101",
+  "tables/policy_vs_p0.csv": "4a747a3943be63ae7dfd28ee178fb1b1694795dd0ad9996f26121c489f5dbcaa",
+  "tables/summary.csv": "366c0c09c65ceb989b0ce05bf2bbb5f0d1e4a095398dce5efd530cd96319779d"
+ }
+}

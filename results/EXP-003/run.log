@@ -1,0 +1,25 @@
+  50/420 runs (RUN-EXP-003-B-sB0.5-P3-s2: ok)
+  100/420 runs (RUN-EXP-003-D-k0.1-pB0.2-P0-s4: ok)
+  150/420 runs (RUN-EXP-003-A-sB1-P0-s7: ok)
+  200/420 runs (RUN-EXP-003-B-sB2-P0-s9: ok)
+  250/420 runs (RUN-EXP-003-D-k0.3-pB0.5-P0-s11: ok)
+  300/420 runs (RUN-EXP-003-A-sB2-P3-s14: ok)
+  350/420 runs (RUN-EXP-003-C-student_t3-P0-s16: ok)
+  400/420 runs (RUN-EXP-003-A-sB0.5-P0-s19: ok)
+  420/420 runs (RUN-EXP-003-D-k0.5-pB0.5-P0-s19: ok)
+CONFIRMATORY EXP-003: 420 runs -> /Users/bechir/research/labs/rigged-equal-rules/results/EXP-003
+ok 420, failed 0, wall clock 2.56 s
+exit status 0
+{
+ "report": "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/report.md",
+ "tables": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/tables/analytic_check.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/tables/contrasts.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/tables/policy_vs_p0.csv",
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/tables/summary.csv"
+ ],
+ "figures": [
+  "/Users/bechir/research/labs/rigged-equal-rules/results/EXP-003/figures/XFIG-EXP-003-01-eog.svg"
+ ],
+ "pdf": null
+}

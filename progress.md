@@ -366,3 +366,7 @@ $ .venv/bin/python -m pytest -q                                   116 passed in 
 ```
 
 Results (under 20 MB in total) are committed with `SHA256SUMS` and `provenance.json` per experiment; `run_manifest.json`, `metrics.csv` and figures copied into `research/experiments/EXP-NNN/`. The M3 status line is left to the coordinator, who writes the experiment reports.
+
+## 2026-11-25: M3 done (coordinator)
+
+The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.

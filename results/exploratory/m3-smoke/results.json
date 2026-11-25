@@ -1,0 +1,2742 @@
+{
+ "counts": {
+  "failed": 0,
+  "ok": 24,
+  "planned": 24
+ },
+ "created_utc": "2026-11-25T00:13:59Z",
+ "description": "Protocol smoke matrix (exploratory)",
+ "experiment_id": "SMOKE",
+ "generator_version": "SYN-001/1.0.0",
+ "label": "exploratory",
+ "matrix_id": "SMOKE",
+ "n": 2000,
+ "package_version": "0.2.0",
+ "protocol": {
+  "frozen": false,
+  "path": "research/protocol.md",
+  "sha256": "",
+  "status_reason": "exploratory matrix; protocol not frozen"
+ },
+ "runs": [
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1000
+   },
+   "config_hash": "sha256:1945059a36641074654e9cd8332a2f1606dd4a603b84b899eaa5c38f39ed6431",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.010884073278362431,
+    "eog": -0.042008387783234014,
+    "fpr_gap": -0.0012881102587211195,
+    "ppv_gap": -0.00026759432700029784,
+    "sr_gap": -0.021100135626582806
+   },
+   "groups": {
+    "A": {
+     "ece": 0.03737322515213031,
+     "fn": 225,
+     "fnr": 0.4352030947775629,
+     "fp": 11,
+     "fpr": 0.023454157782515993,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.9636963696369637,
+     "selected": 303,
+     "sr": 0.30730223123732253,
+     "tn": 458,
+     "tp": 292,
+     "tpr": 0.5647969052224371
+    },
+    "B": {
+     "ece": 0.02648915187376788,
+     "fn": 208,
+     "fnr": 0.3931947069943289,
+     "fp": 12,
+     "fpr": 0.024742268041237112,
+     "n": 1014,
+     "negatives": 485,
+     "positives": 529,
+     "ppv": 0.963963963963964,
+     "selected": 333,
+     "sr": 0.32840236686390534,
+     "tn": 473,
+     "tp": 321,
+     "tpr": 0.6068052930056711
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.772,
+    "fn": 433,
+    "fp": 23,
+    "n": 2000,
+    "selected": 636,
+    "sr": 0.318,
+    "tn": 931,
+    "tp": 613,
+    "utility_per_capita": 0.295
+   },
+   "peak_traced_bytes": 2010325,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5739374845451951
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5739374845451951
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s1000",
+   "runtime_s": 0.030994209002528805,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1000
+   },
+   "config_hash": "sha256:09cf2f5b2c94488d5e2de20b7826c8b2d8286844717d0e1ed2a136c4a2615104",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.010884073278362431,
+    "eog": 0.05589174128771113,
+    "fpr_gap": 0.03027278922031961,
+    "ppv_gap": -0.03844862949841499,
+    "sr_gap": 0.04519285780012883
+   },
+   "groups": {
+    "A": {
+     "ece": 0.03737322515213031,
+     "fn": 191,
+     "fnr": 0.36943907156673117,
+     "fp": 20,
+     "fpr": 0.042643923240938165,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.9421965317919075,
+     "selected": 346,
+     "sr": 0.3509127789046653,
+     "tn": 449,
+     "tp": 326,
+     "tpr": 0.6305609284332688
+    },
+    "B": {
+     "ece": 0.02648915187376788,
+     "fn": 225,
+     "fnr": 0.4253308128544423,
+     "fp": 6,
+     "fpr": 0.012371134020618556,
+     "n": 1014,
+     "negatives": 485,
+     "positives": 529,
+     "ppv": 0.9806451612903225,
+     "selected": 310,
+     "sr": 0.3057199211045365,
+     "tn": 479,
+     "tp": 304,
+     "tpr": 0.5746691871455577
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.779,
+    "fn": 416,
+    "fp": 26,
+    "n": 2000,
+    "selected": 656,
+    "sr": 0.328,
+    "tn": 928,
+    "tp": 630,
+    "utility_per_capita": 0.302
+   },
+   "peak_traced_bytes": 156487,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 48,
+     "B": 51
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.031016554802021812,
+      "selects_none": false,
+      "t": 0.7959183673469388
+     },
+     "B": {
+      "gamma": 0.031016554802021812,
+      "selects_none": false,
+      "t": 0.7959183673469388
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s1000",
+   "runtime_s": 0.0021091669987072237,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1000
+   },
+   "config_hash": "sha256:1d75ea5cedc9f2c2624e766b33b54b20df7dbc77e8aa1b7e753025c61bdc45fd",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.010884073278362431,
+    "eog": -0.09185975509428024,
+    "fpr_gap": -0.013799925263227309,
+    "ppv_gap": 0.014530562718034323,
+    "sr_gap": -0.053162419834287544
+   },
+   "groups": {
+    "A": {
+     "ece": 0.03737322515213031,
+     "fn": 241,
+     "fnr": 0.4661508704061895,
+     "fp": 9,
+     "fpr": 0.019189765458422176,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.968421052631579,
+     "selected": 285,
+     "sr": 0.28904665314401623,
+     "tn": 460,
+     "tp": 276,
+     "tpr": 0.5338491295938105
+    },
+    "B": {
+     "ece": 0.02648915187376788,
+     "fn": 198,
+     "fnr": 0.3742911153119093,
+     "fp": 16,
+     "fpr": 0.032989690721649485,
+     "n": 1014,
+     "negatives": 485,
+     "positives": 529,
+     "ppv": 0.9538904899135446,
+     "selected": 347,
+     "sr": 0.3422090729783038,
+     "tn": 469,
+     "tp": 331,
+     "tpr": 0.6257088846880907
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.768,
+    "fn": 439,
+    "fp": 25,
+    "n": 2000,
+    "selected": 632,
+    "sr": 0.316,
+    "tn": 929,
+    "tp": 607,
+    "utility_per_capita": 0.291
+   },
+   "peak_traced_bytes": 155319,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6314925810080595
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5086589174444858
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s1000",
+   "runtime_s": 0.0015477920023840852,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1000
+   },
+   "config_hash": "sha256:d7c1592aae2ecca33efd5f488714c6aeac5d462229f29f43c55887a45a35c3a9",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.010884073278362431,
+    "eog": -0.08996939592603825,
+    "fpr_gap": -0.00960587343107731,
+    "ppv_gap": 0.008513225904530186,
+    "sr_gap": -0.05017583446355489
+   },
+   "groups": {
+    "A": {
+     "ece": 0.03737322515213031,
+     "fn": 241,
+     "fnr": 0.4661508704061895,
+     "fp": 10,
+     "fpr": 0.021321961620469083,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.965034965034965,
+     "selected": 286,
+     "sr": 0.29006085192697767,
+     "tn": 459,
+     "tp": 276,
+     "tpr": 0.5338491295938105
+    },
+    "B": {
+     "ece": 0.02648915187376788,
+     "fn": 199,
+     "fnr": 0.37618147448015127,
+     "fp": 15,
+     "fpr": 0.030927835051546393,
+     "n": 1014,
+     "negatives": 485,
+     "positives": 529,
+     "ppv": 0.9565217391304348,
+     "selected": 345,
+     "sr": 0.34023668639053256,
+     "tn": 470,
+     "tp": 330,
+     "tpr": 0.6238185255198487
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.7675,
+    "fn": 440,
+    "fp": 25,
+    "n": 2000,
+    "selected": 631,
+    "sr": 0.3155,
+    "tn": 929,
+    "tp": 606,
+    "utility_per_capita": 0.2905
+   },
+   "peak_traced_bytes": 155367,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.5763052208835341,
+     "fit_tpr_b": 0.5760649087221096,
+     "fit_tpr_gap": 0.00024031216142450518
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6173913494702769
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5184234298909781
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s1000",
+   "runtime_s": 0.0023295830033021048,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1000
+   },
+   "config_hash": "sha256:838f24d08f65b8f634660daedf386f1a320901e122613d41338a2dd914a4f1ab",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.006996491312297622,
+    "eog": 0.008645091286502815,
+    "fpr_gap": 0.014968887341717065,
+    "ppv_gap": 0.05929104477611935,
+    "sr_gap": 0.14137971042324293
+   },
+   "groups": {
+    "A": {
+     "ece": 0.025912778904665108,
+     "fn": 150,
+     "fnr": 0.2901353965183753,
+     "fp": 33,
+     "fpr": 0.07036247334754797,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.9175,
+     "selected": 400,
+     "sr": 0.4056795131845842,
+     "tn": 436,
+     "tp": 367,
+     "tpr": 0.7098646034816247
+    },
+    "B": {
+     "ece": 0.03290927021696273,
+     "fn": 98,
+     "fnr": 0.2987804878048781,
+     "fp": 38,
+     "fpr": 0.05539358600583091,
+     "n": 1014,
+     "negatives": 686,
+     "positives": 328,
+     "ppv": 0.8582089552238806,
+     "selected": 268,
+     "sr": 0.26429980276134124,
+     "tn": 648,
+     "tp": 230,
+     "tpr": 0.7012195121951219
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8405,
+    "fn": 248,
+    "fp": 71,
+    "n": 2000,
+    "selected": 668,
+    "sr": 0.334,
+    "tn": 1084,
+    "tp": 597,
+    "utility_per_capita": 0.263
+   },
+   "peak_traced_bytes": 155343,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.30970696512617585
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.30970696512617585
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s1000",
+   "runtime_s": 0.0011849580041598529,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1000
+   },
+   "config_hash": "sha256:a51196e7c59234acd3c4a9104f5367dd6e55c23f187917f2c05bd13f05d22b08",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.006996491312297622,
+    "eog": 0.06955583337264704,
+    "fpr_gap": 0.027870849832470304,
+    "ppv_gap": 0.04973226238286477,
+    "sr_gap": 0.1723717848698345
+   },
+   "groups": {
+    "A": {
+     "ece": 0.025912778904665108,
+     "fn": 139,
+     "fnr": 0.2688588007736944,
+     "fp": 37,
+     "fpr": 0.07889125799573561,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.9108433734939759,
+     "selected": 415,
+     "sr": 0.4208924949290061,
+     "tn": 432,
+     "tp": 378,
+     "tpr": 0.7311411992263056
+    },
+    "B": {
+     "ece": 0.03290927021696273,
+     "fn": 111,
+     "fnr": 0.33841463414634143,
+     "fp": 35,
+     "fpr": 0.05102040816326531,
+     "n": 1014,
+     "negatives": 686,
+     "positives": 328,
+     "ppv": 0.8611111111111112,
+     "selected": 252,
+     "sr": 0.2485207100591716,
+     "tn": 651,
+     "tp": 217,
+     "tpr": 0.6615853658536586
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.839,
+    "fn": 250,
+    "fp": 72,
+    "n": 2000,
+    "selected": 667,
+    "sr": 0.3335,
+    "tn": 1083,
+    "tp": 595,
+    "utility_per_capita": 0.2615
+   },
+   "peak_traced_bytes": 155327,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 48,
+     "B": 51
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.023249849373952025,
+      "selects_none": false,
+      "t": 0.6938775510204082
+     },
+     "B": {
+      "gamma": 0.023249849373952025,
+      "selects_none": false,
+      "t": 0.6938775510204082
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s1000",
+   "runtime_s": 0.0020801249993382953,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1000
+   },
+   "config_hash": "sha256:024ec9d55a79856f11b32784ddd7c829c45c471165d11659a6da6df0d87310e3",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.006996491312297622,
+    "eog": -0.28627282162570167,
+    "fpr_gap": -0.09451285844828336,
+    "ppv_gap": 0.19320491430304865,
+    "sr_gap": -0.053162419834287544
+   },
+   "groups": {
+    "A": {
+     "ece": 0.025912778904665108,
+     "fn": 241,
+     "fnr": 0.4661508704061895,
+     "fp": 9,
+     "fpr": 0.019189765458422176,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.968421052631579,
+     "selected": 285,
+     "sr": 0.28904665314401623,
+     "tn": 460,
+     "tp": 276,
+     "tpr": 0.5338491295938105
+    },
+    "B": {
+     "ece": 0.03290927021696273,
+     "fn": 59,
+     "fnr": 0.17987804878048785,
+     "fp": 78,
+     "fpr": 0.11370262390670553,
+     "n": 1014,
+     "negatives": 686,
+     "positives": 328,
+     "ppv": 0.7752161383285303,
+     "selected": 347,
+     "sr": 0.3422090729783038,
+     "tn": 608,
+     "tp": 269,
+     "tpr": 0.8201219512195121
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8065,
+    "fn": 300,
+    "fp": 87,
+    "n": 2000,
+    "selected": 632,
+    "sr": 0.316,
+    "tn": 1068,
+    "tp": 545,
+    "utility_per_capita": 0.229
+   },
+   "peak_traced_bytes": 155247,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6314925810080595
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.008658917444485825
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s1000",
+   "runtime_s": 0.0013803330002701841,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1000
+   },
+   "config_hash": "sha256:4cf5a0ec3221e1628f04a85201f6bc5e879f7f45aeee7b56cf9e975f0fa0b787",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.006996491312297622,
+    "eog": -0.07078831910175964,
+    "fpr_gap": -0.025977981811061313,
+    "ppv_gap": 0.11060856775142491,
+    "sr_gap": 0.08531272129337353
+   },
+   "groups": {
+    "A": {
+     "ece": 0.025912778904665108,
+     "fn": 169,
+     "fnr": 0.3268858800773694,
+     "fp": 22,
+     "fpr": 0.046908315565031986,
+     "n": 986,
+     "negatives": 469,
+     "positives": 517,
+     "ppv": 0.9405405405405406,
+     "selected": 370,
+     "sr": 0.3752535496957404,
+     "tn": 447,
+     "tp": 348,
+     "tpr": 0.6731141199226306
+    },
+    "B": {
+     "ece": 0.03290927021696273,
+     "fn": 84,
+     "fnr": 0.25609756097560976,
+     "fp": 50,
+     "fpr": 0.0728862973760933,
+     "n": 1014,
+     "negatives": 686,
+     "positives": 328,
+     "ppv": 0.8299319727891157,
+     "selected": 294,
+     "sr": 0.28994082840236685,
+     "tn": 636,
+     "tp": 244,
+     "tpr": 0.7439024390243902
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8375,
+    "fn": 253,
+    "fp": 72,
+    "n": 2000,
+    "selected": 664,
+    "sr": 0.332,
+    "tn": 1083,
+    "tp": 592,
+    "utility_per_capita": 0.26
+   },
+   "peak_traced_bytes": 155295,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.6767068273092369,
+     "fit_tpr_b": 0.6744186046511628,
+     "fit_tpr_gap": 0.002288222658074157
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3794165425798195
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.2152155898780843
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s1000",
+   "runtime_s": 0.0022395420019165613,
+   "seed": 1000,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1001
+   },
+   "config_hash": "sha256:a3216e6ac1ad02726fc542529eb600ce5944e659597f81122d42d994434d3901",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.0008986087478729983,
+    "eog": -0.015076864770116272,
+    "fpr_gap": -0.003971218814968813,
+    "ppv_gap": 0.0050595238095237915,
+    "sr_gap": -0.008918026223601216
+   },
+   "groups": {
+    "A": {
+     "ece": 0.029907216494846223,
+     "fn": 216,
+     "fnr": 0.44171779141104295,
+     "fp": 15,
+     "fpr": 0.031185031185031187,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9479166666666666,
+     "selected": 288,
+     "sr": 0.29690721649484536,
+     "tn": 466,
+     "tp": 273,
+     "tpr": 0.558282208588957
+    },
+    "B": {
+     "ece": 0.03080582524271922,
+     "fn": 221,
+     "fnr": 0.4266409266409267,
+     "fp": 18,
+     "fpr": 0.03515625,
+     "n": 1030,
+     "negatives": 512,
+     "positives": 518,
+     "ppv": 0.9428571428571428,
+     "selected": 315,
+     "sr": 0.3058252427184466,
+     "tn": 494,
+     "tp": 297,
+     "tpr": 0.5733590733590733
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.765,
+    "fn": 437,
+    "fp": 33,
+    "n": 2000,
+    "selected": 603,
+    "sr": 0.3015,
+    "tn": 960,
+    "tp": 570,
+    "utility_per_capita": 0.2685
+   },
+   "peak_traced_bytes": 381023,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5894000662496135
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5894000662496135
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s1001",
+   "runtime_s": 0.0017238330037798733,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1001
+   },
+   "config_hash": "sha256:70a06a82be07a92f293a05b92e7ab169944534183f83d09ea5b78bc762adde30",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.0008986087478729983,
+    "eog": -0.0676741596986995,
+    "fpr_gap": -0.020351481288981288,
+    "ppv_gap": 0.027629042621546418,
+    "sr_gap": -0.04354919427484738
+   },
+   "groups": {
+    "A": {
+     "ece": 0.029907216494846223,
+     "fn": 237,
+     "fnr": 0.48466257668711654,
+     "fp": 9,
+     "fpr": 0.018711018711018712,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9655172413793104,
+     "selected": 261,
+     "sr": 0.2690721649484536,
+     "tn": 472,
+     "tp": 252,
+     "tpr": 0.5153374233128835
+    },
+    "B": {
+     "ece": 0.03080582524271922,
+     "fn": 216,
+     "fnr": 0.41698841698841704,
+     "fp": 20,
+     "fpr": 0.0390625,
+     "n": 1030,
+     "negatives": 512,
+     "positives": 518,
+     "ppv": 0.937888198757764,
+     "selected": 322,
+     "sr": 0.312621359223301,
+     "tn": 492,
+     "tp": 302,
+     "tpr": 0.583011583011583
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.759,
+    "fn": 453,
+    "fp": 29,
+    "n": 2000,
+    "selected": 583,
+    "sr": 0.2915,
+    "tn": 964,
+    "tp": 554,
+    "utility_per_capita": 0.2625
+   },
+   "peak_traced_bytes": 155255,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 47,
+     "B": 52
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.9778229302168429,
+      "selects_none": false,
+      "t": 0.9056603773584906
+     },
+     "B": {
+      "gamma": 0.9778229302168429,
+      "selects_none": false,
+      "t": 0.9056603773584906
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s1001",
+   "runtime_s": 0.00215658300294308,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1001
+   },
+   "config_hash": "sha256:5c8a8eaf41524074f59276e8b85eaf4eb213723baa37ebfd27ef77f3d0cb393f",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.0008986087478729983,
+    "eog": -0.0676741596986995,
+    "fpr_gap": -0.020351481288981288,
+    "ppv_gap": 0.027629042621546418,
+    "sr_gap": -0.04354919427484738
+   },
+   "groups": {
+    "A": {
+     "ece": 0.029907216494846223,
+     "fn": 237,
+     "fnr": 0.48466257668711654,
+     "fp": 9,
+     "fpr": 0.018711018711018712,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9655172413793104,
+     "selected": 261,
+     "sr": 0.2690721649484536,
+     "tn": 472,
+     "tp": 252,
+     "tpr": 0.5153374233128835
+    },
+    "B": {
+     "ece": 0.03080582524271922,
+     "fn": 216,
+     "fnr": 0.41698841698841704,
+     "fp": 20,
+     "fpr": 0.0390625,
+     "n": 1030,
+     "negatives": 512,
+     "positives": 518,
+     "ppv": 0.937888198757764,
+     "selected": 322,
+     "sr": 0.312621359223301,
+     "tn": 492,
+     "tp": 302,
+     "tpr": 0.583011583011583
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.759,
+    "fn": 453,
+    "fp": 29,
+    "n": 2000,
+    "selected": 583,
+    "sr": 0.2915,
+    "tn": 964,
+    "tp": 554,
+    "utility_per_capita": 0.2625
+   },
+   "peak_traced_bytes": 155175,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6569239168741696
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5602649781239399
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s1001",
+   "runtime_s": 0.0012112090043956414,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1001
+   },
+   "config_hash": "sha256:cff4e233eac6b6c1fbc1f61e5e6df94361e0ee6c2b1391e723b63476b3418263",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.0008986087478729983,
+    "eog": 0.028424568301868902,
+    "fpr_gap": 0.003967158264033266,
+    "ppv_gap": -0.0035240510875177433,
+    "sr_gap": 0.01692523270943852
+   },
+   "groups": {
+    "A": {
+     "ece": 0.029907216494846223,
+     "fn": 207,
+     "fnr": 0.4233128834355828,
+     "fp": 16,
+     "fpr": 0.033264033264033266,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9463087248322147,
+     "selected": 298,
+     "sr": 0.30721649484536084,
+     "tn": 465,
+     "tp": 282,
+     "tpr": 0.5766871165644172
+    },
+    "B": {
+     "ece": 0.03080582524271922,
+     "fn": 234,
+     "fnr": 0.4517374517374517,
+     "fp": 15,
+     "fpr": 0.029296875,
+     "n": 1030,
+     "negatives": 512,
+     "positives": 518,
+     "ppv": 0.9498327759197325,
+     "selected": 299,
+     "sr": 0.2902912621359223,
+     "tn": 497,
+     "tp": 284,
+     "tpr": 0.5482625482625483
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.764,
+    "fn": 441,
+    "fp": 31,
+    "n": 2000,
+    "selected": 597,
+    "sr": 0.2985,
+    "tn": 962,
+    "tp": 566,
+    "utility_per_capita": 0.2675
+   },
+   "peak_traced_bytes": 155223,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 599,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.5784313725490197,
+     "fit_tpr_b": 0.5791583166332666,
+     "fit_tpr_gap": -0.0007269440842468944
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5610316908912332
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6395616291676741
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s1001",
+   "runtime_s": 0.0021980829988024198,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1001
+   },
+   "config_hash": "sha256:8b0ae45499ef4463057076b333e797219c0dce86d64fae3efa85ea6fbbb695c9",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.010788209388449179,
+    "eog": 0.037123936637370125,
+    "fpr_gap": 0.01185996122704984,
+    "ppv_gap": 0.0544250758154502,
+    "sr_gap": 0.1431588429586628
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02496907216494881,
+     "fn": 152,
+     "fnr": 0.310838445807771,
+     "fp": 26,
+     "fpr": 0.05405405405405406,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.928374655647383,
+     "selected": 363,
+     "sr": 0.37422680412371134,
+     "tn": 455,
+     "tp": 337,
+     "tpr": 0.689161554192229
+    },
+    "B": {
+     "ece": 0.03575728155339799,
+     "fn": 111,
+     "fnr": 0.3479623824451411,
+     "fp": 30,
+     "fpr": 0.04219409282700422,
+     "n": 1030,
+     "negatives": 711,
+     "positives": 319,
+     "ppv": 0.8739495798319328,
+     "selected": 238,
+     "sr": 0.23106796116504855,
+     "tn": 681,
+     "tp": 208,
+     "tpr": 0.6520376175548589
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8405,
+    "fn": 263,
+    "fp": 56,
+    "n": 2000,
+    "selected": 601,
+    "sr": 0.3005,
+    "tn": 1136,
+    "tp": 545,
+    "utility_per_capita": 0.2445
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3511603461585607
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3511603461585607
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s1001",
+   "runtime_s": 0.001160749998234678,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1001
+   },
+   "config_hash": "sha256:53f5c575fedbd2256b94f6186aab756fd8fee9145a2d55164e6707060e503126",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.010788209388449179,
+    "eog": 0.09519138924681558,
+    "fpr_gap": 0.043167802661473555,
+    "ppv_gap": 0.012736742424242498,
+    "sr_gap": 0.18228405565008507
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02496907216494881,
+     "fn": 142,
+     "fnr": 0.29038854805725967,
+     "fp": 37,
+     "fpr": 0.07692307692307693,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9036458333333334,
+     "selected": 384,
+     "sr": 0.3958762886597938,
+     "tn": 444,
+     "tp": 347,
+     "tpr": 0.7096114519427403
+    },
+    "B": {
+     "ece": 0.03575728155339799,
+     "fn": 123,
+     "fnr": 0.38557993730407525,
+     "fp": 24,
+     "fpr": 0.03375527426160337,
+     "n": 1030,
+     "negatives": 711,
+     "positives": 319,
+     "ppv": 0.8909090909090909,
+     "selected": 220,
+     "sr": 0.21359223300970873,
+     "tn": 687,
+     "tp": 196,
+     "tpr": 0.6144200626959248
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.837,
+    "fn": 265,
+    "fp": 61,
+    "n": 2000,
+    "selected": 604,
+    "sr": 0.302,
+    "tn": 1131,
+    "tp": 543,
+    "utility_per_capita": 0.241
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 47,
+     "B": 52
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.2776431058211358,
+      "selects_none": false,
+      "t": 0.6458333333333334
+     },
+     "B": {
+      "gamma": 0.2776431058211358,
+      "selects_none": false,
+      "t": 0.6458333333333334
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s1001",
+   "runtime_s": 0.0020891249951091595,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1001
+   },
+   "config_hash": "sha256:950fbaba84e054d7fb844bc4af39b2227e3bab38a7abd6b59cb00ec3966b670b",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.010788209388449179,
+    "eog": -0.26836163624824505,
+    "fpr_gap": -0.08255480407379141,
+    "ppv_gap": 0.18911972585136005,
+    "sr_gap": -0.04354919427484738
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02496907216494881,
+     "fn": 237,
+     "fnr": 0.48466257668711654,
+     "fp": 9,
+     "fpr": 0.018711018711018712,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9655172413793104,
+     "selected": 261,
+     "sr": 0.2690721649484536,
+     "tn": 472,
+     "tp": 252,
+     "tpr": 0.5153374233128835
+    },
+    "B": {
+     "ece": 0.03575728155339799,
+     "fn": 69,
+     "fnr": 0.2163009404388715,
+     "fp": 72,
+     "fpr": 0.10126582278481013,
+     "n": 1030,
+     "negatives": 711,
+     "positives": 319,
+     "ppv": 0.7763975155279503,
+     "selected": 322,
+     "sr": 0.312621359223301,
+     "tn": 639,
+     "tp": 250,
+     "tpr": 0.7836990595611285
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8065,
+    "fn": 306,
+    "fp": 81,
+    "n": 2000,
+    "selected": 583,
+    "sr": 0.2915,
+    "tn": 1111,
+    "tp": 502,
+    "utility_per_capita": 0.2105
+   },
+   "peak_traced_bytes": 155143,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6569239168741696
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.060264978123939925
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s1001",
+   "runtime_s": 0.0011990830025752075,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1001
+   },
+   "config_hash": "sha256:6642f76bf866e885b1544ec80443f8c4abb9d9ed8896cc320c9fc5291eab0bcf",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": -0.010788209388449179,
+    "eog": -0.009494137482290665,
+    "fpr_gap": 0.01185996122704984,
+    "ppv_gap": 0.04801116219492674,
+    "sr_gap": 0.12514262836552895
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02496907216494881,
+     "fn": 161,
+     "fnr": 0.3292433537832311,
+     "fp": 26,
+     "fpr": 0.05405405405405406,
+     "n": 970,
+     "negatives": 481,
+     "positives": 489,
+     "ppv": 0.9265536723163842,
+     "selected": 354,
+     "sr": 0.3649484536082474,
+     "tn": 455,
+     "tp": 328,
+     "tpr": 0.6707566462167689
+    },
+    "B": {
+     "ece": 0.03575728155339799,
+     "fn": 102,
+     "fnr": 0.31974921630094044,
+     "fp": 30,
+     "fpr": 0.04219409282700422,
+     "n": 1030,
+     "negatives": 711,
+     "positives": 319,
+     "ppv": 0.8785425101214575,
+     "selected": 247,
+     "sr": 0.23980582524271846,
+     "tn": 681,
+     "tp": 217,
+     "tpr": 0.6802507836990596
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8405,
+    "fn": 263,
+    "fp": 56,
+    "n": 2000,
+    "selected": 601,
+    "sr": 0.3005,
+    "tn": 1136,
+    "tp": 545,
+    "utility_per_capita": 0.2445
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.6705882352941176,
+     "fit_tpr_b": 0.670926517571885,
+     "fit_tpr_gap": -0.00033828227776744324
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3959734392444812
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3149517768989559
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s1001",
+   "runtime_s": 0.002176250003685709,
+   "seed": 1001,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1002
+   },
+   "config_hash": "sha256:27b281015536e0f01d6dbd3cb5d4c23f80c98a25f0b73876b2da4335d2356872",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.0008925578486553912,
+    "eog": -0.024385443093342674,
+    "fpr_gap": 0.0031185642836128284,
+    "ppv_gap": -0.00471323960500758,
+    "sr_gap": -0.002751719824890586
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02899512195121981,
+     "fn": 212,
+     "fnr": 0.42655935613682094,
+     "fp": 16,
+     "fpr": 0.030303030303030304,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.946843853820598,
+     "selected": 301,
+     "sr": 0.29365853658536584,
+     "tn": 512,
+     "tp": 285,
+     "tpr": 0.5734406438631791
+    },
+    "B": {
+     "ece": 0.02810256410256442,
+     "fn": 185,
+     "fnr": 0.40217391304347827,
+     "fp": 14,
+     "fpr": 0.027184466019417475,
+     "n": 975,
+     "negatives": 515,
+     "positives": 460,
+     "ppv": 0.9515570934256056,
+     "selected": 289,
+     "sr": 0.2964102564102564,
+     "tn": 501,
+     "tp": 275,
+     "tpr": 0.5978260869565217
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.7865,
+    "fn": 397,
+    "fp": 30,
+    "n": 2000,
+    "selected": 590,
+    "sr": 0.295,
+    "tn": 1013,
+    "tp": 560,
+    "utility_per_capita": 0.265
+   },
+   "peak_traced_bytes": 380927,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5717124723804186
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5717124723804186
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P0-s1002",
+   "runtime_s": 0.00154254100198159,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1002
+   },
+   "config_hash": "sha256:d60ac53b0d4d0ffdd107893fb4080ec286a9f6b242c3e1d189e3ac4d0574b172",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.0008925578486553912,
+    "eog": 0.014976817426296973,
+    "fpr_gap": -0.002897911150338335,
+    "ppv_gap": 0.009572877211749375,
+    "sr_gap": 0.012858036272670403
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02899512195121981,
+     "fn": 200,
+     "fnr": 0.40241448692152915,
+     "fp": 20,
+     "fpr": 0.03787878787878788,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9369085173501577,
+     "selected": 317,
+     "sr": 0.3092682926829268,
+     "tn": 508,
+     "tp": 297,
+     "tpr": 0.5975855130784709
+    },
+    "B": {
+     "ece": 0.02810256410256442,
+     "fn": 192,
+     "fnr": 0.4173913043478261,
+     "fp": 21,
+     "fpr": 0.040776699029126215,
+     "n": 975,
+     "negatives": 515,
+     "positives": 460,
+     "ppv": 0.9273356401384083,
+     "selected": 289,
+     "sr": 0.2964102564102564,
+     "tn": 494,
+     "tp": 268,
+     "tpr": 0.5826086956521739
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.7835,
+    "fn": 392,
+    "fp": 41,
+    "n": 2000,
+    "selected": 606,
+    "sr": 0.303,
+    "tn": 1002,
+    "tp": 565,
+    "utility_per_capita": 0.262
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 48,
+     "B": 51
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.9746676992401668,
+      "selects_none": false,
+      "t": 0.8541666666666666
+     },
+     "B": {
+      "gamma": 0.9746676992401668,
+      "selects_none": false,
+      "t": 0.8541666666666666
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P1-s1002",
+   "runtime_s": 0.002072290997602977,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1002
+   },
+   "config_hash": "sha256:76164544f460cc18936ebbe3ea2ab47fa55f4a9b96ff2d1aa07690f3dd579ad9",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.0008925578486553912,
+    "eog": 0.023672469600209967,
+    "fpr_gap": 0.01846131215063254,
+    "ppv_gap": -0.026595132284878864,
+    "sr_gap": 0.02824265165728579
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02899512195121981,
+     "fn": 200,
+     "fnr": 0.40241448692152915,
+     "fp": 20,
+     "fpr": 0.03787878787878788,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9369085173501577,
+     "selected": 317,
+     "sr": 0.3092682926829268,
+     "tn": 508,
+     "tp": 297,
+     "tpr": 0.5975855130784709
+    },
+    "B": {
+     "ece": 0.02810256410256442,
+     "fn": 196,
+     "fnr": 0.4260869565217391,
+     "fp": 10,
+     "fpr": 0.019417475728155338,
+     "n": 975,
+     "negatives": 515,
+     "positives": 460,
+     "ppv": 0.9635036496350365,
+     "selected": 274,
+     "sr": 0.28102564102564104,
+     "tn": 505,
+     "tp": 264,
+     "tpr": 0.5739130434782609
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.787,
+    "fn": 396,
+    "fp": 30,
+    "n": 2000,
+    "selected": 591,
+    "sr": 0.2955,
+    "tn": 1013,
+    "tp": 561,
+    "utility_per_capita": 0.2655
+   },
+   "peak_traced_bytes": 155143,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5220578566256765
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.6264071450360579
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P2-s1002",
+   "runtime_s": 0.0011988329933956265,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.00-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.5,
+     "calibration_bins": 20,
+     "cell_id": "d0.00-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.0,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1002
+   },
+   "config_hash": "sha256:a01d9f336f51fe21f910a013226f8f02180e2ac09e9d181d3caf6c8a4350e902",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.0008925578486553912,
+    "eog": -0.0017671244860467672,
+    "fpr_gap": 0.006954251250367756,
+    "ppv_gap": -0.0092246745897,
+    "sr_gap": 0.01013133208255157
+   },
+   "groups": {
+    "A": {
+     "ece": 0.02899512195121981,
+     "fn": 204,
+     "fnr": 0.4104627766599598,
+     "fp": 17,
+     "fpr": 0.032196969696969696,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9451612903225807,
+     "selected": 310,
+     "sr": 0.3024390243902439,
+     "tn": 511,
+     "tp": 293,
+     "tpr": 0.5895372233400402
+    },
+    "B": {
+     "ece": 0.02810256410256442,
+     "fn": 188,
+     "fnr": 0.408695652173913,
+     "fp": 13,
+     "fpr": 0.02524271844660194,
+     "n": 975,
+     "negatives": 515,
+     "positives": 460,
+     "ppv": 0.9543859649122807,
+     "selected": 285,
+     "sr": 0.2923076923076923,
+     "tn": 502,
+     "tp": 272,
+     "tpr": 0.591304347826087
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.789,
+    "fn": 392,
+    "fp": 30,
+    "n": 2000,
+    "selected": 595,
+    "sr": 0.2975,
+    "tn": 1013,
+    "tp": 565,
+    "utility_per_capita": 0.2675
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.5951327433628318,
+     "fit_tpr_b": 0.5949612403100775,
+     "fit_tpr_gap": 0.00017150305275437372
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5499608573725001
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5886049489752062
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.00-r1.00-P3-s1002",
+   "runtime_s": 0.0021878330007893965,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P0",
+    "seed": 1002
+   },
+   "config_hash": "sha256:daac7bf32c26b5d901b19570a78f058231f90647e15a9a37e335c512595c7fcf",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.02389568480300191,
+    "eog": 0.020996152352712794,
+    "fpr_gap": 0.020355731225296436,
+    "ppv_gap": 0.05202292104715911,
+    "sr_gap": 0.14186366479049406
+   },
+   "groups": {
+    "A": {
+     "ece": 0.043034146341463325,
+     "fn": 150,
+     "fnr": 0.30181086519114686,
+     "fp": 36,
+     "fpr": 0.06818181818181818,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9060052219321149,
+     "selected": 383,
+     "sr": 0.37365853658536585,
+     "tn": 492,
+     "tp": 347,
+     "tpr": 0.6981891348088531
+    },
+    "B": {
+     "ece": 0.019138461538461417,
+     "fn": 92,
+     "fnr": 0.32280701754385965,
+     "fp": 33,
+     "fpr": 0.04782608695652174,
+     "n": 975,
+     "negatives": 690,
+     "positives": 285,
+     "ppv": 0.8539823008849557,
+     "selected": 226,
+     "sr": 0.2317948717948718,
+     "tn": 657,
+     "tp": 193,
+     "tpr": 0.6771929824561403
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8445,
+    "fn": 242,
+    "fp": 69,
+    "n": 2000,
+    "selected": 609,
+    "sr": 0.3045,
+    "tn": 1149,
+    "tp": 540,
+    "utility_per_capita": 0.2355
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P0",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P0",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3054289159450664
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3054289159450664
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P0-s1002",
+   "runtime_s": 0.0011336660027154721,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P1",
+    "seed": 1002
+   },
+   "config_hash": "sha256:8ca256b71d19c8ec993056508907fa62f0ecf0534905a1e253b8145070a6b65b",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.02389568480300191,
+    "eog": 0.20912139503688798,
+    "fpr_gap": 0.06716073781291172,
+    "ppv_gap": -0.008220631132325629,
+    "sr_gap": 0.23339587242026263
+   },
+   "groups": {
+    "A": {
+     "ece": 0.043034146341463325,
+     "fn": 128,
+     "fnr": 0.2575452716297787,
+     "fp": 50,
+     "fpr": 0.0946969696969697,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.8806682577565632,
+     "selected": 419,
+     "sr": 0.408780487804878,
+     "tn": 478,
+     "tp": 369,
+     "tpr": 0.7424547283702213
+    },
+    "B": {
+     "ece": 0.019138461538461417,
+     "fn": 133,
+     "fnr": 0.4666666666666667,
+     "fp": 19,
+     "fpr": 0.02753623188405797,
+     "n": 975,
+     "negatives": 690,
+     "positives": 285,
+     "ppv": 0.8888888888888888,
+     "selected": 171,
+     "sr": 0.1753846153846154,
+     "tn": 671,
+     "tp": 152,
+     "tpr": 0.5333333333333333
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.835,
+    "fn": 261,
+    "fp": 69,
+    "n": 2000,
+    "selected": 590,
+    "sr": 0.295,
+    "tn": 1149,
+    "tp": 521,
+    "utility_per_capita": 0.226
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P1",
+   "policy_fit": {
+    "calibration_min_bin_count": {
+     "A": 48,
+     "B": 51
+    },
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P1",
+    "thresholds": {
+     "A": {
+      "gamma": 0.09792164563067562,
+      "selects_none": false,
+      "t": 0.6923076923076923
+     },
+     "B": {
+      "gamma": 0.09792164563067562,
+      "selects_none": false,
+      "t": 0.6923076923076923
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P1-s1002",
+   "runtime_s": 0.0022242919949349016,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P2",
+    "seed": 1002
+   },
+   "config_hash": "sha256:0075a1c16965f5087b5b96763312b2af6fe50751f1edfe5d36333072e1fccd13",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.02389568480300191,
+    "eog": -0.18136185534258176,
+    "fpr_gap": -0.037483530961791835,
+    "ppv_gap": 0.1266895392479679,
+    "sr_gap": 0.02824265165728579
+   },
+   "groups": {
+    "A": {
+     "ece": 0.043034146341463325,
+     "fn": 200,
+     "fnr": 0.40241448692152915,
+     "fp": 20,
+     "fpr": 0.03787878787878788,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9369085173501577,
+     "selected": 317,
+     "sr": 0.3092682926829268,
+     "tn": 508,
+     "tp": 297,
+     "tpr": 0.5975855130784709
+    },
+    "B": {
+     "ece": 0.019138461538461417,
+     "fn": 63,
+     "fnr": 0.2210526315789474,
+     "fp": 52,
+     "fpr": 0.07536231884057971,
+     "n": 975,
+     "negatives": 690,
+     "positives": 285,
+     "ppv": 0.8102189781021898,
+     "selected": 274,
+     "sr": 0.28102564102564104,
+     "tn": 638,
+     "tp": 222,
+     "tpr": 0.7789473684210526
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.8325,
+    "fn": 263,
+    "fp": 72,
+    "n": 2000,
+    "selected": 591,
+    "sr": 0.2955,
+    "tn": 1146,
+    "tp": 519,
+    "utility_per_capita": 0.2235
+   },
+   "peak_traced_bytes": 155143,
+   "policy": "P2",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600
+    },
+    "policy": "P2",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.5220578566256765
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.12640714503605785
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P2-s1002",
+   "runtime_s": 0.0013315830001374707,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  },
+  {
+   "cell_id": "d0.50-r1.00",
+   "config": {
+    "cell": {
+     "base_rate_a": 0.5,
+     "base_rate_b": 0.308537538725987,
+     "calibration_bins": 20,
+     "cell_id": "d0.50-r1.00",
+     "cost_ratio": 1.0,
+     "ece_bins": 10,
+     "family": "gaussian",
+     "kappa": 0.3,
+     "mu_a": 0.0,
+     "mu_b": -0.5,
+     "note": "",
+     "p3_tolerance": 10,
+     "p_b": 0.5,
+     "s_a": 1.0,
+     "s_b": 1.0,
+     "sigma_a": 0.5,
+     "sigma_b": 0.5
+    },
+    "experiment_id": "SMOKE",
+    "generator_version": "SYN-001/1.0.0",
+    "n": 2000,
+    "policy": "P3",
+    "seed": 1002
+   },
+   "config_hash": "sha256:7014e8fee73509c0a9ce8dd5a7818a3d20273f1c159b1f81eb5ab1638c3f66a6",
+   "experiment_id": "SMOKE",
+   "failure_reason": null,
+   "gaps": {
+    "ece_gap": 0.02389568480300191,
+    "eog": 0.04256415687105086,
+    "fpr_gap": 0.027042160737812918,
+    "ppv_gap": 0.043361296945240935,
+    "sr_gap": 0.1529455909943715
+   },
+   "groups": {
+    "A": {
+     "ece": 0.043034146341463325,
+     "fn": 148,
+     "fnr": 0.29778672032193154,
+     "fp": 38,
+     "fpr": 0.07196969696969698,
+     "n": 1025,
+     "negatives": 528,
+     "positives": 497,
+     "ppv": 0.9018087855297158,
+     "selected": 387,
+     "sr": 0.3775609756097561,
+     "tn": 490,
+     "tp": 349,
+     "tpr": 0.7022132796780685
+    },
+    "B": {
+     "ece": 0.019138461538461417,
+     "fn": 97,
+     "fnr": 0.3403508771929824,
+     "fp": 31,
+     "fpr": 0.04492753623188406,
+     "n": 975,
+     "negatives": 690,
+     "positives": 285,
+     "ppv": 0.8584474885844748,
+     "selected": 219,
+     "sr": 0.2246153846153846,
+     "tn": 659,
+     "tp": 188,
+     "tpr": 0.6596491228070176
+    }
+   },
+   "n": 2000,
+   "overall": {
+    "accuracy": 0.843,
+    "fn": 245,
+    "fp": 69,
+    "n": 2000,
+    "selected": 606,
+    "sr": 0.303,
+    "tn": 1149,
+    "tp": 537,
+    "utility_per_capita": 0.234
+   },
+   "peak_traced_bytes": 155207,
+   "policy": "P3",
+   "policy_fit": {
+    "diagnostics": {
+     "fit_selected": 600,
+     "fit_target": 600,
+     "fit_tolerance": 10,
+     "fit_tpr_a": 0.7212389380530974,
+     "fit_tpr_b": 0.7193548387096774,
+     "fit_tpr_gap": 0.0018840993434199316
+    },
+    "policy": "P3",
+    "thresholds": {
+     "A": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.29296702762743954
+     },
+     "B": {
+      "gamma": 1.0,
+      "selects_none": false,
+      "t": 0.3204590377292129
+     }
+    }
+   },
+   "run_id": "RUN-SMOKE-d0.50-r1.00-P3-s1002",
+   "runtime_s": 0.0021510409933398478,
+   "seed": 1002,
+   "status": "ok",
+   "undefined": {}
+  }
+ ],
+ "schema": "rigged.result_bundle",
+ "schema_version": "1.0.0",
+ "seeds": [
+  1000,
+  1001,
+  1002
+ ]
+}

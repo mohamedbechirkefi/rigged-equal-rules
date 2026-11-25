@@ -573,3 +573,21 @@ Earlier entries of this file, `research/decision_log.md` and `research/experimen
 ### Next action
 
 The owner's review (`author_review.md`) and, separately, any G-PUBLIC decision. M6 is not done until the owner signs off.
+
+### Fresh clone of the release candidate (94421ba)
+
+```
+$ git clone -q <this repository> $S/clone2                        HEAD 94421ba
+$ uv sync --frozen --all-groups --all-extras                      exit 0
+$ .venv/bin/python -m pytest -q                                   124 passed in 9.96s
+$ python3 scripts/check_links.py                                  56 Markdown files, 23 links, 8 bib entries: PASS
+$ CITATION.cff with yaml.safe_load                                parses
+$ scripts/rigged smoke --matrix SMOKE --out results/exploratory/m3-smoke
+  contrasts, policy_vs_p0, analytic_check identical; summary.csv differs only in runtime_mean_s (8 rows)
+$ python3 scripts/export_demo_data.py --check                     results.json matches the export
+$ cd demo && npm ci --prefer-offline && npm test && npm run build && node tools/a11y_check.mjs dist
+  added 53 packages; Tests 18 passed (18); built in 262ms; A11Y-CHECK PASS
+$ git status --short | wc -l                                      0
+```
+
+Both clones ($S/clone and $S/clone2), created in this session, were deleted.

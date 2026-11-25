@@ -125,4 +125,4 @@ Every page of the manuscript, every page of the supplementary file, and the firs
 
 ## 6. Re-check in a fresh clone of the release candidate
 
-See `progress.md`, M6 entry, section "Fresh clone of the release candidate", for the commands and outputs after the fixes.
+A second clone of the release-candidate commit 94421ba, after the fixes: `uv sync --frozen` exit 0; `pytest -q` 124 passed in 9.96s; `scripts/check_links.py` PASS (56 Markdown files, 23 links, 8 bib entries); `CITATION.cff` parses as YAML; the M3 smoke matrix again identical except `runtime_mean_s`; `export_demo_data.py --check` matches; demo `npm ci`, 18 tests passed, build, `A11Y-CHECK PASS`; `git status` clean. Both clones were deleted at the end of the session. Commands: `progress.md`, M6 entry.

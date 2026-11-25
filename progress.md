@@ -445,3 +445,65 @@ M5 (interactive experience), using the M4 labels.
 ### Next action
 
 M5, with the placeholders above put to the owner.
+
+
+## 2026-11-25: M5 interactive experience
+
+**Authority:** owner, 2026-11-25, "Next" (`/Users/bechir/research/labs/_shared/owner-approvals-2026-11-25d.md`); stack: the master prompt's default (TypeScript, React, Vite) from the shared template. Brief: `labs/_shared/M5-brief.md`. **Starting state:** `a42e132`, tree clean. Decisions: DEC-024.
+
+### Commands and actual outputs
+
+```
+$ .venv/bin/python -m pytest -q                                   116 passed in 6.82s   (before any change)
+$ rsync -a --exclude node_modules ../_shared/demo-template/ demo/ ; cd demo && npm ci --prefer-offline
+added 53 packages
+$ python3 scripts/export_demo_data.py                             wrote demo/public/data/results.json (108217 bytes)
+$ python3 scripts/export_demo_data.py --check                     results.json matches the export
+$ PYTHONPATH=src .venv/bin/python scripts/make_demo_fixture.py    wrote demo/src/fixtures/engine_fixture.json (0.74 s wall clock, one process)
+$ pandoc research/paper/manuscript.md -s -t latex                 manuscript.tex regenerated (pandoc 3.6.3)
+$ .venv/bin/python -m pytest -q                                   121 passed in 7.08s   (after all changes; 5 new tests in tests/test_demo_export.py)
+$ cd demo && npm ci --prefer-offline && npm test                  Test Files 2 passed (2); Tests 18 passed (18)
+$ npm run build                                                   dist/index.html 0.91 kB; dist/assets/sandbox.worker-CF6u4gxe.js 6.87 kB;
+                                                                  dist/assets/index-DMVOV6WT.css 6.38 kB; dist/assets/index-B05VWmE4.js 251.67 kB; built in 380ms
+$ node tools/a11y_check.mjs dist --screenshots <scratchpad>/rigged/shots
+PASS results render (no fail-closed panel): 7 experiment panels
+PASS text contrast, light scheme (WCAG AA)
+PASS text contrast, dark scheme (WCAG AA)
+PASS keyboard reaches every focusable element: 40 reached of 40
+PASS visible focus indicator
+PASS no horizontal page scroll at 360 px: overflow 0px
+PASS reduced motion: no running animations: 0 running
+PASS no request leaves the local origin
+PASS offline after first load: results stay, sandbox runs: Sandbox output ready: 5 seed(s) from seed 1, n 5000. P0 EOG 6.49 pp.
+A11Y-CHECK PASS
+$ node tools/a11y_check.mjs <copy of dist with one explorer interval bound set to null>
+FAIL results render (no fail-closed panel): 0 experiment panels
+A11Y-CHECK FAIL (2)                                               (expected: the page fails closed)
+```
+
+An earlier checker run failed "keyboard reaches every focusable element: 35 reached of 40": six results tables had identical text and position, so the checker's key collided. The tables were given distinct ids; the checker was not changed.
+
+### What was done
+
+1. **Export** (`scripts/export_demo_data.py`): seven entries (EXP-001 to EXP-004; JRN-0014 to JRN-0016 labelled exploratory), the EXP-002 explorer grid and the EXP-004 cells, 17 source files with SHA-256, code revision b455d59. **Consistency test** (`tests/test_demo_export.py`): byte identity with a fresh export; every display string verbatim in the manuscript, or in the supplementary file for explorer cells, or a documented group-rate exception; no protected-attribute word; README, CITATION.cff, articles and demo README print only manuscript numbers.
+2. **Page** (`demo/`): overview with status and claims boundary, the fairness trade-off explorer and subgroup outcome charts (hand-written SVG, 95% intervals, 2 pp band), published results with equal visual weight for supported, contradicted and exploratory entries, assumptions labelled as such, method and limitations, sandbox. Loading, error (fail closed) and empty states.
+3. **Sandbox**: faithful port of the engine logic (`demo/src/engine.ts`), equal to the Python engine on identical draws (counts exact, metrics within 1e-9); own random numbers, labelled. Seed, scenario presets, delta, rho, kappa, p_B, n, seeds, Run, Cancel, Reset; JSON download of the sandbox output only.
+4. **Screenshots inspected** (desktop light, desktop dark, mobile, plus the EXP-004 view and the mobile sandbox): fixed small chart text on mobile (charts now measure their container), clipped table captions (moved out of the scroll regions), a too-wide gap table (utility moved to the subgroup table), wrapping intervals. `docs/demo.png` (159 KB) added to the README with alt text.
+5. **Text consistency**: manuscript section 11 stale review sentence replaced with the true state; section 10 describes the demo; version M5. README rewritten (it described M2). CITATION.cff message updated. Article drafts written. `author_review.md`: four agent-ticked boxes unticked (DEC-024). Roadmap: stale M2 note on AP-001 to AP-008 brought up to date.
+
+Nothing frozen was touched; no confirmatory run; no push; no network use by the page.
+
+### M5 gate
+
+Offline after the initial load (checker step 7), responsive (no horizontal scroll at 360 px; screenshots inspected), keyboard usable (40 of 40 focusable elements reached with a visible outline), no fabricated data (every published number is traced to a committed table and checked verbatim), no runtime service. **M5 is done.**
+
+### Owner placeholders remaining
+
+1. Author line and affiliation: "Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval)" (manuscript, README, page footer, articles, CITATION.cff).
+2. Repository URL: `<repository URL, not yet published>`.
+3. Demo URL: `<demo URL, not yet published>`.
+4. The owner's full-text review of the manuscript (M6 checklist); the manuscript title remains a working title (the post-M4 title approval named other projects).
+
+### Next action
+
+M6 (release candidate), on the owner's word.

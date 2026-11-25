@@ -3,9 +3,10 @@
 # (custom licence, SPDX LicenseRef-RIGGED-NC-Research-1.0; see LICENSE).
 # It is deliberately not given in a "license" field, which expects a standard SPDX id.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: protocols frozen 2026-11-24, no confirmatory results yet. The AI assistant (Claude) is disclosed as a research and development assistant, not as an author."
+message: "If you use this work, please cite it as below. Status: independent research manuscript / preprint draft, not peer-reviewed; confirmatory results at code revision b455d59 (EXP-001 to EXP-003 simulated, EXP-004 on UCI Adult). Author metadata pending the owner's approval; repository URL not yet published. The AI assistant (Claude) is disclosed as a research and development assistant, not as an author."
 title: "RIGGED: When equal rules produce unequal outcomes (working title)"
 type: software
+# Author metadata (name, no affiliation) pending the owner's approval; repository URL to be added at release.
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
@@ -20,7 +21,8 @@ keywords:
 references:
   - type: dataset
     title: Adult
-    authors:
+    # Author metadata (name, no affiliation) pending the owner's approval; repository URL to be added at release.
+authors:
       - family-names: Becker
         given-names: Barry
       - family-names: Kohavi

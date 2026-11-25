@@ -10,7 +10,7 @@ Target: five focused development days (planning estimate). Effort is in focused 
 | M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | done (2026-11-24): all acceptance criteria checked; exploratory runs only | none |
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | done (2026-11-25): 1,780 confirmatory runs at b455d59, all ok; reports written from committed results; deviations DEC-019 (disclosed limitation, DEC-021) and DEC-020 | none |
 | M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | done (2026-11-25): confounder review, expected versus observed, claims register and evidence audit, manuscript synthesised, second review pass | owner review of the manuscript text (M6 checklist) |
-| M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | not started | none |
+| M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | done (2026-11-25): static demo, explorer and subgroup charts, faithful sandbox port, checker PASS, numbers tested against the manuscript (DEC-024) | owner placeholders: author line, repository URL, demo URL |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
 
 ## M0: Bootstrap and feasibility
@@ -47,7 +47,7 @@ Acceptance criteria:
 - [x] Versioned JSON result schema with validation; run manifest (runtime, peak memory, OS, CPU, package versions, git revision, config hash).
 - [x] CLI: smoke, run (refuses confirmatory while unfrozen), report, test.
 - [x] Report generator producing tables and figures from results (CSV, Markdown, SVG; PDF through pandoc and Typst, visually inspected).
-- Open items carried forward: proposed protocol amendments AP-001 to AP-008 (`research/protocol_amendment_proposals.md`) await the owner.
+- Open items carried forward: proposed protocol amendments AP-001 to AP-008 (`research/protocol_amendment_proposals.md`). Resolved at the freeze of 2026-11-24: the owner-approved amendments A1 to A6 were applied (DEC-012); AP-007 and AP-008 were not in the approved list and were not applied (status updated at M5).
 - Gate: correctness before UI polish.
 
 ## M3: Experiments (11.6: reports as experiments finish; provenance at run time)
@@ -73,10 +73,11 @@ Acceptance criteria:
 
 Acceptance criteria:
 
-- [ ] Static fairness trade-off explorer and subgroup outcome charts; measured results separated from sandbox results.
-- [ ] Accessibility: keyboard, contrast, reduced motion, mobile; empty, error and loading states; fail closed on malformed results.
-- [ ] Offline after initial load; no runtime service.
-- Gate: as above.
+- [x] Static fairness trade-off explorer and subgroup outcome charts; measured results separated from sandbox results (`demo/`, DEC-024).
+- [x] Accessibility: keyboard, contrast, reduced motion, mobile; empty, error and loading states; fail closed on malformed results (`a11y_check.mjs` PASS; FAIL on a malformed results file, as intended).
+- [x] Offline after initial load; no runtime service (checker: no request leaves the local origin; offline sandbox run).
+- [x] Demo, manuscript, README, CITATION.cff and article drafts use the same verified numbers (`tests/test_demo_export.py`).
+- Gate: offline after the initial load, responsive, usable with the keyboard, no fabricated data, no runtime service: holds (progress, 2026-11-25 M5 entry).
 
 ## M6: Release candidate (11.6: PDFs inspected, clean-clone reproduction, owner checklist)
 

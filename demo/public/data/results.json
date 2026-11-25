@@ -1,0 +1,3787 @@
+{
+ "schema": "lab-demo-results",
+ "schema_version": "1.0.0",
+ "project": "RIGGED",
+ "question": "Can equal rules yield unequal outcomes under different starting distributions?",
+ "status_label": "Independent research manuscript / preprint draft, not peer-reviewed. EXP-001 to EXP-003 are simulated; EXP-004 uses real data. Groups A and B are abstract groups, never protected groups.",
+ "code_revision": "b455d59294ea98e2b050ef30f20bc74b7993969e",
+ "sources": [
+  {
+   "path": "research/experiment_registry.csv",
+   "sha256": "f662e924e6f4efe2befc7bff8f12b6251223fd9d7e6c1b18998ab4f15252325d"
+  },
+  {
+   "path": "research/claims_register.csv",
+   "sha256": "1ede66142805e696106ad942543e4bc5d96831e7a459edd2f6be0cdf013fc9b8"
+  },
+  {
+   "path": "research/publication/artifact_manifest.json",
+   "sha256": "1995ea241c8d138e77c1d60f2cf133611a06ada7155c9a7cf72ba48a19da4e13"
+  },
+  {
+   "path": "results/EXP-001/tables/contrasts.csv",
+   "sha256": "1ca632943ce879b8d490ad2d827beccede775cf1adb4a4d8b09e41e78d017096"
+  },
+  {
+   "path": "results/EXP-001/tables/summary.csv",
+   "sha256": "101608f54deef41edfdcacca58db1fb43135f1113e38dc049234ee07215a08ad"
+  },
+  {
+   "path": "results/EXP-001/tables/analytic_check.csv",
+   "sha256": "b139bd921a859765d17868cafc8e72239659ac673698a509a25d8fe8b875e78d"
+  },
+  {
+   "path": "results/EXP-002/tables/summary.csv",
+   "sha256": "f1c2d05032bfd466f67b6798d5ff4a0e81a56171d2363373e710c01f4edf2a79"
+  },
+  {
+   "path": "results/EXP-002/tables/policy_vs_p0.csv",
+   "sha256": "6d2bc9c262d756ab41cc6d115f97d006dcfb9d63831f36a1b810271522f0797a"
+  },
+  {
+   "path": "results/EXP-003/tables/summary.csv",
+   "sha256": "a2d790e4ea55f9192b32dc067e8943f972e2f87fdd552860f355091c6ffb374e"
+  },
+  {
+   "path": "results/EXP-003/tables/analytic_check.csv",
+   "sha256": "b7bd8ccf8026a11bc8c3f97d86fdfbecc281f5f4618d52e1e40d243c88d8043b"
+  },
+  {
+   "path": "results/EXP-004/tables/contrasts.csv",
+   "sha256": "6be849665f3b3f72ec88d2c1dba19675cc3976075a90c41e28fb2de61043a101"
+  },
+  {
+   "path": "results/EXP-004/tables/summary.csv",
+   "sha256": "366c0c09c65ceb989b0ce05bf2bbb5f0d1e4a095398dce5efd530cd96319779d"
+  },
+  {
+   "path": "results/EXP-004/tables/policy_vs_p0.csv",
+   "sha256": "4a747a3943be63ae7dfd28ee178fb1b1694795dd0ad9996f26121c489f5dbcaa"
+  },
+  {
+   "path": "results/EXP-004/tables/base_rate_gap.csv",
+   "sha256": "f8a533cd511f9cfa23034ec0dbaf05f70b6f5b56bc2cd91dc44a5c508cf6273b"
+  },
+  {
+   "path": "results/exploratory/exp-003-x/tables/analytic_check.csv",
+   "sha256": "0f8204467a9d10e3acb20115d94bb7f4f5ab0074950876c808d77ef7ec34a4ea"
+  },
+  {
+   "path": "results/exploratory/m4-confounders/p1_exact_posterior.csv",
+   "sha256": "88b874ea5965197e418d98ba5c762be7df1df38434c9dda2bbe1276c61c7011f"
+  },
+  {
+   "path": "results/exploratory/m4-confounders/exp004_score_by_group.csv",
+   "sha256": "519ce191c7d5356ebcf24ae409976bf2cbfed6969bf080097e8d32eba710c9bc"
+  }
+ ],
+ "experiments": [
+  {
+   "id": "EXP-001",
+   "title": "One common threshold under unequal starting distributions",
+   "status": "confirmatory, complete (240 of 240 runs ok); simulated",
+   "verdict": "H1 supported: the interval lies entirely above +2 pp",
+   "estimates": [
+    {
+     "label": "EOG, primary contrast (d0.50-r1.00 minus d0.00-r1.00, P0)",
+     "estimate": 6.590869469,
+     "ci_low": 6.202696647,
+     "ci_high": 6.967647518000001,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "6.59 pp",
+     "interval_display": "[6.20, 6.97]",
+     "kind": "measured"
+    },
+    {
+     "label": "SR gap, same contrast",
+     "estimate": 15.46767633,
+     "ci_low": 15.318879930000001,
+     "ci_high": 15.604618570000001,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "15.47",
+     "interval_display": "[15.32, 15.60]",
+     "kind": "measured"
+    },
+    {
+     "label": "PPV gap, same contrast",
+     "estimate": 4.815934745,
+     "ci_low": 4.447252854,
+     "ci_high": 5.224072792,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "4.82",
+     "interval_display": "[4.45, 5.22]",
+     "kind": "measured"
+    },
+    {
+     "label": "FPR gap, same contrast",
+     "estimate": 1.606485627,
+     "ci_low": 1.4132198219999998,
+     "ci_high": 1.786780268,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "1.61",
+     "interval_display": "[1.41, 1.79]",
+     "kind": "measured"
+    },
+    {
+     "label": "EOG contrast, population value by numerical integration",
+     "estimate": 6.306931934,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "pp",
+     "display": "6.31 pp",
+     "interval_display": null,
+     "kind": "analytic"
+    }
+   ],
+   "claim_ids": [
+    "CLM-001",
+    "CLM-002",
+    "CLM-003",
+    "CLM-026",
+    "CLM-027",
+    "CLM-029"
+   ],
+   "report_path": "research/experiments/EXP-001/report.md",
+   "notes": [
+    "Implementation check: 48 of 48 comparisons within 3 bootstrap SE.",
+    "The primary result is implied by the Gaussian model; the run quantifies it."
+   ]
+  },
+  {
+   "id": "EXP-002",
+   "title": "Comparing equal and constrained rules; incompatible criteria",
+   "status": "confirmatory, complete (960 of 960 runs ok); simulated",
+   "verdict": "H1 supported (no policy meets all three parity criteria within 2 pp at d0.50-r1.00; all do at the control); H2 supported (P2 and P3 cost utility)",
+   "estimates": [
+    {
+     "label": "Smallest worst violation: P3 SR gap",
+     "estimate": 11.739147580000001,
+     "ci_low": 11.3278553,
+     "ci_high": 12.15781422,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "11.74",
+     "interval_display": "[11.33, 12.16]",
+     "kind": "measured"
+    },
+    {
+     "label": "P2 EOG",
+     "estimate": -19.98908562,
+     "ci_low": -20.63439074,
+     "ci_high": -19.34813283,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "-19.99",
+     "interval_display": "[-20.63, -19.35]",
+     "kind": "measured"
+    },
+    {
+     "label": "P1 EOG",
+     "estimate": 14.892638029999999,
+     "ci_low": 14.2979493,
+     "ci_high": 15.45379528,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "14.89",
+     "interval_display": "[14.30, 15.45]",
+     "kind": "measured"
+    },
+    {
+     "label": "P1 PPV gap",
+     "estimate": 1.003109665,
+     "ci_low": 0.5510655766,
+     "ci_high": 1.4450391439999999,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "1.00",
+     "interval_display": "[0.55, 1.45]",
+     "kind": "measured"
+    },
+    {
+     "label": "P3 EOG",
+     "estimate": 0.1195681146,
+     "ci_low": -0.5207093932,
+     "ci_high": 0.737017103,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "0.12",
+     "interval_display": "[-0.52, 0.74]",
+     "kind": "measured"
+    },
+    {
+     "label": "Utility per capita, P2 minus P0",
+     "estimate": -0.0177325,
+     "ci_low": -0.0185875625,
+     "ci_high": -0.0168775,
+     "ci_level": 0.95,
+     "unit": "per capita",
+     "display": "-0.01773",
+     "interval_display": "[-0.01859, -0.01688]",
+     "kind": "measured"
+    },
+    {
+     "label": "Utility per capita, P3 minus P0",
+     "estimate": -0.002145,
+     "ci_low": -0.0024850625,
+     "ci_high": -0.00181,
+     "ci_level": 0.95,
+     "unit": "per capita",
+     "display": "-0.00215",
+     "interval_display": "[-0.00249, -0.00181]",
+     "kind": "measured"
+    },
+    {
+     "label": "Utility per capita, P1 minus P0",
+     "estimate": 0.00058,
+     "ci_low": 0.0001025,
+     "ci_high": 0.0010800625,
+     "ci_level": 0.95,
+     "unit": "per capita",
+     "display": "+0.00058",
+     "interval_display": "[0.00010, 0.00108]",
+     "kind": "measured"
+    }
+   ],
+   "claim_ids": [
+    "CLM-004",
+    "CLM-005",
+    "CLM-016",
+    "CLM-018",
+    "CLM-029",
+    "CLM-030"
+   ],
+   "report_path": "research/experiments/EXP-002/report.md",
+   "notes": [
+    "Verdict unchanged at tolerances of 1 and 5 pp.",
+    "P1's magnitudes partly reflect its 20-bin calibration map (JRN-0015, exploratory)."
+   ]
+  },
+  {
+   "id": "EXP-003",
+   "title": "Sensitivity: base rate versus distribution shape",
+   "status": "confirmatory, complete (420 of 420 runs ok); simulated; deviation DEC-019",
+   "verdict": "H0 rejected; H2 sign reversal (analytically determined, a quantification, not a test); H3 supported (sign); H4 supported (sign) with a disclosed limitation (DEC-019)",
+   "estimates": [
+    {
+     "label": "EOG, equal base rates, s_B 0.5",
+     "estimate": 19.44203044,
+     "ci_low": 18.98468002,
+     "ci_high": 19.88684597,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "19.44",
+     "interval_display": "[18.98, 19.89]",
+     "kind": "measured"
+    },
+    {
+     "label": "EOG, equal base rates, s_B 2",
+     "estimate": -22.5014576,
+     "ci_low": -22.93483106,
+     "ci_high": -22.06361406,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "-22.50",
+     "interval_display": "[-22.93, -22.06]",
+     "kind": "measured"
+    },
+    {
+     "label": "EOG, fixed base-rate gap, s_B 2",
+     "estimate": -9.56166943,
+     "ci_low": -10.01157993,
+     "ci_high": -9.123824106,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "-9.56",
+     "interval_display": "[-10.01, -9.12]",
+     "kind": "measured"
+    },
+    {
+     "label": "EOG, Student t3 latent",
+     "estimate": 2.2850180929999997,
+     "ci_low": 1.86770097,
+     "ci_high": 2.687053518,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "2.29",
+     "interval_display": "[1.87, 2.69]",
+     "kind": "measured"
+    },
+    {
+     "label": "EOG, shifted log-normal latent",
+     "estimate": 1.430272966,
+     "ci_low": 1.066969514,
+     "ci_high": 1.81460482,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "1.43",
+     "interval_display": "[1.07, 1.81]",
+     "kind": "measured"
+    },
+    {
+     "label": "Smallest grid-D EOG (D-k0.5-pB0.5)",
+     "estimate": 2.087322182,
+     "ci_low": 1.851364309,
+     "ci_high": 2.320247705,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "2.09",
+     "interval_display": "[1.85, 2.32]",
+     "kind": "measured"
+    }
+   ],
+   "claim_ids": [
+    "CLM-006",
+    "CLM-007",
+    "CLM-008",
+    "CLM-009",
+    "CLM-010",
+    "CLM-011",
+    "CLM-029"
+   ],
+   "report_path": "research/experiments/EXP-003/report.md",
+   "notes": [
+    "Implementation check passed 56 of 60 comparisons; the failures are in cells D-k0.1-pB0.5 and D-k0.5-pB0.2. The owner accepted them as a disclosed limitation on H4, with no rerun (DEC-019, DEC-021). The magnitudes in those two cells are not confirmed at the frozen standard.",
+    "All cells share the same 20 seeds, so cells are not independent replications."
+   ]
+  },
+  {
+   "id": "EXP-004",
+   "title": "Second test on a real score distribution (UCI Adult)",
+   "status": "confirmatory, complete (160 of 160 runs ok); real data (UCI Adult)",
+   "verdict": "H1-real disconfirmed: D is negative, a contradiction of the base-rate prediction",
+   "estimates": [
+    {
+     "label": "D: EOG of R-hours minus R-hours-random, P0",
+     "estimate": -7.449731603,
+     "ci_low": -8.746192362999999,
+     "ci_high": -6.0510791930000005,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "-7.45 pp",
+     "interval_display": "[-8.75, -6.05]",
+     "kind": "measured"
+    },
+    {
+     "label": "Base rate, 40 or more hours (Group A)",
+     "estimate": 28.20207901,
+     "ci_low": 28.031437590000003,
+     "ci_high": 28.38187763,
+     "ci_level": 0.95,
+     "unit": "%",
+     "display": "28.20%",
+     "interval_display": "[28.03, 28.38]",
+     "kind": "measured"
+    },
+    {
+     "label": "Base rate, below 40 hours (Group B)",
+     "estimate": 9.131159326,
+     "ci_low": 8.970451598,
+     "ci_high": 9.277664427,
+     "ci_level": 0.95,
+     "unit": "%",
+     "display": "9.13%",
+     "interval_display": "[8.97, 9.28]",
+     "kind": "measured"
+    },
+    {
+     "label": "Random control, P0 EOG",
+     "estimate": -0.3265737356,
+     "ci_low": -1.34007851,
+     "ci_high": 0.7015273237999999,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "-0.33 pp",
+     "interval_display": "[-1.34, 0.70]",
+     "kind": "measured"
+    },
+    {
+     "label": "P1 EOG on R-hours (calibrated equal rule)",
+     "estimate": 30.51926599,
+     "ci_low": 25.627037790000003,
+     "ci_high": 35.58239394,
+     "ci_level": 0.95,
+     "unit": "pp",
+     "display": "+30.52 pp",
+     "interval_display": "[25.63, 35.58]",
+     "kind": "measured"
+    }
+   ],
+   "claim_ids": [
+    "CLM-012",
+    "CLM-013",
+    "CLM-014",
+    "CLM-015",
+    "CLM-017",
+    "CLM-019",
+    "CLM-025",
+    "CLM-028",
+    "CLM-029"
+   ],
+   "report_path": "research/experiments/EXP-004/report.md",
+   "notes": [
+    "Group B is hours-per-week below 40. No protected attribute is a group, input, stratifier or covariate.",
+    "Intervals cover the random split and tie-breaking only, not sampling from a population."
+   ]
+  },
+  {
+   "id": "JRN-0014",
+   "title": "EXP-003 rerun on seeds 1000 to 1019 (diagnosis of DEC-019)",
+   "status": "exploratory, not confirmatory",
+   "verdict": "none: exploratory, no frozen rule applies; it changes no verdict",
+   "estimates": [],
+   "claim_ids": [],
+   "report_path": "results/exploratory/exp-003-x/report.md",
+   "notes": [
+    "Implementation check 60 of 60 on the exploratory seeds."
+   ]
+  },
+  {
+   "id": "JRN-0015",
+   "title": "P1 with the exact Gaussian posterior (calibration-fit confounder)",
+   "status": "exploratory, not confirmatory; population values by numerical integration",
+   "verdict": "none: exploratory; the EXP-002 H1 verdict is unchanged",
+   "estimates": [
+    {
+     "label": "P1 population EOG at d0.50-r1.00, exact posterior",
+     "estimate": 13.0382761,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "pp",
+     "display": "13.04 pp",
+     "interval_display": null,
+     "kind": "analytic"
+    },
+    {
+     "label": "P1 population PPV gap at d0.50-r1.00, exact posterior",
+     "estimate": 2.095807277,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "pp",
+     "display": "2.10 pp",
+     "interval_display": null,
+     "kind": "analytic"
+    }
+   ],
+   "claim_ids": [
+    "CLM-018"
+   ],
+   "report_path": "research/paper/supplementary.md",
+   "notes": [
+    "Deterministic integration: there is no sampling interval. The binned simulation gives 14.89 [14.30, 15.45] pp for the same cell."
+   ]
+  },
+  {
+   "id": "JRN-0016",
+   "title": "EXP-004 score on the full test pool by the hours partition (post hoc)",
+   "status": "exploratory, post hoc, not a test",
+   "verdict": "none: descriptive; establishes no cause",
+   "estimates": [
+    {
+     "label": "Qualified members above the pool's 70th percentile, Group B",
+     "estimate": 70.30812325,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "%",
+     "display": "70.31%",
+     "interval_display": null,
+     "kind": "descriptive"
+    },
+    {
+     "label": "Qualified members above the pool's 70th percentile, Group A",
+     "estimate": 62.05216394000001,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "%",
+     "display": "62.05%",
+     "interval_display": null,
+     "kind": "descriptive"
+    },
+    {
+     "label": "Calibration in the large, Group B (probability minus rate)",
+     "estimate": 11.2327019,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "pp",
+     "display": "11.23 pp",
+     "interval_display": null,
+     "kind": "descriptive"
+    }
+   ],
+   "claim_ids": [
+    "CLM-019"
+   ],
+   "report_path": "research/paper/supplementary.md",
+   "notes": [
+    "Full-pool description with no resampling: there is no interval."
+   ]
+  }
+ ],
+ "assumptions": [
+  {
+   "name": "Latent qualification",
+   "value": "Q ~ N(mu_g, s_g^2); label Y = 1[Q > 0]",
+   "source": "manuscript section 3, generator SYN-001"
+  },
+  {
+   "name": "Observed score",
+   "value": "X = Q + e, e ~ N(0, sigma_g^2) independent of Q; sigma_A = 0.5, sigma_B = 0.5 rho",
+   "source": "manuscript section 3"
+  },
+  {
+   "name": "Starting-distribution gap",
+   "value": "mu_A = 0, mu_B = -delta; delta in {0, 0.25, 0.5, 1}",
+   "source": "manuscript section 4.4"
+  },
+  {
+   "name": "Capacity and group share",
+   "value": "kappa = 0.30 selected; p_B = 0.5 in group B",
+   "source": "manuscript section 3"
+  },
+  {
+   "name": "Population size and seeds",
+   "value": "n = 20,000 fitting and 20,000 evaluation per seed; seeds 0 to 19",
+   "source": "manuscript section 4.2"
+  },
+  {
+   "name": "Utility",
+   "value": "U = (TP - c FP) / n with cost ratio c = 1",
+   "source": "manuscript section 3"
+  },
+  {
+   "name": "Smallest effect size of interest",
+   "value": "2 pp; no p-value threshold",
+   "source": "manuscript section 4.5"
+  },
+  {
+   "name": "Interval",
+   "value": "95% percentile bootstrap over seeds, 10,000 resamples",
+   "source": "manuscript section 4.5"
+  },
+  {
+   "name": "P1 calibration map",
+   "value": "20 quantile bins per group",
+   "source": "manuscript section 4.3"
+  }
+ ],
+ "limitations": [
+  "Simulation: EXP-001 to EXP-003 hold only within the generator (hard cutoff on a latent qualification, additive Gaussian noise, two groups, one score).",
+  "Analytic predictability: EXP-001, EXP-002 and EXP-003 H2 were implied before the runs; their confirmatory status adds reproducibility, not discovery.",
+  "Implementation check (DEC-019): EXP-003 passed 56 of 60 comparisons; the owner accepted the failures as a disclosed limitation on H4.",
+  "Correlated cells: all cells share the same 20 seeds by design.",
+  "P1 binning: P1's magnitudes and its PPV-parity result depend on the 20-bin calibration map (JRN-0015).",
+  "EXP-004: one simple four-feature logistic score and one non-protected partition of one 1994 extract; a different score could change the gap; intervals cover the split and tie-breaking only.",
+  "No protected attributes were used. Nothing can be inferred about protected groups, and the study makes no claim about workers, hours, pay, causes or any real hiring or selection decision.",
+  "No universal metric: the EOG is the primary metric for this question only.",
+  "Static decisions: no feedback over time.",
+  "Literature at abstract level; the search was not systematic."
+ ],
+ "explorer": {
+  "experiment_id": "EXP-002",
+  "label": "measured, simulated",
+  "unit": "pp",
+  "tolerance_pp": 2.0,
+  "source": "results/EXP-002/tables/summary.csv; results/EXP-002/tables/policy_vs_p0.csv",
+  "metrics": [
+   {
+    "key": "sr_gap",
+    "label": "SR gap"
+   },
+   {
+    "key": "eog",
+    "label": "EOG"
+   },
+   {
+    "key": "ppv_gap",
+    "label": "PPV gap"
+   },
+   {
+    "key": "fpr_gap",
+    "label": "FPR gap"
+   }
+  ],
+  "deltas": [
+   0.0,
+   0.25,
+   0.5,
+   1.0
+  ],
+  "rhos": [
+   1.0,
+   1.5,
+   2.0
+  ],
+  "cells": [
+   {
+    "cell_id": "d0.00-r1.00",
+    "delta": 0.0,
+    "rho": 1.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1001691767,
+        "ci_low": -0.4572198091,
+        "ci_high": 0.2628387183,
+        "display": "-0.10 [-0.46, 0.26]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.09202944129,
+        "ci_low": -0.5970356537,
+        "ci_high": 0.3800232529,
+        "display": "-0.09 [-0.60, 0.38]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.2522726728,
+        "ci_low": -0.4396657862,
+        "ci_high": -0.07416183344999999,
+        "display": "-0.25 [-0.44, -0.07]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.1297660375,
+        "ci_low": 0.01670240794,
+        "ci_high": 0.2505054329,
+        "display": "0.13 [0.02, 0.25]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.493339580000004,
+       "ci_low": 57.061883879999996,
+       "ci_high": 57.93667507,
+       "display": "57.49% [57.06, 57.94]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.58536902,
+       "ci_low": 57.23315064,
+       "ci_high": 57.909790189999995,
+       "display": "57.59% [57.23, 57.91]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.128691898,
+        "ci_low": -0.5930750167,
+        "ci_high": 0.35895215340000003,
+        "display": "-0.13 [-0.59, 0.36]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.139615441,
+        "ci_low": -0.8668673422,
+        "ci_high": 0.6055083032999999,
+        "display": "-0.14 [-0.87, 0.61]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.2433428619,
+        "ci_low": -0.5049238234,
+        "ci_high": 0.0018912435750000002,
+        "display": "-0.24 [-0.50, 0.00]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.1206166933,
+        "ci_low": -0.046872938520000004,
+        "ci_high": 0.29993700079999996,
+        "display": "0.12 [-0.05, 0.30]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.47262586,
+       "ci_low": 57.01992944999999,
+       "ci_high": 57.921614909999995,
+       "display": "57.47% [57.02, 57.92]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.6122413,
+       "ci_low": 57.097541809999996,
+       "ci_high": 58.08047403,
+       "display": "57.61% [57.10, 58.08]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": {
+       "estimate": -2.25e-05,
+       "ci_low": -0.0001625,
+       "ci_high": 0.0001175,
+       "display": "-0.00002 [-0.00016, 0.00012]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1381321616,
+        "ci_low": -0.5998068842,
+        "ci_high": 0.34936667920000003,
+        "display": "-0.14 [-0.60, 0.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.1565542992,
+        "ci_low": -0.8787925355,
+        "ci_high": 0.5853957866,
+        "display": "-0.16 [-0.88, 0.59]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.2416127126,
+        "ci_low": -0.5064509037,
+        "ci_high": 0.006837758804,
+        "display": "-0.24 [-0.51, 0.01]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.11872580769999999,
+        "ci_low": -0.05047812473,
+        "ci_high": 0.2989193178,
+        "display": "0.12 [-0.05, 0.30]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.62216263,
+       "ci_low": 57.1074976,
+       "ci_high": 58.09091661,
+       "display": "57.62% [57.11, 58.09]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": {
+       "estimate": -5e-06,
+       "ci_low": -0.0001375,
+       "ci_high": 0.0001275,
+       "display": "-0.00001 [-0.00014, 0.00013]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1611999168,
+        "ci_low": -0.6082969500000001,
+        "ci_high": 0.3106972433,
+        "display": "-0.16 [-0.61, 0.31]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.18254233109999998,
+        "ci_low": -0.8511840361,
+        "ci_high": 0.4850250959,
+        "display": "-0.18 [-0.85, 0.49]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.2087306043,
+        "ci_low": -0.43633803299999996,
+        "ci_high": 0.01335928106,
+        "display": "-0.21 [-0.44, 0.01]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.09795031721000001,
+        "ci_low": -0.05028702678000001,
+        "ci_high": 0.2538417284,
+        "display": "0.10 [-0.05, 0.25]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.44180411000001,
+       "ci_low": 56.99370803,
+       "ci_high": 57.88865586000001,
+       "display": "57.44% [56.99, 57.89]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.62434644,
+       "ci_low": 57.167579290000006,
+       "ci_high": 58.046597479999996,
+       "display": "57.62% [57.17, 58.05]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": {
+       "estimate": -5e-05,
+       "ci_low": -0.000185,
+       "ci_high": 8.5e-05,
+       "display": "-0.00005 [-0.00018, 0.00009]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.00-r1.50",
+    "delta": 0.0,
+    "rho": 1.5,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -2.107093236,
+        "ci_low": -2.438357185,
+        "ci_high": -1.7852386509999998,
+        "display": "-2.11 [-2.44, -1.79]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.15412317009999998,
+        "ci_low": -0.3363249824,
+        "ci_high": 0.6200168302,
+        "display": "0.15 [-0.34, 0.62]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 6.417759704999999,
+        "ci_low": 6.193585775,
+        "ci_high": 6.635476285,
+        "display": "6.42 [6.19, 6.64]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -4.148277165,
+        "ci_low": -4.278370929,
+        "ci_high": -4.017821789,
+        "display": "-4.15 [-4.28, -4.02]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 55.763265,
+       "ci_low": 55.35101967,
+       "ci_high": 56.1963601,
+       "display": "55.76% [55.35, 56.20]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 55.60914183,
+       "ci_low": 55.29353683,
+       "ci_high": 55.909529660000004,
+       "display": "55.61% [55.29, 55.91]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 9.051374401999999,
+        "ci_low": 7.631797108000001,
+        "ci_high": 10.14433825,
+        "display": "9.05 [7.63, 10.14]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 17.981485329999998,
+        "ci_low": 15.56647108,
+        "ci_high": 19.79534995,
+        "display": "17.98 [15.57, 19.80]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 1.431160951,
+        "ci_low": 0.9270664378000001,
+        "ci_high": 2.050057262,
+        "display": "1.43 [0.93, 2.05]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.3389470061,
+        "ci_low": -0.2066653436,
+        "ci_high": 0.7657071059,
+        "display": "0.34 [-0.21, 0.77]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 65.08054971,
+       "ci_low": 63.68788917,
+       "ci_high": 66.1694083,
+       "display": "65.08% [63.69, 66.17]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 47.09906438,
+       "ci_low": 46.2329024,
+       "ci_high": 48.18289359,
+       "display": "47.10% [46.23, 48.18]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0026775,
+       "ci_low": 0.001645,
+       "ci_high": 0.0037525,
+       "display": "+0.00268 [0.00164, 0.00375]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06313110709,
+        "ci_low": -0.5157921401,
+        "ci_high": 0.3890877698,
+        "display": "-0.06 [-0.52, 0.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 3.424339867,
+        "ci_low": 2.709289315,
+        "ci_high": 4.124027228,
+        "display": "3.42 [2.71, 4.12]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 5.51924191,
+        "ci_low": 5.209989564,
+        "ci_high": 5.807230756,
+        "display": "5.52 [5.21, 5.81]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -3.3318874999999997,
+        "ci_low": -3.5328034180000003,
+        "ci_high": -3.120135972,
+        "display": "-3.33 [-3.53, -3.12]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 54.041268460000005,
+       "ci_low": 53.576199790000004,
+       "ci_high": 54.482197899999996,
+       "display": "54.04% [53.58, 54.48]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0008,
+       "ci_low": 0.0003549375,
+       "ci_high": 0.0012425,
+       "display": "+0.00080 [0.00035, 0.00124]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -2.1881100460000003,
+        "ci_low": -2.652845267,
+        "ci_high": -1.720530123,
+        "display": "-2.19 [-2.65, -1.72]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.03261330716,
+        "ci_low": -0.6855849548999999,
+        "ci_high": 0.7217266100999999,
+        "display": "0.03 [-0.69, 0.72]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 6.467483247,
+        "ci_low": 6.2248688869999995,
+        "ci_high": 6.700974647000001,
+        "display": "6.47 [6.22, 6.70]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -4.190156759,
+        "ci_low": -4.360307036,
+        "ci_high": -4.0226418840000004,
+        "display": "-4.19 [-4.36, -4.02]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 55.669278889999994,
+       "ci_low": 55.231802269999996,
+       "ci_high": 56.1065682,
+       "display": "55.67% [55.23, 56.11]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 55.63666558,
+       "ci_low": 55.189350270000006,
+       "ci_high": 56.07058605,
+       "display": "55.64% [55.19, 56.07]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.000235,
+       "ci_low": -0.000495,
+       "ci_high": -1.387778781e-18,
+       "display": "-0.00023 [-0.00049, -0.00000]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.00-r2.00",
+    "delta": 0.0,
+    "rho": 2.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -4.303766455,
+        "ci_low": -4.655505849,
+        "ci_high": -3.9588178789999997,
+        "display": "-4.30 [-4.66, -3.96]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.1147587013,
+        "ci_low": -0.3956031754,
+        "ci_high": 0.5855208725,
+        "display": "0.11 [-0.40, 0.59]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 12.789985109999998,
+        "ci_low": 12.51077061,
+        "ci_high": 13.03443463,
+        "display": "12.79 [12.51, 13.03]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -8.523486125,
+        "ci_low": -8.737002047,
+        "ci_high": -8.310537532,
+        "display": "-8.52 [-8.74, -8.31]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 53.84288189000001,
+       "ci_low": 53.40835276,
+       "ci_high": 54.296117269999996,
+       "display": "53.84% [53.41, 54.30]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 53.72812319,
+       "ci_low": 53.44301661000001,
+       "ci_high": 54.01550040000001,
+       "display": "53.73% [53.44, 54.02]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 11.08914459,
+        "ci_low": 9.926222874,
+        "ci_high": 12.57092198,
+        "display": "11.09 [9.93, 12.57]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 23.862607099999998,
+        "ci_low": 22.08243126,
+        "ci_high": 26.14965992,
+        "display": "23.86 [22.08, 26.15]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 5.849308525,
+        "ci_low": 5.048539954000001,
+        "ci_high": 6.514436712,
+        "display": "5.85 [5.05, 6.51]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -1.48648234,
+        "ci_low": -2.055278406,
+        "ci_high": -0.7814309083,
+        "display": "-1.49 [-2.06, -0.78]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 66.73507269,
+       "ci_low": 65.80980583,
+       "ci_high": 67.86600313,
+       "display": "66.74% [65.81, 67.87]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 42.87246559,
+       "ci_low": 41.66109445,
+       "ci_high": 43.83356057,
+       "display": "42.87% [41.66, 43.83]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0086075,
+       "ci_low": 0.0077249375,
+       "ci_high": 0.009515,
+       "display": "+0.00861 [0.00772, 0.00951]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06440165305000001,
+        "ci_low": -0.5539939045,
+        "ci_high": 0.4411032229,
+        "display": "-0.06 [-0.55, 0.44]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 6.688194235,
+        "ci_low": 5.999918059,
+        "ci_high": 7.357028681999999,
+        "display": "6.69 [6.00, 7.36]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 10.98213638,
+        "ci_low": 10.63315634,
+        "ci_high": 11.30373498,
+        "display": "10.98 [10.63, 11.30]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -6.617398327,
+        "ci_low": -6.897426191,
+        "ci_high": -6.3280374230000005,
+        "display": "-6.62 [-6.90, -6.33]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 50.777414099999994,
+       "ci_low": 50.36828364,
+       "ci_high": 51.162415679999995,
+       "display": "50.78% [50.37, 51.16]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.003545,
+       "ci_low": 0.00307,
+       "ci_high": 0.0040125,
+       "display": "+0.00354 [0.00307, 0.00401]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -4.271904981,
+        "ci_low": -4.72359033,
+        "ci_high": -3.8099125810000003,
+        "display": "-4.27 [-4.72, -3.81]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.13698323880000002,
+        "ci_low": -0.4899106996,
+        "ci_high": 0.7608706976,
+        "display": "0.14 [-0.49, 0.76]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 12.734020400000002,
+        "ci_low": 12.43672428,
+        "ci_high": 13.020971710000001,
+        "display": "12.73 [12.44, 13.02]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -8.483186715,
+        "ci_low": -8.746760252000001,
+        "ci_high": -8.223803231,
+        "display": "-8.48 [-8.75, -8.22]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 53.871413940000004,
+       "ci_low": 53.46253865,
+       "ci_high": 54.281833199999994,
+       "display": "53.87% [53.46, 54.28]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 53.734430700000004,
+       "ci_low": 53.31881942,
+       "ci_high": 54.128505579999995,
+       "display": "53.73% [53.32, 54.13]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.00019,
+       "ci_low": -0.000135,
+       "ci_high": 0.0005725,
+       "display": "+0.00019 [-0.00014, 0.00057]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.25-r1.00",
+    "delta": 0.25,
+    "rho": 1.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 7.71564349,
+        "ci_low": 7.425258202,
+        "ci_high": 8.007842909,
+        "display": "7.72 [7.43, 8.01]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 3.664312827,
+        "ci_low": 3.204085484,
+        "ci_high": 4.11241974,
+        "display": "3.66 [3.20, 4.11]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 1.421410264,
+        "ci_low": 1.158486505,
+        "ci_high": 1.713246778,
+        "display": "1.42 [1.16, 1.71]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.7198579413,
+        "ci_low": 0.5809068753,
+        "ci_high": 0.8547661709,
+        "display": "0.72 [0.58, 0.85]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 64.11741923,
+       "ci_low": 63.68896767,
+       "ci_high": 64.5658052,
+       "display": "64.12% [63.69, 64.57]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 60.4531064,
+       "ci_low": 60.01854986,
+       "ci_high": 60.878165790000004,
+       "display": "60.45% [60.02, 60.88]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 10.01923661,
+        "ci_low": 9.580112218,
+        "ci_high": 10.466274120000001,
+        "display": "10.02 [9.58, 10.47]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 7.6604563919999995,
+        "ci_low": 6.87940425,
+        "ci_high": 8.448113624000001,
+        "display": "7.66 [6.88, 8.45]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 0.1653021366,
+        "ci_low": -0.1403995967,
+        "ci_high": 0.4922576072,
+        "display": "0.17 [-0.14, 0.49]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 1.663298297,
+        "ci_low": 1.483435468,
+        "ci_high": 1.8346073840000001,
+        "display": "1.66 [1.48, 1.83]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 65.9748926,
+       "ci_low": 65.52618905,
+       "ci_high": 66.44665671,
+       "display": "65.97% [65.53, 66.45]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 58.31443621,
+       "ci_low": 57.68362172,
+       "ci_high": 58.931451069999994,
+       "display": "58.31% [57.68, 58.93]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.000325,
+       "ci_low": -3.25e-05,
+       "ci_high": 0.0006825,
+       "display": "+0.00032 [-0.00003, 0.00068]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1381321616,
+        "ci_low": -0.5998068842,
+        "ci_high": 0.34936667920000003,
+        "display": "-0.14 [-0.60, 0.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -9.868530725000001,
+        "ci_low": -10.62637795,
+        "ci_high": -9.117997077,
+        "display": "-9.87 [-10.63, -9.12]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 5.6290458789999995,
+        "ci_low": 5.213231983,
+        "ci_high": 6.0686263380000005,
+        "display": "5.63 [5.21, 6.07]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -2.4634958339999997,
+        "ci_low": -2.73015974,
+        "ci_high": -2.202322573,
+        "display": "-2.46 [-2.73, -2.20]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 67.33413906,
+       "ci_low": 66.80163296,
+       "ci_high": 67.82518192,
+       "display": "67.33% [66.80, 67.83]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.004295,
+       "ci_low": -0.0049175,
+       "ci_high": -0.0036625,
+       "display": "-0.00430 [-0.00492, -0.00366]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 5.5994678989999995,
+        "ci_low": 5.141829576999999,
+        "ci_high": 6.065796355,
+        "display": "5.60 [5.14, 6.07]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.015117040089999999,
+        "ci_low": -0.7657270359,
+        "ci_high": 0.7392123877,
+        "display": "-0.02 [-0.77, 0.74]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 2.542034458,
+        "ci_low": 2.24581517,
+        "ci_high": 2.861626372,
+        "display": "2.54 [2.25, 2.86]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -0.1285581727,
+        "ci_low": -0.31523669,
+        "ci_high": 0.04466034987,
+        "display": "-0.13 [-0.32, 0.04]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 62.377761899999996,
+       "ci_low": 61.963610319999994,
+       "ci_high": 62.79323262,
+       "display": "62.38% [61.96, 62.79]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 62.392878939999996,
+       "ci_low": 61.799682739999994,
+       "ci_high": 62.96335067,
+       "display": "62.39% [61.80, 62.96]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0006925,
+       "ci_low": -0.00116,
+       "ci_high": -0.000245,
+       "display": "-0.00069 [-0.00116, -0.00024]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.25-r1.50",
+    "delta": 0.25,
+    "rho": 1.5,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 5.270359421999999,
+        "ci_low": 4.966676665,
+        "ci_high": 5.557965203,
+        "display": "5.27 [4.97, 5.56]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 4.609320504,
+        "ci_low": 4.126939462999999,
+        "ci_high": 5.0942940960000005,
+        "display": "4.61 [4.13, 5.09]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 10.34794283,
+        "ci_low": 10.0438385,
+        "ci_high": 10.66947453,
+        "display": "10.35 [10.04, 10.67]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -3.753143272,
+        "ci_low": -3.9173659370000005,
+        "ci_high": -3.595707762,
+        "display": "-3.75 [-3.92, -3.60]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 62.017936920000004,
+       "ci_low": 61.63108254,
+       "ci_high": 62.422716030000004,
+       "display": "62.02% [61.63, 62.42]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.40861641,
+       "ci_low": 57.02750566,
+       "ci_high": 57.77807859000001,
+       "display": "57.41% [57.03, 57.78]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 17.50424235,
+        "ci_low": 15.436317129999999,
+        "ci_high": 19.34509894,
+        "display": "17.50 [15.44, 19.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 24.49111517,
+        "ci_low": 21.10851048,
+        "ci_high": 27.48254611,
+        "display": "24.49 [21.11, 27.48]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 3.0612561289999998,
+        "ci_low": 1.9382394559999998,
+        "ci_high": 4.271374449,
+        "display": "3.06 [1.94, 4.27]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 2.288237438,
+        "ci_low": 1.29962738,
+        "ci_high": 3.1892086280000003,
+        "display": "2.29 [1.30, 3.19]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 71.34272514999999,
+       "ci_low": 69.74489828,
+       "ci_high": 72.76457373000001,
+       "display": "71.34% [69.74, 72.76]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 46.85160998,
+       "ci_low": 45.23361239,
+       "ci_high": 48.687657220000006,
+       "display": "46.85% [45.23, 48.69]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.00377,
+       "ci_low": 0.0030175,
+       "ci_high": 0.0045475,
+       "display": "+0.00377 [0.00302, 0.00455]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06313110709,
+        "ci_low": -0.5157921401,
+        "ci_high": 0.3890877698,
+        "display": "-0.06 [-0.52, 0.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -3.9641256780000003,
+        "ci_low": -4.729274562,
+        "ci_high": -3.22794105,
+        "display": "-3.96 [-4.73, -3.23]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 13.355464340000001,
+        "ci_low": 12.94682631,
+        "ci_high": 13.77907865,
+        "display": "13.36 [12.95, 13.78]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -6.322732606000001,
+        "ci_low": -6.595633925,
+        "ci_high": -6.053800356,
+        "display": "-6.32 [-6.60, -6.05]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 61.429734010000004,
+       "ci_low": 60.9303269,
+       "ci_high": 61.90683678,
+       "display": "61.43% [60.93, 61.91]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.00564,
+       "ci_low": -0.006145,
+       "ci_high": -0.0050999375,
+       "display": "-0.00564 [-0.00615, -0.00510]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 2.394874939,
+        "ci_low": 1.9385413859999998,
+        "ci_high": 2.850291354,
+        "display": "2.39 [1.94, 2.85]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.04152935363,
+        "ci_low": -0.8052833759000001,
+        "ci_high": 0.6881842502,
+        "display": "-0.04 [-0.81, 0.69]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 11.94092141,
+        "ci_low": 11.58924949,
+        "ci_high": 12.33300513,
+        "display": "11.94 [11.59, 12.33]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -5.118301377,
+        "ci_low": -5.365031689,
+        "ci_high": -4.883074283,
+        "display": "-5.12 [-5.37, -4.88]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 59.534465759999996,
+       "ci_low": 59.08234474,
+       "ci_high": 59.993328459999994,
+       "display": "59.53% [59.08, 59.99]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 59.57599512,
+       "ci_low": 59.055400680000005,
+       "ci_high": 60.075350449999995,
+       "display": "59.58% [59.06, 60.08]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0029425,
+       "ci_low": -0.00331,
+       "ci_high": -0.00258,
+       "display": "-0.00294 [-0.00331, -0.00258]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.25-r2.00",
+    "delta": 0.25,
+    "rho": 2.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 2.525772656,
+        "ci_low": 2.137341411,
+        "ci_high": 2.908213319,
+        "display": "2.53 [2.14, 2.91]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 4.804261868999999,
+        "ci_low": 4.208055958,
+        "ci_high": 5.393431875,
+        "display": "4.80 [4.21, 5.39]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 18.38631329,
+        "ci_low": 18.02097216,
+        "ci_high": 18.771806220000002,
+        "display": "18.39 [18.02, 18.77]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -8.175102717,
+        "ci_low": -8.403617473999999,
+        "ci_high": -7.953783362999999,
+        "display": "-8.18 [-8.40, -7.95]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 59.60894863,
+       "ci_low": 59.15494058,
+       "ci_high": 60.097198,
+       "display": "59.61% [59.15, 60.10]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 54.804686759999996,
+       "ci_low": 54.45982314,
+       "ci_high": 55.13707289999999,
+       "display": "54.80% [54.46, 55.14]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 20.159101030000002,
+        "ci_low": 19.70647512,
+        "ci_high": 20.59653007,
+        "display": "20.16 [19.71, 20.60]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 32.13704666,
+        "ci_low": 31.5038475,
+        "ci_high": 32.751759670000006,
+        "display": "32.14 [31.50, 32.75]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 8.118139643,
+        "ci_low": 7.601314068,
+        "ci_high": 8.6496627,
+        "display": "8.12 [7.60, 8.65]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 1.3851681919999999,
+        "ci_low": 1.066396943,
+        "ci_high": 1.6993930179999999,
+        "display": "1.39 [1.07, 1.70]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 73.29970297,
+       "ci_low": 72.89760475,
+       "ci_high": 73.70348325,
+       "display": "73.30% [72.90, 73.70]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 41.1626563,
+       "ci_low": 40.773348850000005,
+       "ci_high": 41.54232102,
+       "display": "41.16% [40.77, 41.54]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0121075,
+       "ci_low": 0.0111849375,
+       "ci_high": 0.0131075,
+       "display": "+0.01211 [0.01118, 0.01311]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06440165305000001,
+        "ci_low": -0.5539939045,
+        "ci_high": 0.4411032229,
+        "display": "-0.06 [-0.55, 0.44]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.8149651079,
+        "ci_low": 0.06800506288,
+        "ci_high": 1.5185461359999999,
+        "display": "0.81 [0.07, 1.52]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 19.78385013,
+        "ci_low": 19.33180658,
+        "ci_high": 20.23666037,
+        "display": "19.78 [19.33, 20.24]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -9.550016734,
+        "ci_low": -9.885265586,
+        "ci_high": -9.209004415999999,
+        "display": "-9.55 [-9.89, -9.21]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 56.65064322,
+       "ci_low": 56.21111391,
+       "ci_high": 57.078425489999994,
+       "display": "56.65% [56.21, 57.08]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0032525,
+       "ci_low": -0.003775,
+       "ci_high": -0.0027225,
+       "display": "-0.00325 [-0.00378, -0.00272]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.6048432852000001,
+        "ci_low": -1.080827304,
+        "ci_high": -0.09071179835,
+        "display": "-0.60 [-1.08, -0.09]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.024458498739999997,
+        "ci_low": -0.7552780983999999,
+        "ci_high": 0.6959105145,
+        "display": "-0.02 [-0.76, 0.70]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 20.06305278,
+        "ci_low": 19.63310809,
+        "ci_high": 20.49556822,
+        "display": "20.06 [19.63, 20.50]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -9.826671203,
+        "ci_low": -10.151138379999999,
+        "ci_high": -9.495299623000001,
+        "display": "-9.83 [-10.15, -9.50]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 56.99019973,
+       "ci_low": 56.56914415999999,
+       "ci_high": 57.42516957,
+       "display": "56.99% [56.57, 57.43]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 57.01465823,
+       "ci_low": 56.54740396,
+       "ci_high": 57.458714609999994,
+       "display": "57.01% [56.55, 57.46]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.00405,
+       "ci_low": -0.0047275,
+       "ci_high": -0.0034,
+       "display": "-0.00405 [-0.00473, -0.00340]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.50-r1.00",
+    "delta": 0.5,
+    "rho": 1.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 15.367507150000002,
+        "ci_low": 15.08875434,
+        "ci_high": 15.64494087,
+        "display": "15.37 [15.09, 15.64]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 6.498840028,
+        "ci_low": 6.1170996429999995,
+        "ci_high": 6.887276465,
+        "display": "6.50 [6.12, 6.89]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 4.563662072,
+        "ci_low": 4.188987156,
+        "ci_high": 4.9723641259999996,
+        "display": "4.56 [4.19, 4.97]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 1.736251665,
+        "ci_low": 1.541267089,
+        "ci_high": 1.93630075,
+        "display": "1.74 [1.54, 1.94]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 69.96699642,
+       "ci_low": 69.58437532,
+       "ci_high": 70.3537924,
+       "display": "69.97% [69.58, 70.35]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.46815639,
+       "ci_low": 63.05039745,
+       "ci_high": 63.87806041,
+       "display": "63.47% [63.05, 63.88]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 20.01729542,
+        "ci_low": 19.65006417,
+        "ci_high": 20.39463426,
+        "display": "20.02 [19.65, 20.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 14.892638029999999,
+        "ci_low": 14.2979493,
+        "ci_high": 15.45379528,
+        "display": "14.89 [14.30, 15.45]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 1.003109665,
+        "ci_low": 0.5510655766,
+        "ci_high": 1.4450391439999999,
+        "display": "1.00 [0.55, 1.45]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 4.173555543,
+        "ci_low": 3.931906506,
+        "ci_high": 4.422614902,
+        "display": "4.17 [3.93, 4.42]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 73.2635966,
+       "ci_low": 72.85298901,
+       "ci_high": 73.6752722,
+       "display": "73.26% [72.85, 73.68]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 58.37095858,
+       "ci_low": 57.89538607,
+       "ci_high": 58.83141226000001,
+       "display": "58.37% [57.90, 58.83]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.00058,
+       "ci_low": 0.0001025,
+       "ci_high": 0.0010800625,
+       "display": "+0.00058 [0.00010, 0.00108]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1381321616,
+        "ci_low": -0.5998068842,
+        "ci_high": 0.34936667920000003,
+        "display": "-0.14 [-0.60, 0.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -19.98908562,
+        "ci_low": -20.63439074,
+        "ci_high": -19.34813283,
+        "display": "-19.99 [-20.63, -19.35]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 15.944929199999999,
+        "ci_low": 15.49680286,
+        "ci_high": 16.40469579,
+        "display": "15.94 [15.50, 16.40]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -6.302643692,
+        "ci_low": -6.584363229999999,
+        "ci_high": -6.024101029,
+        "display": "-6.30 [-6.58, -6.02]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 77.45469394999999,
+       "ci_low": 77.01768389,
+       "ci_high": 77.88156766,
+       "display": "77.45% [77.02, 77.88]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0177325,
+       "ci_low": -0.0185875625,
+       "ci_high": -0.0168775,
+       "display": "-0.01773 [-0.01859, -0.01688]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 11.739147580000001,
+        "ci_low": 11.3278553,
+        "ci_high": 12.15781422,
+        "display": "11.74 [11.33, 12.16]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.1195681146,
+        "ci_low": -0.5207093932,
+        "ci_high": 0.737017103,
+        "display": "0.12 [-0.52, 0.74]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 7.335462806,
+        "ci_low": 6.903379215999999,
+        "ci_high": 7.761180286999999,
+        "display": "7.34 [6.90, 7.76]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -0.1627790533,
+        "ci_low": -0.3671325559,
+        "ci_high": 0.04688297154,
+        "display": "-0.16 [-0.37, 0.05]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 67.24709462,
+       "ci_low": 66.854505,
+       "ci_high": 67.64860144,
+       "display": "67.25% [66.85, 67.65]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 67.12752651,
+       "ci_low": 66.61425874,
+       "ci_high": 67.61697290000001,
+       "display": "67.13% [66.61, 67.62]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.002145,
+       "ci_low": -0.0024850625,
+       "ci_high": -0.00181,
+       "display": "-0.00215 [-0.00249, -0.00181]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.50-r1.50",
+    "delta": 0.5,
+    "rho": 1.5,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 12.51456933,
+        "ci_low": 12.241709100000001,
+        "ci_high": 12.78728523,
+        "display": "12.51 [12.24, 12.79]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 8.407827416,
+        "ci_low": 7.988665581,
+        "ci_high": 8.832732479999999,
+        "display": "8.41 [7.99, 8.83]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 15.77915258,
+        "ci_low": 15.345531439999998,
+        "ci_high": 16.21678502,
+        "display": "15.78 [15.35, 16.22]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -2.8674862990000003,
+        "ci_low": -3.051072888,
+        "ci_high": -2.678117142,
+        "display": "-2.87 [-3.05, -2.68]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 67.80669579,
+       "ci_low": 67.40276876,
+       "ci_high": 68.22899464999999,
+       "display": "67.81% [67.40, 68.23]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 59.39886838,
+       "ci_low": 58.9961846,
+       "ci_high": 59.779013160000005,
+       "display": "59.40% [59.00, 59.78]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 24.52854292,
+        "ci_low": 22.52659791,
+        "ci_high": 26.564691410000002,
+        "display": "24.53 [22.53, 26.56]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 28.50160907,
+        "ci_low": 25.07819791,
+        "ci_high": 31.95892762,
+        "display": "28.50 [25.08, 31.96]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 6.5498112299999995,
+        "ci_low": 4.999066933,
+        "ci_high": 8.087188388,
+        "display": "6.55 [5.00, 8.09]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 4.229634217,
+        "ci_low": 3.044571164,
+        "ci_high": 5.437947317,
+        "display": "4.23 [3.04, 5.44]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 76.16171386,
+       "ci_low": 74.84275349,
+       "ci_high": 77.49019133,
+       "display": "76.16% [74.84, 77.49]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 47.660104790000005,
+       "ci_low": 45.47147358,
+       "ci_high": 49.83760413,
+       "display": "47.66% [45.47, 49.84]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.00531,
+       "ci_low": 0.0045299375,
+       "ci_high": 0.0060775,
+       "display": "+0.00531 [0.00453, 0.00608]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06313110709,
+        "ci_low": -0.5157921401,
+        "ci_high": 0.3890877698,
+        "display": "-0.06 [-0.52, 0.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -11.833719069999999,
+        "ci_low": -12.51754738,
+        "ci_high": -11.17885364,
+        "display": "-11.83 [-12.52, -11.18]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 24.202925229999998,
+        "ci_low": 23.76874839,
+        "ci_high": 24.63371912,
+        "display": "24.20 [23.77, 24.63]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -9.86299672,
+        "ci_low": -10.14031537,
+        "ci_high": -9.592471503999999,
+        "display": "-9.86 [-10.14, -9.59]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 69.2993274,
+       "ci_low": 68.8652201,
+       "ci_high": 69.73207401,
+       "display": "69.30% [68.87, 69.73]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.01941,
+       "ci_low": -0.020245125,
+       "ci_high": -0.0185175,
+       "display": "-0.01941 [-0.02025, -0.01852]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 7.427879527,
+        "ci_low": 6.9968141710000005,
+        "ci_high": 7.873136427,
+        "display": "7.43 [7.00, 7.87]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.12616351150000002,
+        "ci_low": -0.4800187829,
+        "ci_high": 0.7294970343,
+        "display": "0.13 [-0.48, 0.73]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 19.297904799999998,
+        "ci_low": 18.79461265,
+        "ci_high": 19.7970377,
+        "display": "19.30 [18.79, 19.80]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -5.73270145,
+        "ci_low": -6.021666839,
+        "ci_high": -5.4440002309999995,
+        "display": "-5.73 [-6.02, -5.44]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 63.78926301,
+       "ci_low": 63.39074429,
+       "ci_high": 64.18187888,
+       "display": "63.79% [63.39, 64.18]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.6630995,
+       "ci_low": 63.180266870000004,
+       "ci_high": 64.11064187,
+       "display": "63.66% [63.18, 64.11]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.006415,
+       "ci_low": -0.0070200625,
+       "ci_high": -0.00582,
+       "display": "-0.00641 [-0.00702, -0.00582]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d0.50-r2.00",
+    "delta": 0.5,
+    "rho": 2.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 9.433631756999999,
+        "ci_low": 9.109234836,
+        "ci_high": 9.742238238,
+        "display": "9.43 [9.11, 9.74]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 9.19641597,
+        "ci_low": 8.709884112000001,
+        "ci_high": 9.684132543,
+        "display": "9.20 [8.71, 9.68]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 25.07696171,
+        "ci_low": 24.64888496,
+        "ci_high": 25.495851180000003,
+        "display": "25.08 [24.65, 25.50]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -7.238865464,
+        "ci_low": -7.414969148,
+        "ci_high": -7.056887446,
+        "display": "-7.24 [-7.41, -7.06]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 65.41953686000001,
+       "ci_low": 65.03074834,
+       "ci_high": 65.82533054000001,
+       "display": "65.42% [65.03, 65.83]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 56.22312089,
+       "ci_low": 55.89635377,
+       "ci_high": 56.56151491,
+       "display": "56.22% [55.90, 56.56]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 28.94375609,
+        "ci_low": 27.4121807,
+        "ci_high": 30.095045510000002,
+        "display": "28.94 [27.41, 30.10]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 40.03082498,
+        "ci_low": 37.69168073,
+        "ci_high": 41.78025873,
+        "display": "40.03 [37.69, 41.78]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 10.9422408,
+        "ci_low": 9.963719393,
+        "ci_high": 12.06912447,
+        "display": "10.94 [9.96, 12.07]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 5.127293048,
+        "ci_low": 4.2146241,
+        "ci_high": 5.852649503,
+        "display": "5.13 [4.21, 5.85]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 78.94721001,
+       "ci_low": 78.05145511,
+       "ci_high": 79.65698846,
+       "display": "78.95% [78.05, 79.66]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 38.91638503,
+       "ci_low": 37.78898846,
+       "ci_high": 40.40244677,
+       "display": "38.92% [37.79, 40.40]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.01361,
+       "ci_low": 0.0125899375,
+       "ci_high": 0.014585,
+       "display": "+0.01361 [0.01259, 0.01459]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06440165305000001,
+        "ci_low": -0.5539939045,
+        "ci_high": 0.4411032229,
+        "display": "-0.06 [-0.55, 0.44]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -5.566955116,
+        "ci_low": -6.253078777,
+        "ci_high": -4.9113929,
+        "display": "-5.57 [-6.25, -4.91]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 30.69612938,
+        "ci_low": 30.25354549,
+        "ci_high": 31.14696475,
+        "display": "30.70 [30.25, 31.15]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -12.68496491,
+        "ci_low": -13.024961269999999,
+        "ci_high": -12.35566683,
+        "display": "-12.68 [-13.02, -12.36]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.03256345,
+       "ci_low": 62.61707526,
+       "ci_high": 63.431725459999996,
+       "display": "63.03% [62.62, 63.43]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0173425,
+       "ci_low": -0.01812,
+       "ci_high": -0.0165849375,
+       "display": "-0.01734 [-0.01812, -0.01658]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 3.553021652,
+        "ci_low": 3.102326144,
+        "ci_high": 4.020863545,
+        "display": "3.55 [3.10, 4.02]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.07919252929000001,
+        "ci_low": -0.5336094680000001,
+        "ci_high": 0.7052264664,
+        "display": "0.08 [-0.53, 0.71]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 28.671208729999996,
+        "ci_low": 28.1913166,
+        "ci_high": 29.135442839999996,
+        "display": "28.67 [28.19, 29.14]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -10.640433100000001,
+        "ci_low": -10.9443099,
+        "ci_high": -10.34132556,
+        "display": "-10.64 [-10.94, -10.34]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 60.491450719999996,
+       "ci_low": 60.09024716,
+       "ci_high": 60.900199789999995,
+       "display": "60.49% [60.09, 60.90]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 60.41225819,
+       "ci_low": 59.9873415,
+       "ci_high": 60.79175994,
+       "display": "60.41% [59.99, 60.79]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.010435,
+       "ci_low": -0.0111825,
+       "ci_high": -0.0096674375,
+       "display": "-0.01043 [-0.01118, -0.00967]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d1.00-r1.00",
+    "delta": 1.0,
+    "rho": 1.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 29.586008730000003,
+        "ci_low": 29.3814225,
+        "ci_high": 29.79399707,
+        "display": "29.59 [29.38, 29.79]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 8.651886804,
+        "ci_low": 8.216524386,
+        "ci_high": 9.155706534,
+        "display": "8.65 [8.22, 9.16]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 15.54564772,
+        "ci_low": 14.88617665,
+        "ci_high": 16.17897401,
+        "display": "15.55 [14.89, 16.18]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 5.502871012,
+        "ci_low": 5.323666672,
+        "ci_high": 5.709691535,
+        "display": "5.50 [5.32, 5.71]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 79.48432023999999,
+       "ci_low": 79.19208304,
+       "ci_high": 79.77818311,
+       "display": "79.48% [79.19, 79.78]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 70.83243343,
+       "ci_low": 70.40138447,
+       "ci_high": 71.27171952,
+       "display": "70.83% [70.40, 71.27]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 39.306750820000005,
+        "ci_low": 38.15632699,
+        "ci_high": 40.06169336,
+        "display": "39.31 [38.16, 40.06]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 29.91271104,
+        "ci_low": 27.36783372,
+        "ci_high": 31.646281650000002,
+        "display": "29.91 [27.37, 31.65]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 2.2330282560000003,
+        "ci_low": 1.187406124,
+        "ci_high": 3.63671266,
+        "display": "2.23 [1.19, 3.64]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 12.64837798,
+        "ci_low": 11.86233762,
+        "ci_high": 13.23333925,
+        "display": "12.65 [11.86, 13.23]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 84.8601596,
+       "ci_low": 84.2489502,
+       "ci_high": 85.37560211,
+       "display": "84.86% [84.25, 85.38]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 54.94744856,
+       "ci_low": 53.50725095,
+       "ci_high": 57.01111389,
+       "display": "54.95% [53.51, 57.01]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0018475,
+       "ci_low": 0.0010824375,
+       "ci_high": 0.002585,
+       "display": "+0.00185 [0.00108, 0.00259]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.1381321616,
+        "ci_low": -0.5998068842,
+        "ci_high": 0.34936667920000003,
+        "display": "-0.14 [-0.60, 0.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -36.014326419999996,
+        "ci_low": -36.66372239,
+        "ci_high": -35.372282500000004,
+        "display": "-36.01 [-36.66, -35.37]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 46.94379864,
+        "ci_low": 46.38762654,
+        "ci_high": 47.5108166,
+        "display": "46.94 [46.39, 47.51]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -15.77547581,
+        "ci_low": -16.14300726,
+        "ci_high": -15.406727759999999,
+        "display": "-15.78 [-16.14, -15.41]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 93.47993475,
+       "ci_low": 93.15609074,
+       "ci_high": 93.79855488,
+       "display": "93.48% [93.16, 93.80]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.072475,
+       "ci_low": -0.0739400625,
+       "ci_high": -0.071052375,
+       "display": "-0.07247 [-0.07394, -0.07105]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 24.707463269999998,
+        "ci_low": 24.41750755,
+        "ci_high": 25.00575852,
+        "display": "24.71 [24.42, 25.01]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.23064600799999999,
+        "ci_low": -0.9080822085999999,
+        "ci_high": 0.4633484095,
+        "display": "-0.23 [-0.91, 0.46]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 21.78947895,
+        "ci_low": 21.22873213,
+        "ci_high": 22.336848919999998,
+        "display": "21.79 [21.23, 22.34]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 1.87501487,
+        "ci_low": 1.66507298,
+        "ci_high": 2.07277033,
+        "display": "1.88 [1.67, 2.07]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 76.3918915,
+       "ci_low": 76.06334876000001,
+       "ci_high": 76.73076567,
+       "display": "76.39% [76.06, 76.73]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 76.62253751,
+       "ci_low": 76.02300014,
+       "ci_high": 77.223878,
+       "display": "76.62% [76.02, 77.22]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.00599,
+       "ci_low": -0.0064625,
+       "ci_high": -0.0055325,
+       "display": "-0.00599 [-0.00646, -0.00553]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d1.00-r1.50",
+    "delta": 1.0,
+    "rho": 1.5,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 26.12447816,
+        "ci_low": 25.90614543,
+        "ci_high": 26.35036724,
+        "display": "26.12 [25.91, 26.35]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 13.00853818,
+        "ci_low": 12.461516829999999,
+        "ci_high": 13.647862,
+        "display": "13.01 [12.46, 13.65]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 29.88215958,
+        "ci_low": 29.32669598,
+        "ci_high": 30.44915042,
+        "display": "29.88 [29.33, 30.45]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.9159655274999999,
+        "ci_low": 0.7435856012000001,
+        "ci_high": 1.098695853,
+        "display": "0.92 [0.74, 1.10]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 77.26575123,
+       "ci_low": 76.97309818,
+       "ci_high": 77.58512563,
+       "display": "77.27% [76.97, 77.59]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 64.25721304999999,
+       "ci_low": 63.82849696,
+       "ci_high": 64.63913699,
+       "display": "64.26% [63.83, 64.64]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 40.05490084,
+        "ci_low": 39.71868764,
+        "ci_high": 40.3891616,
+        "display": "40.05 [39.72, 40.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 39.31883473,
+        "ci_low": 38.56047889,
+        "ci_high": 40.06658476,
+        "display": "39.32 [38.56, 40.07]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 13.054740319999999,
+        "ci_low": 12.246404530000001,
+        "ci_high": 13.84709336,
+        "display": "13.05 [12.25, 13.85]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 11.76614538,
+        "ci_low": 11.3948374,
+        "ci_high": 12.17974757,
+        "display": "11.77 [11.39, 12.18]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 85.22082315,
+       "ci_low": 84.8284646,
+       "ci_high": 85.60480479,
+       "display": "85.22% [84.83, 85.60]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 45.90198842,
+       "ci_low": 45.216335629999996,
+       "ci_high": 46.59541874,
+       "display": "45.90% [45.22, 46.60]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.01033,
+       "ci_low": 0.0094475,
+       "ci_high": 0.0112075,
+       "display": "+0.01033 [0.00945, 0.01121]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06313110709,
+        "ci_low": -0.5157921401,
+        "ci_high": 0.3890877698,
+        "display": "-0.06 [-0.52, 0.39]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -26.931195959999997,
+        "ci_low": -27.708924829999997,
+        "ci_high": -26.1324783,
+        "display": "-26.93 [-27.71, -26.13]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 51.607073660000005,
+        "ci_low": 51.098145689999996,
+        "ci_high": 52.11927254,
+        "display": "51.61 [51.10, 52.12]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -17.384689729999998,
+        "ci_low": -17.70959987,
+        "ci_high": -17.05786316,
+        "display": "-17.38 [-17.71, -17.06]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 84.39680429,
+       "ci_low": 83.87113980999999,
+       "ci_high": 84.85513569000001,
+       "display": "84.40% [83.87, 84.86]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0656875,
+       "ci_low": -0.067085,
+       "ci_high": -0.0643125,
+       "display": "-0.06569 [-0.06709, -0.06431]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 18.157682310000002,
+        "ci_low": 17.755233959999998,
+        "ci_high": 18.58547506,
+        "display": "18.16 [17.76, 18.59]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.1613149912,
+        "ci_low": -0.9446875309,
+        "ci_high": 0.6433440891,
+        "display": "-0.16 [-0.94, 0.64]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 37.606197949999995,
+        "ci_low": 36.93295688,
+        "ci_high": 38.28494461,
+        "display": "37.61 [36.93, 38.28]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -4.9711445649999995,
+        "ci_low": -5.2758300789999995,
+        "ci_high": -4.660361366,
+        "display": "-4.97 [-5.28, -4.66]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 71.92498817,
+       "ci_low": 71.54893629,
+       "ci_high": 72.30820168999999,
+       "display": "71.92% [71.55, 72.31]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 72.08630317,
+       "ci_low": 71.56051339,
+       "ci_high": 72.60693324,
+       "display": "72.09% [71.56, 72.61]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0144225,
+       "ci_low": -0.01548,
+       "ci_high": -0.013455,
+       "display": "-0.01442 [-0.01548, -0.01345]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "d1.00-r2.00",
+    "delta": 1.0,
+    "rho": 2.0,
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 22.36346681,
+        "ci_low": 22.114213839999998,
+        "ci_high": 22.61437677,
+        "display": "22.36 [22.11, 22.61]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 15.2239293,
+        "ci_low": 14.63956499,
+        "ci_high": 15.91642781,
+        "display": "15.22 [14.64, 15.92]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 40.81813766,
+        "ci_low": 40.179870220000005,
+        "ci_high": 41.45100883,
+        "display": "40.82 [40.18, 41.45]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -3.501940091,
+        "ci_low": -3.711905282,
+        "ci_high": -3.277827435,
+        "display": "-3.50 [-3.71, -3.28]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 74.81067623999999,
+       "ci_low": 74.50409631,
+       "ci_high": 75.12371211,
+       "display": "74.81% [74.50, 75.12]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 59.586746940000005,
+       "ci_low": 59.07481746,
+       "ci_high": 60.02548011,
+       "display": "59.59% [59.07, 60.03]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 40.78280231,
+        "ci_low": 40.17798741,
+        "ci_high": 41.69578202,
+        "display": "40.78 [40.18, 41.70]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 46.99115933,
+        "ci_low": 45.62895999,
+        "ci_high": 48.92622753,
+        "display": "46.99 [45.63, 48.93]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 21.99603988,
+        "ci_low": 20.586141660000003,
+        "ci_high": 23.20077915,
+        "display": "22.00 [20.59, 23.20]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 11.19704901,
+        "ci_low": 10.584543640000001,
+        "ci_high": 12.0132864,
+        "display": "11.20 [10.58, 12.01]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 85.63004236,
+       "ci_low": 85.18000337000001,
+       "ci_high": 86.15363257,
+       "display": "85.63% [85.18, 86.15]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 38.638883029999995,
+       "ci_low": 37.09241719,
+       "ci_high": 39.83303185,
+       "display": "38.64% [37.09, 39.83]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.0200075,
+       "ci_low": 0.0190775,
+       "ci_high": 0.0209625,
+       "display": "+0.02001 [0.01908, 0.02096]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.06440165305000001,
+        "ci_low": -0.5539939045,
+        "ci_high": 0.4411032229,
+        "display": "-0.06 [-0.55, 0.44]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -18.88327493,
+        "ci_low": -19.699584310000002,
+        "ci_high": -18.069919000000002,
+        "display": "-18.88 [-19.70, -18.07]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 55.841045310000005,
+        "ci_low": 55.33859665999999,
+        "ci_high": 56.33828333,
+        "display": "55.84 [55.34, 56.34]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -18.89109401,
+        "ci_low": -19.2559726,
+        "ci_high": -18.52592969,
+        "display": "-18.89 [-19.26, -18.53]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 57.465608329999995,
+       "ci_low": 57.01362539,
+       "ci_high": 57.913435189999994,
+       "display": "57.47% [57.01, 57.91]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 76.34888326,
+       "ci_low": 75.83252604,
+       "ci_high": 76.83998661,
+       "display": "76.35% [75.83, 76.84]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0588325,
+       "ci_low": -0.0599875,
+       "ci_high": -0.0576199375,
+       "display": "-0.05883 [-0.05999, -0.05762]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 12.67510351,
+        "ci_low": 12.21163793,
+        "ci_high": 13.14403293,
+        "display": "12.68 [12.21, 13.14]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.11380817,
+        "ci_low": -1.037924738,
+        "ci_high": 0.8335961261,
+        "display": "-0.11 [-1.04, 0.83]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 47.96034666,
+        "ci_low": 47.428287600000004,
+        "ci_high": 48.49159708,
+        "display": "47.96 [47.43, 48.49]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -10.446786750000001,
+        "ci_low": -10.75202985,
+        "ci_high": -10.147749209999999,
+        "display": "-10.45 [-10.75, -10.15]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 67.86039478,
+       "ci_low": 67.42425519000001,
+       "ci_high": 68.30438859,
+       "display": "67.86% [67.42, 68.30]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 67.97420294999999,
+       "ci_low": 67.36404659,
+       "ci_high": 68.55930000000001,
+       "display": "67.97% [67.36, 68.56]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.0212775,
+       "ci_low": -0.0224875,
+       "ci_high": -0.0201725,
+       "display": "-0.02128 [-0.02249, -0.02017]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "real_score": {
+  "experiment_id": "EXP-004",
+  "label": "measured, real data (UCI Adult test file)",
+  "unit": "pp",
+  "tolerance_pp": 2.0,
+  "source": "results/EXP-004/tables/summary.csv; results/EXP-004/tables/policy_vs_p0.csv",
+  "cells": [
+   {
+    "cell_id": "R-hours",
+    "description": "Group B is hours-per-week below 40",
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 7.922543512000001,
+        "ci_low": 7.6775521,
+        "ci_high": 8.151350909000001,
+        "display": "7.92 [7.68, 8.15]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -7.776305339,
+        "ci_low": -8.757202138,
+        "ci_high": -6.797114288,
+        "display": "-7.78 [-8.76, -6.80]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 28.44624233,
+        "ci_low": 27.749011210000003,
+        "ci_high": 29.23980314,
+        "display": "28.45 [27.75, 29.24]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.5654303109000001,
+        "ci_low": 0.23861662720000001,
+        "ci_high": 0.8731749085,
+        "display": "0.57 [0.24, 0.87]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 62.64556375,
+       "ci_low": 62.24726195,
+       "ci_high": 63.0312695,
+       "display": "62.65% [62.25, 63.03]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 70.42186909,
+       "ci_low": 69.41774184,
+       "ci_high": 71.42212925,
+       "display": "70.42% [69.42, 71.42]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 28.27296669,
+        "ci_low": 26.160661410000003,
+        "ci_high": 30.37897839,
+        "display": "28.27 [26.16, 30.38]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 30.51926599,
+        "ci_low": 25.627037790000003,
+        "ci_high": 35.58239394,
+        "display": "30.52 [25.63, 35.58]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 10.47355164,
+        "ci_low": 7.185081447,
+        "ci_high": 13.68864809,
+        "display": "10.47 [7.19, 13.69]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 19.22165666,
+        "ci_low": 17.37216483,
+        "ci_high": 21.01196276,
+        "display": "19.22 [17.37, 21.01]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 67.14644360999999,
+       "ci_low": 66.5177201,
+       "ci_high": 67.77764816,
+       "display": "67.15% [66.52, 67.78]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 36.62717762,
+       "ci_low": 32.09063372,
+       "ci_high": 41.02571477,
+       "display": "36.63% [32.09, 41.03]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.004323793146,
+       "ci_low": 0.002481114114,
+       "ci_high": 0.005939227368,
+       "display": "+0.0043 [0.0025, 0.0059]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -0.2062947885,
+        "ci_low": -0.8256656343,
+        "ci_high": 0.37843379099999996,
+        "display": "-0.21 [-0.83, 0.38]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -17.53694609,
+        "ci_low": -18.63486545,
+        "ci_high": -16.44810998,
+        "display": "-17.54 [-18.63, -16.45]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 33.10346449,
+        "ci_low": 32.407223019999996,
+        "ci_high": 33.862965509999995,
+        "display": "33.10 [32.41, 33.86]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -7.326974776,
+        "ci_low": -7.969563585,
+        "ci_high": -6.732903205,
+        "display": "-7.33 [-7.97, -6.73]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 60.474505300000004,
+       "ci_low": 60.035557409999996,
+       "ci_high": 60.89941175,
+       "display": "60.47% [60.04, 60.90]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 78.01145138999999,
+       "ci_low": 76.94939507000001,
+       "ci_high": 79.07115639999999,
+       "display": "78.01% [76.95, 79.07]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.006332145928,
+       "ci_low": -0.007351830242,
+       "ci_high": -0.005330886869,
+       "display": "-0.0063 [-0.0074, -0.0053]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 13.849861690000001,
+        "ci_low": 12.998135329999998,
+        "ci_high": 14.646304230000002,
+        "display": "13.85 [13.00, 14.65]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.94864839,
+        "ci_low": -1.032976081,
+        "ci_high": 2.831695135,
+        "display": "0.95 [-1.03, 2.83]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 24.67582261,
+        "ci_low": 24.0749995,
+        "ci_high": 25.339614230000002,
+        "display": "24.68 [24.07, 25.34]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 6.155190096,
+        "ci_low": 5.441469175,
+        "ci_high": 6.823288202,
+        "display": "6.16 [5.44, 6.82]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 64.26593374000001,
+       "ci_low": 63.832266940000004,
+       "ci_high": 64.6926639,
+       "display": "64.27% [63.83, 64.69]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.31728535,
+       "ci_low": 61.65172859,
+       "ci_high": 65.10761384,
+       "display": "63.32% [61.65, 65.11]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": 0.003838594767,
+       "ci_low": 0.002818910453,
+       "ci_high": 0.004882692544,
+       "display": "+0.0038 [0.0028, 0.0049]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   },
+   {
+    "cell_id": "R-hours-random",
+    "description": "Control: the same group labels permuted within each seed",
+    "policies": [
+     {
+      "policy": "P0",
+      "name": "P0, one raw threshold (baseline)",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 0.1657497075,
+        "ci_low": -0.2779198617,
+        "ci_high": 0.644757021,
+        "display": "0.17 [-0.28, 0.64]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.3265737356,
+        "ci_low": -1.34007851,
+        "ci_high": 0.7015273237999999,
+        "display": "-0.33 [-1.34, 0.70]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.6644194117,
+        "ci_low": -1.443692087,
+        "ci_high": 0.2379476553,
+        "display": "-0.66 [-1.44, 0.24]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.3475306039,
+        "ci_low": -0.07779064836999999,
+        "ci_high": 0.7651699764,
+        "display": "0.35 [-0.08, 0.77]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 63.30385132000001,
+       "ci_low": 62.79994527,
+       "ci_high": 63.79002051,
+       "display": "63.30% [62.80, 63.79]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.63042504999999,
+       "ci_low": 62.85272611,
+       "ci_high": 64.45794497,
+       "display": "63.63% [62.85, 64.46]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": null
+     },
+     {
+      "policy": "P1",
+      "name": "P1, one threshold on a within-group calibrated score",
+      "gaps": {
+       "sr_gap": {
+        "estimate": -3.9892772809999997,
+        "ci_low": -6.758711922000001,
+        "ci_high": -1.240426742,
+        "display": "-3.99 [-6.76, -1.24]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -4.7133097479999995,
+        "ci_low": -7.448917809999999,
+        "ci_high": -1.9578726080000002,
+        "display": "-4.71 [-7.45, -1.96]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": 2.012794846,
+        "ci_low": -0.43220118339999997,
+        "ci_high": 4.398081916,
+        "display": "2.01 [-0.43, 4.40]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": -3.733585818,
+        "ci_low": -6.530640665,
+        "ci_high": -0.9264027196,
+        "display": "-3.73 [-6.53, -0.93]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 61.72474464,
+       "ci_low": 60.94905632,
+       "ci_high": 62.45792832,
+       "display": "61.72% [60.95, 62.46]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 66.43805438,
+       "ci_low": 64.24261564,
+       "ci_high": 68.59427264,
+       "display": "66.44% [64.24, 68.59]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": false,
+      "utility_vs_p0": {
+       "estimate": -0.001351185358,
+       "ci_low": -0.002499692912,
+       "ci_high": -0.0002579535684,
+       "display": "-0.0014 [-0.0025, -0.0003]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P2",
+      "name": "P2, group thresholds with equal selection rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 0.2108587112,
+        "ci_low": -0.1453765199,
+        "ci_high": 0.5866848977,
+        "display": "0.21 [-0.15, 0.59]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": -0.269186067,
+        "ci_low": -1.202355502,
+        "ci_high": 0.6912037357999999,
+        "display": "-0.27 [-1.20, 0.69]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.6882560439,
+        "ci_low": -1.385637536,
+        "ci_high": 0.1424104857,
+        "display": "-0.69 [-1.39, 0.14]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.38847682029999997,
+        "ci_low": 0.10416833140000001,
+        "ci_high": 0.6660431110999999,
+        "display": "0.39 [0.10, 0.67]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 63.35879505999999,
+       "ci_low": 62.879410400000005,
+       "ci_high": 63.83752491,
+       "display": "63.36% [62.88, 63.84]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.62798113,
+       "ci_low": 62.90642423,
+       "ci_high": 64.42120233,
+       "display": "63.63% [62.91, 64.42]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": {
+       "estimate": -6.75592679e-05,
+       "ci_low": -0.0002825205749,
+       "ci_high": 0.0001289767842,
+       "display": "-0.0001 [-0.0003, 0.0001]",
+       "source": "supplementary"
+      }
+     },
+     {
+      "policy": "P3",
+      "name": "P3, group thresholds with equal true positive rates",
+      "gaps": {
+       "sr_gap": {
+        "estimate": 0.49047270000000004,
+        "ci_low": -0.41918505759999997,
+        "ci_high": 1.417573683,
+        "display": "0.49 [-0.42, 1.42]",
+        "source": "supplementary"
+       },
+       "eog": {
+        "estimate": 0.1024314684,
+        "ci_low": -1.286370264,
+        "ci_high": 1.566780195,
+        "display": "0.10 [-1.29, 1.57]",
+        "source": "supplementary"
+       },
+       "ppv_gap": {
+        "estimate": -0.8985480329,
+        "ci_low": -1.868531778,
+        "ci_high": 0.1359775153,
+        "display": "-0.90 [-1.87, 0.14]",
+        "source": "supplementary"
+       },
+       "fpr_gap": {
+        "estimate": 0.6390605617,
+        "ci_low": -0.1891402448,
+        "ci_high": 1.486304273,
+        "display": "0.64 [-0.19, 1.49]",
+        "source": "supplementary"
+       }
+      },
+      "tpr_a": {
+       "estimate": 63.39287969,
+       "ci_low": 62.846021220000004,
+       "ci_high": 63.92240391,
+       "display": "63.39% [62.85, 63.92]",
+       "exception": "group-rate"
+      },
+      "tpr_b": {
+       "estimate": 63.290448219999995,
+       "ci_low": 62.17176899,
+       "ci_high": 64.38423433,
+       "display": "63.29% [62.17, 64.38]",
+       "exception": "group-rate"
+      },
+      "within_2pp_all_three": true,
+      "utility_vs_p0": {
+       "estimate": 0.0002088195553,
+       "ci_low": -9.212627441e-05,
+       "ci_high": 0.0005159071367,
+       "display": "+0.0002 [-0.0001, 0.0005]",
+       "source": "supplementary"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "display_exceptions": {
+  "supplementary": "Per-cell values of the explorer are printed in research/paper/supplementary.md (tables S2, S3 and S5), which the manuscript incorporates by reference, not in the manuscript body. They are checked verbatim against that file.",
+  "group-rate": "Group-level true positive rates (TPR_A, TPR_B) are not printed in the manuscript. They are seed means from the same summary tables, shown to two decimals in percent; their difference is the EOG printed in the manuscript and supplementary file."
+ }
+}

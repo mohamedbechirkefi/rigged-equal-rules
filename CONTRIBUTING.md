@@ -84,3 +84,15 @@ python3 scripts/build_supplementary.py
 python3 scripts/build_artifact_manifest.py
 ```
 
+
+## M5 demo (2026-11-25)
+
+```
+# Demo data from committed tables (deterministic; --check compares with the committed file)
+python3 scripts/export_demo_data.py
+# Sandbox test fixture from the Python engine (test fixture, not a result)
+PYTHONPATH=src .venv/bin/python scripts/make_demo_fixture.py
+# Build, test and check the static page (Node 22)
+cd demo && npm ci && npm test && npm run build && npm run preview
+node tools/a11y_check.mjs dist --screenshots <dir>   # from demo/
+```

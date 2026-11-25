@@ -3,7 +3,7 @@
 
 Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval).
 
-**Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M4, 2026-11-25. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
+**Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M5, 2026-11-25. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
 
 ## Abstract
 
@@ -271,9 +271,11 @@ PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py   # evidence audit
 
 The UCI Adult archive is redistributed unchanged under CC BY 4.0 (Becker and Kohavi 1996).
 
+A static interactive page in `demo/` (M5) shows the published results of this manuscript, a trade-off explorer over the EXP-002 and EXP-004 summary tables and a sandbox that runs a port of the engine in the browser. Its numbers are exported from the committed tables by `scripts/export_demo_data.py` and tested to match this manuscript and the supplementary file verbatim (`tests/test_demo_export.py`). Sandbox output is labelled as such and is not a research result. The demo URL is a placeholder until the owner approves a release: `<demo URL, not yet published>`. Build: `cd demo && npm ci && npm run build && npm run preview`.
+
 ## 11. Funding, competing interests and AI assistance disclosure
 
-No funding was received. The author declares no competing interests. An AI assistant (Claude, Anthropic) served as a research and development assistant. It drafted protocols, code, tests, reports and this manuscript. It also ran the experiments and the evidence audit. It is not an author. The owner approved the protocols and their freezes, the amendments, the deviations listed in the supplementary material and the decision to write reports from committed results. The owner has not yet reviewed this manuscript's text (pending, M6 owner checklist). The automated evidence audit and the second review pass are internal quality control, not peer review.
+No funding was received. The author declares no competing interests. An AI assistant (Claude, Anthropic) served as a research and development assistant. It drafted protocols, code, tests, reports and this manuscript. It also ran the experiments and the evidence audit. It is not an author. The owner approved the protocols and their freezes, the amendments, the deviations listed in the supplementary material and the decision to write reports from committed results. The owner approved these funding, competing-interest and AI-use statements on 2026-11-25 (DEC-023); the owner's full-text review of this manuscript is pending (M6 owner checklist). The automated evidence audit and the second review pass are internal quality control, not peer review.
 
 ## References
 

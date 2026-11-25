@@ -5,13 +5,14 @@ No test here runs an EXP-004 run on the real pool: that would compute real-data 
 confirmatory run is scheduled.
 """
 
+import json
 from pathlib import Path
 
 import numpy as np
 import pytest
 
-from rigged.adult import (GROUP_B_SEX, PARTITIONS, AdultSchemaError, AdultTable, fit_logistic, group_b_hours, group_b_sex,
-                          lower_base_rate_value, parse_adult, real_populations, score, sex_base_rates)
+from rigged.adult import (PARTITIONS, AdultSchemaError, AdultTable, fit_logistic, group_b_hours, parse_adult,
+                          real_populations, score)
 from rigged.config import CellConfig, ConfigError
 from rigged.policies import PolicyFitError, fit_p3
 
@@ -30,8 +31,7 @@ def test_parse_fixture_counts():
     assert table.y.tolist() == [False, True, True, False]  # trailing "." removed, both label spellings
     assert table.age.tolist() == [30, 45, 52, 23]
     assert group_b_hours(table).tolist() == [False, False, True, True]  # hours below 40 is Group B
-    assert table.sex == ("Male", "Female", "Male", "Female")
-    assert group_b_sex(table).tolist() == [False, True, False, True]  # Female is Group B (round 3, R3-1)
+    assert not hasattr(table, "sex")  # no protected attribute is kept (amendment of 2026-11-25, A25-3)
 
 
 def test_parse_rejects_empty_input():
@@ -95,8 +95,9 @@ def test_real_populations_split_and_common_draws():
 def test_data_source_validated():
     for part in PARTITIONS:
         assert CellConfig(cell_id="x", data_source=f"ADULT-R1:{part}").is_real
-    with pytest.raises(ConfigError):
-        CellConfig(cell_id="x", data_source="ADULT-R1:random")  # renamed in round 3
+    for gone in ("ADULT-R1:random", "ADULT-R1:sex", "ADULT-R1:sex-random"):  # renamed in round 3; withdrawn 2026-11-25
+        with pytest.raises(ConfigError):
+            CellConfig(cell_id="x", data_source=gone)
     with pytest.raises(ConfigError):
         CellConfig(cell_id="x", p3_tolerance=-1)
     c = CellConfig(cell_id="R-hours", data_source="ADULT-R1:hours")
@@ -117,43 +118,26 @@ def test_p3_capacity_tolerance(make_pop):
         fit_p3(pop, CellConfig(cell_id="t", kappa=0.33, p3_tolerance=dev - 1))
 
 
-def test_sex_column_rule_and_schema_error():
-    # Round 3, R3-2: a kept row with a sex value other than Male or Female stops ingestion.
+def test_sex_field_is_not_used():
+    # Amendment of 2026-11-25, A25-3: sex is an unused column; any value (or "?") is kept like any other field.
     good = "30, Private, 1, B, 13, N, T, N, White, Male, 0, 0, 40, US, <=50K\n"
-    with pytest.raises(AdultSchemaError, match="sex"):
-        parse_adult(good + good.replace("Male", "Other"))
-    # An excluded row (bad label) is not checked for sex: exclusions are unchanged.
-    t, rep = parse_adult(good + good.replace("Male", "?").replace("<=50K", "maybe"))
-    assert t.n == 1 and rep["excluded"]["invalid_label"] == 1
-    with pytest.raises(AdultSchemaError):
-        group_b_sex(AdultTable(*(np.zeros(1),) * 5, np.zeros(1, dtype=bool)))
+    t, rep = parse_adult(good + good.replace("Male", "Other") + good.replace("Male", "?"))
+    assert t.n == 3 and rep["excluded_total"] == 0 and rep["missing_by_column"]["sex"] == 1
+    import rigged.adult as adult
+    for name in ("group_b_sex", "sex_base_rates", "lower_base_rate_value", "GROUP_B_SEX", "SEX_VALUES"):
+        assert not hasattr(adult, name)
 
 
-def test_lower_base_rate_rule_on_synthetic_rows():
-    sex = ("Male",) * 4 + ("Female",) * 4
-    y = np.array([1, 1, 0, 0, 1, 0, 0, 0], dtype=bool)
-    t = AdultTable(*(np.zeros(8),) * 5, y, sex=sex)
-    rates = sex_base_rates(t)
-    assert rates["Male"] == {"n": 4, "positives": 2, "base_rate": 0.5}
-    assert rates["Female"]["base_rate"] == 0.25
-    assert lower_base_rate_value(rates) == "Female" == GROUP_B_SEX
-    flipped = AdultTable(*(np.zeros(8),) * 5, y[::-1].copy(), sex=sex)
-    assert lower_base_rate_value(sex_base_rates(flipped)) == "Male"
-    tied = AdultTable(*(np.zeros(8),) * 5, np.ones(8, dtype=bool), sex=sex)
-    with pytest.raises(AdultSchemaError, match="tied"):
-        lower_base_rate_value(sex_base_rates(tied))
-
-
-def test_exp004_matrix_round3():
+def test_exp004_matrix_amended_2026_11_25():
     from rigged.matrices import exp004, matrix_config
     m = exp004()
-    assert [c.cell_id for c in m.cells] == ["R-sex", "R-sex-random", "R-hours", "R-hours-random"]
-    assert m.contrasts[0] == ("R-sex", "R-sex-random")  # primary first
-    assert m.contrasts[1] == ("R-hours", "R-hours-random")
-    assert len(m.runs()) == 320
+    assert [c.cell_id for c in m.cells] == ["R-hours", "R-hours-random"]
+    assert m.contrasts == (("R-hours", "R-hours-random"),)  # primary contrast
+    assert len(m.runs()) == 160
     assert all(c.p3_tolerance == 30 for c in m.cells)
     doc = matrix_config(m)
-    assert doc["group_b"]["sex"].startswith("sex == Female")
+    assert set(doc["group_b"]) == {"hours", "random"} and doc["group_b"]["hours"].startswith("hours_per_week < 40")
+    assert "sex" not in json.dumps(doc).lower()
 
 
 def test_real_run_populations_routes_partitions(monkeypatch):
@@ -162,7 +146,7 @@ def test_real_run_populations_routes_partitions(monkeypatch):
     n = 101
     rng = np.random.default_rng(7200)
     x, y = rng.normal(size=n), rng.random(n) < 0.3
-    groups = {"sex": rng.random(n) < 0.33, "hours": rng.random(n) < 0.5}
+    groups = {"hours": rng.random(n) < 0.5}
     monkeypatch.setattr(adult, "load_pool", lambda: (x, y, groups))
     for part in PARTITIONS:
         attr = part.split("-")[0]
@@ -170,8 +154,9 @@ def test_real_run_populations_routes_partitions(monkeypatch):
         ref_f, _ = real_populations(x, y, groups[attr], 5, part.endswith("random"))
         assert np.array_equal(f.group_b, ref_f.group_b)
         assert int(f.group_b.sum() + e.group_b.sum()) == int(groups[attr].sum())
-    with pytest.raises(ValueError):
-        adult.real_run_populations("ADULT-R1:random", 5)
+    for gone in ("ADULT-R1:random", "ADULT-R1:sex", "ADULT-R1:sex-random"):
+        with pytest.raises(ValueError):
+            adult.real_run_populations(gone, 5)
 
 
 def test_guard_refuses_a_changed_group_b(monkeypatch):
@@ -183,6 +168,6 @@ def test_guard_refuses_a_changed_group_b(monkeypatch):
     if not (REPO_ROOT / FREEZE_RECORD).exists():
         pytest.skip("no freeze record yet")
     assert protocol_status("EXP-004", expected_config=matrix_config(exp004())).frozen
-    monkeypatch.setattr(adult, "GROUP_B_SEX", "Male")
+    monkeypatch.setattr(adult, "GROUP_B_HOURS_BELOW", 35.0)
     s = protocol_status("EXP-004", expected_config=matrix_config(exp004()))
     assert not s.frozen and "current code" in s.reason

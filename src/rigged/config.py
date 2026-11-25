@@ -16,7 +16,7 @@ from . import GENERATOR_VERSION
 from .numerics import FAMILIES, base_rate
 
 POLICIES = ("P0", "P1", "P2", "P3")
-DATA_SOURCES = ("", "ADULT-R1:sex", "ADULT-R1:sex-random", "ADULT-R1:hours", "ADULT-R1:hours-random")
+DATA_SOURCES = ("", "ADULT-R1:hours", "ADULT-R1:hours-random")  # amendment of 2026-11-25
 
 
 class ConfigError(ValueError):

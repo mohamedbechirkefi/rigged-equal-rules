@@ -84,15 +84,15 @@ def exp003(n: int = 20_000, seeds=CONFIRMATORY_SEEDS) -> Matrix:
 
 
 ADULT_POOL_N = 16_281  # kept rows of adult.test (data/ingestion_report.json)
-EXP004_P3_TOLERANCE = 30  # protocol section 13, round 2 (tied real scores); ratified in round 3
-EXP004_PARTITIONS = ("sex", "sex-random", "hours", "hours-random")  # protocol section 13, round 3
-EXP004_CONTRASTS = (("R-sex", "R-sex-random"), ("R-hours", "R-hours-random"))  # primary, then secondary
+EXP004_P3_TOLERANCE = 30  # protocol section 13, round 2 (tied real scores); ratified in round 3 and on 2026-11-25
+EXP004_PARTITIONS = ("hours", "hours-random")  # protocol section 13, amendment of 2026-11-25 (A25-1 to A25-3)
+EXP004_CONTRASTS = (("R-hours", "R-hours-random"),)  # primary contrast only
 
 
 def exp004(n: int = ADULT_POOL_N, seeds=CONFIRMATORY_SEEDS) -> Matrix:
-    """EXP-004: second test on the UCI Adult score distribution, P0 to P3 (protocol section 13, round 3).
+    """EXP-004: second test on the UCI Adult score distribution, P0 to P3 (protocol section 13, 2026-11-25).
 
-    Primary contrast R-sex vs R-sex-random; secondary contrast R-hours vs R-hours-random.
+    Primary contrast R-hours vs R-hours-random. No protected attribute is used.
     """
     cells = tuple(CellConfig(cell_id=f"R-{part}", data_source=f"ADULT-R1:{part}", p3_tolerance=EXP004_P3_TOLERANCE)
                   for part in EXP004_PARTITIONS)
@@ -170,9 +170,8 @@ def matrix_config(matrix: Matrix) -> dict:
         from .environment import REPO_ROOT
         doc["data"] = ident
         doc["score_model"] = json.loads((REPO_ROOT / ident["score_model"]).read_text(encoding="utf-8"))
-        from .adult import GROUP_B_HOURS_BELOW, GROUP_B_SEX
-        doc["group_b"] = {"sex": f"sex == {GROUP_B_SEX} (lower base rate on adult.data; protocol section 13, round 3, "
-                                 "JRN-0007)",
-                          "hours": f"hours_per_week < {GROUP_B_HOURS_BELOW:g}",
-                          "random": "labels of the named attribute permuted by the seed's row-index permutation"}
+        from .adult import GROUP_B_HOURS_BELOW
+        doc["group_b"] = {"hours": f"hours_per_week < {GROUP_B_HOURS_BELOW:g} (protocol section 13, amendment of "
+                                   "2026-11-25, A25-1)",
+                          "random": "hours labels permuted by the seed's row-index permutation"}
     return doc

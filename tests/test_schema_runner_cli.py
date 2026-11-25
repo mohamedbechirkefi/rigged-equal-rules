@@ -232,6 +232,6 @@ def test_matrix_sizes_and_seeds():
     assert len(exp001().runs()) == 240 and len(exp002().runs()) == 960
     assert len(exp003().runs()) == 15 * 20 + 6 * 20
     m4 = exp004()
-    assert len(m4.runs()) == 320 and all(c.p3_tolerance == 30 for c in m4.cells)
+    assert len(m4.runs()) == 160 and all(c.p3_tolerance == 30 for c in m4.cells)
     assert all(c.p3_tolerance == 10 for c in exp003().cells)
     assert not set(smoke().seeds) & set(CONFIRMATORY_SEEDS) and min(smoke().seeds) >= 1000

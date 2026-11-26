@@ -625,3 +625,30 @@ A1, B1, B2, B3, B6 to B11, B13, B14 and R-RIGGED-1 applied or recorded as listed
 ### Next action
 
 The owner: B15 article drafts, B16 full-text review and sign-off, B18 release. The coordinator deploys the demo.
+
+## 2026-11-26: demo brand identity, motion and UI redesign
+
+**Authority:** owner request of 2026-11-26; coordinator brief `labs/_shared/DEMO-BRAND-brief.md`. Decision DEC-027. **Starting state:** `a83cea8`, working tree clean. Presentation only: no result, data export, fixture, test expectation, frozen file or checksummed output changed; nothing pushed or deployed.
+
+### Changed files
+
+`demo/DESIGN.md` (new: plan, review against generated-page tells, two screenshot critique passes); `demo/src/Hero.tsx`, `demo/src/motion.ts` (new); `demo/src/App.tsx`, `Explorer.tsx`, `charts.tsx`, `Sandbox.tsx`, `main.tsx`, `style.css`; `demo/index.html` (theme colour, Open Graph tags, favicons); `demo/package.json` and `package-lock.json` (two Fontsource packages); `demo/public/brand/` (marks, lockups, wordmark, favicon SVG and 32 px PNG, `og.png` 1200 by 630); `demo/public/licenses/` (two OFL texts); `demo/README.md` (brand line, third-party notes).
+
+### Commands and actual outputs
+
+```
+$ npm_config_before=2026-11-12 npm install --save-exact @fontsource/libre-caslon-text @fontsource/barlow-semi-condensed
+  added 2 packages; versions 5.3.0 and 5.3.0
+$ python3 -I svg_audit.py demo/public/brand/*.svg               no FAIL; marks 100, lockups and wordmark 91 (font-outline angle warnings)
+$ npm test                                                        Test Files 2 passed (2); Tests 18 passed (18)
+$ npm run build                                                   index-DAJq9arR.js 260.71 kB (gzip 81.17 kB), index-BHPGUEWk.css 13.97 kB; dist/ 667,968 bytes in total
+$ node tools/a11y_check.mjs dist                                  9 PASS lines (keyboard 45 reached of 45; overflow 0px at 360 px; 0 running animations under reduced motion; no request leaves the local origin); A11Y-CHECK PASS
+$ .venv/bin/python -m pytest -q                                   124 passed in 7.28s
+$ .venv/bin/python -m pytest -q tests/test_demo_export.py         5 passed (after the demo README change)
+```
+
+Screenshots (Chrome headless, 1440 px and 390 px) are kept outside the repository.
+
+### Next action
+
+The coordinator deploys `demo/dist` with `demo/wrangler.jsonc`. The owner: B15, B16, B18 as before.

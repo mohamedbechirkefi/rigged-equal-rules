@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0
 import { useEffect, useState } from "react";
 import { Explorer } from "./Explorer";
+import { HeroRule } from "./Hero";
+import { useCountUp } from "./motion";
 import { fmtEstimate, fmtInterval, loadResults, ResultsError, type Experiment, type Results } from "./results";
 import { Sandbox } from "./Sandbox";
 
@@ -23,14 +25,16 @@ export function App() {
       );
   }, []);
 
+  useSectionSpy(state.kind === "ready");
+
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <header className="site">
-        <div className="wrap">
-          <p className="kicker">RIGGED, a pre-registered simulation study with one real-score test</p>
-          <h1>When equal rules produce unequal outcomes</h1>
-          <p className="lede">Can equal rules yield unequal outcomes under different starting distributions?</p>
+      <header className="bar">
+        <div className="bar-in">
+          <a className="brand" href="#top" aria-label="Rigged, back to the top">
+            <img src="./brand/rigged-mark.svg" alt="" width="30" height="30" /><span>Rigged</span>
+          </a>
           <nav aria-label="Sections">
             <a href="#overview">Overview</a>
             <a href="#explorer">Explorer</a>
@@ -41,6 +45,24 @@ export function App() {
           </nav>
         </div>
       </header>
+      <div className="desk" id="top">
+        <article className="letter hero-letter" aria-labelledby="h-question">
+          <div className="letterhead">
+            <p className="lh-title">Results letter</p>
+            <p>A pre-registered simulation study with one real-score test</p>
+          </div>
+          <h1 id="h-question"><span className="re">Re:</span> Can equal rules yield unequal outcomes under different starting distributions?</h1>
+          {state.kind === "ready" ? <Answer r={state.results} /> : (
+            <p className="answer">{state.kind === "error" ? "The published results file failed validation, so no measured answer is shown." : "Loading the measured answer."}</p>
+          )}
+          <HeroRule />
+          <p className="postscript">
+            <strong>P.S. Claims boundary.</strong> Groups A and B are abstract groups, never protected groups. Nothing
+            here is a claim about real hiring or any real selection decision, about workers or about the people in
+            the data. The EOG is one criterion among several; no fairness metric is presented as universal.
+          </p>
+        </article>
+      </div>
       <main id="main" className="wrap">
         {state.kind === "loading" && <p role="status">Loading the published results.</p>}
         {state.kind === "error" && (
@@ -54,17 +76,65 @@ export function App() {
         <Sandbox />
       </main>
       <footer className="site">
-        <div className="wrap">
-          <p>Runs offline after the first load. No data about visitors is collected, stored or sent anywhere.</p>
-          <p>
-            Author: Mohamed Bechir Kefi, independent researcher. Repository:{" "}
-            <a href="https://github.com/mohamedbechirkefi/rigged-equal-rules">github.com/mohamedbechirkefi/rigged-equal-rules</a>. Licence: RIGGED Source-Available Non-Commercial
-            Research License v1.0.
-          </p>
+        <div className="wrap foot-grid">
+          <div className="foot-brand">
+            <img src="./brand/rigged-lockup-reversed.svg" alt="Rigged" width="170" height="45" />
+            <p>Author: Mohamed Bechir Kefi, independent researcher.</p>
+          </div>
+          <div>
+            <p>
+              Repository:{" "}
+              <a href="https://github.com/mohamedbechirkefi/rigged-equal-rules">github.com/mohamedbechirkefi/rigged-equal-rules</a>.
+              Manuscript:{" "}
+              <a href="https://github.com/mohamedbechirkefi/rigged-equal-rules/blob/main/research/paper/manuscript.md">research/paper/manuscript.md</a>.
+              More studies: <a href="https://labs.kefimohamedbechir.workers.dev">the labs index</a>.
+            </p>
+            <p>Licence: RIGGED Source-Available Non-Commercial Research License v1.0.</p>
+            <p>An AI system (Claude, Anthropic) was used as a research and development assistant; it is not an author.</p>
+            <p>Runs offline after the first load. No data about visitors is collected, stored or sent anywhere.</p>
+            <p className="credits">Type: Libre Caslon Text (Pablo Impallari, Rodrigo Fuenzalida) and Barlow Semi Condensed (Jeremy Tribby), both under the SIL Open Font License, served from this site.</p>
+          </div>
         </div>
       </footer>
     </>
   );
+}
+
+/** Marks the nav link of the section in view. */
+function useSectionSpy(ready: boolean) {
+  useEffect(() => {
+    if (!ready || typeof IntersectionObserver === "undefined") return;
+    const links = [...document.querySelectorAll<HTMLAnchorElement>("header.bar nav a")];
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) if (en.isIntersecting) for (const a of links) a.classList.toggle("here", a.getAttribute("href") === `#${en.target.id}`);
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    for (const a of links) { const t = document.querySelector(a.getAttribute("href") ?? ""); if (t) io.observe(t); }
+    return () => io.disconnect();
+  }, [ready]);
+}
+
+function Answer({ r }: { r: Results }) {
+  const e1 = r.experiments.find((e) => e.id === "EXP-001")!.estimates[0];
+  const e4 = r.experiments.find((e) => e.id === "EXP-004")!.estimates[0];
+  return (
+    <p className="answer">
+      Inside the model, yes. Under one common threshold, when Group B starts half a standard deviation lower, the
+      equal-opportunity gap rises by <strong>{fmtEstimate(e1)}</strong> {fmtInterval(e1)} against an
+      equal-distribution control. On a real score the same base-rate prediction failed, with the sign
+      reversed: <strong>{fmtEstimate(e4)}</strong> {fmtInterval(e4)}.
+    </p>
+  );
+}
+
+function Figure({ text }: { text: string }) {
+  const ref = useCountUp<HTMLParagraphElement>(text);
+  return <p className="big" ref={ref}>{text}</p>;
+}
+
+function stamp(e: Experiment): string {
+  if (e.id.startsWith("JRN")) return "Exploratory";
+  if (/disconfirmed|rejected|reversal/i.test(e.verdict)) return "Against the base-rate reading";
+  return "Supported";
 }
 
 function verdictClass(e: Experiment): string {
@@ -91,13 +161,13 @@ function Published({ r }: { r: Results }) {
         <div className="keyfinds">
           <div className="keyfind">
             <p className="tag tag-measured">Measured, simulated</p>
-            <p className="big">{fmtEstimate(e1)}</p>
+            <Figure text={fmtEstimate(e1)} />
             <p>{fmtInterval(e1)} (95% bootstrap). Rise in the EOG under one common threshold when Group B starts half
               a standard deviation lower (EXP-001). Supported, and implied by the model.</p>
           </div>
           <div className="keyfind">
             <p className="tag tag-measured">Measured, real data</p>
-            <p className="big">{fmtEstimate(e4)}</p>
+            <Figure text={fmtEstimate(e4)} />
             <p>{fmtInterval(e4)} (95% bootstrap). The same prediction on a real score (EXP-004, Group B is
               hours-per-week below 40): disconfirmed, with the sign reversed.</p>
           </div>
@@ -106,11 +176,6 @@ function Published({ r }: { r: Results }) {
           The base rate alone does not fix the sign or size of the gap (EXP-003 and EXP-004). What remains is a
           near-definitional statement: under one common rule, the gap follows where each group's qualified members
           sit relative to the cutoff.
-        </p>
-        <p className="boundary">
-          <strong>Claims boundary.</strong> Groups A and B are abstract groups, never protected groups. Nothing
-          here is a claim about real hiring or any real selection decision, about workers or about the people in
-          the data. The EOG is one criterion among several; no fairness metric is presented as universal.
         </p>
       </section>
 
@@ -124,10 +189,13 @@ function Published({ r }: { r: Results }) {
           are shown with the same weight. Intervals are 95% percentile bootstrap intervals over 20 seeds.
         </p>
         {r.experiments.map((e) => (
-          <article key={e.id} className={`panel ${verdictClass(e)}`} aria-labelledby={`h-${e.id}`}>
-            <h3 id={`h-${e.id}`}>
-              {e.id}: {e.title}
-            </h3>
+          <article key={e.id} className={`panel letter-panel ${verdictClass(e)}`} aria-labelledby={`h-${e.id}`}>
+            <div className="panel-head">
+              <h3 id={`h-${e.id}`}>
+                {e.id}: {e.title}
+              </h3>
+              <p className={`stamp ${verdictClass(e)}`}>{stamp(e)}</p>
+            </div>
             <p>
               <span className="badge">{e.status}</span>
             </p>
@@ -161,7 +229,7 @@ function Published({ r }: { r: Results }) {
             ))}
             <p className="meta">
               Report: <code>{e.report_path}</code>
-              {e.claim_ids.length > 0 && <> · Claims: {e.claim_ids.join(", ")}</>}
+              {e.claim_ids.length > 0 && <>. Claims: {e.claim_ids.join(", ")}</>}
             </p>
           </article>
         ))}

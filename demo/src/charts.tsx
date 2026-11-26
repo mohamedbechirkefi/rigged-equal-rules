@@ -72,13 +72,16 @@ export function GapChart({ title, rows, domain, tol, unit }: {
         <line className="zero" x1={x(0)} x2={x(0)} y1={TOP - 4} y2={TOP + rows.length * ROW} />
         {rows.map((r, i) => {
           const cy = TOP + i * ROW + ROW / 2;
+          // Marks are positioned by transform so a change of cell moves them (CSS transition, transform only).
+          const lo = x(r.value.ci_low), hi = x(r.value.ci_high);
           return (
             <g key={r.label}>
               <text className="lbl" x={4} y={cy + 4}>{r.label}</text>
-              <line className="whisker" x1={x(r.value.ci_low)} x2={x(r.value.ci_high)} y1={cy} y2={cy} />
-              <line className="whisker" x1={x(r.value.ci_low)} x2={x(r.value.ci_low)} y1={cy - 5} y2={cy + 5} />
-              <line className="whisker" x1={x(r.value.ci_high)} x2={x(r.value.ci_high)} y1={cy - 5} y2={cy + 5} />
-              <circle className="dot" cx={x(r.value.estimate)} cy={cy} r={4.5} />
+              <line className="whisker mv" x1={0} x2={1} y1={0} y2={0} vectorEffect="non-scaling-stroke"
+                style={{ transform: `translate(${lo}px, ${cy}px) scaleX(${Math.max(hi - lo, 0.01)})` }} />
+              <line className="whisker mv" x1={0} x2={0} y1={-5} y2={5} style={{ transform: `translate(${lo}px, ${cy}px)` }} />
+              <line className="whisker mv" x1={0} x2={0} y1={-5} y2={5} style={{ transform: `translate(${hi}px, ${cy}px)` }} />
+              <circle className="dot mv" cx={0} cy={0} r={4.5} style={{ transform: `translate(${x(r.value.estimate)}px, ${cy}px)` }} />
             </g>
           );
         })}

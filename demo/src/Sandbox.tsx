@@ -133,11 +133,12 @@ export function Sandbox() {
           help="1 to 10" />
       </div>
       <div className="controls buttons">
-        <button type="button" onClick={run} disabled={running || invalid !== null}>Run sandbox</button>
+        <button type="button" className="primary" onClick={run} disabled={running || invalid !== null}>Run sandbox</button>
         <button type="button" onClick={cancel} disabled={!running}>Cancel</button>
         <button type="button" onClick={reset}>Reset</button>
       </div>
       {invalid && <p className="warn" role="status">Settings out of range: {invalid}.</p>}
+      <div className={`run-rail${running ? " running" : ""}`} aria-hidden="true"><span /></div>
       {running && (
         <p className="meta">
           Working: <progress max={1} value={out.fraction} aria-label="Sandbox progress" /> {Math.round(out.fraction * 100)}%

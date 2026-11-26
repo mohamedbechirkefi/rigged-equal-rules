@@ -652,3 +652,25 @@ Screenshots (Chrome headless, 1440 px and 390 px) are kept outside the repositor
 ### Next action
 
 The coordinator deploys `demo/dist` with `demo/wrangler.jsonc`. The owner: B15, B16, B18 as before.
+
+## 2026-11-26: unique typeface pair across the labs (owner request)
+
+Brief: `labs/_shared/FONT-UNIQUE-brief.md`, row RIGGED (Libre Caslon Text and Karla; change the sans face). No number, data, fixture, test expectation, accessible name or scientific wording changed.
+
+### Changes
+
+- `demo/package.json`, `package-lock.json`: removed `@fontsource/barlow-semi-condensed` 5.3.0; added `@fontsource-variable/karla` 5.3.0 (exact, `npm_config_before=2026-11-12`). Karla has `tnum`, so numbers stay in the sans face with tabular figures.
+- `demo/src/main.tsx`: imports `@fontsource-variable/karla/wght.css`. `demo/src/style.css`: `--rule` stack is now Karla; type re-tuned for the wider face (navigation 0.97 rem, tables 0.95 rem and 0.9 rem below 40 rem, tags 0.85 rem, key figures weight 650 with tighter tracking).
+- `demo/public/licenses/`: `OFL-karla.txt` replaces the Barlow licence. `demo/src/App.tsx`: footer font credit names Karla (Jonny Pinhorn).
+- `demo/public/brand/og.png`: the tagline "One rule, two starting distributions" redrawn in Karla 600 (instance cut with fontTools, drawn with Pillow); the rest of the image unchanged. Logo marks and wordmark are Libre Caslon Text outlines and were not redrawn.
+- `demo/DESIGN.md` (type section: why Karla, re-tuned scale), `demo/README.md` (third-party font table).
+
+### Checks (actual results)
+
+- `npm test`: 2 files, 18 tests passed. `npm run build`: built; `dist` 756 KB. `node tools/a11y_check.mjs dist`: A11Y-CHECK PASS.
+- `.venv/bin/python -m pytest -q tests/test_demo_export.py`: 5 passed.
+- Screenshots through the DevTools protocol at 1440 px and 390 px (kept outside the repository): no horizontal page overflow; wide tables scroll inside their own container as before.
+
+### Next action
+
+None for this brief. Deployment is the coordinator's.

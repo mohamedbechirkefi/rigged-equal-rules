@@ -23,11 +23,11 @@ Hosting: the built page (`dist/`) is hosted as Cloudflare Workers static assets 
 
 ## Third-party notes
 
-Fonts are self-hosted through Fontsource, installed with exact versions and `npm_config_before=2026-11-12`, and bundled by Vite into `dist/assets/` (latin subset, only the weights used). Nothing is loaded from a font service.
+Fonts are self-hosted through Fontsource, installed with exact versions and `npm_config_before=2026-11-12`, and bundled by Vite into `dist/assets/` (Libre Caslon Text: latin subset, only the weights used; Karla: the variable weight-axis files, of which the browser fetches only the latin subset this page needs). Nothing is loaded from a font service.
 
 | Family | Package and version | Weights | Licence |
 |---|---|---|---|
 | Libre Caslon Text (Pablo Impallari, Rodrigo Fuenzalida) | `@fontsource/libre-caslon-text` 5.3.0 | 400, 700 | SIL Open Font License 1.1 |
-| Barlow Semi Condensed (Jeremy Tribby) | `@fontsource/barlow-semi-condensed` 5.3.0 | 500, 600 | SIL Open Font License 1.1 |
+| Karla (Jonny Pinhorn) | `@fontsource-variable/karla` 5.3.0 | variable 200 to 800 (500, 600, 650 used) | SIL Open Font License 1.1 |
 
-The licence texts are copied to `public/licenses/` so they ship with the built page. The wordmark "Rigged" in the logo files is built from Libre Caslon Text 700 outlines (converted to paths with fontTools), which the OFL permits.
+The licence texts are copied to `public/licenses/` so they ship with the built page. The wordmark "Rigged" in the logo files is built from Libre Caslon Text 700 outlines (converted to paths with fontTools), which the OFL permits. The tagline in `brand/og.png` is set in Karla 600 (static instance cut from the variable font with fontTools).

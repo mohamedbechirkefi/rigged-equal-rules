@@ -92,7 +92,7 @@ export function App() {
             <p>Licence: RIGGED Source-Available Non-Commercial Research License v1.0.</p>
             <p>An AI system (Claude, Anthropic) was used as a research and development assistant; it is not an author.</p>
             <p>Runs offline after the first load. No data about visitors is collected, stored or sent anywhere.</p>
-            <p className="credits">Type: Libre Caslon Text (Pablo Impallari, Rodrigo Fuenzalida) and Barlow Semi Condensed (Jeremy Tribby), both under the SIL Open Font License, served from this site.</p>
+            <p className="credits">Type: Libre Caslon Text (Pablo Impallari, Rodrigo Fuenzalida) and Karla (Jonny Pinhorn), both under the SIL Open Font License, served from this site.</p>
           </div>
         </div>
       </footer>

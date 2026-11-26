@@ -10,7 +10,7 @@
   --band: #ece9f4; --error-bg: #fbe9e7; --error-fg: #8a1a10;
   --accent: #2747a8; --focus: #b8203a;
   --letter: "Libre Caslon Text", "Iowan Old Style", Georgia, serif;
-  --rule: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --rule: "Karla Variable", "Karla", "Helvetica Neue", Arial, sans-serif;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --bar-h: 58px;
@@ -39,7 +39,7 @@ header.bar { position: sticky; top: 0; z-index: 20; background: var(--sheet); bo
 .brand img { display: block; }
 header.bar nav { display: flex; gap: 0.1rem; overflow-x: auto; scrollbar-width: none; margin-left: auto; }
 header.bar nav::-webkit-scrollbar { display: none; }
-header.bar nav a { color: var(--muted); text-decoration: none; font: 600 1rem/1 var(--rule); padding: 0 0.6rem; min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; border-top: 3px solid transparent; border-bottom: 3px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
+header.bar nav a { color: var(--muted); text-decoration: none; font: 600 0.97rem/1 var(--rule); padding: 0 0.6rem; min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; border-top: 3px solid transparent; border-bottom: 3px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
 header.bar nav a.here { color: var(--ink); border-bottom-color: var(--cut); }
 @media (hover: hover) and (pointer: fine) { header.bar nav a:hover { color: var(--ink); } }
 @media (max-width: 47.99rem) {
@@ -104,7 +104,7 @@ section > p { max-width: 42em; }
 .meta { font-size: 0.92rem; overflow-wrap: anywhere; }
 .status-label { font: 500 1.04rem/1.5 var(--rule); color: var(--ink); max-width: 50em; }
 .badge { display: inline-block; border: 1px solid var(--line); border-radius: 3px; padding: 0.05rem 0.55rem; font: 500 0.92rem/1.5 var(--rule); color: var(--muted); background: var(--sheet); }
-.tag { display: inline-block; font: 600 0.86rem/1.5 var(--rule); padding: 0.05rem 0.55rem; border-radius: 3px; border: 1.5px solid currentColor; margin: 0; vertical-align: middle; background: var(--sheet); }
+.tag { display: inline-block; font: 600 0.85rem/1.5 var(--rule); letter-spacing: 0.005em; padding: 0.05rem 0.55rem; border-radius: 3px; border: 1.5px solid currentColor; margin: 0; vertical-align: middle; background: var(--sheet); }
 .tag-measured { color: var(--a); }
 .tag-sandbox { color: var(--b); border-style: dashed; }
 .tag-assumption { color: var(--explo); border-style: double; border-width: 3px; }
@@ -113,7 +113,7 @@ section > p { max-width: 42em; }
 .keyfinds { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
 .keyfind { background: var(--sheet); border-top: 3px dotted var(--muted); padding: 1.1rem 1.25rem 1.25rem; box-shadow: 0 1px 0 var(--line); }
 .keyfind p { margin: 0.3rem 0; }
-.keyfind .big { font: 600 clamp(2.4rem, 5vw, 3.2rem)/1.05 var(--rule); margin: 0.6rem 0 0.5rem; letter-spacing: -0.01em; }
+.keyfind .big { font: 650 clamp(2.3rem, 4.8vw, 3.1rem)/1.05 var(--rule); margin: 0.6rem 0 0.5rem; letter-spacing: -0.025em; }
 
 /* Experiments: one letter each, with a printed verdict stamp. */
 .panel { background: var(--sheet); border: 1px solid var(--line); padding: 1.25rem clamp(1rem, 3vw, 1.75rem); margin: 1.25rem 0; }
@@ -128,7 +128,8 @@ section > p { max-width: 42em; }
 .panel.error { background: var(--error-bg); color: var(--error-fg); }
 .verdict { margin: 0.4rem 0 0.6rem; }
 .table-scroll { overflow-x: auto; max-width: 100%; margin: 0.6rem 0; }
-table { border-collapse: collapse; width: 100%; font: 500 0.98rem/1.45 var(--rule); font-variant-numeric: tabular-nums; }
+table { border-collapse: collapse; width: 100%; font: 500 0.95rem/1.45 var(--rule); font-variant-numeric: tabular-nums; }
+@media (max-width: 40rem) { table { font-size: 0.9rem; } }
 caption { text-align: left; color: var(--muted); font-size: 0.9rem; padding-bottom: 0.3rem; }
 th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 thead th { font-weight: 600; border-bottom: 2px solid var(--ink); }

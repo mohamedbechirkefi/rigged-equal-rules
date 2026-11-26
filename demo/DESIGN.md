@@ -32,7 +32,9 @@ Groups keep their shapes (circle, square) so colour never carries the group alon
 ## Type
 
 - **Libre Caslon Text** (Pablo Impallari, Rodrigo Fuenzalida; OFL 1.1), 400 and 700. The letters: headings, the hero letter, body prose. A Caslon reads as correspondence and as institutional print.
-- **Barlow Semi Condensed** (Jeremy Tribby; OFL 1.1), 500 and 600. The rule: chart labels, numbers with tabular figures, buttons, tags, navigation. A narrow grotesque in the spirit of engraved scale numerals.
+- **Karla** (Jonny Pinhorn; OFL 1.1), variable weight axis, used at 500, 600 and 650. The rule: chart labels, numbers with tabular figures (`tnum`), buttons, tags, navigation. A plain, slightly quirky grotesque with open, even numerals, the kind of sans set on printed forms and measuring instruments; it sits beside the Caslon letters as the form sits beside the covering letter. Replaced Barlow Semi Condensed on 2026-11-26 so that no two lab demos share a typeface (owner request).
+
+Karla is wider than the semi-condensed face it replaced and has a smaller x-height relative to its width, so its sizes were trimmed: navigation 0.97 rem, tables 0.95 rem (0.9 rem below 40 rem width), tags 0.85 rem with 0.005 em tracking, and the key figures at weight 650 with -0.025 em tracking and a slightly smaller clamp (2.3 to 3.1 rem).
 
 Scale: 17 px body, headings 1.333 ratio (22.7, 30.2, 40.3), hero subject line fluid to 52 px. Measure 62 to 70 characters.
 
@@ -78,8 +80,8 @@ The page opens as a letter whose subject line is the research question, and unde
 
 - *Cream and terracotta:* the first idea was letter paper on a manila desk with an oxblood seal. That is the cream and clay default. Changed to white sheets on a cool lilac-grey desk, and the only warm accent is the stamp red of the cut line, which has one meaning.
 - *Near-black with one acid accent:* no; light page.
-- *All-caps tracked eyebrows:* the original page had an uppercase kicker; removed. Verdict stamps are set in Barlow at normal case with a ruled border, not tracked capitals.
-- *Mono for data labels:* no mono; numbers use Barlow tabular figures.
+- *All-caps tracked eyebrows:* the original page had an uppercase kicker; removed. Verdict stamps are set in Karla at normal case with a ruled border, not tracked capitals.
+- *Mono for data labels:* no mono; numbers use Karla tabular figures.
 - *01/02/03:* none. Experiment ids are real identifiers.
 - *Identical rounded cards:* the experiments become letters: square-cornered white sheets with a letterhead row and a stamp; the key findings become narrow slips with a perforated top edge (dashed border), different from the letters.
 - *Fade-up on every section:* only charts reveal, once.

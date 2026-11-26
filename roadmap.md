@@ -10,7 +10,7 @@ Target: five focused development days (planning estimate). Effort is in focused 
 | M2 | Core implementation | M1 drafts (freeze not needed to implement) | P0 | 1.25 | done (2026-11-24): all acceptance criteria checked; exploratory runs only | none |
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.5 | done (2026-11-25): 1,780 confirmatory runs at b455d59, all ok; reports written from committed results; deviations DEC-019 (disclosed limitation, DEC-021) and DEC-020 | none |
 | M4 | Interpretation and evidence audit | M3 | P0 | 0.75 | done (2026-11-25): confounder review, expected versus observed, claims register and evidence audit, manuscript synthesised, second review pass | owner review of the manuscript text (M6 checklist) |
-| M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | done (2026-11-25): static demo, explorer and subgroup charts, faithful sandbox port, checker PASS, numbers tested against the manuscript (DEC-024) | owner placeholders: author line, repository URL, demo URL |
+| M5 | Interactive experience | M3 results (M4 for final labels) | P1 | 0.75 | done (2026-11-25): static demo, explorer and subgroup charts, faithful sandbox port, checker PASS, numbers tested against the manuscript (DEC-024) | none (author line, repository URL and demo URL filled on 2026-11-26, DEC-026) |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | release candidate prepared, awaiting owner review and G-PUBLIC (2026-11-25, 0.1.0-rc1, DEC-025) | owner sign-off of `author_review.md`; owner approval for any publication (G-PUBLIC) |
 
 ## M0: Bootstrap and feasibility

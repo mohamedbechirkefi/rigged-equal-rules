@@ -39,8 +39,8 @@ Then run `git status`, inspect existing files, and never overwrite the owner's c
 - No confirmatory experiment before the owner has frozen its protocol. Small exploratory smoke checks are allowed and labelled exploratory.
 
 ### Scope
-- Work only inside this repository. Tools outside it are used read-only: `/Users/bechir/research/labs/.tools/` (uv, typst, pypdf, pillow, pandoc) and `/Users/bechir/research/helix/.tools/node/bin` (Node; never modify that folder).
-- Do not touch any other folder under `/Users/bechir/research`.
+- Work only inside this repository. Tools outside it are used read-only: `../.tools/` (uv, typst, pypdf, pillow, pandoc; paths relative to the repository) and the Node installation in the research root's `helix/.tools/node/bin` (never modify that folder).
+- Do not touch any other folder under the research root.
 - Never kill processes you did not start. Never delete anything you did not create in the current session.
 
 ### Truthfulness
@@ -65,6 +65,6 @@ Update `progress.md` (dated entry: decisions, commands, actual results, failures
 
 ## 5. Toolchain (zero cost, decision DEC-002)
 
-- Python 3.12.1 at `/usr/local/bin/python3`; dependencies locked with `/Users/bechir/research/labs/.tools/py/bin/uv lock` (`uv.lock`).
-- No TeX distribution. PDFs: pandoc (`/Users/bechir/research/labs/.tools/pandoc`) converts Markdown to Typst; the `typst` Python package (`/Users/bechir/research/labs/.tools/py/bin/python`) compiles it. `manuscript.tex` is generated from Markdown with pandoc but is not compiled locally.
+- Python 3.12.1 at `/usr/local/bin/python3`; dependencies locked with `../.tools/py/bin/uv lock` (`uv.lock`).
+- No TeX distribution. PDFs: pandoc (`../.tools/pandoc`) converts Markdown to Typst; the `typst` Python package (`../.tools/py/bin/python`) compiles it. `manuscript.tex` is generated from Markdown with pandoc but is not compiled locally.
 - Commands are recorded in `CONTRIBUTING.md` (development section) and `scripts/`.

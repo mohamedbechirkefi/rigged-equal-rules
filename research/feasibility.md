@@ -1,6 +1,8 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
 # Feasibility audit (M0, 2026-11-24)
 
+Note (2026-11-26): absolute home-directory paths in this record were replaced by repository-relative paths or words (owner, 2026-11-26, decision sheet, B9). The commands and outputs are otherwise as recorded on 2026-11-24.
+
 ## 1. Hardware (confirmed with commands)
 
 | Item | Command | Actual output |
@@ -9,19 +11,19 @@
 | Cores | `sysctl -n hw.ncpu` | `10` |
 | Memory | `sysctl -n hw.memsize` | `17179869184` (16 GiB) |
 | OS | `sw_vers` | `macOS 15.3.1 (24D70)` |
-| Free disk | `df -h /Users/bechir` | `129Gi` available on `/System/Volumes/Data` |
+| Free disk | `df -h` on the home folder | `129Gi` available on `/System/Volumes/Data` |
 
 ## 2. Tools (confirmed with commands)
 
 | Tool | Location | Version output |
 |---|---|---|
 | Python | `/usr/local/bin/python3` | `Python 3.12.1` |
-| uv | `/Users/bechir/research/labs/.tools/py/bin/uv` | `uv 0.9.5 (d5f39331a 2025-10-21)` |
-| typst (Python package) | `/Users/bechir/research/labs/.tools/py/bin/python` | `typst 0.15.0` (via `import typst`); there is no `typst` executable in that folder |
+| uv | `../.tools/py/bin/uv` | `uv 0.9.5 (d5f39331a 2025-10-21)` |
+| typst (Python package) | `../.tools/py/bin/python` | `typst 0.15.0` (via `import typst`); there is no `typst` executable in that folder |
 | pypdf | same interpreter | `6.20.0` |
 | pillow | same interpreter | `11.3.0` |
-| pandoc | `/Users/bechir/research/labs/.tools/pandoc` | `pandoc 3.6.3` |
-| Node | `/Users/bechir/research/helix/.tools/node/bin/node` (read-only use) | `v22.23.3` |
+| pandoc | `../.tools/pandoc` | `pandoc 3.6.3` |
+| Node | `helix/.tools/node/bin/node` under the research root (read-only use) | `v22.23.3` |
 | git | system | `git version 2.42.1` |
 | TeX | `which tex pdflatex xelatex` | `tex not found`, `pdflatex not found`, `xelatex not found` |
 

@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
 # When equal rules produce unequal outcomes, and when the obvious explanation fails
 
-*Draft for Medium (M5). Not published; publication is the owner's decision. Author: Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval). Every number below is copied from the manuscript (`research/paper/manuscript.md`), which is an independent research manuscript / preprint draft, not peer-reviewed.*
+*Draft for Medium (M5). Not published; publication is the owner's decision. Author: Mohamed Bechir Kefi, independent researcher. Every number below is copied from the manuscript (`research/paper/manuscript.md`), which is an independent research manuscript / preprint draft, not peer-reviewed.*
 
 ## One threshold for everyone
 
@@ -31,6 +31,6 @@ The limits matter. The simulated results hold only inside the generator. EXP-004
 
 ## Reproduce it
 
-Code, frozen protocols, raw results, the manuscript and a static demo with a sandbox: `<repository URL, not yet published>`. Demo: `<demo URL, not yet published>`.
+Code, frozen protocols, raw results, the manuscript and a static demo with a sandbox: <https://github.com/mohamedbechirkefi/rigged-equal-rules>. Demo: <https://rigged-equal-rules.kefimohamedbechir.workers.dev>.
 
 *Disclosure: an AI assistant (Claude, Anthropic) drafted the code, the experiments' reports, the manuscript and this article under the owner's direction; it is not an author.*

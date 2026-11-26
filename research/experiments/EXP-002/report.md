@@ -7,7 +7,7 @@
 | Date | 2026-11-25 |
 | Version | 1.0 |
 | Status | Complete (960 of 960 runs ok). Confirmatory, simulated data. |
-| Authorship | Mohamed Bechir Kefi (C3). AI assistant disclosed as a research and development assistant, not an author. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (C3; author line approved by the owner on 2026-11-26). AI assistant disclosed as a research and development assistant, not an author. |
 | Protocol | `research/experiments/EXP-002/protocol.md`, FROZEN v1.0, SHA-256 263ede02caaa43102ff0aee8b2e23653beb968d857632c9e87c6cf4175f2e875 |
 | Config | SHA-256 150d6fffba5d2a8ac56cf1c2e187ae48048fe5167ea4050cf891e9eb380ed30e |
 | Code revision | b455d59294ea98e2b050ef30f20bc74b7993969e (tree clean) |

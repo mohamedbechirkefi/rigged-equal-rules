@@ -9,6 +9,6 @@ One defensible finding: in simulation, one common threshold opens an equal-oppor
 
 Caveat: simulated results hold only within the model; the real-data test covers one simple score and one non-protected partition. The groups are abstract, no protected attribute was used, and nothing here describes a real hiring decision or offers a universal fairness metric. Independent preprint draft, not peer-reviewed.
 
-Code, manuscript and an offline interactive demo: `<repository URL, not yet published>` · `<demo URL, not yet published>`
+Code, manuscript and an offline interactive demo: https://github.com/mohamedbechirkefi/rigged-equal-rules · https://rigged-equal-rules.kefimohamedbechir.workers.dev
 
 AI assistance (Claude, Anthropic) is disclosed in the manuscript.

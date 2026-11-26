@@ -57,8 +57,8 @@ export function App() {
         <div className="wrap">
           <p>Runs offline after the first load. No data about visitors is collected, stored or sent anywhere.</p>
           <p>
-            Author: Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval). Repository:{" "}
-            <code>&lt;repository URL, not yet published&gt;</code>. Licence: RIGGED Source-Available Non-Commercial
+            Author: Mohamed Bechir Kefi, independent researcher. Repository:{" "}
+            <a href="https://github.com/mohamedbechirkefi/rigged-equal-rules">github.com/mohamedbechirkefi/rigged-equal-rules</a>. Licence: RIGGED Source-Available Non-Commercial
             Research License v1.0.
           </p>
         </div>

@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
 # Release checklist
 
-Status (2026-11-25, M6): release candidate 0.1.0-rc1 prepared locally and verified as recorded below; awaiting the owner's review and G-PUBLIC. Nothing is released, tagged or pushed without the owner's explicit approval. Each ticked item was verified in the M6 session; the evidence is named next to it.
+Status (2026-11-25, M6; corrected 2026-11-26): release candidate 0.1.0-rc1 prepared and verified as recorded below. The repository is public at <https://github.com/mohamedbechirkefi/rigged-equal-rules> since 2026-11-25 (pushed on the owner's approval); no tag or release exists, and none is made without the owner's explicit approval (B16 sign-off, then B18). Each ticked item was verified in the M6 session; the evidence is named next to it.
 
 - [x] Every registered experiment has a truthful standalone report (`research/experiments/EXP-NNN/report.md`; M3, with M4 corrections and addenda). M6: the four reports were rebuilt as PDFs and inspected; their figure captions were checked against the plotted columns (EXP-003 caption corrected); `rigged.cli report` rerun on the committed results in a clean clone left every generated file byte-identical.
 - [x] Integrated manuscript complete; PDF compiled with the Typst chain and visually inspected (`scripts/build_pdfs.py`; `research/paper/manuscript.pdf`, 14 pages, every page inspected at 60 ppi; reproducibility report, section 3).
@@ -15,3 +15,12 @@ Status (2026-11-25, M6): release candidate 0.1.0-rc1 prepared locally and verifi
 - [x] Secret, identifier and licence scan (reproducibility report, section 5; `dependency_licences.md`: no dependency flagged).
 - [ ] Owner sign-off of `author_review.md` (the owner only).
 - [ ] Owner approval to publish, recorded in `research/decision_log.md` (G-PUBLIC; the owner only).
+
+## Version and date at the release (owner, 2026-11-26, decision sheet, B8)
+
+The release candidate keeps version `0.1.0-rc1` and no `date-released` in `CITATION.cff`. At the release, the version becomes `0.1.0` and `date-released` is set to the release day. `pyproject.toml` stays at `0.0.0`, because changing it would change the lockfile and the recorded environments.
+
+## Release notes (draft)
+
+- Figure 2 (EXP-002, `results/EXP-002/figures/XFIG-EXP-002-01-eog.svg`) is kept with its crowded, partly overlapping rotated axis labels, because it is a checksummed result file; every plotted value is in Supplementary Table S2 (owner, 2026-11-26, decision sheet, B11).
+- External build and check tools are used but not redistributed by this repository: pandoc (GPL-2.0-or-later) for the PDFs, Google Chrome for the demo's accessibility check, the fonts bundled with the typst package (Libertinus Serif, OFL-1.1, embedded as subsets in the committed PDFs as that licence permits), and the MPL-2.0 packages listed in `dependency_licences.md` (lightningcss, build only; hypothesis, test only) (B13).

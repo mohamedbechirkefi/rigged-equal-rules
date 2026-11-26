@@ -7,7 +7,7 @@
 | Date | 2026-11-25 |
 | Version | 1.0 |
 | Status | Complete (160 of 160 runs ok). Confirmatory, real data (UCI Adult, CC BY 4.0). H1-real disconfirmed. |
-| Authorship | Mohamed Bechir Kefi (C3). AI assistant disclosed as a research and development assistant, not an author. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (C3; author line approved by the owner on 2026-11-26). AI assistant disclosed as a research and development assistant, not an author. |
 | Protocol | `research/experiments/EXP-004/protocol.md`, FROZEN v1.2 (pre-data amendment of 2026-11-25, owner-approved), SHA-256 ff9b80ff4c2421b9057838e1775bcfb08da65ae9e26b30c6c4f3ecdc4bfe30ae |
 | Config | SHA-256 6fe218fd09d7ea15f1689e048cdb44b935d110307889b14121008df165aed0c1 |
 | Data | `data/raw/adult.zip`, SHA-256 7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb; data manifest SHA-256 37194645cd251abaab069a90a26908b3032bdd573097633fb9908bfe9540192d |

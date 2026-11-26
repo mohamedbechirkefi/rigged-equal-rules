@@ -16,4 +16,6 @@ npm test                                        # vitest: validator and engine p
 node tools/a11y_check.mjs dist --screenshots <dir>   # offline and accessibility check
 ```
 
-Demo URL: `<demo URL, not yet published>`.
+Demo URL: <https://rigged-equal-rules.kefimohamedbechir.workers.dev>.
+
+Hosting: the built page (`dist/`) is hosted as Cloudflare Workers static assets on the free plan, configured by `wrangler.jsonc` in this folder (assets only, no Worker script). It is deployed by the coordinator, not by any script of this repository.

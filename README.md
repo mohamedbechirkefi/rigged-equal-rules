@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
-# RIGGED: when equal rules produce unequal outcomes (working title)
+# RIGGED: when equal rules produce unequal outcomes
 
 **Question.** Can equal rules yield unequal outcomes under different starting distributions?
 
@@ -43,7 +43,7 @@ Exploratory checks (JRN-0014 to JRN-0016) are labelled exploratory everywhere an
 
 ## Interactive demo
 
-`demo/` is a static page (TypeScript, React and Vite, pinned versions): the published results with their intervals, a fairness trade-off explorer and subgroup outcome charts over the EXP-002 and EXP-004 summary tables, the assumptions, the method and limitations, and a sandbox that runs a port of the engine in a Web Worker. Sandbox output is labelled and is not a research result. The page makes no request to any other host, collects nothing and works offline after the first load. Demo URL: `<demo URL, not yet published>`.
+`demo/` is a static page (TypeScript, React and Vite, pinned versions): the published results with their intervals, a fairness trade-off explorer and subgroup outcome charts over the EXP-002 and EXP-004 summary tables, the assumptions, the method and limitations, and a sandbox that runs a port of the engine in a Web Worker. Sandbox output is labelled and is not a research result. The page makes no request to any other host, collects nothing and works offline after the first load. Demo: <https://rigged-equal-rules.kefimohamedbechir.workers.dev> (Cloudflare Workers static assets, free plan).
 
 Quick start (Node 22):
 
@@ -84,4 +84,4 @@ RIGGED Source-Available Non-Commercial Research License v1.0 (`LICENSE`, `NOTICE
 
 ## Citation
 
-See `CITATION.cff`. Author: Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval). Repository: `<repository URL, not yet published>`. An AI assistant (Claude, Anthropic) is disclosed as a research and development assistant, not as an author.
+See `CITATION.cff`. Author: Mohamed Bechir Kefi, independent researcher. Repository: <https://github.com/mohamedbechirkefi/rigged-equal-rules>. An AI assistant (Claude, Anthropic) is disclosed as a research and development assistant, not as an author.

@@ -126,3 +126,19 @@ Every page of the manuscript, every page of the supplementary file, and the firs
 ## 6. Re-check in a fresh clone of the release candidate
 
 A second clone of the release-candidate commit 94421ba, after the fixes: `uv sync --frozen` exit 0; `pytest -q` 124 passed in 9.96s; `scripts/check_links.py` PASS (56 Markdown files, 23 links, 8 bib entries); `CITATION.cff` parses as YAML; the M3 smoke matrix again identical except `runtime_mean_s`; `export_demo_data.py --check` matches; demo `npm ci`, 18 tests passed, build, `A11Y-CHECK PASS`; `git status` clean. Both clones were deleted at the end of the session. Commands: `progress.md`, M6 entry.
+
+## 7. Home-directory paths after the scrub (2026-11-26)
+
+Under owner, 2026-11-26, decision sheet, B9, absolute home-directory paths were removed from the editable files in a new commit, without rewriting history: `CLAUDE.md` (toolchain locations now relative to the repository, for example `../.tools/`, and "the research root" in words), `research/feasibility.md` (relative paths, with a dated note) and `src/rigged/report.py` (the default tool locations are now computed from the file's own location, `../.tools/` next to the repository; `RIGGED_PANDOC` and `RIGGED_TYPST_PYTHON` still override them; `build_pdf` was tested with the new defaults on a scratch copy of an exploratory report and produced a PDF). The repository has been public since 2026-11-25, so earlier commits keep the old paths.
+
+Remaining after the scrub (`git grep -c` on absolute home paths): 36 occurrences in 7 files, all left untouched on purpose:
+
+| File | Occurrences | Why it stays |
+|---|---|---|
+| `results/EXP-001/run.log` to `results/EXP-004/run.log` | 7 each, 28 in all | checksummed confirmatory run logs (`SHA256SUMS`) |
+| `progress.md` | 3 | append-only record |
+| `research/decision_log.md` | 2 | append-only record |
+| `research/experiment_journal.jsonl` | 3 | append-only journal |
+
+Frozen protocols, licence files and `master_prompt.md` contain none.
+

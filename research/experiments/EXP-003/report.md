@@ -7,7 +7,7 @@
 | Date | 2026-11-25 |
 | Version | 1.0 |
 | Status | Complete (420 of 420 runs ok). Confirmatory, simulated data. Implementation check failed on 4 of 60 comparisons (deviation DEC-019; the owner decided on 2026-11-25 that it is a disclosed limitation on H4, with no rerun, DEC-021). |
-| Authorship | Mohamed Bechir Kefi (C3). AI assistant disclosed as a research and development assistant, not an author. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (C3; author line approved by the owner on 2026-11-26). AI assistant disclosed as a research and development assistant, not an author. |
 | Protocol | `research/experiments/EXP-003/protocol.md`, FROZEN v1.0, SHA-256 7d6335cf96cb0b856eeffc6f2bfc264425df11c008f9984147d313609a116214 |
 | Config | SHA-256 b22c17b436cf9fc0fa4ad2e083f0de2dbac804557001410045e027c71ff2c24a |
 | Code revision | b455d59294ea98e2b050ef30f20bc74b7993969e (tree clean) |

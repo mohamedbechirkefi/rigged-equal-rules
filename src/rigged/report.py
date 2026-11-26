@@ -2,8 +2,8 @@
 """Report generator: tables (CSV, Markdown) and figures (SVG) built only from validated result files.
 
 PDFs go through pandoc (Markdown to Typst, ``-V mainfont="Libertinus Serif"``) and the typst Python
-package. Tool locations come from RIGGED_PANDOC and RIGGED_TYPST_PYTHON, defaulting to the owner's
-local zero-cost toolchain.
+package. Tool locations come from RIGGED_PANDOC and RIGGED_TYPST_PYTHON, defaulting to the zero-cost
+toolchain next to the repository (``../.tools/``, located from this file).
 """
 
 from __future__ import annotations
@@ -23,8 +23,9 @@ from .matrices import exp001, exp002, exp003
 from .schema import load
 from .stats import summarise
 
-PANDOC = os.environ.get("RIGGED_PANDOC", "/Users/bechir/research/labs/.tools/pandoc")
-TYPST_PYTHON = os.environ.get("RIGGED_TYPST_PYTHON", "/Users/bechir/research/labs/.tools/py/bin/python")
+_TOOLS = Path(__file__).resolve().parents[3] / ".tools"
+PANDOC = os.environ.get("RIGGED_PANDOC", str(_TOOLS / "pandoc"))
+TYPST_PYTHON = os.environ.get("RIGGED_TYPST_PYTHON", str(_TOOLS / "py" / "bin" / "python"))
 
 SUMMARY_METRICS = ("eog", "sr_gap", "fpr_gap", "ppv_gap", "ece_gap", "utility_per_capita", "accuracy",
                    "tpr_a", "tpr_b")

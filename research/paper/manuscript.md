@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-RIGGED-NC-Research-1.0 -->
 # When equal rules produce unequal outcomes: a seeded simulation of one common threshold, with a contradicting test on a real score
 
-Mohamed Bechir Kefi (no affiliation; author metadata pending the owner's approval).
+Mohamed Bechir Kefi, independent researcher.
 
 **Status:** independent research manuscript / preprint draft, not peer-reviewed. Version M6 release candidate (0.1.0-rc1), 2026-11-25; not released. All numbers come from committed results at code revision b455d59 (confirmatory) or from runs labelled exploratory. Simulated results are labelled simulated. Groups A and B are abstract groups, never protected groups. EXP-004 uses the UCI Adult dataset (Becker and Kohavi 1996, DOI 10.24432/C5XW20, CC BY 4.0).
 
@@ -257,7 +257,7 @@ In the Gaussian model, one common threshold gives equally qualified members of a
 
 ## 10. Data and code availability
 
-Code, configurations, frozen protocols, raw results (`results/EXP-NNN/results.json`), tables, figures, provenance and checksums are in this repository. The public URL is a placeholder until the owner approves a release: `<repository URL, not yet published>`. Reproduction, from the repository root:
+Code, configurations, frozen protocols, raw results (`results/EXP-NNN/results.json`), tables, figures, provenance and checksums are in this repository. Public repository: <https://github.com/mohamedbechirkefi/rigged-equal-rules>. Reproduction, from the repository root:
 
 ```
 ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
@@ -272,7 +272,7 @@ PYTHONPATH=src .venv/bin/python scripts/m4_evidence_audit.py
 
 The UCI Adult archive is redistributed unchanged under CC BY 4.0 (Becker and Kohavi 1996).
 
-A static interactive page in `demo/` (M5) shows the published results of this manuscript, a trade-off explorer over the EXP-002 and EXP-004 summary tables and a sandbox that runs a port of the engine in the browser. Its numbers are exported from the committed tables by `scripts/export_demo_data.py` and tested to match this manuscript and the supplementary file verbatim (`tests/test_demo_export.py`). Sandbox output is labelled as such and is not a research result. The demo URL is a placeholder until the owner approves a release: `<demo URL, not yet published>`. Build: `cd demo && npm ci && npm run build && npm run preview`.
+A static interactive page in `demo/` (M5) shows the published results of this manuscript, a trade-off explorer over the EXP-002 and EXP-004 summary tables and a sandbox that runs a port of the engine in the browser. Its numbers are exported from the committed tables by `scripts/export_demo_data.py` and tested to match this manuscript and the supplementary file verbatim (`tests/test_demo_export.py`). Sandbox output is labelled as such and is not a research result. Hosted demo: <https://rigged-equal-rules.kefimohamedbechir.workers.dev>. Build: `cd demo && npm ci && npm run build && npm run preview`.
 
 ## 11. Funding, competing interests and AI assistance disclosure
 

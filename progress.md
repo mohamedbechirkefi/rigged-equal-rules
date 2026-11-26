@@ -591,3 +591,37 @@ $ git status --short | wc -l                                      0
 ```
 
 Both clones ($S/clone and $S/clone2), created in this session, were deleted.
+
+## 2026-11-26: owner answers of 2026-11-26 applied
+
+**Authority:** owner, 2026-11-26, decision sheet (`labs/_shared/owner-approvals-2026-11-26.md`); coordinator brief `labs/_shared/OWNER-ANSWERS-brief.md`. **Starting state:** `56791be`, working tree clean. Decision: DEC-026. `$S` is the session scratch folder outside the repository.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/python scripts/build_pdfs.py --typ-dir $S/typ --png-dir $S/png
+  manuscript.pdf 333233 bytes (13 pages, was 14), supplementary.pdf (source unchanged: restored with git checkout),
+  EXP-001 4 pages, EXP-002 4, EXP-003 5, EXP-004 5
+$ ../.tools/pandoc research/paper/manuscript.md -s -t latex -o research/paper/manuscript.tex
+$ pypdf: 5 rebuilt PDFs titled; no home path, no e-mail address in their bytes
+$ PNG inspection: manuscript pages 1 (author line), 12 (repository URL), 13 (demo URL, section 11); EXP-001 page 1 (authorship row)
+$ PYTHONPATH=src python3 -c "rigged.report.build_pdf(<scratch copy of results/exploratory/degen/report.md>)"   PDF written, 197425 bytes (new default tool paths)
+$ .venv/bin/python -m pytest -q                                   124 passed in 9.08s
+$ python3 scripts/check_links.py                                  56 Markdown files, 23 links, 8 bib entries: PASS
+$ python3 scripts/export_demo_data.py --check                     results.json matches the export
+$ cd demo && npm ci --prefer-offline                              added 53 packages in 18s
+$ npm test                                                        Test Files 2 passed (2); Tests 18 passed (18)
+$ npm run build                                                   index-DSnvotB6.js 251.70 kB; built in 292ms (folder dist/)
+$ node tools/a11y_check.mjs dist                                  A11Y-CHECK PASS (incl. "no request leaves the local origin")
+$ git commit                                                      e7df1bc
+$ python3 scripts/export_demo_data.py                             wrote demo/public/data/results.json (108290 bytes); git status: 0 lines
+$ git grep -c <home path>                                          36 in 7 files (4 run.log, progress.md, decision_log.md, experiment_journal.jsonl)
+```
+
+### What was done
+
+A1, B1, B2, B3, B6 to B11, B13, B14 and R-RIGGED-1 applied or recorded as listed in DEC-026: URLs filled, author line "Mohamed Bechir Kefi, independent researcher", working-title marks removed, `CITATION.cff` (`repository-code`, `affiliation`, placeholder comment removed), `demo/wrangler.jsonc` added, home paths scrubbed from `CLAUDE.md`, `research/feasibility.md` and `src/rigged/report.py`, release notes and the B8 record added to `release_checklist.md`, reproducibility report section 7, `author_review.md` section "Owner answers recorded (2026-11-26)". No box ticked; no result, config, seed, frozen file or checksummed output changed; nothing pushed or deployed.
+
+### Next action
+
+The owner: B15 article drafts, B16 full-text review and sign-off, B18 release. The coordinator deploys the demo.
